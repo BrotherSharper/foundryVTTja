@@ -1,0 +1,22 @@
+{
+	"name": "foundryVTTja",
+	"title": "FVTT日本語化モッド",
+	"description": "D&D5版システム用のロカライゼーションファイル、＋辞典。このモッドを使用するには必ずモッドを適用してから言語を変更してください",
+	"version": "0.2",
+	"author": "Brother Sharp, Asami",
+	"languages": [
+		{
+			"lang": "ja",
+			"name": "日本語",
+			"path": "lang/ja.json"
+		}
+	],
+	"scripts": [],
+  "styles" : [],
+  "packs": [],
+	"url" : "https://github.com/BrotherSharper/foundryVTTja",
+	"download" : "https://github.com/BrotherSharper/foundryVTTja/archive/master.zip",
+	"manifest" : "https://raw.githubusercontent.com/BrotherSharper/foundryVTTja/master/module.json",
+  "minimumCoreVersion": "0.5.5",
+  "compatibleCoreVersion": "0.5.5"
+}
