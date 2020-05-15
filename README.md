@@ -1,13 +1,15 @@
 # FVTT本体用　日本語化モッド
 
 * **製作者**: Brother Sharp (ディスコード：Brother Sharp#6921)
+* **翻訳ファイル提供者**: Asami (ディスコード：Asami
+#8627)
 * **対応FVTTバージョン**: 0.5.6 (0.5.0+)
 * **modバージョン**: 0.3.1
 
 ### インストール方法： 
 以下のリンクをモッドとしてインストールしてください。
 
-リンク： https://raw.githubusercontent.com/BrotherSharper/foundryVTTja/master/module.json
+* リンク： https://raw.githubusercontent.com/BrotherSharper/foundryVTTja/master/module.json
 
 ### 内容
 Foundry VTTの本体用の日本語化に必要なロカライゼーションファイルを追加するモッドです。
