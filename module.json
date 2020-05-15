@@ -1,8 +1,8 @@
 {
 	"name": "foundryVTTja",
-	"title": "FVTT日本語化モッド",
+	"title": "日本語化（FVTT本体）",
 	"description": "Foundry VTTの本体用の日本語化に必要なロカライゼーションファイルを追加するモッド。このモッドを使用するには必ずモッドを適用してから言語を変更してください",
-	"version": "0.3",
+	"version": "0.3.1",
 	"author": "Brother Sharp, Asami",
 	"languages": [
 		{
