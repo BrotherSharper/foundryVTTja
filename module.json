@@ -2,7 +2,7 @@
 	"name": "foundryVTTja",
 	"title": "日本語化（オンセ工房本体）",
 	"description": "オンセ工房Foundry VTTの本体用の日本語化に必要なロカライゼーションファイルを追加するモッド。このモッドを使用するには必ずモッドを適用してから言語を変更してください",
-	"version": "0.4.1",
+	"version": "0.4.2",
 	"author": "Brother Sharp, Asami",
 	"languages": [
 		{
@@ -18,5 +18,5 @@
 	"download" : "https://github.com/BrotherSharper/foundryVTTja/archive/master.zip",
 	"manifest" : "https://raw.githubusercontent.com/BrotherSharper/foundryVTTja/master/module.json",
   "minimumCoreVersion": "0.5.5",
-  "compatibleCoreVersion": "0.6.1"
+  "compatibleCoreVersion": "0.6.2"
 }
