@@ -1064,5 +1064,197 @@
 "WEBRTC.GenericError" : "WebRTC エラー : ",
 "WEBRTC.NoSSLError": "オンセ工房サーバがSSL証明書を使用していない限り、音声/ビデオ通話は使用できません。 手順については、オンラインマニュアルを参照してください。",
 "WEBRTC.WarningCannotEnableVideo": "ビデオ画像をブロードキャストする権限がないため、カメラを有効にすることができません。",
-"WEBRTC.WarningCannotEnableAudio": "音声をブロードキャストする権限がないため、マイクを有効にすることができません。"
+"WEBRTC.WarningCannotEnableAudio": "音声をブロードキャストする権限がないため、マイクを有効にすることができません。",
+
+
+
+	"bellows.import-yt-playlist-nav-text": "YouTubeのプレイリストを読み込む",
+	"bellows.import-yt-playlist-notes": "YouTubeのプレイリストURL、またはIDを入力してください。隣のインポートボタンを押すと開始します。",
+	"bellows.import-yt-playlist-btn-import": "インポート",
+	"bellows.import-yt-playlist-btn-submit": "保存",
+	"bellows.import-yt-playlist-msg-already-working": "プレイリストをインポートしています。",
+	"bellows.import-yt-playlist-msg-invalid-key": "有効なYouTubeのプレイリストURL（クエリ文字列を含む）、またはプレイリストIDを入力してください。",
+	"bellows.import-yt-playlist-msg-error": "プレイリストのインポート中にエラーが発生しました。",
+	"bellows.import-yt-playlist-msg-key-not-found": "キー {playlistKey} を持つプレイリストが存在しません。URLやIDを確認し再試行してください。",
+	"bellows.import-yt-playlist-msg-imported": "プレイリスト {playlistName} が正常にインポートされました。",
+	"bellows.import-yt-playlist-lbl-name": "プレイリスト名",
+	"bellows.import-yt-playlist-lbl-volume": "標準の音量",
+	
+	
+	
+	  "WEATHERMANAGE.Title": "天候効果管理",
+  "FILTERMANAGE.Title": "フィルター効果管理",
+  "CONTROLS.Effects": "効果制御",
+  "CONTROLS.Weather": "天候制御",
+  "CONTROLS.Daylight": "日光フィルター",
+  "CONTROLS.Underwater": "水中フィルター",
+  "CONTROLS.Predator": "走査線フィルター",
+  "CONTROLS.OldFilm": "モノクロフィルター",
+  "CONTROLS.Bloom": "ブルームフィルター",
+  "CONTROLS.SpecialFX": "特殊効果",
+  "CONTROLS.Colorize": "色フィルター",
+  "CONTROLS.SaveMacro": "天候をマクロ出力",
+  "CONTROLS.ClearFX": "効果とフィルターを初期化",
+  "EFFECTCONTROLS.Title": "特殊効果",
+  "FXMASTER.AddEffect": "効果の追加",
+  "FXMASTER.Density": "濃度",
+  "FXMASTER.Tint": "色味",
+  "FXMASTER.Scale": "縮尺",
+  "FXMASTER.ScaleHint": "映像の縮尺を設定します。",
+  "FXMASTER.Speed": "速度",
+  "FXMASTER.SpeedHint": "映像の移動速度を設定します。",
+  "FXMASTER.Direction": "方向",
+  "FXMASTER.SaveMacro": "マクロに保存する",
+  "FXMASTER.SaveChanges": "変更を保存する",
+  "FXMASTER.Delete": "効果クリア",
+  "FXMASTER.DeleteConfirm": "<p>すべての効果が削除されます。<strong>本当に削除しますか？</strong></p>",
+  "FXMASTER.Enable": "効果を有効にする",
+  "FXMASTER.Angle": "角度",
+  "FXMASTER.AngleHint": "左右軸と比較した効果の初期角度を設定します。",
+  "FXMASTER.Anchor": "アンカー",
+  "FXMASTER.AnchorHint": "原点のローカル座標。0.0～1.0の値をとります。",
+  "FXMASTER.File": "ファイル",
+  "FXMASTER.Name": "名前",
+  "FXMASTER.AnimationDelay": "ディレイ",
+  "FXMASTER.AnimationDelayHint": "アニメーション速度の遅延を設定します。",
+  "FXMASTER.Ease": "イージング",
+  "FXMASTER.EaseHint": "アニメーション速度のイージング機能です。",
+  
+  
+  
+    "MLT.SettingAutoSyncTargets": "プレイヤーのターゲットを同期する",
+  "MLT.SettingAutoSyncTargetsHint": "プレイヤーがターゲットを変更すると、そのクローン（またはオリジナル）も同様にターゲットを変更します。",
+  "MLT.SettingAutoSyncChatBubbles": "吹き出しを同期する",
+  "MLT.SettingAutoSyncChatBubblesHint": "トークンの吹き出しは、そのクローン（またはオリジナル）にも表示されます。",
+  "MLT.SettingCloneModuleFlags": "ほかのモジュールで設定されたフラグを引き継ぐ",
+  "MLT.SettingCloneModuleFlagsHint": "モジュールは、トークンにカスタムフラグを設定することがあります。このオプションを有効にすると、複製されたトークンは、オリジナルのフラグを継承するようになります。これがどんな影響を及ぼすかは、そのフラグを設定したモジュール次第ですが、そうしたモジュールとの互換性に問題がある場合は変更してみるといいでしょう。",
+  "MLT.TabTitle": "マルチレベル",
+  "MLT.TabNotes": "この図面を使用して、マルチレベルトークンを使用した自動化領域を定義します。",
+  "MLT.SectionTeleports": "テレポート",
+  "MLT.SectionTeleportsNotes": "<strong>イン領域</strong>に入ったトークンは、一致した識別子を持つ<strong>アウト領域</strong>にテレポートします。",
+  "MLT.FieldIn": "イン",
+  "MLT.FieldOut": "アウト",
+  "MLT.FieldTeleportId": "テレポート識別子",
+  "MLT.FieldAnimateMovement": "移動のアニメーションを表示する",
+  "MLT.FieldActivateViaMapNote": "マップノートを使ってアクティブ化する",
+  "MLT.FieldActivateViaMapNoteNotes": "トークンの所有者（またはGM）が、<strong>イン領域</strong>内でマップノートをクリックした場合にのみテレポートを実行します。",
+  "MLT.FieldSnapToGrid": "グリッドにスナップする",
+  "MLT.FieldSnapToGridNotes": "この<strong>アウト領域</strong>にテレポートすると、トークンはグリッドにスナップされます。",
+  "MLT.FieldSceneLocal": "ローカルシーンに制限する",
+  "MLT.FieldSceneLocalNotes": "テレポートと複製の領域を制限し、同じシーン上の領域とのみ一致するようにします。",
+  "MLT.SectionTokenCloning": "トークンの複製（クローン）",
+  "MLT.SectionTokenCloningNotes": "<strong>ソース領域</strong>のトークンは、一致する識別子を持つ任意の<strong>ターゲット領域</strong>に複製されます。",
+  "MLT.FieldSource": "ソース",
+  "MLT.FieldTarget": "ターゲット",
+  "MLT.FieldCloneId": "クローン識別子",
+  "MLT.SectionTargetRegionNotes": "この対象領域で作成されたクローントークンの設定を行います。",
+  "MLT.FieldClonedTokenTintColor": "複製されたトークンの色合い",
+  "MLT.FieldClonedTokenScale": "複製されたトークンの縮尺係数",
+  "MLT.FieldMirrorHorizontally": "横方向に反転",
+  "MLT.FieldMirrorVertically": "縦方向に反転",
+  "MLT.SectionMacroTriggers": "マクロトリガー",
+  "MLT.SectionMacroTriggersNotes": "トークンがこの領域に入ったとき、出たとき、または領域内を移動したときにマクロを起動します。マクロでは、<strong>scene</strong>、<strong>region</strong>、<strong>token</strong>、<strong>actor</strong> が変数として使用できます。それぞれには <strong>Scene</strong>、<strong>Drawing</strong>、<strong>Token</strong>、<strong>Actor</strong> オブジェクトが格納されています。",
+  "MLT.FieldTriggerOnEnter": "入場時にトリガーする",
+  "MLT.FieldTriggerOnLeave": "出場時にトリガーする",
+  "MLT.FieldTriggerOnMove": "移動時にトリガーする",
+  "MLT.SectionMacroEventsNotes": "マクロで使用できる変数 <strong>event</strong> は<strong>MLT.ENTER</strong>、<strong>MLT.LEAVE</strong>、または<strong>MLT.MOVE</strong>のいずれかの値をとります。",
+  "MLT.FieldMacroName": "マクロ名",
+  "MLT.FieldAdditionalArguments": "追加の引数",
+  "MLT.FieldAdditionalArgumentsNotes": "変数 <strong>args</strong>で使用する引数をカンマ区切りで指定します。",
+  "MLT.SectionLevels": "レベル（階層）",
+  "MLT.SectionLevelsNotes": "<strong>@stairs</strong> トークンの上に移動したトークンは、数値的に隣接するレベル領域内の同じ相対位置にある、ほかの<strong>@stairs</strong>トークンの場所にテレポートします。",
+  "MLT.FieldLevelRegion": "レベル領域",
+  "MLT.FieldLevelNumber": "レベル値",
+  "MLT.FieldDisableRegion": "領域無効化",
+  "MLT.FieldDisableRegionNotes": "この領域のすべての自動化機能を一時的に無効にします。",
+  
+  
+  
+      "SETTINGS.AboutAppN": "Pin Cushionについて",
+    "SETTINGS.AboutAppH": "Pin Cushionの追加情報を表示します。",
+    "SETTINGS.ShowJournalPreviewN": "資料のプレビューを表示",
+    "SETTINGS.ShowJournalPreviewH": "マップピンにカーソルを置くと、資料のプレビューが表示されます。",
+    "SETTINGS.PreviewTypeN": "資料のプレビュー形式",
+    "SETTINGS.PreviewTypeH": "表示される資料のプレビュー形式を指定します（HTMLもしくはテキスト）",
+    "SETTINGS.PreviewMaxLengthN": "プレビューの最大長",
+    "SETTINGS.PreviewMaxLengthH": "**テキスト形式のみ** 何文字までプレビュー表示しますか？",
+    "SETTINGS.PreviewDelayN": "プレビューのディレイ値",
+    "SETTINGS.PreviewDelayH": "プレビューが表示されるまでの時間(ミリ秒)",
+	
+	
+	
+		"pings": {
+		"settings": {
+			"minMovePermission": {
+				"title": "画面移動の最小権限",
+				"hint": "画面移動を伴うPingを許可する最も低い権限を指定します。例えばASSISTANTが選択されている場合、GAMEMASTERとASSISTANTのみが全員の画面を移動させるPingを実行できます。"
+			},
+			"mouseButton": {
+				"title": "Pingに用いるマウスボタン",
+				"hint": "pingの実行に用いるマウスボタンを指定します。0＝左、1＝中、2＝右。このフィールド内でマウスボタンを押すと、そのボタンが反映されます。必要に応じShiftやCtrlなどの修飾キーを加えてください。Escキーを押すとクリアされます。"
+			},
+			"mouseButtonMove": {
+				"title": "画面移動Pingに用いるマウスボタン",
+				"hint": "すべてのプレイヤーの画面を移動させるPingの実行に用いるマウスボタンを指定します。0＝左、1＝中、2＝右。このフィールド内でマウスボタンを押すと、そのボタンが反映されます。必要に応じShiftやCtrlなどの修飾キーを加えてください。Escキーを押すとクリアされます。"
+			},
+			"mouseButtonDuration": {
+				"title": "マウスボタンの押下時間",
+				"hint": "Pingの実行にあたり、マウスボタンを押し続ける時間を指定します。単位はミリ秒です。"
+			},
+			"key": {
+				"title": "Pingに用いるキー",
+				"hint": "マウスカーソルの現在位置にPingを実行するためのキーを指定します。このフィールド内で希望するキーを押すと反映されます。必要に応じShiftやCtrlなどの修飾キーを加えてください。Escキーを押すとクリアされます。"
+			},
+			"keyMove": {
+				"title": "画面移動Pingに用いるキー",
+				"hint": "マウスカーソルの現在位置に、すべてのプレイヤーの画面を移動させるPingを実行するためのキーを指定します。このフィールド内で希望するキーを押すと反映されます。必要に応じShiftやCtrlなどの修飾キーを加えてください。Escキーを押すとクリアされます。"
+			},
+			"showName": {
+				"title": "プレイヤーの名前を表示",
+				"hint": "有効にすると、Pingの下にプレイヤー名を表示します。"
+			},
+			"image": {
+				"title": "Pingの画像",
+				"hint": "デフォルトのPingを代替する画像を指定します。プレイヤーカラーに基づく色調が適用されるため、グレースケール以外の画像を指定すると見栄えが損なわれることに注意してください。"
+			},
+			"scale": {
+				"title": "縮尺",
+				"hint": "グリッド上でのPingの大きさを指定します。"
+			},
+			"duration": {
+				"title": "持続時間",
+				"hint": "Pingが表示される時間を指定します。単位は秒です。"
+			},
+			"rotate": {
+				"title": "回転",
+				"hint": "有効にすると、実行中にPingが大きさを変え、より目立つようになります"
+			},
+			"rotateSpeed": {
+				"title": "回転速度",
+				"hint": "Ping画像が360度回転するのに何秒かかるかを指定します。"
+			},
+			"sizeChange": {
+				"title": "サイズの変化",
+				"hint": "有効にすると、実行中にPingが大きさを変え、より目立つようになります。"
+			},
+			"sizeChangeAmount": {
+				"title": "サイズの変化量",
+				"hint": "大きさをどの程度変化させるかを決定します。"
+			},
+			"sizeChangeSpeed": {
+				"title": "サイズ変化速度",
+				"hint": "サイズ変更の1サイクルにかかる時間を指定します。単位は秒です。"
+			}
+		}
+	},
+	
+	
+	
+	
+	"POPOUT.PopOut": "PopOut!",
+    "POPOUT.PopIn": "PopIn!",
+    "POPOUT.useWindows": "ポップシートを新しいウィンドウで開く",
+    "POPOUT.useWindowsHint": "ポップアウトされたシートを、最小限の要素によるウィンドウで強制的に開きます。それ以外の場合はブラウザのデフォルト（たいていは新しいタブ）で開きます。",
+    "POPOUT.electronWarning": "Popout! は、スタンドアロンのFVTTアプリケーションでは動作しません。通常のブラウザからゲームを開いてください。",
+    "POPOUT.failureWarning": "PopOut! のウィンドウが開けませんでした。サイトの設定/権限を確認してください。ウェブサイトのURLの左にある<i class='fas fa-info-circle'></i>をクリックしてください。"
 }
