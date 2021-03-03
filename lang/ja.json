@@ -1256,5 +1256,38 @@
     "POPOUT.useWindows": "ポップシートを新しいウィンドウで開く",
     "POPOUT.useWindowsHint": "ポップアウトされたシートを、最小限の要素によるウィンドウで強制的に開きます。それ以外の場合はブラウザのデフォルト（たいていは新しいタブ）で開きます。",
     "POPOUT.electronWarning": "Popout! は、スタンドアロンのFVTTアプリケーションでは動作しません。通常のブラウザからゲームを開いてください。",
-    "POPOUT.failureWarning": "PopOut! のウィンドウが開けませんでした。サイトの設定/権限を確認してください。ウェブサイトのURLの左にある<i class='fas fa-info-circle'></i>をクリックしてください。"
+    "POPOUT.failureWarning": "PopOut! のウィンドウが開けませんでした。サイトの設定/権限を確認してください。ウェブサイトのURLの左にある<i class='fas fa-info-circle'></i>をクリックしてください。",
+
+
+    "CONVIS.settings.autoStealth.name": "〈隠密〉判定後に自動で隠れ身状態にする",
+    "CONVIS.settings.autoStealth.hint": "〈隠密〉判定を行った後に、コマを自動的に隠れ身状態にします（サポートされているゲームシステムのみ）。",
+
+    "CONVIS.popup.dismissuntilupdated": "更新まで再表示しない",
+    "CONVIS.popup.close": "閉じる",
+    "CONVIS.popup.version0910.1":"状態の適用にアイコンでなくマクロを使用したい場合、また一括して状態を適用したい場合のために、このモジュールに辞典が追加されました。",
+    "CONVIS.popup.version0910.2":"またFoundry 0.6.x系から0.7系へのコマの移行を行うスクリプトもありますが、いくつかの効果は再適用する必要があるかもしれません。",
+    "CONVIS.popup.version0910.3":"これらのスクリプトをマクロとして使用するには、非同期であるためモジュール「Furnace」をインストールする必要があります。",
+
+    "CONVIS.help.readmeat": "より詳細な説明はこちらを参照してください：",
+    "CONVIS.help.gamesystem": "ゲームシステム",
+    "CONVIS.help.hasStealth": "隠密対応",
+    "CONVIS.help.availableconditions": "利用可能な状態",
+
+    "CONVIS.unsupportedsystem":"Conditional Visibilityは{system}システムをサポートしていません。これは独自の状態メカニズムを持っているためです。問題報告（とくにプルリクエスト）を歓迎します。",
+    "CONVIS.ExtraSenseInstructions": "視覚を強化するその他の感覚",
+    "CONVIS.seeinvisible":"不可視視認（不可視）",
+    "CONVIS.blindsight": "擬似感覚（不可視/隠蔽/魔法闇）",
+    "CONVIS.tremorsense":"振動感知（不可視/隠蔽/魔法闇）",
+    "CONVIS.devilssight":"悪魔の目（魔法の闇）",
+    "CONVIS.truesight":"超視覚（不可視/魔法の闇）",
+
+    "CONVIS.invisible":"不可視",
+    "CONVIS.obscured":"隠蔽",
+    "CONVIS.indarkness":"魔法の闇",
+    "CONVIS.hidden":"隠れ身",
+    
+    "CONVIS.stealth.not.supported": "Conditional Visilbityは、{sysid}の隠れ身状態/隠密をサポートしていません。",
+    "CONVIS.currentstealth":"〈隠密〉値",
+    "CONVIS.stealthroll":"〈隠密〉判定",
+    "CONVIS.stealthrolldescription":"コマが隠れ身状態である限り、この値は受動〈知覚〉値との比較が行われます。数値以外の入力は初期値として扱われます。"
 }
