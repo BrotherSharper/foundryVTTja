@@ -1,4 +1,4 @@
-/**
+
 Hooks.on("preUpdateActor", (data, updatedData) =>{
     if (data.data.token.img == "modules/foundryVTTja/img/mystery-man.svg" && updatedData.img)
     {
