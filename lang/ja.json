@@ -749,6 +749,7 @@
   
   "SETTINGS.Configure": "コンフィグ設定",
   "SETTINGS.Controls": "操作リファレンス",
+  "SETTINGS.DemoMode": "デモ・モード",
   "SETTINGS.Docs": "説明書を開く",
   "SETTINGS.Invite": "招待リンク",
   "SETTINGS.ManageModules": "モジュールの管理",
@@ -941,6 +942,7 @@
   "PACKAGE.TagLocalization": "多言語対応",
   "PACKAGE.TagVersion": "Ver",
   "PACKAGE.TagCoreVersion": "コア Ver",
+  "PACKAGE.UpdateCheckTimedOut": "タイムアウト",
   
   "JOIN.CurrentPlayers": "現在のプレイヤー",
   "JOIN.HeaderJoin": "ゲームセッションに参加する",
@@ -1300,7 +1302,7 @@
   "WORLD.Description": "ワールドの説明",
 
 
-
+  
 	"bellows.import-yt-playlist-nav-text": "YouTubeのプレイリストを読み込む",
 	"bellows.import-yt-playlist-notes": "YouTubeのプレイリストURL、またはIDを入力してください。隣のインポートボタンを押すと開始します。",
 	"bellows.import-yt-playlist-btn-import": "インポート",
