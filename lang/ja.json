@@ -373,11 +373,11 @@
   "DRAWING.TextOpacity": "テキストの不透明度",
   
   "EFFECT.MODE_CUSTOM": "カスタム",
-  "EFFECT.MODE_MULTIPLY": "重複",
+  "EFFECT.MODE_MULTIPLY": "乗算",
   "EFFECT.MODE_ADD": "追加",
-  "EFFECT.MODE_DOWNGRADE": "ﾀﾞｳﾝｸﾞﾚｰﾄﾞ",
-  "EFFECT.MODE_UPGRADE": "ｱｯﾌﾟｸﾞﾚｰﾄﾞ",
-  "EFFECT.MODE_OVERRIDE": "上乗せ",
+  "EFFECT.MODE_DOWNGRADE": "ダウングレード",
+  "EFFECT.MODE_UPGRADE": "アップグレード",
+  "EFFECT.MODE_OVERRIDE": "上書き",
   "EFFECT.ConfigTitle": "ｱｸﾃｨﾌﾞｴﾌｪｸﾄの設定",
   "EFFECT.TabDetails": "詳細",
   "EFFECT.TabDuration": "持続時間",
@@ -1557,5 +1557,37 @@
     "FvttPartyResources.ResourceForm.PlayerManagedRestriction": "このチェックボックスは、設定変更の許可をプレイヤーに明示的に与えることによってのみ有効にできます。",
     "FvttPartyResources.ResourceForm.Reset": "入力リセット",
     "FvttPartyResources.ResourceForm.SaveChanges": "変更を保存",
-    "FvttPartyResources.Title": "パーティリソース"
+    "FvttPartyResources.Title": "パーティリソース",
+
+
+
+
+      "forien-copy-environment": {
+        "menu": {
+          "copy": "クリップボードにコピー",
+          "save": "JSONに保存",
+          "export": "設定のエクスポート",
+          "import": "設定のインポート"
+        },
+        "title": "インポート設定",
+        "intro": "このフォームでは、ワールドとプレイヤーのどの設定をインポートするかを選択します。",
+        "message": "このリストは「Forien's Copy Environment」で作成されました： https://github.com/League-of-Foundry-Developers/foundryvtt-forien-copy-environment",
+        "copiedToClipboard": "環境データをクリップボードにコピーしました！",
+        "updatedReloading": "ワールド設定を更新しました。5秒後に再読み込みします……",
+        "import": {
+          "save": "インポート設定",
+          "playerList": "次のプレイヤー設定をインポートします：",
+          "existing": "既存のエクスポートをインポートします：",
+          "property": "プロパティ",
+          "newValue": "新しい値",
+          "currentValue": "現在の値",
+          "notFound": "インポートファイルに含まれる次のユーザーは、このワールドに存在しないため、スキップされます。",
+          "existingValue": "次の値は変更がないためスキップされます：",
+          "existingPlayerValues": "次のプレイヤーは変更がないためスキップされます：",
+          "updatedPlayer": "次のプレイヤーの設定を更新しました：{name}",
+          "noChanges": "現在のワールド設定とインポートした設定に差異がありません。"
+        }
+      }
+    
 }
+
