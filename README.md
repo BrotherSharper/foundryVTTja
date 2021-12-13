@@ -1,9 +1,9 @@
 # オンセ工房FVTT本体用　日本語化モッド
 
 * **製作者**: Brother Sharp (ディスコード：Brother Sharp#6921)
-* **翻訳ファイル初期提供者**: Asami (ディスコード：Asami
+* **翻訳ファイル初期提供者**: Asami (ディスコード：Asami#8627)
 * **現翻訳ファイル管理者**: Brother Sharp (ディスコード：Brother Sharp#6921)
-#8627)
+
 * **対応FVTTバージョン**: 0.6.0~v9
 * **modバージョン**: 0.8.3
 
