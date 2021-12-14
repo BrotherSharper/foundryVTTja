@@ -24,46 +24,46 @@
 
 このModには以下のModの日本語化ファイルも含まれています。起動しないとこれらのModの日本語化が使えないのでご注意ください。
 
-Always-HP
-Automated Animations
-Automated Evocations
-BarBrawl
-Better Roofs
-Chat-Portrait
-Combat-Carousel
-Combat Utility Belt
-Dynamic Active Effects (dae)
-DF Chat enhance
-DF Curvy walls
-DF qol
-DF scene enhance
-dice so nice (3Dダイス)
-dnd5e helpers
-food and water tracker
-gmscreen
-party resources
-fxMaster
-hero creation tool
-illandril's ttoken tooltips
-inline web viewer
-merchant sheet npc
-midi-qol
-monsk active tile triggers
-monks little details
-monks token bar
-pings
-quick encounters
-polyglot
-multilevel token
-pin-cushion
-simple fog
-smalltime
-smart target
-theatre inserts（立ち絵ツール）
-tidy5e-sheet
-Tokens Visible
-Turn Alert
-popout
+* Always-HP
+* Automated Animations
+* Automated Evocations
+* BarBrawl
+* Better Roofs
+* Chat-Portrait
+* Combat-Carousel
+* Combat Utility Belt
+* Dynamic Active Effects (dae)
+* DF Chat enhance
+* DF Curvy walls
+* DF qol
+* DF scene enhance
+* dice so nice (3Dダイス)
+* dnd5e helpers
+* food and water tracker
+* gmscreen
+* party resources
+* fxMaster
+* hero creation tool
+* illandril's ttoken tooltips
+* inline web viewer
+* merchant sheet npc
+* midi-qol
+* monks active tile triggers
+* monks little details
+* monks token bar
+* pings
+* quick encounters
+* polyglot
+* multilevel token
+* pin-cushion
+* simple fog
+* smalltime
+* smart target
+* theatre inserts（立ち絵ツール）
+* tidy5e-sheet
+* Tokens Visible
+* Turn Alert
+* popout
 
 
 ### その他日本語化モッド
