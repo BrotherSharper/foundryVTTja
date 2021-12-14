@@ -23,6 +23,7 @@
 仕様上、一度ゲーム内に有効化して言語を日本語に変更しないと日本語化されませんが、それ以降ずっと日本語化されます。
 
 このModには以下のModの日本語化ファイルも含まれています。起動しないとこれらのModの日本語化が使えないのでご注意ください。
+
 Always-HP
 Automated Animations
 Automated Evocations
