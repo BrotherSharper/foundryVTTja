@@ -1,0 +1,83 @@
+{
+	"drag-ruler": {
+		"dependencies": {
+			"ok": "OK",
+			"terrain-ruler": {
+				"title": "Drag Rulerで移動困難地形を測定する",
+				"text": "「{moduleName}」モジュールが有効化されました。Drag Rulerは、同モジュールによって設定された移動困難地形を測定できます。これには「Terrain Ruler」モジュールが必要です。有効化すると、自動的に移動困難地形を考慮した測定を行います",
+				"neverShowAgain": "再表示しない"
+			},
+			"socketlib": {
+				"title": "「Socketlib」が見つかりません",
+				"text": "Drag Rulerの正常動作には「Socketlib」モジュールが必要です。このワールドで「Socketlib」を有効にしてください。"
+			}
+		},
+		"resetMovementHistory": "移動履歴のリセット",
+		"genericSpeedProvider": {
+			"settings": {
+				"dashMultiplier": {
+					"name": "早足の倍率",
+					"hint": "設定すると、移動経路の測定中に第二の色分けが追加されます。0にすると第二速度が無効になります。"
+				},
+				"speedAttribute": {
+					"name": "移動速度の属性値",
+					"hint": "コマの移動速度が定義された属性値を指定します。移動範囲表示の色分けに使用されます。"
+				}
+			},
+			"speeds": {
+				"walk": "歩き",
+				"dash": "早足"
+			}
+		},
+		"settings": {
+			"alwaysShowSpeedForPCs": {
+				"name": "プレイヤーキャラクターの移動速度を全員に公開する",
+				"hint": "有効にすると、アクターの観察者（Observer）権限を持たない人にも，移動範囲の色分けが表示されるようになります。"
+			},
+			"enableMovementHistory": {
+				"name": "戦闘中の移動履歴を有効にする",
+				"hint": "有効にすると、Drag Rulerは戦闘ターン中にコマが辿った経路を記憶するようになります。これはコマの再選択時に再表示されます。"
+			},
+			"showGMRulerToPlayers": {
+				"name": "GMのルーラーをプレイヤーに見せる",
+				"hint": "無効の場合、GMのルーラーはプレイヤーに表示されません。"
+			},
+			"speedProviderSettings": {
+				"name": "移動速度の提供元",
+				"hint": "ゲームシステムに固有のすべての設定をここで行います。",
+				"button": "移動速度の提供元設定",
+				"windowTitle": "移動速度の提供元設定",
+				"headers": {
+					"speedProvider": "移動速度の提供元",
+					"speedProviderSettings": "提供元に固有の設定"
+				},
+				"activeProvider": {
+					"name": "現在有効な提供元",
+					"hint": "以下の設定は、現在有効な移動速度の提供元によって変化します。GMが別の提供元を選択すると、利用可能な項目が変更となる場合があります。"
+				},
+				"noSettings": "この移動速度提供元には、設定オプションがありません。",
+				"color": {
+					"name": "{colorName}の色",
+					"hint": "{colorName}の範囲に使用するセルの色を指定します。",
+					"unreachable": {
+						"name": "到達不能域",
+						"hint": "ドラッグしたコマが到達できない範囲の色を指定します。"
+					}
+				},
+				"speedProvider": {
+					"name": "移動速度の提供元",
+					"hint": "色分けに使用する速度情報の提供元を選択します。Drag Rulerは基本機能を備えた汎用の提供元を備えており、正しく設定すればすべてのゲームシステムで動作するはずです。しかしゲームシステムやモジュールを介することで、より多くの提供元を利用することもできます。こうした提供元を利用すると、ゲームルールとの統合がさらに向上するかもしれません。以下のオプションは、ここで選択した提供元によって変化します。",
+					"choices": {
+						"module": "モジュール {name}",
+						"native": "汎用",
+						"system": "システム {name}"
+					}
+				}
+			},
+			"swapSpacebarRightClick": {
+				"name": "スペースキーと右クリックを入れ替える",
+				"hint": "ドラッグ中のスペースキーと右クリックの機能を入れ替えます。有効にすると右クリックがウェイポイントの配置、スペースキーが削除になります。"
+			}
+		}
+	}
+}

@@ -1,0 +1,76 @@
+{
+    "barbrawl": {
+        "barStyle": {
+            "name": "バーのスタイル",
+            "hint": "バーの表示方法を変更します。",
+            "minimal": "最小限 (スリム, 枠線無)",
+            "default": "ファウンドリのデフォルト",
+            "large": "最大限(ワイド,枠線あり)",
+            "legacy": "Legacy (thick border)"
+        },
+        "textStyle": {
+            "name": "バーのラベル",
+            "hint": "バーが表示される数を変更します。",
+            "user": "デフォルト",
+            "none": "なし",
+            "fraction": "分数(値/最大)",
+            "percent": "パーセンテージ(%)"
+        },
+        "reset": {
+            "name": "デフォルトにリセット",
+            "hint": "設定をリセットして、デフォルトのトークン･リソースを表示します。",
+            "button": "リセット"
+        },
+        "config": {
+            "attribute": "能力値",
+            "visibility": "可視性",
+            "value": "値 (現在/最大)",
+            "color": "色 (最小/最大)",
+            "position": "位置",
+            "advanced": "高度な設定",
+            "advancedButton": "他の設定を表示する",
+            "indent": "インデント",
+            "indentHint": "バーの側面にある余白を、トークンの幅に対する%で表したもの。",
+            "indentLeft": "左側",
+            "indentRight": "右側",
+            "style": "ラベル",
+            "ignoreLimits": "制限の無視",
+            "ignoreLimitsHint": "0（下）から最大（上）までの入力値のクランプを無効にする。他の属性のクランピングはシステムで処理されるため、これはカスタムバーにのみ適用されます。",
+            "ignoreMin": "下限",
+            "ignoreMax": "上限",
+            "invert": "値の反転",
+            "invertHint": "0をフルバー、最大値をエンプティバーで表示します。",
+            "label": "ラベルプレフィックス",
+            "labelHint": "設定されたテキストをバーに表示します。",
+            "approximate": "近似値",
+            "approximateHint": "バーとそのラベルに概算値を表示します。表示するセグメントの数を設定します。",
+            "approximateOwner": "所持者に近似値を表示する",
+            "approximateOwnerHint": "トークンの所有者に対しても近似値を表示するかどうかを示します。",
+            "fgImage": "前景イメージ",
+            "fgImageHint": "通常のバーを、塗りつぶし率に応じてクリッピングされたイメージで置き換えます。",
+            "bgImage": "背景イメージ",
+            "bgImageHint": "通常のバーの背景を画像で置き換えます。両方の画像の幅は、シーンのグリッドサイズと同じにすることをお勧めします。",
+            "save": "バーをアップデート"
+        },
+        "attribute": {
+            "none": "なし(除去)",
+            "custom": "カスタム(以下の値)"
+        },
+        "position": {
+            "top-inner": "上部(内)",
+            "top-outer": "上部(外)",
+            "bottom-inner": "下部(内)",
+            "bottom-outer": "下部(外)",
+            "left-inner": "左(内)",
+            "left-outer": "左(外)",
+            "right-inner": "右(内)",
+            "right-outer": "右(外)"
+        },
+        "add": "リソースの追加",
+        "save": "デフォルトとしてセーブ",
+        "saveConfirmation": "デフォルトのトークンリソースを保存します。",
+        "load": "デフォルト設定をロード",
+        "noDefaults": "このワールドには、デフォルトの設定は保存されていません。",
+        "resetConfirmation": "デフォルトのトークンリソースをリセットします。"
+    }
+}

@@ -2,7 +2,7 @@
 	"name": "foundryVTTja",
 	"title": "日本語化（オンセ工房本体）",
 	"description": "オンセ工房Foundry VTTの本体用（v9）の日本語化に必要なロカライゼーションファイルを追加するモッド。このモッドを使用するには必ずモッドを適用してから言語を変更してください。",
-	"version": "0.9",
+	"version": "1.1",
 	"author": "Brother Sharp",
 	"coreTranslation": true,
 	"languages": [
@@ -12,9 +12,232 @@
 			"path": "lang/ja.json"
 		},
 		{
-			"lang": "en",
-			"name": "English",
-			"path": "lang/en.json"
+			"lang": "ja",
+			"path": "lang/modules/midi-qol.json",
+			"module": "midi-qol",
+			"lang-author": "touge"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/dae.json",
+			"module": "dae",
+			"lang-author": "touge"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/monks-tokenbar.json",
+			"module": "monks-tokenbar",
+			"lang-author": "touge"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/merchantsheetnpc.json",
+			"module": "merchantsheetnpc",
+			"lang-author": "touge"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/df-chat-enhance.json",
+			"module": "df-chat-enhance",
+			"lang-author": "tonishi"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/illandril-token-tooltips.json",
+			"module": "illandril-token-tooltips",
+			"lang-author": "tonishi"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/inlinewebviewer.json",
+			"module": "inlinewebviewer",
+			"lang-author": "tonishi"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/barbrawl.json",
+			"module": "barbrawl",
+			"lang-author": "tonishi"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/chat-portrait.json",
+			"module": "chat-portrait",
+			"lang-author": "tonishi"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/food-and-water-tracker.json",
+			"module": "food-and-water-tracker",
+			"lang-author": "touge"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/monks-little-details.json",
+			"module": "monks-little-details",
+			"lang-author": "touge"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/dice-so-nice.json",
+			"module": "dice-so-nice",
+			"lang-author": "touge"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/dnd5e-helpers.json",
+			"module": "dnd5e-helpers",
+			"lang-author": "touge"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/autoanimations.json",
+			"module": "autoanimations",
+			"lang-author": "touge"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/monks-active-tiles.json",
+			"module": "monks-active-tiles",
+			"lang-author": "tonishi"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/hero-creation-tool.json",
+			"module": "hero-creation-tool",
+			"lang-author": "touge"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/foundryvtt-gmScreen.json",
+			"module": "foundryvtt-gmScreen",
+			"lang-author": "tonishi"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/turnAlert.json",
+			"module": "turnAlert",
+			"lang-author": "tonishi"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/df-qol.json",
+			"module": "df-qol",
+			"lang-author": "touge"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/TokensVisible.json",
+			"module": "TokensVisible",
+			"lang-author": "touge"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/polyglot.json",
+			"module": "polyglot",
+			"lang-author": "touge"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/fvtt-party-resources.json",
+			"module": "fvtt-party-resources",
+			"lang-author": "touge"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/df-scene-enhance.json",
+			"module": "df-scene-enhance",
+			"lang-author": "touge"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/betterroofs.json",
+			"module": "betterroofs",
+			"lang-author": "touge"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/drag-ruler.json",
+			"module": "drag-ruler",
+			"lang-author": "touge"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/forien-copy-environment.json",
+			"module": "forien-copy-environment",
+			"lang-author": "touge"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/smalltime.json",
+			"module": "smalltime",
+			"lang-author": "touge"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/always-hp.json",
+			"module": "always-hp",
+			"lang-author": "touge"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/combat-utility-belt.json",
+			"module": "combat-utility-belt",
+			"lang-author": "touge"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/df-curvy-walls.json",
+			"module": "df-curvy-walls",
+			"lang-author": "touge"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/fxmaster.json",
+			"module": "fxmaster",
+			"lang-author": "touge"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/pin-cushion.json",
+			"module": "pin-cushion",
+			"lang-author": "touge"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/quick-encounters.json",
+			"module": "quick-encounters",
+			"lang-author": "touge"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/smarttarget.json",
+			"module": "smarttarget",
+			"lang-author": "touge"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/combat-carousel.json",
+			"module": "combat-carousel",
+			"lang-author": "touge"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/automated-evocations.json",
+			"module": "automated-evocations",
+			"lang-author": "touge"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/theatre.json",
+			"module": "theatre",
+			"lang-author": "Brother Sharp"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/tidy5e-sheet.json",
+			"module": "tidy5e-sheet",
+			"lang-author": "asami, Brother Sharp"
 		}
 	],
 	"scripts": ["./js/main.js"],
