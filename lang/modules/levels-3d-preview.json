@@ -1,0 +1,347 @@
+{
+    "levels3dpreview" : {
+        "sceneConfigTitle": {
+            "title": "3D Canvas",
+            "notes": "このシーンの3Dキャンバス設定を行う。"
+        },
+        "controls": {
+            "preview3d": "3Dモード切り替え",
+            "miniCanvas": "2Dキャンバス表示切り替え"
+        },
+        "errors": {
+            "filenotsupported": "このファイルの拡張子はサポートされていません。",
+            "3dnotactive": "3Dモードに切り替えるまで2Dキャンバスは表示できません。"
+        },
+        "keybindings":{
+            "resetView": "Reset Camera View",
+            "topdownView": "Top-Down Camera View",
+            "cameraToToken": "Focus Camera on Selected Token"
+        },
+        "flags": {
+            "isFog":{
+                "label": "Is Fog of War Box?",
+                "notes": "Obscure view when camera enters this template. Works only for rectangle templates."
+            },
+            "enablePlayers":{
+                "label": "プレイヤー使用可能",
+                "notes": "プレイヤーにこのマップの3Dモードを表示しても良い権限を付与します。注意、3Dモードになるとマップ、壁、コマ等の全体が見えてしまいます。"
+            },
+            "auto3d":{
+                "label": "ロード時3Dを表示"
+            },
+            "skybox" : {
+                "label": "背景画像（Skybox）",
+                "placeholder": "背景画像パス",
+                "notes": "選択したファイルと同じフォルダに同名の_ft, _bk, _up, _dn, _rt, _lfが名前に記述されたファイルがあった場合、背景の前、後、上、下、右、左の画像が個別に読み込まれます。"
+            },
+            "renderTable": {
+                "label": "テーブルを表示",
+                "notes": "3Dのテーブルを表示する。"
+            },
+            "tableTex" : {
+                "label": "テーブルテクスチャ",
+                "placeholder": "テーブルのテクスチャ"
+            },
+            "renderBackground": {
+                "label": "マップ画像を表示する",
+                "notes": "現在のマップ画像をテーブルの上に表示する。"
+            },
+            "enableGrid": {
+                "label": "マス目・グリッドを表示する"
+            },
+            "enableRuler": {
+                "label": "定規を表示する"
+            },
+            "enableFogOfWar": {
+                "label": "Enable Fog of War (WARNING EXPERIMENTAL)"
+            },
+            "enableFog": {
+                "label": "Enable Fog"
+            },
+            "fogColor": {
+                "label": "Fog Color"
+            },
+            "fogDistance": {
+                "label": "Fog Distance"
+            },
+            "sceneTint": {
+                "label": "シーンの光沢"
+            },
+            "timeSync": {
+                "label": "太陽の位置自動化",
+                "options": {
+                    "off": "オフ",
+                    "time": "ワールドの時間",
+                    "darkness": "シーンの明度"
+                }
+            },
+            "sunPosition": {
+                "label": "太陽の角度"
+            },
+            "sunDistance": {
+                "label": "太陽の距離"
+            },
+            "sunIntensity": {
+                "label": "太陽の強度"
+            },
+            "showSceneWalls": {
+                "label": "シーンの壁を表示する"
+            },
+            "showSceneFloors": {
+                "label": "シーンの床・ポリゴンを表示する"
+            },
+            "wallFloorAlpha": {
+                "label": "壁・床のアルファチャンネル"
+            },
+            "renderSceneLights": {
+                "label": "シーンの光源を表示する"
+            },
+            "model3d" : {
+                "label": "3Dモデル"
+            },
+            "imageTexture":{
+                "label": "テクスチャ"
+            },
+            "wallSidesTexture": {
+                "label": "Sides Texture"
+            },
+            "wallSidesTint": {
+                "label": "Sides Tint"
+            },
+            "material": {
+                "label": "素材",
+                "options": {
+                    "none": "デフォルト",
+                    "basic": "Basic (no Lighting/Shadows)",
+                    "texcol": "Texture/Color",
+                    "plastic": "プラスチック",
+                    "wood": "木製",
+                    "glass": "ガラス",
+                    "metal": "Metal"
+                }
+            },
+            "color": {
+                "label": "色",
+                "notes": "モデルの色や素材はテクスチャの無い白・グレーのモデルのほうが見えやすいです。それ以外だと適切に素材やテクスチャが動作しない可能性があります。"
+            },
+            "baseColor": {
+                "label": "Base Color"
+            },
+            "disableBase": {
+                "label": "Disable Base"
+            },
+            "solidBaseMode": {
+                "label": "Base Mode",
+                "options": {
+                    "default": "Default",
+                    "merge": "Merge",
+                    "ontop": "On Top"
+                }
+            },
+            "draggable": {
+                "label": "ドラッグ可能"
+            },
+            "alwaysVisible": {
+                "label": "常に見える"
+            },
+            "enableAnim": {
+                "label": "アニメーションを使用する（保持している場合）"
+            },
+            "animIndex":{
+                "label": "アニメーションインデックス"
+            },
+            "animSpeed":{
+                "label": "アニメーション速度"
+            },
+            "faceCamera":{
+                "label": "Face Camera Mode",
+                "options": {
+                    "default": "Global Setting (Default)",
+                    "face": "Face Camera",
+                    "noface": "Don't Face Camera"
+                }
+            },
+            "rotationAxis" : {
+                "label": "回転軸",
+                "options": {
+                    "x": "X",
+                    "z": "Z",
+                    "y": "Y"
+                },
+                "notes": "コマを回転するときに使用する軸。フィアルがSTL形式の場合はZ、それ以外はYで回転するようになります。"
+            },
+            "rotationX" : {
+                "label": "X回転"
+            },
+            "rotationY" : {
+                "label": "Y回転"
+            },
+            "rotationZ" : {
+                "label": "Z回転"
+            },
+            "rotateBase": {
+                "label": "ベース回転を調整する",
+                "notes": "STL形式のファイルでは選択時のインジケータを調整する必要があります。必要に応じてオンにして使ってください。（STLから変換されたものが対象）"
+            },
+            "offsetX": {
+                "label": "Xオフセット"
+            },
+            "offsetY": {
+                "label": "Yオフセット"
+            },
+            "offsetZ": {
+                "label": "Zオフセット"
+            },
+            "scale": {
+                "label": "拡大倍率"
+            },
+            "wallOpacity": {
+                "label": "Opacity"
+            },
+            "wallDepth": {
+                "label": "Wall Depth"
+            },
+            "joinWall": {
+                "label": "Join Wall"
+            },
+            "stretchTex": {
+                "label": "Stretch Texture"
+            },
+            "enableCollision": {
+                "label": "Enable Collision",
+                "options": {
+                    "0": "Off",
+                    "1": "On (From Token)",
+                    "2": "On (From Sky)"
+                }
+            },
+            "collisionPlane": {
+                "label": "Collision Plane"
+            }
+        },
+        "settings" : {
+            "baseStyle": {
+                "name": "Base Style",
+                "hint": "The base style to use: Image will display the chosen image, solid will draw a miniature style base.",
+                "options": {
+                    "image": "Image",
+                    "solid": "Solid",
+                    "solidindicator": "Solid + Direction Indicator"
+                }
+            },
+            "solidBaseMode": {
+                "name": "Solid Base Mode",
+                "hint": "The default solid base mode to use: Merge will not move the original model, on top will offset the model to the top of the base.",
+                "options": {
+                    "merge": "Merge",
+                    "ontop": "On Top"
+                }
+            },
+            "solidBaseColor": {
+                "name": "Solid Base Color",
+                "hint": "The color of the solid base. Can be a hex value or a color name (or any CSS color). default is #1c1c1c"
+            },
+            "highlightCombat": {
+                "name": "Combat Highlight",
+                "hint": "Highlight the current combatant."
+            },
+            "selectedImage": {
+                "name": "選択画像",
+                "hint": "コマを選択しているときにモデルの下部に表示する画像。"
+            },
+            "colorizeInidcator": {
+                "name": "Colorize Highlight Image",
+                "hint": "Colorize the Highlight Image to match default foundry border colors."
+            },
+            "hideTarget": {
+                "name": "Hide Target Indicator (if solid base)",
+                "hint": "Hide the target indicator if the token has the base enabled, the targets will be shown in the base ring highlight."
+            },
+            "rotateIndicator": {
+                "name": "Rotate Highlight Image",
+                "hint": "Rotate the Highlight Image to match the token rotation."
+            },
+            "templateSyle" : {
+                "name": "Template Style",
+                "hint": "The style to use for the measured templates.",
+                "options": {
+                    "wireframe": "Wireframe",
+                    "solid": "Solid"
+                }
+            },
+            "gridMode" : {
+                "name": "Grid Draw Mode",
+                "hint": "How the grid is drawn. Fast is better in general but only supports square grids. Mirror, will mirror 1:1 the foundry grid but is more expensive to render.",
+                "options": {
+                    "fast": "Fast",
+                    "mirror": "Mirror"
+                }
+            },
+            "autoPan": {
+                "name": "Auto Pan",
+                "hint": "Hooks the 3D Camera panning to the 2D one. Mainly, moving a token will have the camera follow it. When disabled you can always pan to the selected token with Ctrl+X",
+                "options": {
+                    "none": "Disabled",
+                    "player": "Only Players",
+                    "all": "Everyone"
+                }
+            },
+            "conservativeHitbox": {
+                "name": "Conservative Hitbox",
+                "hint": "Restrict hitbox size for tokens so that it does not overflow outside the token's base."
+            },
+            "screenspacepanning": {
+                "name": "Enable Screen Space Panning",
+                "hint": "Enable screen space panning for the 3D view."
+            },
+            "camerafocuszoom": {
+                "name": "Enable Camera Focus Zoom",
+                "hint": "When focusin the camera on a token with Shift+X Zoom in on the token"
+            },
+            "standupFace": {
+                "name": "2Dモデルはカメラを向く",
+                "hint": "立ち絵形式で表示されている2Dのコマは回転の角度を無視して常にカメラを向くようになります。"
+            },
+            "miniCanvas": {
+                "name": "2Dキャンバスを表示する",
+                "hint": "3Dモードを起動したとき、2Dのキャンバスも横に表示します。"
+            },
+            "preventNegative": {
+                "name": "負の高度を制限する",
+                "hint": "床より下の高度を設定することを禁止します。"
+            },
+            "globalCollision": {
+                "name": "Enable Global Collision",
+                "hint": "Enable collision for all tokens on the board."
+            },
+            "disableLighting":{
+                "name": "光源・影をオフにする",
+                "hint": "明かりは太陽の明かりのみとして、シーンの光源や影を表示しないことでパフォーマンスを改善します。"
+            },
+            "shadowQuality":{
+                "name": "Shadow Quality",
+                "hint": "The resolution of the shadows.",
+                "options": {
+                    "low": "Low",
+                    "medium": "Medium",
+                    "high": "High",
+                    "ultra": "Ultra",
+                    "gamer": "Gamer"
+                }
+            },
+            "resolution": {
+                "name": "解像度",
+                "hint": "3Dキャンバスの解像度。低ければ低いほどPCのパフォーマンスを改善します。（リフレシュ必要）",
+                "options": {
+                    "full": "高",
+                    "half": "中",
+                    "quarter": "低"
+                }
+            },
+            "debugMode": {
+                "name": "デバッグモード",
+                "hint": "トラブルシューティング用のデバッグ情報を表示します。（コマの選択ボックスや光源等）"
+            }
+        }
+    }
+}
