@@ -161,7 +161,7 @@
   "CHAT.InvalidCommand": "{command} は、有効なチャットコマンドではありません。",
   "CHAT.Title": "チャットログ",
   "CHAT.To": "宛先",
-  "CHAT.PopoutMessage": "表示メッセージ",
+  "CHAT.PopoutMessage": "メッセージをポップアウト",
   "CHAT.RevealMessage": "全て開示",
   "CHAT.ConcealMessage": "非公開",
   "CHAT.RollBlind": "GMだけに送信（自分は見えない）",
@@ -802,7 +802,7 @@
   "NUE.FirstLaunchHint": "<i class=\"fas fa-info-circle\"></i>このチャットカードは右クリックして別ウィンドウとしてポップアウトさせることができます。チャットタブそのものや他のタブも同じ方法でポップアウトできます。",
   "NUE.FirstLaunchInvite": "PLを招待しよう",
   "NUE.FirstLaunchInviteBody": "準備ができましたら、この部屋へのリンクを送ってあげてください。リンクは<a class=\"nue-action\" data-action=\"invite\">招待リンク</a>から入手できます。家の中のPC同士で遊ぶ場合はローカル、インターネット上の他人と遊ぶ場合はインターネットにあるリンクを送ってください。インターネットのリンクはあなたのIPアドレスでもあるので、不特定多数の見える場所には置かないほうが良いでしょう。",
-  "NUE.FirstLaunchKB": "右側にあるサイドバーのすべてのタブに目を通してみてください。わからないことがありましたら本家の英語のチュートリアル<a href=\"https://foundryvtt.com/article/tutorial/\" target=\"_blank\">Gamemaster Tutorial</a>か日本語でサポートを行っているオンセ工房Foundry VTT日本支部のDiscordサーバまでお越しください series in our <a href=\"http://discord.gg/vM4YM27\" target=\"_blank\">オンセ工房Foundry VTT日本支部</a>.",
+  "NUE.FirstLaunchKB": "右側にあるサイドバーのすべてのタブに目を通してみてください。わからないことがありましたら本家の英語のチュートリアル<a href=\"https://foundryvtt.com/article/tutorial/\" target=\"_blank\">Gamemaster Tutorial</a>か日本語でサポートを行っている<a href=\"http://discord.gg/vM4YM27\" target=\"_blank\">オンセ工房Foundry VTT日本支部</a>のDiscordサーバまでお越しください。",
   "NUE.FirstLaunchTroubleshooting": "招待リンク画面で接続が閉じていると表示されていた場合、ポート開放が必要かもしれません。サポートいたしますので「ご使用の回線業者」と「ご使用のルータ」を分かる範囲（いずれわからなくてもOK）でオンセ工房のDiscordサーバまでお知らせください。その場合、参加を完了させてからサポートチャンネルよりご相談ください。それ以外でもわからないことがありましたらDiscordサーバ内部でご相談ください。",
   
   "PLAYERS.Title": "参加メンバー",
