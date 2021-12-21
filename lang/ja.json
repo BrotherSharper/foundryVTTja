@@ -797,7 +797,7 @@
   "NOTE.TextColor": "テキストの色",
   "NOTE.Update": "地点メモを更新",
 
-  "NUE.FirstLaunchBody": "こんにちは！ <br> 新しいワールドを作ったようですね。このワールドというのが「卓部屋」となるわけです。<br>まずは<a class=\"nue-tab\" data-tab=\"settings\">ユーザ管理</a>からこの部屋で遊ぶPLのユーザを設定してください。その後、<a class=\"nue-tab\" data-tab=\"actors\">キャラクター一覧</a>からPL達が使うキャラクターシートや、NPCたちのデータを用意してください。<br>マップなどは「シーン」と呼ばれ、<a class=\"nue-tab\" data-tab=\"scenes\">シーン一覧</a>タブより設定してください。ハンドアウトやその他のテキストは<a class=\"nue-tab\" data-tab=\"journal\">資料一覧</a>タブから作成できます。",
+  "NUE.FirstLaunchBody": "こんにちは！ <br> 新しいワールドを作ったようですね。このワールドというのが「卓部屋」となるわけです。<br>まずは<a class=\"nue-tab\" data-tab=\"settings\">ユーザ管理</a>からこの部屋で遊ぶPLのユーザを設定してください。その後、<a class=\"nue-tab\" data-tab=\"actors\">キャラクター一覧</a>からPL達が使うキャラクターシートや、NPCのデータを用意してください。<br>マップなどは「シーン」と呼ばれ、<a class=\"nue-tab\" data-tab=\"scenes\">シーン一覧</a>タブより設定してください。ハンドアウトやその他のテキストは<a class=\"nue-tab\" data-tab=\"journal\">資料一覧</a>タブから作成できます。",
   "NUE.FirstLaunchHeader": "はじめに",
   "NUE.FirstLaunchHint": "<i class=\"fas fa-info-circle\"></i>このチャットカードは右クリックして別ウィンドウとしてポップアウトさせることができます。チャットタブそのものや他のタブも同じ方法でポップアウトできます。",
   "NUE.FirstLaunchInvite": "PLを招待しよう",
