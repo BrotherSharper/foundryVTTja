@@ -339,7 +339,7 @@
   "CONTROLS.RightClick": "右クリック",
   "CONTROLS.Drag": "ドラッグ",
   "CONTROLS.Drop": "ドロップ",
-  "CONTROLS.During": "中に",
+  "CONTROLS.During": "<-",
   "CONTROLS.KeyHighlight": "マップにあるキャラ等を強調表示",
   "CONTROLS.KeyPan": "図形描画",
   "CONTROLS.KeyZoomIn": "拡大",

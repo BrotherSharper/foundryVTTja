@@ -13,14 +13,15 @@
             "3dnotactive": "3Dモードに切り替えるまで2Dキャンバスは表示できません。"
         },
         "keybindings":{
-            "resetView": "Reset Camera View",
-            "topdownView": "Top-Down Camera View",
-            "cameraToToken": "Focus Camera on Selected Token"
+            "resetView": "カメラリセット",
+            "topdownView": "見下ろしカメラ",
+            "cameraToToken": "コマにカメラを注目",
+            "freeMode": "任意配置モード"
         },
         "flags": {
             "isFog":{
-                "label": "Is Fog of War Box?",
-                "notes": "Obscure view when camera enters this template. Works only for rectangle templates."
+                "label": "マスク？",
+                "notes": "この領域にカメラが入ったときにマスクをかけて黒く染め上げます。四角テンプレートのみ対応。"
             },
             "enablePlayers":{
                 "label": "プレイヤー使用可能",
@@ -53,16 +54,16 @@
                 "label": "定規を表示する"
             },
             "enableFogOfWar": {
-                "label": "Enable Fog of War (WARNING EXPERIMENTAL)"
+                "label": "Fog of warマスク使用（動作が不安定です！）"
             },
             "enableFog": {
-                "label": "Enable Fog"
+                "label": "マスク使用"
             },
             "fogColor": {
-                "label": "Fog Color"
+                "label": "マスク色"
             },
             "fogDistance": {
-                "label": "Fog Distance"
+                "label": "マスク距離"
             },
             "sceneTint": {
                 "label": "シーンの光沢"
@@ -112,12 +113,12 @@
                 "label": "素材",
                 "options": {
                     "none": "デフォルト",
-                    "basic": "Basic (no Lighting/Shadows)",
-                    "texcol": "Texture/Color",
+                    "basic": "ベーシック（影、光沢無し）",
+                    "texcol": "テクスチャ・色",
                     "plastic": "プラスチック",
                     "wood": "木製",
                     "glass": "ガラス",
-                    "metal": "Metal"
+                    "metal": "メタル"
                 }
             },
             "color": {
@@ -125,17 +126,17 @@
                 "notes": "モデルの色や素材はテクスチャの無い白・グレーのモデルのほうが見えやすいです。それ以外だと適切に素材やテクスチャが動作しない可能性があります。"
             },
             "baseColor": {
-                "label": "Base Color"
+                "label": "ベースの色"
             },
             "disableBase": {
-                "label": "Disable Base"
+                "label": "ベースをオフにする"
             },
             "solidBaseMode": {
-                "label": "Base Mode",
+                "label": "ベースモード",
                 "options": {
-                    "default": "Default",
-                    "merge": "Merge",
-                    "ontop": "On Top"
+                    "default": "デフォルト",
+                    "merge": "融合",
+                    "ontop": "コマを上に"
                 }
             },
             "draggable": {
@@ -154,11 +155,11 @@
                 "label": "アニメーション速度"
             },
             "faceCamera":{
-                "label": "Face Camera Mode",
+                "label": "2Dコマの向き",
                 "options": {
-                    "default": "Global Setting (Default)",
-                    "face": "Face Camera",
-                    "noface": "Don't Face Camera"
+                    "default": "デフォルト",
+                    "face": "常にカメラを向く",
+                    "noface": "カメラを向かない"
                 }
             },
             "rotationAxis" : {
@@ -169,6 +170,9 @@
                     "y": "Y"
                 },
                 "notes": "コマを回転するときに使用する軸。フィアルがSTL形式の場合はZ、それ以外はYで回転するようになります。"
+            },
+            "autoCenter": {
+                "label": "自動中央注目"
             },
             "rotationX" : {
                 "label": "X回転"
@@ -196,107 +200,214 @@
                 "label": "拡大倍率"
             },
             "wallOpacity": {
-                "label": "Opacity"
+                "label": "不透明度"
+            },
+            "roughness": {
+                "label": "ザラザラ感"
+            },
+            "metalness": {
+                "label": "反射度"
             },
             "wallDepth": {
-                "label": "Wall Depth"
+                "label": "壁の厚さ"
             },
             "joinWall": {
-                "label": "Join Wall"
+                "label": "壁結合"
             },
             "stretchTex": {
-                "label": "Stretch Texture"
+                "label": "テクスチャ引き伸ばし"
             },
             "enableCollision": {
-                "label": "Enable Collision",
+                "label": "コリジョン（自動高低差）",
                 "options": {
-                    "0": "Off",
-                    "1": "On (From Token)",
-                    "2": "On (From Sky)"
+                    "0": "オフ",
+                    "1": "オン（コマ起点）",
+                    "2": "オン（上空起点）"
                 }
             },
             "collisionPlane": {
-                "label": "Collision Plane"
+                "label": "コリジョンプレーン"
+            },
+        "castShadow": {
+            "label": "影を表示",
+            "notes": "コマなどに光があたったときに影を投影するかどうかを設定します。"
+        },
+        "particlePreset": {
+            "label1": "天気プリセット１",
+            "label2": "天気プリセット２",
+            "notes": "天気等を表すパーティクル効果を設定します",
+            "options": {
+                "none": "無し",
+                "rain": "雨",
+                "heavyrain": "豪雨",
+                "snow": "雪",
+                "hail": "雪崩",
+                "leaves": "木の葉",
+                "embers": "火の粉",
+                "mysteriouslights": "怪光",
+                "stars": "星",
+                "starfall": "星屑（jb2a）",
+                "smoke": "煙",
+                "toxic": "毒霧",
+                "dust": "土煙",
+                "custom": "カスタム"
             }
         },
-        "settings" : {
+        "particleTexture": {
+            "label": "テクスチャ"
+        },
+        "particleColor": {
+            "label": "色"
+        },
+        "particleSize": {
+            "label": "サイズ"
+        },
+        "particleSpeed": {
+            "label": "速度"
+        },
+        "particleDensity": {
+            "label": "密度"
+        },
+        "particleDirection": {
+            "label": "方向"
+        },
+        "particleOpacity": {
+            "label": "不透明度"
+        },
+        "particleVelocity": {
+            "label": "加速度"
+        },
+        "particleBlending": {
+            "label": "乗算ブレンド"
+        },
+        "particleRandomRotation": {
+            "label": "向きランダム化"
+        },
+        "particleRandomScale": {
+            "label": "サイズランダム化"
+        },
+        "particleRotationspeed": {
+            "label": "回転速度"
+        },
+        "particleBlend": {
+            "label": "ブレンド"
+        }
+    },
+    "settings" : {
+        "headers":{
+            "basics": {
+                "title": "基本",
+                "notes": "この3Dシーンの基本設定"
+            },
+            "environment": {
+                "title": "環境",
+                "notes": "3D環境や効果の設定"
+            },
+            "lighting": {
+                "title": "光源",
+                "notes": "このシーンの光源やマスク設定"
+            },
+            "particles": {
+                "title": "パーティクル・天候",
+                "notes": "パーティクルや天候の設定"
+            },
+            "visibility": {
+                "title": "視覚",
+                "notes": "3Dオブジェクトやコマの視覚設定"
+            }
+        },
+        "configApp": {
+            "title": "3Dキャンバス設定",
+            "hint": "全体に影響する3Dキャンバス設定",
+            "save": "設定保存",
+            "tabs": {
+                "canvas": "キャンバス",
+                "token": "コマ",
+                "base": "ベース",
+                "misc": "その他"
+            }
+        },
             "baseStyle": {
-                "name": "Base Style",
-                "hint": "The base style to use: Image will display the chosen image, solid will draw a miniature style base.",
+                "name": "ベース種類",
+                "hint": "使用するベースの種類を選びます。「画像」は選択された画像を代わりに表示し、「ソリッド」はミニチュア風のベースを自動で描画します。",
                 "options": {
-                    "image": "Image",
-                    "solid": "Solid",
-                    "solidindicator": "Solid + Direction Indicator"
+                    "image": "画像",
+                    "solid": "ソリッド",
+                    "solidindicator": "ソリッド＋方向矢印"
                 }
             },
             "solidBaseMode": {
-                "name": "Solid Base Mode",
-                "hint": "The default solid base mode to use: Merge will not move the original model, on top will offset the model to the top of the base.",
+                "name": "ソリッドベース設定",
+                "hint": "ソリッドベースの基本設定を行います。「融合」は画像をベースの上に移動せずに融合させて、「コマを上に」はコマのモデルをベースの上に移動します。",
                 "options": {
-                    "merge": "Merge",
-                    "ontop": "On Top"
+                    "merge": "融合",
+                    "ontop": "コマを上に"
                 }
             },
             "solidBaseColor": {
-                "name": "Solid Base Color",
-                "hint": "The color of the solid base. Can be a hex value or a color name (or any CSS color). default is #1c1c1c"
+                "name": "ソリッドベースの色",
+                "hint": "ベースの色を設定します。色のヘクスコードと色のテキスト（英語、CSS基準）の両方で指定できます。デフォルトは #1c1c1c"
             },
             "highlightCombat": {
-                "name": "Combat Highlight",
-                "hint": "Highlight the current combatant."
+                "name": "戦闘ハイライト",
+                "hint": "現在のターンを行っているコマをハイライトします。"
+            },
+            "startMarker": {
+                "name": "ターン開始マーカ",
+                "hint": "戦闘中、コマが移動したときにどこからターンを開始したのかを知らせるマーカーを置きます。所有者しか見ることができません。"
             },
             "selectedImage": {
                 "name": "選択画像",
-                "hint": "コマを選択しているときにモデルの下部に表示する画像。"
+                "hint": "コマを選択しているときにモデルの下部に表示する画像です。"
             },
             "colorizeInidcator": {
-                "name": "Colorize Highlight Image",
-                "hint": "Colorize the Highlight Image to match default foundry border colors."
+                "name": "ハイライト画像着色",
+                "hint": "オンセ工房の既定色にマッチするようにハイライト画像に着色を行います。"
             },
             "hideTarget": {
-                "name": "Hide Target Indicator (if solid base)",
-                "hint": "Hide the target indicator if the token has the base enabled, the targets will be shown in the base ring highlight."
+                "name": "ソリッドベース時ターゲットを隠す",
+                "hint": "ターゲットのカーソルを隠し、代わりにベースにターゲットした人の色を表示する。"
             },
             "rotateIndicator": {
-                "name": "Rotate Highlight Image",
-                "hint": "Rotate the Highlight Image to match the token rotation."
+                "name": "ハイライト画像を回転",
+                "hint": "コマの回転に応じてハイライト画像も回転するように設定します。"
             },
             "templateSyle" : {
-                "name": "Template Style",
-                "hint": "The style to use for the measured templates.",
+                "name": "テンプレート設定",
+                "hint": "定規テンプレートの表示方法を選択できます。",
                 "options": {
-                    "wireframe": "Wireframe",
-                    "solid": "Solid"
+                    "wireframe": "ワイヤーフレーム",
+                    "solid": "ソリッド"
                 }
             },
             "gridMode" : {
-                "name": "Grid Draw Mode",
-                "hint": "How the grid is drawn. Fast is better in general but only supports square grids. Mirror, will mirror 1:1 the foundry grid but is more expensive to render.",
+                "name": "グリッド描画設定",
+                "hint": "グリッドの描画設定を行います。「高速」は描画が早く快適ですが四角グリッドしか対応しません。「ミラー」はオンセ工房の既定のグリッドを描画（ヘクス含む）できますが描画コストが重いです。",
                 "options": {
-                    "fast": "Fast",
-                    "mirror": "Mirror"
+                    "fast": "高速",
+                    "mirror": "ミラー"
                 }
             },
             "autoPan": {
-                "name": "Auto Pan",
-                "hint": "Hooks the 3D Camera panning to the 2D one. Mainly, moving a token will have the camera follow it. When disabled you can always pan to the selected token with Ctrl+X",
+                "name": "自動注目",
+                "hint": "3Dカメラを2Dのコマ移動に連動させます。コマを動かすとカメラも移動するようになります。これがオフになっていても、CTRL+Xでいつでもコマに注目できます。",
                 "options": {
-                    "none": "Disabled",
-                    "player": "Only Players",
-                    "all": "Everyone"
+                    "none": "無効化",
+                    "player": "PLのみ",
+                    "all": "全員"
                 }
             },
             "conservativeHitbox": {
-                "name": "Conservative Hitbox",
-                "hint": "Restrict hitbox size for tokens so that it does not overflow outside the token's base."
+                "name": "ヒットボックス縮小",
+                "hint": "コマのベースより外にはみ出すコマのモデルのヒットボックスを無視します。"
             },
             "screenspacepanning": {
-                "name": "Enable Screen Space Panning",
-                "hint": "Enable screen space panning for the 3D view."
+                "name": "空間パンを使用",
+                "hint": "3Dモードの右クリックの挙動が変化します。有効時は右クリック＋ドラッグでカメラを上下左右にパンし、無効化時は右クリック＋ドラッグで奥・手前へスライドします。無効化時でもShift+右クリックで有効化のときと同じ挙動ができます。（再起動必要）"
             },
             "camerafocuszoom": {
-                "name": "Enable Camera Focus Zoom",
-                "hint": "When focusin the camera on a token with Shift+X Zoom in on the token"
+                "name": "注目時にズーム",
+                "hint": "Ctrl+Xでコマにカメラを注目したときにズームするようになります。"
             },
             "standupFace": {
                 "name": "2Dモデルはカメラを向く",
@@ -311,22 +422,22 @@
                 "hint": "床より下の高度を設定することを禁止します。"
             },
             "globalCollision": {
-                "name": "Enable Global Collision",
-                "hint": "Enable collision for all tokens on the board."
+                "name": "グローバル・コリジョンを使用",
+                "hint": "すべてのコマにコリジョンを適用し、移動したときに自動的にオブジェクトの上に移動する高低差を意識した移動となります。"
             },
             "disableLighting":{
                 "name": "光源・影をオフにする",
                 "hint": "明かりは太陽の明かりのみとして、シーンの光源や影を表示しないことでパフォーマンスを改善します。"
             },
             "shadowQuality":{
-                "name": "Shadow Quality",
-                "hint": "The resolution of the shadows.",
+                "name": "影のクオリティ",
+                "hint": "パフォーマンスに影響する影のクオリティ",
                 "options": {
-                    "low": "Low",
-                    "medium": "Medium",
-                    "high": "High",
-                    "ultra": "Ultra",
-                    "gamer": "Gamer"
+                    "low": "低",
+                    "medium": "中",
+                    "high": "高",
+                    "ultra": "最高",
+                    "gamer": "ゲーマー"
                 }
             },
             "resolution": {
@@ -342,6 +453,25 @@
                 "name": "デバッグモード",
                 "hint": "トラブルシューティング用のデバッグ情報を表示します。（コマの選択ボックスや光源等）"
             }
+        },
+        "exporter" : {
+            "title": "オブジェクトをGLTFとしてエクスポートする",
+            "tokens": "コマ",
+            "interactive": "移動可能なコマも含む",
+            "tiles": "タイル",
+            "all": "シーン全体",
+            "doors": "ドア",
+            "walls": "ウォール",
+            "background": "背景",
+            "export": "エクスポート",
+            "cancel": "キャンセル"
+        },
+        "macrodialog": {
+            "title": "パーティクル・天候効果をエクスポート",
+            "label": "名前：",
+            "export": "マクロとして保存",
+            "cancel": "キャンセル",
+            "placeholder": "マクロ名を入力してください。"
         }
     }
 }

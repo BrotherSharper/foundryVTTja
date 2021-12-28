@@ -250,11 +250,66 @@
 			"path": "lang/modules/bossbar.json",
 			"module": "bossbar",
 			"lang-author": "Brother Sharp"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/choices.json",
+			"module": "choices",
+			"lang-author": "Brother Sharp"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/token-z.json",
+			"module": "token-z",
+			"lang-author": "Brother Sharp"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/splatter.json",
+			"module": "splatter",
+			"lang-author": "Brother Sharp"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/enhancedcombathud.json",
+			"module": "enhancedcombathud",
+			"lang-author": "Brother Sharp"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/combatbooster.json",
+			"module": "combatbooster",
+			"lang-author": "Brother Sharp"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/hurry-up.json",
+			"module": "hurry-up",
+			"lang-author": "Brother Sharp"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/levels.json",
+			"module": "levels",
+			"lang-author": "Brother Sharp"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/patrol.json",
+			"module": "patrol",
+			"lang-author": "Brother Sharp"
 		}
 	],
 	"scripts": ["./js/main.js"],
   "styles" : [],
   "packs": [],
+  "dependencies": [
+    {
+      "name": "lib-changelogs",
+      "manifest": "https://github.com/theripper93/libChangelogs/releases/latest/download/module.json",
+      "type": "module"
+    }
+  ],
 	"url" : "https://github.com/BrotherSharper/foundryVTTja",
 	"download" : "https://github.com/BrotherSharper/foundryVTTja/archive/master.zip",
 	"manifest" : "https://raw.githubusercontent.com/BrotherSharper/foundryVTTja/master/module.json",
