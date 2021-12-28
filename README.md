@@ -64,6 +64,18 @@
 * Tokens Visible
 * Turn Alert
 * popout
+* visual novel choices *
+* combat-booster
+* levels-3d-preview *
+* levels
+* lib-changelogs
+* patrol
+* splatter
+* token-z
+
+上記の*がついているModはRipper93氏のPatreonより入手できる有料Modです。
+
+https://www.patreon.com/theripper93
 
 
 ### その他日本語化モッド

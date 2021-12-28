@@ -17,3 +17,7 @@ Hooks.on("preUpdateActor", (data, updatedData) =>{
     if (!createData.img)
       createData.img = "modules/foundryVTTja/img/mystery-man.svg"
   })
+
+  Hooks.once('libChangelogsReady', function() {
+    libChangelogs.registerConflict("foundryVTTja", "jpfoundryvtt","オンセ工房 Foundry VTT日本語コミュニティがサポートしていない本体日本語化Modが検出されました。オンセ工房が正しく機能しない恐れがありますのでいずれかを無効化してください。","critical")
+})
