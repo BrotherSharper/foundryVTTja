@@ -1,10 +1,10 @@
 # オンセ工房FVTT本体用　日本語化モッド
 
 * **製作者**: Brother Sharp (ディスコード：Brother Sharp#6921)
-* **翻訳ファイル提供者**: [Brother Sharp, Asami, Touge, Tonishi, エクスヴァリア]
+* **翻訳ファイル提供者**: [Brother Sharp, Asami, Touge, Tonishi, エクスヴェリア]
 
 * **対応FVTTバージョン**: 0.6.0~v9
-* **modバージョン**: 1.7
+* **modバージョン**: 1.8
 
 ### インストール方法： 
 以下のリンクをモッドとしてインストールしてください。
