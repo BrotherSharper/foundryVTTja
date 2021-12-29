@@ -4,7 +4,7 @@
 * **翻訳ファイル提供者**: [Brother Sharp, Asami, Touge, Tonishi, エクスヴェリア]
 
 * **対応FVTTバージョン**: 0.6.0~v9
-* **modバージョン**: 1.8
+* **modバージョン**: 1.9
 
 ### インストール方法： 
 以下のリンクをモッドとしてインストールしてください。
@@ -52,6 +52,7 @@
 * monks little details
 * monks token bar
 * pings
+* pointer
 * quick encounters
 * polyglot
 * multilevel token
