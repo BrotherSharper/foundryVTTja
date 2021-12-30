@@ -4,7 +4,7 @@
 * **翻訳ファイル提供者**: [Brother Sharp, Asami, Touge, Tonishi, エクスヴェリア]
 
 * **対応FVTTバージョン**: 0.6.0~v9
-* **modバージョン**: 1.9
+* **modバージョン**: 1.11
 
 ### インストール方法： 
 以下のリンクをモッドとしてインストールしてください。
@@ -62,6 +62,7 @@
 * smart target
 * theatre inserts（立ち絵ツール）
 * tidy5e-sheet
+* tidy-ui
 * Tokens Visible
 * Turn Alert
 * popout

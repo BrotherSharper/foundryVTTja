@@ -26,7 +26,7 @@
 	"TIDY5E.RestHint": "休憩",
 	"TIDY5E.RestS": "小休憩",
 	"TIDY5E.RestL": "大休憩",
-	"TIDY5E.HitDiceRollAverage": "Right Click: Average",
+	"TIDY5E.HitDiceRollAverage": "右クリック：平均",
 
 	"TIDY5E.Journal": "記録",
 
@@ -326,6 +326,22 @@
 		"hint" : "「アクション」または「能力値」を選択します。",
 		"default": "アクション",
 		"attributes": "能力値"
+	},
+	"TIDY5E.Settings.HiddenDeathSaves" : {
+		"name" : "PLから死亡セーヴを隠す",
+		"hint" : "有効化することで死亡セーヴの結果をGMのみ表示します。"
+	},
+	"TIDY5E.Settings.npsSheetWidth" : {
+		"name" : "デフォルトNPCシート幅",
+		"hint" : "NPCシートの長さ（ピクセル単位）。再起動が必要です。"
+	},
+	"TIDY5E.Settings.playerSheetWidth" : {
+		"name" : "デフォルトPCシート幅",
+		"hint" : "PCシートの長さ（ピクセル単位）。再起動が必要です。"
+	},
+	"TIDY5E.Settings.vehicleSheetWidth" : {
+		"name" : "乗り物シート幅",
+		"hint" : "乗り物シートの長さ（ピクセル単位）。再起動が必要です。"
 	},
 	"Save Changes" : "保存"
 }

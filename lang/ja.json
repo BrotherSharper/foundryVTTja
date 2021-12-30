@@ -1405,7 +1405,7 @@
   "TOKEN.CharNameplate": "コマ名",
   "TOKEN.CharShowNameplate": "表示方法",
   "TOKEN.Coordinates": "座標",
-  "TOKEN.Disposition": "性質",
+  "TOKEN.Disposition": "関係性",
   "TOKEN.Dimensions": "サイズ",
   "TOKEN.ImageAlts": "代替コマ画像",
   "TOKEN.ImagePath": "イメージ画像",
@@ -1899,7 +1899,7 @@
   "TABLE.Create": "ロール表 作成",
   "TABLE.Search": "ロール表 検索",
   
-  "TOKEN.CharDisposition": "性質",
+  "TOKEN.CharDisposition": "関係性",
   "TOKEN.CharInstructions": "このコマに関連付けされるキャラクターや、表示について設定。",
   
   "SCENES.JournalNotes": "シーンのメモ",

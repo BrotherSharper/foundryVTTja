@@ -1,0 +1,598 @@
+{
+    "DANGERZONE": {
+        "add": "追加",
+        "cancel": "キャンセル",
+        "copy": "コピー",
+        "degrees": "（度）",
+        "delete": "削除",
+        "distance": "（距離）",
+        "edit": "編集",
+        "grids": "（マス）",
+        "gridUnits": "単位",
+        "location-picker": "ゾーンのサイズを選択",
+        "ms": "ミリ秒",
+        "none": "なし",
+        "ratio": "（割合）",
+        "save": "保存",
+        "sec": "秒",
+        "view": "閲覧",
+        "yes": "Ok",
+        "zones": "ゾーン設定",
+        "alerts": {
+            "danger-depth-exceeds-zone": "デンジャーの深度はゾーンの深度を超えることはできません。ゾーンの深度が無限のときデンジャーの深度を0以上にすることはできません。",
+            "input-z": "高度",
+            "enter-z": "デンジャーの高度を入力してください。",
+            "json-invalid": "データが有効なオブジェクトフォーマットではありません。",
+            "no-trigger-if-not-on-combat-scene": "デンジャー・ゾーンは現在の戦闘シーンに居ない場合は発動しません。",
+            "select-zone-start": "このゾーンの開始地点を選択してください。選択されたエリアはマス目に合わさり、エリアの右上を表します。",
+            "select-zone-end": "このゾーンの終了地点を選択してください。選択されたエリアはマス目に合わさり、エリアの左下を表します。",
+            "select-target": "このゾーンの中の対象を選択してください。これはマス目に合わさり、対象となる物体の右上を表す。",
+            "user-selection-exited": "ゾーン作成が完了する前に設定から退出しました。ゾーンのトリガーを自動的に止めました。",
+            "zone-copied": "ゾーンのコピーが完了しました。サイズを確認してください。",
+            "zone-copy-fail": "ゾーンのコピーに失敗しました…"
+        },
+        "controls": {
+            "clearAmbientLight.label": "デンジャー・ゾーンの環境ライトをクリア",
+            "clearEffectsTile.label": "デンジャー・ゾーンの持続効果をクリア",
+            "clearWalls.label": "デンジャー・ゾーンのウォールをクリア"
+        },
+        "copy-zone":{
+            "label": "シーンからゾーンをコピー",
+            "scene": "コピー元",
+            "target": "コピー先",
+            "zone": "ゾーン"
+        },
+        "edit-form": {
+            "actor.label": "キャラクター",
+            "allInArea.label": "デンジャーにいるすべてのコマをターゲット",
+            "allInArea.description": "デンジャー・ゾーンに複数体のコマがいる場合はすべてが選択されます。無効化時、ランダムな1体が選ばれます。",
+            "bleed.label": "はみ出し",
+            "bleed.description": "設定時、ゾーンの境界線（深度、サイズ）がここで設定した単位ぶんだけはみ出すようになります。はみ出しゾーンにはデンジャー効果は適用されますが、コマはターゲットされません。こうすることでゾーンの中のすべてのマスが同確率で選ばれるようになります。設定されていない場合はゾーンの中心部に近いマスのほうがターゲットされる確立が大きくなります。",
+            "boundary": {
+                "bottom.label": "底面",
+                "end.label": "の終了位置：",
+                "label": "寸法",
+                "description": "このゾーンの寸法は、指定された開始位置と終了位置の間に伸びるマスと、指定された底面から上面までの高さ（ただし上面は含まず）を含むものです。底辺と上辺の数値が同じであれば、そのゾーンの深さは無限であるとみなされます。",
+                "start.label": "の開始位置",
+                "top.label": "上面",
+                "x.label": "x",
+                "y.label": "y"
+            },
+            "convert-global.notes": "このグローバルゾーンの設定のコピーをこのシーンに保存します（元の設定は変わりません）。",
+            "enabled.label": "有効化",
+            "initiative-count.label": "数",
+            "flavor.label": "テキスト",
+            "flavor.description": "ゾーンがトリガーしたときに表示されるテキストです。",
+            "light.replace.label": "ライト設定",
+            "light.replace.description": "ゾーンがトリガーしたときにライトの設定をどうするかを設定します。",
+            "likelihood.label": "発動確率",
+            "likelihood.description": "ゾーンがトリガーしたときにデンジャーも発動される確率です。",
+            "loop.label": "繰り返し数",
+            "loop.description": "ゾーンがトリガーされたときのデンジャーの発動回数を設定します。それぞれの発動には個別の確率が設定されます。",
+            "name": "ゾーン設定",
+            "other.label": "その他設定",
+            "placeTemplate.label": "地点選択",
+            "placeTemplate.description": "発動時に、デンジャーの対象となるシーンの場所を選択するよう促されます（そうでない場合はゾーンの通常範囲内・はみ出し範囲内からランダムに選択されます。選択した場所が完全にゾーンの外にある場合、デンジャーの効果は発生しますが、ゾーンの外にあるコマは対象になりません。 ",
+            "promptElevation.label": "高度選択をスキップ",
+            "random.label": "ランダム化",
+            "random.description": "このシーンで同じトリガーを共有するすべてのゾーンはグループ化され、1つのトリガーだけがランダムで適用されます。優先順位を割り当てて、トリガーが重複したときの発動順序と頻度を設定します。",
+            "replace.label": "永続効果",
+            "replace.description": "このゾーンがトリガーされたときに、既存のデンジャーゾーンで作成された永続効果をどうするかを選択します。",
+            "runUntilTokenFound.label": "必ずコマに命中",
+            "runUntilTokenFound.description": "デンジャー効果は可能であれば必ず一つ以上のコマに命中する。",
+            "single-run.description": "最初のデンジャー成功の後、このゾーンのループ回数に関係なく、最大1回だけ実行されます。",
+            "source":{
+                "actor.label": "ソースキャラクター",
+                "description": "ゾーンの元となるキャラクターを定義します。ソースキャラはゾーンがいつトリガーされるかに影響し、デンジャー効果はソースと関連付けられます。",
+                "label": "ソース",
+                "trigger.description": "ゾーン効果がどのキャラクターに発動するのかを定義します。\n    * 手動またはAPIで起動したゾーンに影響はありません。\n戦闘中に「ソースのみトリガー」と設定されているデンジャー効果はそのキャラクターと同じ戦闘シーンにいる必要があります。\n    ターン: ターンを行っているキャラクターのみ\n    その他: 戦闘のどのキャラクターでも良い",
+                "trigger.label": "トリガータイミング",
+                "triggers":{
+                    "any": "ソース関係なくトリガーします",
+                    "scene": "ソースがシーンにいる時のみトリガーします",
+                    "source": "ソースのみがゾーンをトリガーできる"
+                }
+            },
+            "stretch.description": "ストレッチ位置を残したままゾーンの上面と底面でターゲット範囲を調整できるようにデンジャーの効果範囲を調整します。「地面」は０を底面として、「上空」は99999を上面とします。Adjusts the danger's area of effect so that the stretch location remains fixed while the zone's top and bottom still constrict the possible initial target. 'Ground' uses 0 as the final bottom and 'Sky' uses 99999 as the final top. Example: Given 'rising from bottom' in a zone with bottom=2, top=10, and danger depth=3, and an initial target of bottom=5/top=8. The stretch will keep the top target = 8 but drop the bottom to 2, which equals the bottom of the zone.",
+            "stretch.label": "ストレッチ",
+            "title.label": "タイトル",
+            "token-targeting.label": "コマターゲット",
+            "token-disposition.label": "性質",
+            "trigger.label": "トリガー",
+            "type.label": "デンジャー",
+            "types.add": "デンジャー一覧",
+            "wall.replace.label": "ウォール",
+            "wall.replace.description": "このゾーンがトリガーされたときに、既存のデンジャーゾーンが作成したウォールをどうするか選択します。",
+            "weight.label": "Weight"
+        },
+        "export":{
+            "title": "デンジャー書き出し"
+        },
+        "import":{
+            "title": "デンジャー読み込み",
+            "noFile": "データをアップロードしていません！",
+            "complete": "読み込みが完了しました。",
+            "success": "読み込みが無事成功しました。",
+            "error": "データが無効なため読み込めませんでした。",
+            "skipped": "既存のデンジャーと同じIDが検出されました。",
+            "short-title": "読み込み"
+        },
+        "light.replace-types": {
+            "A.label": "光源をすべてクリア",
+            "N.label": "光源をすべて保持",
+            "R.label": "トリガーを共有する光源をクリア",
+            "T.label": "デンジャーを共有する光源をクリア",
+            "Z.label": "ゾーンを共有する光源をクリア"
+        },
+        "occlusionmodes": {
+            "none": "なし (常に見える)",
+            "fade": "フェード (タイルすべて)",
+            "roof": "屋根 (視線と光源をブロック)",
+            "radial": "ラジアル (周囲のコマ)"
+        },
+        "record": {
+            "title.label": "タイトル",
+            "likelihood.label": "確率",
+            "likelihood.description": "確率",
+            "isActive.label": "有効化"            
+        },
+        "replace-types": {
+            "A.label": "永続効果をクリア",
+            "N.label": "永続効果をすべて保持",
+            "R.label": "トリガーを共有する永続効果をクリア",
+            "T.label": "デンジャーを共有する永続効果をクリア",
+            "Z.label": "ゾーンを共有する永続効果をクリア"
+        },
+        "restrictions":{
+            "none": "なし",
+            "limited": "限定的",
+            "normal": "通常"
+        },
+        "scene": {
+            "add-danger-zone": "デンジャー・ゾーン追加",
+            "clear": "ゾーン削除",
+            "confirm": "Are you sure you want to delete this zone?",
+            "copy-danger-zone": "Copy a zone from another scene. The dimensions will be defaulted to this scene's width and height.",
+            "delete-danger-zone": "Delete danger zone",
+            "description": "Add danger zone effects to this scene (this will cause the scene form to refresh so save any scene changes before proceeding).",
+            "edit-danger-zone": "Edit danger zone",
+            "header.name": "Configure Scene Zones",
+            "label": "Danger Zone",
+            "random": "Random",
+            "random-trigger.label": "Random Manual Trigger",
+            "title": "Title",
+            "trigger": "Trigger",
+            "type": "Danger"
+        },
+        "setting": {
+            "chat-details-to-gm.label": "Chat Zone Details to GM on Trigger",
+		    "chat-details-to-gm.description": "Will send a private chat message to GM that includes details on the danger zone on trigger, such as target location, eligible tokens, and targeted tokens.",
+            "danger-zone-types-config.name": "Dangers",
+            "danger-zone-types-config.label": "Configure Dangers",
+            "display-danger-boundary.label": "Highlight Danger Target Area",
+            "display-danger-boundary.description": "Temporarily highlights the area targeted by a danger when the zone is triggered (GM's session only).",
+            "scene-control-button-display.label": "Display Clear Lasting Effects Button",
+            "scene-control-button-display.description": "Toggles the display of the Clear Danger Zone Lasting Effects button within the scene control buttons tiles grouping",
+            "scene-control-light-button-display.label": "Display Clear Ambient Light Button",
+            "scene-control-light-button-display.description": "Toggles the display of the Clear Ambient Light button within the scene control buttons lighting control grouping",
+            "scene-control-wall-button-display.label": "Display Clear Wall Button",
+            "scene-control-wall-button-display.description": "Toggles the display of the Clear Wall button within the scene control buttons walls control grouping",
+            "scene-trigger-button-display.label": "Zone Trigger Display Location",
+		    "scene-trigger-button-display.description": "Set the location where the zone triggers will display. Triggers only display for the GM when viewing the active scene.",
+            "types-button-display.label": "Display Dangers Button",
+            "types-button-display.description": "Toggles the display of the Dangers button at the bottom of the scenes side bar",
+            "scene-enabled-default.label": "New Zone Active by Default",
+            "scene-enabled-default.description": "Select whether or not new danger zones default to active when you first create them.",
+            "scene-header":{
+                "display": {
+                  "label": "Display Button in Token Form Header",
+                  "description": "Determine if and how to show a button in the scene form header. This button will launch the 'Configure Danger Zones' form.",
+                  "iconOnly": "Display icon only",
+                  "iconLabel": "Display icon and 'Zones' label",
+                  "none": "Do not display"
+                }
+              },
+            "token-depth-multiplier.label": "Token Depth Multiplier",
+		    "token-depth-multiplier.description": "For purposes of zone depth targeting, set a multiplier that calculates how tall a token is in relation to the scene distance, the token's scale, and the number of grid squares that that token takes up. A token in a single grid square with a scale of 1.0, a scene distance of 5, and a multiplier of 1.2 will have a tallness of 6 (1 * 1.0 * 5 * 1.2).",
+            "zone-exclusion-tag.label": "Block Zone Tag",
+            "zone-exclusion-tag.description": "Enter the tag that you will use to indicate that a wall, light, tile, token or drawing blocks the occupied grid from being included in the zone. Note that the 'Tagger' module is required or, for drawings, using this as the Text Label also works."
+        },
+        "source":{
+            "danger.description": "The source is an actor defined within the zone form.\nDefine how this danger part should be applied in relation to the targets and the source.",
+            "label": "Source",
+            "treatment":{
+                "none": "No special treatment",
+                "ignore": "Do not apply to source (if targeted)",
+                "also": "Apply also to source",
+                "only": "Apply to source instead of targets"
+            }
+        },
+        "stretch": {
+            "bottom.label": "Rise From Bottom",
+            "ground.label": "Rise From Ground",
+            "sky.label": "Descend From Sky",
+            "top.label": "Descend From Top"
+        },
+        "token-disposition": {
+            "all.label": "All",
+            "friendly.label": "Friendly",
+            "hostile.label": "Hostile",
+            "neutral.label": "Neutral"
+        },
+        "trigger-display-options": {
+            "scene.label": "Scene Navigation In-line",
+            "hotbar.label": "Hotbar Adjacent"
+        },
+        "trigger-types": {
+            "aura.label": "Aura",
+            "manual.label": "Manual",
+            "move.label": "Movement",
+            "combat-start.label": "Combat Start",
+            "combat-end.label": "Combat End",
+            "initiative-start.label":  "Initiative Count (Win Ties)",
+            "initiative-end.label":  "Initiative Count (Lose Ties)",
+            "round-start.label": "Round Start",
+            "round-end.label": "Round End",
+            "turn-start.label": "Turn Start",
+            "turn-end.label": "Turn End"
+        },
+        "type-form": {
+            "active-effect":{
+                "delay.label": "Delay Start",
+                "description": "Adds an active effect to targeted tokens.",
+                "label": "Active Effect",
+                "limit.description": "If a token already has this effect applied, a second one will not be added.",
+                "limit.label": "Max 1 Per Token",
+                "macro.description": "Determine if active effect macros should repeat on each turn of the associated token.",
+                "macro.label": "Macro Repeat",
+                "notes": "Active effect will be transferred to each danger target.",
+                "edit.title": "Edit Active Effect",
+                "delete.title": "Delete Active Effect"
+            },
+            "animation.label": "Animation",
+            "area-x.label": "Width",
+            "area-y.label": "Height",
+            "area-z.label": "Depth",
+            "audio":{
+                "description": "Plays a sound when the danger triggers.",
+                "label": "Audio",
+                "file.label": "Audio Source",
+                "file.placeholder": "path/audio.mp3",
+                "file.find": "Browse for Audio File",
+                "delay.label": "Delay Start",
+                "duration.description": "If the sound file is longer than the duration (in seconds) entered, then it will stop the sound at the provided duration following start of play. If duration = 0 then the sound plays for the entire length.",
+                "duration.label": "Duration",
+                "volume.label": "Sound Volume"
+            },
+            "backgroundEffect":{
+                "delay.label": "Delay Start",
+                "description": "Generate a temporary effect that plays beneath the target area, such as an explosion or impact animation.",
+                "label": "Secondary Effect",
+                "file.find": "Browse for Effect",
+                "file.label": "Image or Video",
+                "file.placeholder": "path/image.webm",
+                "randomFile.label": "Randomize Wildcard .webm",
+                "rotate.label": "Random Rotation",
+                "scale.label": "Scale",
+                "repeat.label": "Number of Repeats",
+                "duration.label": "Duration"
+            },
+            "clear": "Clear",
+            "cleared.info": "has been deleted from this danger.",
+            "confirm": "Are you sure you want to delete this danger's",
+            "dimensions.label": "Dimensions",
+            "dimensions.description": "Width and height dimensions are measured in scene grids.\nIf the width or height = 0 then that dimension will default to the zone's dimension.\nFor depth, specify the difference in grid units between the top and bottom elevations.\nA depth of 0 will default to the zone's depth.",
+            "fluidCanvas": {
+                "delay.label":"Delay Start",
+                "description": "Invoke canvas wide effects at the start of the danger effect using Kandashi's Fluid Canvas module.",
+                "duration.label":"Duration",
+                "intensity.label":"Intensity",
+                "iteration.label":"Number of Repeats",
+                "label":"Canvas",
+                "type.label":"Effect Type",
+                "types":{
+                    "black":"Black",
+                    "blur":"Blur",
+                    "drug":"Drug",
+                    "earthquake":"Earthquake",
+                    "heartbeat":"Heart Beat",
+                    "negative":"Negative",
+                    "sepia":"Sepia",
+                    "spin":"Spin"
+                }
+            },
+            "foregroundEffect":{
+                "delay.label": "Delay Start",
+                "description": "Generate a temporary effect that plays above the target area, such as a lightning bolt or falling rocks animation.",
+                "label": "Primary Effect",
+                "file.label": "Image or Video",
+                "file.placeholder": "path/image.webm",
+                "file.find": "Browse for Effect",
+                "randomFile.label": "Randomize Wildcard .webm",
+                "scale.label": "Scale",
+                "source": {
+                    "enabled.label": "Source to Target",
+                    "name.label": "Override Source (Tag)",
+                    "name.description": "Tagger tag",
+                    "name.notes": "By default the source is the zone's source actor. If a tag is added here, then all entities in the zone with this tag are instead considered to be sources.",
+                    "swap.description": "Plays the effect so that it appears to come from target and towards the source.",
+                    "swap.label": "Reverse Flow"
+                },
+                "repeat.label": "Number of Repeats",
+                "duration.label": "Duration"
+            },
+            "global-zone": {
+                "description": "Configures this danger so that it becomes available on every scene as a manually triggered zone with a more limited option set.",
+                "label": "World Zone"
+            },
+            "icon.label": "Icon",
+            "icon.find": "Browse for Icon",
+            "light":{
+                "animationIntensity.label": "Animation Intensity",
+                "animation.label": "Light Animation Type",
+                "brightLight.label": "Bright Light Radius",
+                "color.label": "Light Color",
+                "description": "Add ambient lighting to the targeted area.",
+                "dimLight.label": "Dim Light Radius",
+                "emission.label": "Emission Angle",
+                "intensity.label": "Light Intensity",
+                "label": "Ambient Local Light",
+                "rotation.label": "Rotation Angle",
+                "speed.label": "Animation Speed",
+                "tag.label": "Tag",
+                "tag.description": "Tagger tag"
+            },
+            "macro.label": "Macro",
+            "macro.notes": "The macro in this world that will run when the danger zone triggers.",
+            "monks-active-tiles":{
+                "label": "Monk's Active Tiles",
+                "macro": {
+                    "args.label": "Macro Args",
+                    "description": "Embed a macro into the tile that executes when a token enters the space.",
+                    "label": "Run Macro"
+                },
+                "notes": "Adds triggers to the lasting effect tile by integrating with Monk's Active Tiles.",
+                "teleport":{
+                    "avoid.label": "Avoid Destination Tokens",
+                    "description": "Tile will teleport tokens to another random destination in the zone. If 'Twin' is selected then a second tile will be created and the two will teleport between each other.",
+                    "label": "Add Token Teleportion",
+                    "pan.label": "Pan Screen On Teleport",
+                    "source.label": "Delete Source Token",
+                    "twin.label": "Twin Tiles (i.e. Portal)"
+                }
+            },
+            "mutate": {
+                "actor.label": "Token Actor Data",
+                "actor.description": "Updates token actor by passing in object data. Expects key: value pairs. This will be wrapped in {brackets} and passed as an object to the Warpgate actor mutation.",
+                "delay.label": "Delay Start",
+                "description": "Transforms targeted tokens with revertable changes using Warpgate. This is in beta and form layout / data collection is subject to change.",
+                "embedded.label": "Embedded Data",
+                "embedded.description": "Updates token items or active effects by passing in object data. Expects key: value pairs. This will be wrapped in {brackets} and passed as an object to the Warpgate embedded mutation.",
+                "label": "Mutate",
+                "permanent.label": "Mutation is Permanent",
+                "tag.label": "Token Tag",
+                "tag.description": "Tagger tag",
+                "token.label": "Token Data",
+                "token.description": "Updates token by passing in object data. Expects key: value pairs. This will be wrapped in {brackets} and passed as an object to the Warpgate token mutation."
+            },
+            "name.label": "Name",
+            "tab" :{
+                "effects.title": "Effects",
+                "modules.title": "Module Integration",
+                "main.title": "Core Configuration"
+            },
+            "tile":{
+                "alpha.label": "Tile Opacity",
+                "delay.label": "Delay Start",
+                "description": "Create a tile with an embedded video or image in the target area.",
+                "effect.description": "This field is required in order for the tile to generate. To generate a blank tile, use a transparent image.",
+                "effect.label": "Tile Image or Video",
+                "file.placeholder": "path/image.png",
+                "file.find": "Browse for Image or Video",
+                "hidden.label":"Hidden",
+                "label": "Lasting Effect",
+                "occlusion":{
+                    "alpha.label": "Occlusion Alpha",
+                    "mode.label":  "Occlusion Mode"
+                },
+                "overhead.label": "Overhead Tile",
+                "overhead.description": "If Levels module is installed, tile will automatically be set to overhead for zones with depth if the bottom of danger when placed in the zone is > 0.",
+                "is-overhead.label": "Is Overhead?",
+                "loop.label": "Loop Video",
+                "randomFile.label": "Randomize Wildcard Image",
+                "scale.label": "Effect Scale",
+                "tab": {
+                    "main.title": "Tile",
+                    "monks.title": "Monk's Active"
+                },
+                "tag.label": "Tile Tag",
+                "tag.description": "Tagger tag",
+                "z.label": "Z-Index"
+            },
+            "tokenSays": {
+                "compendium.description": "Identify the compendium that holds the 'Source' playlist or rollable table. If 'Compendium' is left blank, then Token Says will use the default compendium or the world source following Token Says settings.",
+                "compendium.label": "Compendium",
+                "compendium.placeholder": "compendium name",
+                "delay.label":"Delay Start",
+                "description": "Cause danger targets to say something in text or audibly using Token Says module.",
+                "label": "Token Says",
+                "likelihood.label": "Likelihood",
+                "rule-type.label": "Type",
+                "rule-type-option": {
+                    "playlist": "Audio Playlist",
+                    "roll-table": "Rollable Table"
+                },
+                "saying-source.label": "Saying Source",
+                "says":{
+                    "description": "If populated, token will always say this thing. Leave blank in order to randomize saying using the 'Source' instead.",
+                    "label": "Saying",
+                    "placeholder": "quote or audio track name"
+                },
+                "source.label": "Source",
+                "source.placeholder": "playlist or rollable table name"
+            },
+            "tokenEffect":{
+                "below.label": "Display Below Token",
+                "delay.label": "Delay Start",
+                "description": "Create an effect that plays upon the targeted token and, if made permanent, moves with the token.",
+                "label": "Token Effect",
+                "file.label": "Image or Video",
+                "file.placeholder": "path/image.webm",
+                "file.find": "Browse for Effect",
+                "randomFile.label": "Randomize Wildcard .webm",
+                "scale.label": "Scale",
+                "duration.label": "Duration"
+            },  
+            "tokenMove":{
+                "delay.label": "Delay Start",
+                "elevation.label": "Elevation Movement",
+                "elevation-distance.label": "Movement Distance",
+                "elevation-distance-max.label": "Maximum",
+                "elevation-distance-min.label": "Minimum",
+                "elevation-type.label": "Movement Type",
+                "elevation-types": {
+                    "relative.label": "Relative to Token Elevation",
+                    "set.label": "Set to Elevation"
+                    },
+                "flag.description": "Prevents any movement caused by this danger from triggering a zone (because some zones may have movement-based triggers).",
+                "flag.label": "Doesn't Trigger Zones",
+                "horizontal.label": "Horizontal Movement",
+                "horizontal-distance.label": "Movement Distance",
+                "horizontal-distance-max.label": "Maximum",
+                "horizontal-distance-min.label": "Minimum",
+                "horizontal-direction.label": "Movement Direction",
+                "horizontal-directions": {
+                    "left.label": "Left",
+                    "right.label": "Right",
+                    "random.label": "Random"
+                    },
+                "label": "Move Tokens",
+                "overrides.label": "Movement Overrides",
+                "source-to-target.label": "Move Source to Targeted Area",
+                "tiles-block.label": "Tiles Block Target Depth Move",
+                "walls-block.label": "Walls Block Target X/Y Move",
+                "vertical.label": "Vertical Movement",
+                "vertical-distance.label": "Movement Distance",
+                "vertical-distance-max.label": "Maximum",
+                "vertical-distance-min.label": "Minimum",
+                "vertical-direction.label": "Movement Direction",
+                "vertical-directions": {
+                    "down.label": "Down",
+                    "up.label": "Up",
+                    "random.label": "Random"
+                    },
+                "description": "Move targeted tokens."
+            },
+            "tokenResponse": {
+                "damage": {
+                    "amount.description": "e.g. 1d6+1",
+                    "amount.label": "Damage Roll or Amount",
+                    "amount.title": "Include parameters for variable roll:\n@elevation for token elevation amount changed by danger*\n@moved for token grids moved by danger*\n* these are individual by token so will force individual damage rolls and chat cards.",
+                    "delay.label": "Delay Start",
+                    "description": "Apply damage to each targeted token.",
+                    "enable.label": "Activate Damage",
+                    "flavor.label": "Flavor (Chat Card)",
+                    "flavor.description": "Outputs the message to chat for each token damaged as part of the damage card.\nInclude parameters for variable text:\n@alias for token name list\n@elevation for token elevation amount changed by danger*\n@moved for token grids moved by danger*\n* these are individual by token so will force individual damage rolls and chat cards.",
+                    "save.label": "If Save Success",
+                    "save.options": {
+                        "none": "No Damage",
+                        "half": "Half Damage",
+                        "full": "Full Damage"
+                    },
+                    "type.label": "Damage Type"
+                },
+                "description": "Interact with targeted tokens by invoking system-specific events, such as those that perform a saving throw or apply damage.",
+                "label": "Token Interaction",
+                "save": {
+                    "diff.label": "Saving Throw DC",
+                    "description": "Invoke a saving throw for each targeted token and define how this affects other danger parts.",
+                    "enable.label": "Activate Saving Throw",
+                    "result":{
+                        "success": "Generate on success only",
+                        "fail": "Generate on fail only",
+                        "both": "Generate on success or fail"
+                    },
+                    "success.description": "Choose how a save success or failure affects other danger parts",
+                    "success.label": "Based on Save Result",
+                    "type.label": "Saving Throw Type"
+                },
+                "tab": {
+                    "save.title": "Saving Throw",
+                    "damage.title": "Token Damage"
+                }
+            },
+            "wall":{
+                "bottom.label": "Wall on Bottom",
+                "description": "Add walls or doors around the perimeter of the targeted area.",
+                "direction.label": "Wall Direction",
+                "door.label": "Is Door?",
+                "label": "Walls",
+                "left.label": "Wall on Left",
+                "light.label": "Light Restriction",
+                "movement.label": "Movement Restriction",
+                "random.description": "From amongst the walls selected (top, right, bottom, left), will randomize whether or not each are actually built in the danger.",
+                "random.label": "Randomize Walls Placed",
+                "right.label": "Wall on Right",
+                "sound.label": "Sound Restriction",
+                "sight.label": "Sight Restriction",
+                "tag.label": "Tag",
+                "tag.description": "Tagger tag",
+                "top.label": "Wall on Top"
+            },
+            "warpgate": {
+                "description": "Spawn new tokens to the target area using the Warp Gate module.",
+                "actor.description": "Spawn creatures using the actor name or, if 'Is Rollable Table' is checked, spawn will be a random actor matching the name rolled from the specified rollable table in this world.",
+                "actor.label": "Name",
+                "actor.placeholder": "actor or rollable table name",
+                "duplicates.label": "Number to Spawn",
+                "delay.label": "Delay Start",
+                "isRolltable.label": "Is Rollable Table",
+                "label": "Token Spawn",
+                "tag.label": "Tag",
+                "tag.description": "Tagger tag"
+            }
+        },
+        "tiles-block":{
+            "none.label": "Tiles do not block",
+            "all.label": "All tiles block",
+            "roof.label": "Overhead tiles block",
+            "bottom.label": "Tiles block at depth top",
+            "top.label": "Tiles block at depth bottom"
+        },
+        "times-up-macro": {
+            "start": "Start of character's turn",
+            "end": "End of character's turn"
+        },
+        "types-form": {
+            "clear": "Delete Danger",
+            "confirm": "Are you sure you want to delete this danger?",
+            "header.name": "Dangers",
+            "search.placeholder": "enter text to filter dangers",
+            "search.clear": "Clear Search",
+            "export.title": "Export Dangers",
+            "import.title": "Import Dangers",
+            "type.name.label": "Name",
+            "world.label": "World"
+        },
+        "walls-block":{
+            "none.label": "Walls do not block",
+            "all.label": "All walls block"
+        },
+        "wall.replace-types": {
+            "A.label": "Clear all walls",
+            "N.label": "Retain all walls",
+            "R.label": "Clear walls that share this trigger",
+            "T.label": "Clear walls that share this danger",
+            "Z.label": "Clear walls that share this zone"
+        },
+        "zone-active-effect-form": {
+            "form-name": "Danger Active Effect"
+        },
+        "zone-type-form": {
+            "form-name": "Danger",
+            "name": "Name"
+        }
+    }
+
+}
+    
