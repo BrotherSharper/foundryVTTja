@@ -2,7 +2,7 @@
 	"name": "foundryVTTja",
 	"title": "日本語化（オンセ工房 Foundry VTT 本体＆Mod日本語化）",
 	"description": "オンセ工房Foundry VTTの本体用（v9）の日本語化に必要な翻訳ファイルを追加するモッド。日本語化されたほぼすべてのModの翻訳がここに載っています。デフォルト言語としてこのモッドを設定してからゲーム内でもモッドを適用してください。",
-	"version": "1.11",
+	"version": "1.12",
 	"author": "Brother Sharp",
 	"coreTranslation": true,
 	"languages": [
@@ -315,6 +315,12 @@
 			"lang": "ja",
 			"path": "lang/modules/tabbed-chatlog.json",
 			"module": "tabbed-chatlog",
+			"lang-author": "Brother Sharp"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/babele.json",
+			"module": "babele",
 			"lang-author": "Brother Sharp"
 		}
 	],

@@ -1,0 +1,20 @@
+{
+    "BABELE.CompendiumTranslations": "翻訳",
+    "BABELE.TranslateActorHeadBtn": "翻訳摘出",
+    "BABELE.TranslateActorTitle": "キャラ翻訳",
+    "BABELE.TranslateActorHint": "キャラクターの所持しているアイテム・特徴の翻訳が存在していれば、それらを自動的に適用します。",
+    "BABELE.TranslateActorBtn": "翻訳開始",
+    "BABELE.ExportTranslationTitle": "翻訳ファイル摘出",
+    "BABELE.ExportTranslationBtn": "摘出",
+    "BABELE.ExportTranslationNotes": "摘出するファイルのフォーマットを選んでください。\"従来\"が従来のKey:ValueペアのJsonとして出力し、\"共同翻訳\"がTransifexやWeblateの共同翻訳ツールも読み込める形に出力します（読み込むときは向こうにもKey:Valueペアを指定すると上手く入ります）",
+    "BABELE.ExportTranslationFormat": "フォーマット",
+    "BABELE.ExportTranslationFormatLegacy": "従来",
+    "BABELE.ExportTranslationFormatCompatible": "共同翻訳",
+    "BABELE.TranslationDirTitle": "翻訳ファイルディレクトリ",
+    "BABELE.TranslationDirHint": "翻訳ファイルの入っているディレクトリを指定してください。日本語化Modなどを使っているときModが裏でここを設定していますので、はなるべくここを手動で変えないでください。",
+    "BABELE.EnableTranslationExportTile": "翻訳摘出を有効化",
+    "BABELE.EnableTranslationExportHint": "有効化されていると辞典の中身を翻訳ファイルとして摘出してくれます。主に辞典の翻訳を1から始めるときに用いられる機能です。",
+    "BABELE.ShowOriginalName": "元の名前を表示",
+    "BABELE.ShowOriginalNameHint": "翻訳されたアイテムや辞典に元の名前を表示することで元の名前で検索できるようになります。",
+    "BABELE.requireLibWrapperMessage": "Babeleを起動するには依存関係にある「libWrapper」が必要です。有効化してください。"
+  }
