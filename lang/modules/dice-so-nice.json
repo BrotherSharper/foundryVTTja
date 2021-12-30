@@ -198,7 +198,7 @@
 
     "DICESONICE.CanvasZIndexOver": "シートの上",
     "DICESONICE.CanvasZIndexUnder": "シートの下",
-
+    
     "DICESONICE.ThrowingForceWeak": "弱く",
     "DICESONICE.ThrowingForceMedium" : "普通",
     "DICESONICE.ThrowingForceStrong" : "強く",
@@ -222,5 +222,14 @@
 
     "DICESONICE.sfxOptionsIsGlobal" : "（GMのみ）この特殊効果をすべてのプレイヤーに適用する",
     "DICESONICE.sfxOptionsCustomSound" : "音声ファイル選択",
-    "DICESONICE.sfxOptionsMacro" : "マクロ選択"
+    "DICESONICE.sfxOptionsMacro" : "マクロ選択",
+
+    "DICESONICE.RollableAreaConfig":  "ロールエリア設定",
+    "DICESONICE.RollableAreaConfigTitle": "ロールエリア設定",
+    "DICESONICE.RollableAreaConfigHint": "3Dダイスのアニメーションが行われる画面のエリアを指定します。この設定は他のプレイヤーに影響しません。",
+    "DICESONICE.RollableAreaText": "ロールエリア",
+    "DICESONICE.RollableAreaConfigDescription1": "このエリアを自由に移動させてリサイズすれば\"ロールエリア\"を指定できます。この空間にのみ3Dダイスが出現します。",
+    "DICESONICE.RollableAreaConfigDescription3": "ロールエリア使用中ではウィンドウの画面をリサイズしてもロールエリアは追従しません。もう一度手動でロールエリアを調整してください。",
+    "DICESONICE.RollableAreaConfigDescription2": "\"はい\"で現在の変更を保存して適用します。\"もとに戻す\"ことで従来の自動設定に戻ります。",
+    "DICESONICE.Restore": "もとに戻す"
 }

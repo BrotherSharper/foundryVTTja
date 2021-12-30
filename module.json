@@ -322,6 +322,12 @@
 			"path": "lang/modules/babele.json",
 			"module": "babele",
 			"lang-author": "Brother Sharp"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/sequencer.json",
+			"module": "sequencer",
+			"lang-author": "Brother Sharp"
 		}
 	],
 	"scripts": ["./js/main.js"],
