@@ -75,6 +75,8 @@
 * splatter
 * token-z
 * hurry-up
+* lib-captions
+* sequencer
 
 上記の*がついているModはRipper93氏のPatreonより入手できる有料Modです。
 

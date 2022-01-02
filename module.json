@@ -328,6 +328,12 @@
 			"path": "lang/modules/sequencer.json",
 			"module": "sequencer",
 			"lang-author": "Brother Sharp"
+		},
+		{
+			"lang": "ja",
+			"path": "lang/modules/lib-captions.json",
+			"module": "lib-captions",
+			"lang-author": "Brother Sharp"
 		}
 	],
 	"scripts": ["./js/main.js"],

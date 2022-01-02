@@ -1,0 +1,9 @@
+{
+    "LIBCAPTIONS.debug": "デバッグログ有効化",
+    "LIBCAPTIONS.debugHint": "デバッグ情報のログをコンソールに表示するようになります。",
+    "LIBCAPTIONS.timeout": "字幕の表示時間",
+    "LIBCAPTIONS.timeoutHint": "字幕の表示時間を秒単位で設定します。",
+    "LIBCAPTIONS.fontSize": "字幕の文字サイズ",
+    "LIBCAPTIONS.fontSizeHint": "字幕のフォントサイズを設定します。"
+  }
+  
