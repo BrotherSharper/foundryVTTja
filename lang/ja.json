@@ -1058,7 +1058,7 @@
   "SETUP.RequireSystem": "要システム･アップデート",
   "SETUP.RequireDep": "要ディペンデンシー",
   "SETUP.RequireCore": "要コア･アップデート",
-  "SETUP.LockHint": "パッケージをロックして削除されないようにするか、更新します",
+  "SETUP.LockHint": "パッケージをロックして削除・更新されないようにします。",
   
   "SETUP.ManifestUpdate": "新しいインストールURLで更新されたバージョンが利用可能です",
   "SETUP.ManifestUpdateAvailable": "\"{package}\" の新しいバージョンが別のURLより利用可能です。これは、パッケージのホスティング場所または作成者が変更した場合に発生します。",
