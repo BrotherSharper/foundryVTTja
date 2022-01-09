@@ -1,0 +1,7 @@
+.item-pile-config form.flex {
+    flex-direction: column;
+}
+
+form .form-group .form-fields > label {
+    flex-grow: 2;
+}
