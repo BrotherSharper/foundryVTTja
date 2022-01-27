@@ -628,7 +628,7 @@
   "JOURNAL.ModeText": "テキスト",
   "JOURNAL.ModeImage": "画像",
   "JOURNAL.ActionShow": "プレイヤーに見せる",
-  "JOURNAL.ActionShowSuccess": "{title}の{mode}を{which}さんに表示しました。",
+  "JOURNAL.ActionShowSuccess": "{title}の{mode}を{which}に表示しました。",
   "JOURNAL.Submit": "記録を保存",
   "JOURNAL.AnchorCenter": "中央揃え",
   "JOURNAL.AnchorBottom": "下揃え",
