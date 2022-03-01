@@ -3,14 +3,15 @@
   "Angle": "角度",
   "Author": "作成者",
   "AuthorPl": "作成者ら",
-  "Cancel": "キャンセル",
   "AreYouSure": "よろしいですか？",
   "and": "～",
   "Between": "",
+  "Cancel": "キャンセル",
   "Character": "キャラクター",
   "Configure": "設定",
   "Command": "コマンド",
   "Close": "閉じる",
+  "Collapse": "閉じる",
   "Degrees": "度",
   "Default": "既定",
   "Delete": "削除",
@@ -20,6 +21,7 @@
   "Documentation": "説明書",
   "Duplicate": "複製",
   "Error": "エラー",
+  "Expand": "展開",
   "GridUnits": "マス単位",
   "Install": "ｲﾝｽﾄｰﾙ",
   "Elevation": "高度",
@@ -69,7 +71,7 @@
   "Yes": "はい",
   
 "APP.NavigateBackConfirm": "オンセ工房 FoundryVTTを終了します、よろしいですか？",
-  
+
   "CARDS.CardsDeck": "カードデッキ",
   "CARDS.CardsHand": "手札",
   "CARDS.CardsPile": "山札",
@@ -102,13 +104,6 @@
   "CARDS.Image": "デッキの裏面",
   "CARDS.Number": "枚数",
   "CARDS.NoCards": "デッキは空です",
-  "CARDS.NotifyDeal": "{link}に{number}枚のカードを配りました。",
-  "CARDS.NotifyDiscard": "{link}から{number}枚のカードを捨てました。",
-  "CARDS.NotifyDraw": "{link}から{number}枚のカードを引きました。",
-  "CARDS.NotifyPass": "{link}に{number}枚のカードを移動しました。",
-  "CARDS.NotifyPlay": "{link}に{number}枚のカードを切りました。",
-  "CARDS.NotifyReset": "{link}にすべてのカードを戻しました。",
-  "CARDS.NotifyShuffle": "{link}をシャフルしました。",
   "CARDS.Pass": "移動",
   "CARDS.PassTo": "移動先",
   "CARDS.PassTitle": "移動するカード",
@@ -122,6 +117,17 @@
   "CARDS.Shuffle": "シャッフル",
   "CARDS.SortMode": "並べ替え",
   "CARDS.Reset": "リセット",
+  "CARDS.ResetConfirm": "{name}を本当にリセットしますか？配られたすべてのカードが回収されます。",
+  "CARDS.ReturnConfirm": "本当に実行しますか？ {name}のすべてのカードが元のデッキに戻されます。",
+
+  "CARDS.NotifyDeal": "{link}に{number}枚のカードを配りました。",
+  "CARDS.NotifyDiscard": "{link}から{number}枚のカードを捨てました。",
+  "CARDS.NotifyDraw": "{link}から{number}枚のカードを引きました。",
+  "CARDS.NotifyPass": "{link}に{number}枚のカードを移動しました。",
+  "CARDS.NotifyPlay": "{link}に{number}枚のカードを切りました。",
+  "CARDS.NotifyReset": "{link}にすべてのカードを戻しました。",
+  "CARDS.NotifyShuffle": "{link}をシャフルしました。",
+  "CARDS.NotifyReturn": "{link}のすべてのカードを回収しました。",
   
   "CARD.Create": "カード作成",
   "CARD.Delete": "カード削除",
@@ -154,6 +160,7 @@
   "CARD.Save": "カード保存",
   "CARD.Unknown": "不明なカード（{source}）",
   
+  "CHAT.Chat": "チャット",
   "CHAT.Clear": "チャットログを消去",
   "CHAT.Export": "チャットログを書き出す",
   "CHAT.FlushTitle": "チャットログを消去",
@@ -386,15 +393,16 @@
   "DOCUMENT.Delete": "{type}削除",
   "DOCUMENT.New": "新規{type}",
   "DOCUMENT.Update": "{type}更新",
-  
+
   "DOCUMENT.ImportData": "インポートデータ",
   "DOCUMENT.ImportDataError": "データ・ファイルをアップロードしていません。",
   "DOCUMENT.ImportDataHint1": "手元にあるJSONファイルを選択し、この{document}にデータをインポートします。",
   "DOCUMENT.ImportDataHint2": "この操作により{name}は上書きされ、元には戻せません。",
   "DOCUMENT.ImportSource": "インポートファイル",
+  "DOCUMENT.Imported": "{document}「{name}」がJSONデータより無事にインポートされました。",
   "DOCUMENT.SheetPermissionWarn": "この{document}シートを表示する権限がありません。",
   "DOCUMENT.UsePermissionWarn": "この{document}を使用する権限がありません。",
-  
+
   "DOCUMENT.ActiveEffect": "アクティブな効果",
   "DOCUMENT.ActiveEffects": "アクティブな効果",
   "DOCUMENT.Actor": "キャラクター",
@@ -448,7 +456,7 @@
   "DOCUMENT.Users": "ユーザー",
   "DOCUMENT.Wall": "ウォール",
   "DOCUMENT.Walls": "ウォール",
-  
+
   "DRAWING.ConfigTitle": "図形の設定",
   "DRAWING.ConfigDefaultTitle": "図形描画の設定",
   "DRAWING.SubmitDefault": "デフォルト設定",
@@ -548,6 +556,7 @@
   "EFFECT.StatusHolyShield": "シールド（聖）",
   
   "ERROR.BrowserVersion": "オンセ工房 FoundryVTT {minimum} から、 {browser} ではサポートされていない最新のJavaScript機能を使用しています。現在、{browser} バージョン {version} を使用しています。ブラウザを更新するか、別のブラウザを使用してください。",
+  "ERROR.ElectronVersion": "オンセ工房FVTTのアプリはブラウザ（Electron）を内包しています。現在使用のElectronバージョンが古いことが検出されました。アプリ内のアップデートでは更新されないため、ウェブサイトからのインストーラーで新規に更新してください。",
   "ERROR.LowResolution": "オンセ工房 FoundryVTTには、{reqWidth} px x {reqHeight} px以上の画面解像度が必要です。 現在、お使いのディスプレイの有効解像度は{width} px x {height} pxであるため、ソフトウェアの多くの機能が適切に動作しない可能性があります。",
   "ERROR.NoHardwareAcceleration": "ご使用のブラウザはハードウェア・アクセラレーションを有効にしていません。このため、オンセ工房Foundry VTTの動作速度が大きく影響されます。ブラウザの設定よりハードウェア・アクセラレーションを有効にしてください。",
   "ERROR.NoWebGL": "ご使用のブラウザは現在、オンセ工房 FoundryVTTで必要なWebGLレンダリングをサポートしていません。ブラウザでハードウェアレンダリングとWebGLが有効になっていることを確認してください。",
@@ -559,7 +568,6 @@
   "ERROR.LoadPackages": "オンセ工房 Foundryサーバとの接続に失敗したため、既存パッケージへの参照ができませんでした。アプリケーションが外部接続可能であることを確認してください。",
   "ERROR.NoTargetUsersForWhisper": "この秘話の対象となるユーザーが存在しません。名前を再確認するか、 もしくは \"/w [User Name]\"コマンドを試してください。",
   "ERROR.CantWhisper": "秘話のチャットメッセージを他のプレイヤーに送信する権限がありません。",
-  
   
   "WARNING.GridConfigNoBG": "背景画像のないシーンにグリッド設定ツールを使用しています。これは現在、推奨されてない使用法で、予期しない結果が生じる可能性があります。",
   "WARNING.ForegroundDimensionsMismatch": "設定した前景レイヤーの画像サイズが、このシーンの背景レイヤーと画像サイズが一致しません。前景レイヤーのサイズが変更されたため、望ましくない結果が生じる可能性があります。",
@@ -602,6 +610,8 @@
   
   "GAME.Paused": "一時停止",
   "GAME.PausedWarning": "ゲームが一時停止している間、そのアクションは実行できません。",
+
+  "INFO.SceneViewCanvasDisabled": "シーン「{name}」を現在表示中ですが、キャンバスが無効化されているため表示するものがありません。",
   
   "INVITATIONS.Copied": "招待リンクをクリップボードにコピーしました",
   "INVITATIONS.Instructions": "あなたのゲームに参加したいユーザーに、以下の招待リンクを送ってください。ネットワークの招待リンクは、あなたのローカルネットワーク上のユーザーのためのもので、インターネットの招待リンクは設定されたポートを使ってインターネット経由で接続します。",
@@ -640,19 +650,20 @@
   "KEYBINDINGS.AllActions": "すべてのショートカット",
   "KEYBINDINGS.AddBinding": "ショートカット追加",
   "KEYBINDINGS.DeleteBinding": "ショートカット削除",
+  "KEYBINDINGS.EditBinding": "ショートカットを変更",
+  "KEYBINDINGS.SaveBinding": "ショートカット保存",
+  "KEYBINDINGS.Uneditable": "ショートカット変更不可",
   "KEYBINDINGS.ActionFilter": "検索",
   "KEYBINDINGS.ActionName": "動作名で検索",
   "KEYBINDINGS.Conflict": "「{conflicts}」と競合",
   "KEYBINDINGS.CoreKeybindings": "本体キーボード操作",
   "KEYBINDINGS.CoreMouse": "本体マウス操作",
   "KEYBINDINGS.Restricted": "ゲームマスター（GM）のみ",
-  "KEYBINDINGS.SaveBinding": "ショートカット保存Save Binding",
   "KEYBINDINGS.ReservedModifiers": "組み合わせキー： {modifiers}",
   "KEYBINDINGS.ResetTitle": "ショートカットをリセットする",
   "KEYBINDINGS.ResetWarning": "すべてのショートカットを既定のものにリセットしますか？",
   "KEYBINDINGS.CycleView": "選択表示切り替え",
   "KEYBINDINGS.Dismiss":  "メニュー表示・ウィンドウをクリア",
-  "KEYBINDINGS.EditBinding": "ショートカットを変更",
   "KEYBINDINGS.ErrorIllegalModifier": "指定された組み合わせキー\"{key}\"は有効な組み合わせキーではありません。",
   "KEYBINDINGS.ErrorProtectedKey": "指定されたキー\"{key}\"は保護されているため割り当てることができませんでした。",
   "KEYBINDINGS.ErrorReservedModifier": "このショートカットのための指定キーとなっているため、\"{key}\"を割り当てることができませんでした。",
@@ -1318,7 +1329,7 @@
   "SIDEBAR.TokenArt": "コマ画像を表示",
   "SIDEBAR.JumpPin": "地点メモに移動",
   "SIDEBAR.CharArt": "キャラクター画像を表示",
-  "SIDEBAR.CollapseToggle": "たたむ / 展開",
+  "SIDEBAR.CollapseToggle": "閉じる / 展開",
   "SIDEBAR.Delete": "削除",
   "SIDEBAR.DeleteWarning": "この {type} は完全に削除され、元に戻すことはできません。",
   "SIDEBAR.Duplicate": "複製",
@@ -1344,6 +1355,8 @@
   
   "TABLE.AnimateSetting": "ロール表をアニメーションさせる",
   "TABLE.AnimateSettingHint": "ロール表を使うとき、ルーレット風にアニメーションさせるかどうか設定します。",
+  "TABLE.DrawFlavor": "ロール表{name}の結果",
+  "TABLE.DrawFlavorPlural": "ロール表{name}の{number}個の結果",
   "TABLE.Description": "ロール表の説明",
   "TABLE.DisplayRoll": "ダイスロールをチャット欄に表示する",
   "TABLE.Formula": "ロール表の式",
@@ -1388,6 +1401,13 @@
   "TILE.VideoLoop": "動画のループ",
   "TILE.VideoAutoplay": "動画の自動再生",
   "TILE.VideoVolume": "動画の音量",
+
+  "TIME.Now": "今",
+  "TIME.SecondsAbbreviation": "秒",
+  "TIME.MinutesAbbreviation": "分",
+  "TIME.HoursAbbreviation": "時間",
+  "TIME.DaysAbbreviation": "日",
+  "TIME.Since": "{since}前",
   
   "TOKEN.HeaderIdentity": "キャラクター",
   "TOKEN.HeaderAppearance": "画像",
@@ -1891,6 +1911,7 @@
   "SOUND.Type": "サウンド種別",
   "SOUND.TypeLocal": "ローカル",
   "SOUND.TypeGlobal": "グローバル",
+
   
   "PERMISSION.HintEntity": "特定のエンティティへのアクセス権を設定して、各ユーザーにそれぞれ異なる段階の情報を開示します。",
   
