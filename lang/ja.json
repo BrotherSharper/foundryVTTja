@@ -23,6 +23,7 @@
   "Error": "エラー",
   "Expand": "展開",
   "GridUnits": "マス単位",
+  "GridSpaces": "マス目",
   "Install": "ｲﾝｽﾄｰﾙ",
   "Elevation": "高度",
   "Foundry Virtual Tabletop": "オンセ工房 Foundry VTT",
@@ -1123,7 +1124,7 @@
   "SETUP.WorldDeleteConfirm1": "<strong>警告:</strong> これによりワールドが完全に削除され、 <strong>元に戻すことはできません。</strong>実行してもよろしいですか？</strong>",
   "SETUP.WorldDeleteConfirm2": "続行するには、入力欄に次の確認コードを入力してください：",
   "SETUP.PackageDeleteNoUndo": "<strong>警告:</strong> この操作は取り消すことができません。",
-  "SETUP.PackageDeleteWorldConfirm": "削除するには、正確なワールド名を入力する必要があります。",
+  "SETUP.PackageDeleteWorldConfirm": "削除するには、以下の確認コードを入力する必要があります。",
   "SETUP.PackageStatusCheck": "アップデート確認",
   "SETUP.PackageStatusBlocked": "更新保留",
   "SETUP.PackageStatusUpdate": "アップデート",
@@ -1374,6 +1375,8 @@
   "TABLE.Roll": "ダイスロール",
   "TABLE.ToggleDrawn": "ロール結果のロック",
   "TABLE.Update": "アップデート",
+
+  
   
   "TEMPLATE.ConeTypeSetting": "円錐テンプレート種別",
   "TEMPLATE.ConeTypeSettingHint": "円錐テンプレートの効果範囲の種別を選択します。",
@@ -1415,7 +1418,7 @@
   "TOKEN.HeaderLight": "照明",
   "TOKEN.HeaderResources": "リソース",
   
-  "TOKEN.Assign": "リソースを共有",
+  "TOKEN.Assign": "初期コマに反映",
   "TOKEN.AssignWarn": "新しい設定を割り当てるには、既存のコマを1つ選択する必要があります。",
   "TOKEN.AssignSuccess": "{name}のコマ設定を更新しました",
   "TOKEN.BarAttributes": "バー",
@@ -1442,7 +1445,7 @@
   "TOKEN.ResourceBar2D": "バー 2 データ",
   "TOKEN.ResourceDisplay": "表示方法",
   "TOKEN.Title": "コマ設定",
-  "TOKEN.TitlePrototype": "コマ設定",
+  "TOKEN.TitlePrototype": "初期コマ",
   "TOKEN.TintColor": "色調整",
   "TOKEN.Update": "コマを更新",
   "TOKEN.VisionHas": "視覚制限を有効化",
@@ -1919,6 +1922,8 @@
   "SIDEBAR.SceneSearch": "シーン検索",
   "TABLE.Create": "ロール表 作成",
   "TABLE.Search": "ロール表 検索",
+
+  
   
   "TOKEN.CharDisposition": "関係性",
   "TOKEN.CharInstructions": "このコマに関連付けされるキャラクターや、表示について設定。",
