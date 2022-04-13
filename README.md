@@ -94,7 +94,7 @@ D&D5版用日本語化モッド： https://github.com/BrotherSharper/dnd5eja
 このMod（FoundryVTT本体日本語化モッド）を利用するときは以下のことをご留意ください。
 
 * FoundryVTT本体日本語化モッドは無料です。どのような作品に使っても大丈夫です！
-* 動画、リプレイ、配信等、FoundryVTT本体日本語化モッドから提供された日本語化が他者に見える状態で利用する場合は「FoundryVTT本体日本語化モッドはオンセ工房（Foundry VTT）日本コミュニティより提供されました」とともにツイッターまたはDiscordへのリンクを表示してください。（https://twitter.com/FoundryVTT_JP または http://discord.gg/vM4YM27）
+* 動画、リプレイ、配信等、FoundryVTT本体日本語化モッドから提供された日本語化が他者に見える状態で利用する場合は「FoundryVTT本体日本語化モッドはオンセ工房（Foundry VTT）日本コミュニティより提供されました」とともにツイッターまたはDiscordへのリンクを表示してください。（ https://twitter.com/FoundryVTT_JP または http://discord.gg/vM4YM27 ）
 * 画像や卓の感想などは表記しなくて大丈夫です。
 * 上記は非営利利用の場合です。営利利用を個人で行う場合は追加で日本コミュニティのDiscordへの在籍をお願いします。発言は行わなくて大丈夫です。（投げ銭版もある作品は非営利、収益化された動画等は営利とみなします）
 * オンセ工房の支援Patreonに4$のランクに登録済みの方は登録をしている限り上記の表示義務を免除します。
