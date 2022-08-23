@@ -1865,19 +1865,6 @@
   "MLT.FieldLevelNumber": "レベル値",
   "MLT.FieldDisableRegion": "領域無効化",
   "MLT.FieldDisableRegionNotes": "この領域のすべての自動化機能を一時的に無効にします。",
-  
-  
-  
-      "SETTINGS.AboutAppN": "Pin Cushionについて",
-    "SETTINGS.AboutAppH": "Pin Cushionの追加情報を表示します。",
-    "SETTINGS.ShowJournalPreviewN": "資料のプレビューを表示",
-    "SETTINGS.ShowJournalPreviewH": "マップピンにカーソルを置くと、資料のプレビューが表示されます。",
-    "SETTINGS.PreviewTypeN": "資料のプレビュー形式",
-    "SETTINGS.PreviewTypeH": "表示される資料のプレビュー形式を指定します（HTMLもしくはテキスト）",
-    "SETTINGS.PreviewMaxLengthN": "プレビューの最大長",
-    "SETTINGS.PreviewMaxLengthH": "**テキスト形式のみ** 何文字までプレビュー表示しますか？",
-    "SETTINGS.PreviewDelayN": "プレビューのディレイ値",
-    "SETTINGS.PreviewDelayH": "プレビューが表示されるまでの時間(ミリ秒)",
 	
 	
 	
