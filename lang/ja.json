@@ -44,6 +44,7 @@
   "Minimum": "最小",
   "Maximum": "最大",
   "Image": "画像",
+  "Invalid": "無効",
   "None": "ー",
   "Path": "保存先",
   "Packs": "辞典",
@@ -69,6 +70,7 @@
   "Template": "テンプレート",
   "Type": "種別",
   "Uninstall": "アンインストール",
+  "units": "単位",
   "Update": "更新",
   "URL": "URL",
   "Vision": "視覚",
@@ -100,6 +102,10 @@
   "ADVENTURE.ExportTabSummary": "概要",
   "ADVENTURE.ExportTabContents": "内容",
   "ADVENTURE.ExportDropZone": "冒険の中身を増やすにはワールド内からオブジェクトをドラッグ＆ドロップしてください。",
+  "ADVENTURE.ExportPackNoSystem": "You are attempting to export Actors or Items into an Adventure that is system agnostic. The Adventure compendium must have a system field that matches the system that these Actors or Items are from.",
+"ADVENTURE.ExportPrimaryDocumentsOnly": "You may only add primary Documents which exist within the World",
+"ADVENTURE.CreateSuccess": "Adventure \"{name}\" was successfully created!",
+"ADVENTURE.UpdateSuccess": "Adventure \"{name}\" was successfully updated!",
   
 "APP.NavigateBackConfirm": "オンセ工房 FoundryVTTを終了します、よろしいですか？",
 
@@ -209,6 +215,7 @@
   "CHAT.RollSelf": "自分だけに送信",
   "CHAT.RollTables": "ロール表",
   "CHAT.PrivateRollContent": "{user}は秘密裏にメッセージ（ロール）を送信した",
+  "CHAT.UnknownUser": "Unknown User",
   
   "COMBAT.NavLabel": "戦闘ナビゲーション",
   "COMBAT.Begin": "戦闘開始",
@@ -227,7 +234,8 @@
   "COMBAT.NoneActive": "現在表示されているシーンに有効な戦闘はありません。",
   "COMBAT.NoneRemaining": "この戦闘で敗北していない戦闘参加キャラはいません。",
   "COMBAT.NotStarted": "-",
-  "COMBAT.PingCombatant": "戦闘参加キャラハイライト",
+  "COMBAT.PingCombatant": "戦闘参加キャラに注目",
+  "COMBAT.PingInvisibleToken": "You cannot ping a Token you cannot see.",
   "COMBAT.Resource": "データの表示",
   "COMBAT.ResourceHint": "追跡する各戦闘参加キャラのデータを選択してください。",
   "COMBAT.Round": "ラウンド",
@@ -294,6 +302,7 @@
   "COMPENDIUM.ToggleLockedWarning": "ロックを解除して、このワールドに属していない共有の辞典を編集しようとしています。この辞典に行なった変更は、それを使用するシステムまたはモジュールが更新されると失われる可能性があります。その代わりとして自分のワールドに、辞典を複製することもできます。 続行しますか？",
   
   "CONTROLS.Title": "操作マニュアル",
+  "CONTROLS.NavLabel": "Canvas Controls Palette",
   "CONTROLS.Instructions": "ここでは、オンセ工房 Foundry VTTでの一般的なキーボード、マウス操作について説明します。一部の操作は薄紫色で強調表示されており、ゲームマスターだけが使用可能です。",
   "CONTROLS.GroupToken": "コマ操作",
   "CONTROLS.BasicSelect": "コマ選択",
@@ -346,7 +355,6 @@
   "CONTROLS.SoundClear": "全サウンド消去",
   "CONTROLS.GroupNotes": "地点メモ操作",
   "CONTROLS.NoteSelect": "地点メモ選択",
-  "CONTROLS.NoteJournal": "地点メモ作成",
   "CONTROLS.NoteToggle": "地点メモ表示切替",
   "CONTROLS.NoteClear": "全地点メモ消去",
   "CONTROLS.ClearAll": "全てのオブジェクトを消去",
@@ -367,9 +375,9 @@
   "CONTROLS.CanvasCancel": "保留中の移動をキャンセル",
   "CONTROLS.CanvasMove": "オブジェクトを動かす",
   "CONTROLS.CanvasPan": "マップ画面の移動",
-  "CONTROLS.CanvasPing": "地点をハイライト",
-  "CONTROLS.CanvasPingAlert": "地点ハイライト通知",
-  "CONTROLS.CanvasPingPull": "ハイライトへカメラ移動",
+  "CONTROLS.CanvasPing": "地点を注目",
+  "CONTROLS.CanvasPingAlert": "地点注目通知",
+  "CONTROLS.CanvasPingPull": "注目マーカへカメラ移動",
   "CONTROLS.CanvasSelect": "オブジェクトを選択",
   "CONTROLS.CanvasSelectAll": "全オブジェクトを選択",
   "CONTROLS.CanvasSelectMany": "選択したオブジェクトの追加 / 削除",
@@ -425,8 +433,8 @@
   "CONTROLS.DrawingTextConfirm": "図面テキストを確認",
   "CONTROLS.DrawingTextCancel": "図形テキストをキャンセル",
 
-  "DICE.ErrorNonNumeric": "ダイスロール式 {formula} では、結果となる数値が出ませんでした。",
-  "DICE.WarnMissingData": "特性 {match} は、ロールデータの中に存在しませんでした。",
+  "DICE.ErrorNonNumeric": "ダイスロール式 {formula} に結果となる数値が出力されませんでした。",
+  "DICE.WarnMissingData": "特性 {match} は、ロールデータの中に存在しません。",
   
   "DOCUMENT.Create": "{type}新規作成",
   "DOCUMENT.Delete": "{type}削除",
@@ -463,7 +471,7 @@
   "DOCUMENT.Combats": "戦闘",
   "DOCUMENT.Combatant": "戦闘参加キャラ",
   "DOCUMENT.Combatants": "戦闘参加キャラ",
-  "DOCUMENT.CopyOf": "{name} (Copy)",
+  "DOCUMENT.CopyOf": "{name} (複製)",
   "DOCUMENT.Drawing": "描画",
   "DOCUMENT.Drawings": "描画",
   "DOCUMENT.Folder": "フォルダ",
@@ -797,7 +805,7 @@
   "JOURNALENTRYPAGE.ShowTitle": "ページタイトルを表示",
   "JOURNALENTRYPAGE.HeadingLevel": "見出し段階",
   "JOURNALENTRYPAGE.Level": "段階 {level}",
-  
+
   "KEYBINDINGS.NavLabel": "ショートカット設定タブ",
   "KEYBINDINGS.ActionCategories": "ショートカットカテゴリー",
   "KEYBINDINGS.AllActions": "すべてのショートカット",
@@ -1151,7 +1159,7 @@
   "SETTINGS.ManageModules": "モジュールの管理",
   "SETTINGS.ViewModules": "有効化されたモジュールを表示",
   "SETTINGS.Title": "設定",
-  "SETTINGS.Tours": "ツアー設定",
+  "SETTINGS.Tours": "操作方法を確認する",
   "SETTINGS.Update": "アップデート",
   "SETTINGS.Logout": "ログアウト",
   "SETTINGS.Players": "ユーザー管理",
@@ -1318,13 +1326,18 @@
   "SETUP.PackageVisInst": "インストール済",
   "SETUP.PackageVisUnin": "未インストール",
 
-  "SETUP.PackageHasDependencies": "{title}には、まだインストールされていない{number}つの依存関係があります。",
+  "SETUP.PackageHasDependenciesSingular": "{title}には、まだインストールされていない一個の依存関係があります。依存関係を解消するまでこのパッケージを使用できない可能性があります。",
+  "SETUP.PackageHasDependenciesPlural": "{title}には、まだインストールされていない{number}個の依存関係があります。依存関係を解消するまでこのパッケージを使用できない可能性があります。",
   "SETUP.PackageDependenciesTitle": "不足パッケージのインストール",
-  "SETUP.PackageInstallDependencies": "これらの依存関係が成立しない場合、このパッケージを使用できない場合があります。不足のものを自動インストールしますか？",
-  "SETUP.PackageDependenciesAutomatic": "{number}個の依存関係を自動的にインストールする",
-  "SETUP.PackageDependenciesManual": "依存関係を全て手動でインストールする",
-  "SETUP.PackageDependenciesCouldNotInstall": "{number}個の依存関係を手動でインストールする必要があります。",
-  "SETUP.PackageDependenciesCouldInstall": "{number}個の依存関係が自動的にインストール可能です。",
+  "SETUP.PackageInstallDependencies": "自動的にインストールしますか？",
+  "SETUP.PackageDependenciesAutomaticSingular": "依存関係を自動的にインストールする",
+  "SETUP.PackageDependenciesAutomaticPlural": "{number}個の依存関係を自動的にインストールする",
+  "SETUP.PackageDependenciesManualSingular": "依存関係を手動でインストールする",
+  "SETUP.PackageDependenciesManualPlural": "依存関係を全て手動でインストールする",
+  "SETUP.PackageDependenciesCouldNotInstallSingular": "依存関係を手動でインストールする必要があります。",
+  "SETUP.PackageDependenciesCouldNotInstallPlural": "{number}個の依存関係を手動でインストールする必要があります。",
+  "SETUP.PackageDependenciesCouldInstallSingular": "依存関係を自動的にインストール可能です。",
+  "SETUP.PackageDependenciesCouldInstallPlural": "{number}個の依存関係を自動的にインストール可能です。", 
   "SETUP.PackageDependenciesDecline": "{title}に必要な依存パッケージをインストールしないことを選択しました。手動でインストールする必要があります。",
   "SETUP.PackageDependenciesSuccess": "{title}および{number}個の依存関係に必要なものが正常にインストールされました。",
   "SETUP.PackageUpdateCoreUpdateNeeded": "{id}のためのアップデートが存在しますが、インストールするには最低でもバージョン{vmin}まで本体をアップデートする必要があります。現在使用しているバージョンは{vcur}です。",
@@ -1335,8 +1348,8 @@
   "SETUP.WorldDeleteConfirm2": "続行するには、入力欄に次の確認コードを入力してください：",
   "SETUP.PackageDeleteNoUndo": "<strong>警告:</strong> この操作は取り消すことができません。",
   "SETUP.PackageDeleteWorldConfirm": "削除するには、以下の確認コードを入力する必要があります。",
-  "SETUP.PackageStatusCheck": "アップデート確認",
-  "SETUP.PackageStatusBlocked": "更新保留",
+  "SETUP.PackageStatusCheck": "アップデート",
+  "SETUP.PackageStatusBlocked": "保留",
   "SETUP.PackageStatusUpdate": "アップデート",
   "SETUP.PackageStatusCurrent": "最新",
   "SETUP.PackageStatusUpdating": "アップデート中",
@@ -1387,7 +1400,7 @@
   "SETUP.AWSHint": "S3統合用のAWS構成ファイルを設定します。 パスはユーザーデータのConfigサブディレクトリに対する絶対パスまたは相対パスです。",
   "SETUP.CompressStaticLabel": "静的ファイル圧縮",
   "SETUP.CompressStaticHint": "オンセ工房 Foundry VTT の Webサーバーが送信するファイルをPLのPCに到達するまえに圧縮することで転送されるデータ量を削減します。（月○○ギガのプランの人はお勧めです）",
-  "SETUP.DefaultLanguage": "デフォルトの言語",
+  "SETUP.DefaultLanguageLabel": "デフォルトの言語",
   "SETUP.DefaultLanguageHint": "対応する言語の翻訳ファイルを提供するモジュールを選択することにより、デフォルトの言語が選択できます。",
   "SETUP.PortLabel": "・ポート",
   "SETUP.PortHint": "オンセ工房 FoundryVTTがTCP接続に使用するポートを選択し、ユニバーサル・プラグアンドプレイ (UPnP) を有効または無効にすることができます。",
@@ -1397,8 +1410,8 @@
   "SETUP.WorldLabel": "・既定のワールド",
   "SETUP.WorldHint": "利用可能なワールドから、ソフトウェア起動時に自動的に開始するワールドを選択できます。",
   "SETUP.SSLCertLabel": "・SSL証明書",
-  "SETUP.SSLKeyLabel": "・SSL秘密鍵",
-  "SETUP.SSLHint": "証明書とキーファイルへのパスを入力することで、SSLを使用してサーバ実行できます。 パスはユーザーデータのConfigサブディレクトリに対する絶対パスまたは相対パスです。",
+  "SETUP.SSLCertHint": "・SSL秘密鍵",
+  "SETUP.SSLKeyLabel": "証明書とキーファイルへのパスを入力することで、SSLを使用してサーバ実行できます。 パスはユーザーデータのConfigサブディレクトリに対する絶対パスまたは相対パスです。",
   
   "PACKAGE.TagJavaScript": "JavaScript",
   "PACKAGE.TagCSS": "CSS",
@@ -1535,6 +1548,8 @@
   "PERMISSION.MessageWhisperHint": "GMには見えないプライベートメッセージのウィスパーを許可します。",
   "PERMISSION.NoteCreate": "地点メモの作成",
   "PERMISSION.NoteCreateHint": "このユーザーが所有する資料を使った、地点メモの作成を許可します。",
+  "PERMISSION.PingCanvas": "注目マーカ",
+  "PERMISSION.PingCanvasHint": "Allow users with this role to bring attention to a point on the canvas with a pinging animation.",
   "PERMISSION.SettingsModify": "設定の変更",
   "PERMISSION.SettingsModifyHint": "ゲーム設定を変更し、モジュールを有効または無効にすることを許可します。",
   "PERMISSION.ShowCursor": "マウスカーソルの表示",
@@ -1612,10 +1627,12 @@
   "TEMPLATE.ConeTypeSetting": "円錐テンプレート種別",
   "TEMPLATE.ConeTypeSettingHint": "円錐テンプレートの効果範囲の種別を選択します。",
   "TEMPLATE.ConeTypeFlat": "三角",
-  "TEMPLATE.ConeTypeRound": "扇状",
+  "TEMPLATE.ConeTypeRound": "扇形",
   "TEMPLATE.MeasuredConfig": "範囲テンプレートの設定",
   "TEMPLATE.FillColor": "塗りつぶし色",
   "TEMPLATE.FillTexture": "テクスチャ",
+  "TEMPLATE.SubmitCreate": "テンプレート作成",
+  "TEMPLATE.SubmitUpdate": "テンプレート更新",
   
   "TILE.ConfigTitle": "タイル設定",
   "TILE.SubmitCreate": "タイル作成",
@@ -1629,6 +1646,10 @@
   "TILE.Image": "タイル画像 / 動画",
   "TILE.Opacity": "タイルの不透明度",
   "TILE.Tint": "色合い",
+  "TILE.Scale": "タイル縮尺",
+  "TILE.ScaleHint": "XとY軸で画像の縮尺を調整します。設定のよってはコマの枠からあふれる可能性があります。負の値は画像をその軸で反転させます。",
+  "TILE.ScaleX": "X軸",
+  "TILE.ScaleY": "Y軸",
   "TILE.Overhead": "前景？",
   "TILE.Roof": "屋根？",
   "TILE.OcclusionMode": "干渉モード",
@@ -1644,11 +1665,11 @@
   
   "TIME.Now": "今",
   "TIME.Seconds": "秒",
-  "TIME.SecondsAbbreviation": "秒",
+  "TIME.SecondsAbbreviation": "s",
   "TIME.Minutes": "分",
-  "TIME.MinutesAbbreviation": "分",
+  "TIME.MinutesAbbreviation": "m",
   "TIME.Hours": "時間",
-  "TIME.HoursAbbreviation": "時間",
+  "TIME.HoursAbbreviation": "h",
   "TIME.DaysAbbreviation": "日",
   "TIME.Since": "{since}前",
 
@@ -1670,6 +1691,7 @@
   "TOKEN.Coordinates": "座標",
   "TOKEN.Disposition": "関係性",
   "TOKEN.Dimensions": "サイズ",
+  "TOKEN.DimensionsHint": "コマのサイズは一番近い0.5単位に四捨五入されます。",
   "TOKEN.ImageAlts": "代替コマ画像",
   "TOKEN.ImagePath": "イメージ画像",
   "TOKEN.LockRotation": "回転を固定",
@@ -1873,7 +1895,6 @@
   "WEBRTC.NameplatesCharacter": "キャラ名のみ",
   "WEBRTC.NameplatesBoth": "交互に表示",
 
-
   "WEBRTC.CaptureWarningVideo" : "音声デバイスからキャプチャできません。ビデオのみを共有します",
   "WEBRTC.CaptureWarningAudio" : "ビデオデバイスからキャプチャできません。音声のみを共有します",
   "WEBRTC.CaptureErrorAudioVideo" : "音声およびビデオデバイスからキャプチャできません",
@@ -2008,409 +2029,4 @@
   "WELCOME.HelpContent": "便利な資料や他のユーザがFVTTにおける君の旅路を手助けしてくれます。英語の資料を読みたい場合は<a href='https://foundryvtt.com/kb/' target='_blank'>こちら</a>をクリックしてください。もちろん、日本語の<a href='https://discord.gg/vM4YM27' target='_blank'>オンセ工房Discordサーバ</a>と<a href='https://foundryvtt.wiki/ja/home' target='_blank'>日本語Wiki</a>にも便利な情報が沢山あります！\n作者たちと直接話したい方は英語の<a href='https://discord.gg/FoundryVTT' target='_blank'>公式Discordサーバ</a>に入室してみてください。",
   "WELCOME.ToursTitle": "第一歩",
   "WELCOME.ToursContent": "初めてFVTTを触る場合は、10分間をかけて他のツアーを受けてみてください。「ツアー設定」ボタンより必要に応じて中断したり、ツアーを再開して知識を深めてみよう！",
-
-  "COMMENTS": "These are localization strings for modules that are maintained by the community rather than the author's repostory",
-
-  "CONTROLS.MeasureBorder": "境界の色",
-  "CONTROLS.MeasureTemplate": "テクスチャ",
-  "KEYBINDINGS.CannotSetProtectedKey": "\"{key}\"は保護されているのでショートカットを割り当てることができません",
-
-
-  "PERMISSION.NONE": "なし",
-  "PERMISSION.LIMITED": "限定的 (Limited)",
-  "PERMISSION.OBSERVER": "閲覧者 (Observer)",
-  "PERMISSION.OWNER": "所有者 (Owner)",
-  "PERMISSION.DEFAULT": "デフォルト (Default)",
-  "PERMISSION.NOCHANGE": "そのまま (No Change)",
-    
-  "PERMISSION.AllPlayers": "全プレイヤー",
-  "PERMISSION.HintFolder": "フォルダ内の全てのデータに対するアクセス権を設定します。この変更はこのフォルダのみのデータに有効であり、サブフォルダを含みません。",
-  "PERMISSION.HintDocument": "特定のデータへのアクセス権を設定して、各ユーザーにそれぞれ異なる段階の情報を開示します。",
-    
-    
-  "SIDEBAR.TabChat": "チャットログ",
-  "SIDEBAR.TabCombat": "イニシアチブ表",
-  "SIDEBAR.TabScenes": "シーン一覧",
-  "SIDEBAR.TabActors": "キャラクター一覧",
-  "SIDEBAR.TabItems": "アイテム一覧",
-  "SIDEBAR.TabJournal": "資料一覧",
-  "SIDEBAR.TabCards": "山札",
-  "SIDEBAR.TabPlaylists": "プレイリスト一覧",
-    
-  "WEBRTC.TooltipChangeSize" : "ビデオサイズ変更",
-    
-  "TOKEN.VisionHas": "視覚制限を有効化",
-  "TOKEN.VisionRadius": "見える半径",
-  "TOKEN.VisionBright": "明るい",
-  "TOKEN.VisionDim": "薄暗い",
-
-
-	"bellows.import-yt-playlist-nav-text": "YouTubeのプレイリストを読み込む",
-	"bellows.import-yt-playlist-notes": "YouTubeのプレイリストURL、またはIDを入力してください。隣のインポートボタンを押すと開始します。",
-	"bellows.import-yt-playlist-btn-import": "インポート",
-	"bellows.import-yt-playlist-btn-submit": "保存",
-	"bellows.import-yt-playlist-msg-already-working": "プレイリストをインポートしています。",
-	"bellows.import-yt-playlist-msg-invalid-key": "有効なYouTubeのプレイリストURL（クエリ文字列を含む）、またはプレイリストIDを入力してください。",
-	"bellows.import-yt-playlist-msg-error": "プレイリストのインポート中にエラーが発生しました。",
-	"bellows.import-yt-playlist-msg-key-not-found": "キー {playlistKey} を持つプレイリストが存在しません。URLやIDを確認し再試行してください。",
-	"bellows.import-yt-playlist-msg-imported": "プレイリスト {playlistName} が正常にインポートされました。",
-	"bellows.import-yt-playlist-lbl-name": "プレイリスト名",
-	"bellows.import-yt-playlist-lbl-volume": "標準の音量",
-	
-	
-	
-"WEATHERMANAGE.Title": "天候効果管理",
-  "FILTERMANAGE.Title": "フィルター効果管理",
-  "CONTROLS.Effects": "効果制御",
-  "CONTROLS.Weather": "天候制御",
-  "CONTROLS.Daylight": "日光フィルター",
-  "CONTROLS.Underwater": "水中フィルター",
-  "CONTROLS.Predator": "走査線フィルター",
-  "CONTROLS.OldFilm": "モノクロフィルター",
-  "CONTROLS.Bloom": "ブルームフィルター",
-  "CONTROLS.SpecialFX": "特殊効果",
-  "CONTROLS.Colorize": "色フィルター",
-  "CONTROLS.SaveMacro": "天候をマクロ出力",
-  "CONTROLS.ClearFX": "効果とフィルターを初期化",
-  "EFFECTCONTROLS.Title": "特殊効果",
-  "FXMASTER.AddEffect": "効果の追加",
-  "FXMASTER.Density": "濃度",
-  "FXMASTER.Tint": "色味",
-  "FXMASTER.Scale": "縮尺",
-  "FXMASTER.ScaleHint": "映像の縮尺を設定します。",
-  "FXMASTER.Speed": "速度",
-  "FXMASTER.SpeedHint": "映像の移動速度を設定します。",
-  "FXMASTER.Direction": "方向",
-  "FXMASTER.SaveMacro": "マクロに保存する",
-  "FXMASTER.SaveChanges": "変更を保存する",
-  "FXMASTER.Delete": "効果クリア",
-  "FXMASTER.DeleteConfirm": "<p>すべての効果が削除されます。<strong>本当に削除しますか？</strong></p>",
-  "FXMASTER.Enable": "効果を有効にする",
-  "FXMASTER.Angle": "角度",
-  "FXMASTER.AngleHint": "左右軸と比較した効果の初期角度を設定します。",
-  "FXMASTER.Anchor": "アンカー",
-  "FXMASTER.AnchorHint": "原点のローカル座標。0.0～1.0の値をとります。",
-  "FXMASTER.File": "ファイル",
-  "FXMASTER.Name": "名前",
-  "FXMASTER.AnimationDelay": "ディレイ",
-  "FXMASTER.AnimationDelayHint": "アニメーション速度の遅延を設定します。",
-  "FXMASTER.Ease": "イージング",
-  "FXMASTER.EaseHint": "アニメーション速度のイージング機能です。",
-  
-  
-  
-    "MLT.SettingAutoSyncTargets": "プレイヤーのターゲットを同期する",
-  "MLT.SettingAutoSyncTargetsHint": "プレイヤーがターゲットを変更すると、そのクローン（またはオリジナル）も同様にターゲットを変更します。",
-  "MLT.SettingAutoSyncChatBubbles": "吹き出しを同期する",
-  "MLT.SettingAutoSyncChatBubblesHint": "コマの吹き出しは、そのクローン（またはオリジナル）にも表示されます。",
-  "MLT.SettingCloneModuleFlags": "ほかのモジュールで設定されたフラグを引き継ぐ",
-  "MLT.SettingCloneModuleFlagsHint": "モジュールは、コマにカスタムフラグを設定することがあります。このオプションを有効にすると、複製されたコマは、オリジナルのフラグを継承するようになります。これがどんな影響を及ぼすかは、そのフラグを設定したモジュール次第ですが、そうしたモジュールとの互換性に問題がある場合は変更してみるといいでしょう。",
-  "MLT.TabTitle": "マルチレベル",
-  "MLT.TabNotes": "この図面を使用して、マルチレベルコマを使用した自動化領域を定義します。",
-  "MLT.SectionTeleports": "テレポート",
-  "MLT.SectionTeleportsNotes": "<strong>イン領域</strong>に入ったコマは、一致した識別子を持つ<strong>アウト領域</strong>にテレポートします。",
-  "MLT.FieldIn": "イン",
-  "MLT.FieldOut": "アウト",
-  "MLT.FieldTeleportId": "テレポート識別子",
-  "MLT.FieldAnimateMovement": "移動のアニメーションを表示する",
-  "MLT.FieldActivateViaMapNote": "マップノートを使ってアクティブ化する",
-  "MLT.FieldActivateViaMapNoteNotes": "コマの所有者（またはGM）が、<strong>イン領域</strong>内でマップノートをクリックした場合にのみテレポートを実行します。",
-  "MLT.FieldSnapToGrid": "グリッドにスナップする",
-  "MLT.FieldSnapToGridNotes": "この<strong>アウト領域</strong>にテレポートすると、コマはグリッドにスナップされます。",
-  "MLT.FieldSceneLocal": "ローカルシーンに制限する",
-  "MLT.FieldSceneLocalNotes": "テレポートと複製の領域を制限し、同じシーン上の領域とのみ一致するようにします。",
-  "MLT.SectionTokenCloning": "コマの複製（クローン）",
-  "MLT.SectionTokenCloningNotes": "<strong>ソース領域</strong>のコマは、一致する識別子を持つ任意の<strong>ターゲット領域</strong>に複製されます。",
-  "MLT.FieldSource": "ソース",
-  "MLT.FieldTarget": "ターゲット",
-  "MLT.FieldCloneId": "クローン識別子",
-  "MLT.SectionTargetRegionNotes": "この対象領域で作成されたクローンコマの設定を行います。",
-  "MLT.FieldClonedTokenTintColor": "複製されたコマの色合い",
-  "MLT.FieldClonedTokenScale": "複製されたコマの縮尺係数",
-  "MLT.FieldMirrorHorizontally": "横方向に反転",
-  "MLT.FieldMirrorVertically": "縦方向に反転",
-  "MLT.SectionMacroTriggers": "マクロトリガー",
-  "MLT.SectionMacroTriggersNotes": "コマがこの領域に入ったとき、出たとき、または領域内を移動したときにマクロを起動します。マクロでは、<strong>scene</strong>、<strong>region</strong>、<strong>token</strong>、<strong>actor</strong> が変数として使用できます。それぞれには <strong>Scene</strong>、<strong>Drawing</strong>、<strong>Token</strong>、<strong>Actor</strong> オブジェクトが格納されています。",
-  "MLT.FieldTriggerOnEnter": "入場時にトリガーする",
-  "MLT.FieldTriggerOnLeave": "出場時にトリガーする",
-  "MLT.FieldTriggerOnMove": "移動時にトリガーする",
-  "MLT.SectionMacroEventsNotes": "マクロで使用できる変数 <strong>event</strong> は<strong>MLT.ENTER</strong>、<strong>MLT.LEAVE</strong>、または<strong>MLT.MOVE</strong>のいずれかの値をとります。",
-  "MLT.FieldMacroName": "マクロ名",
-  "MLT.FieldAdditionalArguments": "追加の引数",
-  "MLT.FieldAdditionalArgumentsNotes": "変数 <strong>args</strong>で使用する引数をカンマ区切りで指定します。",
-  "MLT.SectionLevels": "レベル（階層）",
-  "MLT.SectionLevelsNotes": "<strong>@stairs</strong> コマの上に移動したコマは、数値的に隣接するレベル領域内の同じ相対位置にある、ほかの<strong>@stairs</strong>コマの場所にテレポートします。",
-  "MLT.FieldLevelRegion": "レベル領域",
-  "MLT.FieldLevelNumber": "レベル値",
-  "MLT.FieldDisableRegion": "領域無効化",
-  "MLT.FieldDisableRegionNotes": "この領域のすべての自動化機能を一時的に無効にします。",
-	
-	
-	
-		"pings": {
-		"settings": {
-			"minMovePermission": {
-				"title": "画面移動の最小権限",
-				"hint": "画面移動を伴うPingを許可する最も低い権限を指定します。例えばASSISTANTが選択されている場合、GAMEMASTERとASSISTANTのみが全員の画面を移動させるPingを実行できます。"
-			},
-			"mouseButton": {
-				"title": "Pingに用いるマウスボタン",
-				"hint": "pingの実行に用いるマウスボタンを指定します。0＝左、1＝中、2＝右。このフィールド内でマウスボタンを押すと、そのボタンが反映されます。必要に応じShiftやCtrlなどの修飾キーを加えてください。Escキーを押すとクリアされます。"
-			},
-			"mouseButtonMove": {
-				"title": "画面移動Pingに用いるマウスボタン",
-				"hint": "すべてのプレイヤーの画面を移動させるPingの実行に用いるマウスボタンを指定します。0＝左、1＝中、2＝右。このフィールド内でマウスボタンを押すと、そのボタンが反映されます。必要に応じShiftやCtrlなどの修飾キーを加えてください。Escキーを押すとクリアされます。"
-			},
-			"mouseButtonDuration": {
-				"title": "マウスボタンの押下時間",
-				"hint": "Pingの実行にあたり、マウスボタンを押し続ける時間を指定します。単位はミリ秒です。"
-			},
-			"key": {
-				"title": "Pingに用いるキー",
-				"hint": "マウスカーソルの現在位置にPingを実行するためのキーを指定します。このフィールド内で希望するキーを押すと反映されます。必要に応じShiftやCtrlなどの修飾キーを加えてください。Escキーを押すとクリアされます。"
-			},
-			"keyMove": {
-				"title": "画面移動Pingに用いるキー",
-				"hint": "マウスカーソルの現在位置に、すべてのプレイヤーの画面を移動させるPingを実行するためのキーを指定します。このフィールド内で希望するキーを押すと反映されます。必要に応じShiftやCtrlなどの修飾キーを加えてください。Escキーを押すとクリアされます。"
-			},
-			"showName": {
-				"title": "プレイヤーの名前を表示",
-				"hint": "有効にすると、Pingの下にプレイヤー名を表示します。"
-			},
-			"image": {
-				"title": "Pingの画像",
-				"hint": "デフォルトのPingを代替する画像を指定します。プレイヤーカラーに基づく色調が適用されるため、グレースケール以外の画像を指定すると見栄えが損なわれることに注意してください。"
-			},
-			"scale": {
-				"title": "縮尺",
-				"hint": "グリッド上でのPingの大きさを指定します。"
-			},
-			"duration": {
-				"title": "持続時間",
-				"hint": "Pingが表示される時間を指定します。単位は秒です。"
-			},
-			"rotate": {
-				"title": "回転",
-				"hint": "有効にすると、実行中にPingが大きさを変え、より目立つようになります"
-			},
-			"rotateSpeed": {
-				"title": "回転速度",
-				"hint": "Ping画像が360度回転するのに何秒かかるかを指定します。"
-			},
-			"sizeChange": {
-				"title": "サイズの変化",
-				"hint": "有効にすると、実行中にPingが大きさを変え、より目立つようになります。"
-			},
-			"sizeChangeAmount": {
-				"title": "サイズの変化量",
-				"hint": "大きさをどの程度変化させるかを決定します。"
-			},
-			"sizeChangeSpeed": {
-				"title": "サイズ変化速度",
-				"hint": "サイズ変更の1サイクルにかかる時間を指定します。単位は秒です。"
-			}
-		}
-	},
-	
-	
-	
-	"POPOUT.PopOut": "PopOut!",
-    "POPOUT.PopIn": "PopIn!",
-    "POPOUT.useWindows": "ポップシートを新しいウィンドウで開く",
-    "POPOUT.useWindowsHint": "ポップアウトされたシートを、最小限の要素によるウィンドウで強制的に開きます。それ以外の場合はブラウザのデフォルト（たいていは新しいタブ）で開きます。",
-    "POPOUT.electronWarning": "Popout! は、スタンドアロンのFVTTアプリケーションでは動作しません。通常のブラウザからゲームを開いてください。",
-    "POPOUT.failureWarning": "PopOut! のウィンドウが開けませんでした。サイトの設定/権限を確認してください。ウェブサイトのURLの左にある<i class='fas fa-info-circle'></i>をクリックしてください。",
-
-
-    "CONVIS.settings.autoStealth.name": "〈隠密〉判定後に自動で隠れ身状態にする",
-    "CONVIS.settings.autoStealth.hint": "〈隠密〉判定を行った後に、コマを自動的に隠れ身状態にします（サポートされているゲームシステムのみ）。",
-
-    "CONVIS.popup.dismissuntilupdated": "更新まで再表示しない",
-    "CONVIS.popup.close": "閉じる",
-    "CONVIS.popup.version0910.1":"状態の適用にアイコンでなくマクロを使用したい場合、また一括して状態を適用したい場合のために、このモジュールに辞典が追加されました。",
-    "CONVIS.popup.version0910.2":"またFoundry 0.6.x系から0.7系へのコマの移行を行うスクリプトもありますが、いくつかの効果は再適用する必要があるかもしれません。",
-    "CONVIS.popup.version0910.3":"これらのスクリプトをマクロとして使用するには、非同期であるためモジュール「Furnace」をインストールする必要があります。",
-
-    "CONVIS.help.readmeat": "より詳細な説明はこちらを参照してください：",
-    "CONVIS.help.gamesystem": "ゲームシステム",
-    "CONVIS.help.hasStealth": "隠密対応",
-    "CONVIS.help.availableconditions": "利用可能な状態",
-
-    "CONVIS.unsupportedsystem":"Conditional Visibilityは{system}システムをサポートしていません。これは独自の状態メカニズムを持っているためです。問題報告（とくにプルリクエスト）を歓迎します。",
-    "CONVIS.ExtraSenseInstructions": "視覚を強化するその他の感覚",
-    "CONVIS.seeinvisible":"不可視視認（不可視）",
-    "CONVIS.blindsight": "擬似感覚（不可視/隠蔽/魔法闇）",
-    "CONVIS.tremorsense":"振動感知（不可視/隠蔽/魔法闇）",
-    "CONVIS.devilssight":"悪魔の目（魔法の闇）",
-    "CONVIS.truesight":"超視覚（不可視/魔法の闇）",
-
-    "CONVIS.invisible":"不可視",
-    "CONVIS.obscured":"隠蔽",
-    "CONVIS.indarkness":"魔法の闇",
-    "CONVIS.hidden":"隠れ身",
-    
-    "CONVIS.stealth.not.supported": "Conditional Visilbityは、{sysid}の隠れ身状態/隠密をサポートしていません。",
-    "CONVIS.currentstealth":"〈隠密〉値",
-    "CONVIS.stealthroll":"〈隠密〉判定",
-    "CONVIS.stealthrolldescription":"コマが隠れ身状態である限り、この値は受動〈知覚〉値との比較が行われます。数値以外の入力は初期値として扱われます。",
-
-
-
-
-    "FvttPartyResources.Dashboard.AddButtonTitle": "増やす",
-    "FvttPartyResources.Dashboard.BlankWarning": "リソースが追加されると、ここに表示されます。",
-    "FvttPartyResources.Dashboard.DeleteButtonTitle": "リソース削除",
-    "FvttPartyResources.Dashboard.EditButtonTitle": "リソース編集",
-    "FvttPartyResources.Dashboard.MakeInvisibleButtonTitle": "プレイヤーから隠す",
-    "FvttPartyResources.Dashboard.MakeVisibleButtonTitle": "プレイヤーに公開",
-    "FvttPartyResources.Dashboard.SubtractButtonTitle": "減らす",
-    "FvttPartyResources.FirstTimeNotification": "<strong>Party Resources v{version}</strong>へようこそ！<br>このモジュールが初めて有効になりました。<br>{anchor} をクリックすると、リソースの管理画面に移動します。",
-    "FvttPartyResources.ResourceForm.AddFormTitle": "新しいリソースの追加",
-    "FvttPartyResources.ResourceForm.AllowPlayersToModifySettings": "プレイヤーに設定の変更を許可する",
-    "FvttPartyResources.ResourceForm.CreateResource": "リソース作成",
-    "FvttPartyResources.ResourceForm.DefaultValue": "デフォルトの値",
-    "FvttPartyResources.ResourceForm.DefaultValueHint": "リソースの初期値です。",
-    "FvttPartyResources.ResourceForm.EditFormTitle": "リソースを編集",
-    "FvttPartyResources.ResourceForm.Identifier": "リソースID",
-    "FvttPartyResources.ResourceForm.IdentifierHint": "APIリクエストにおけるこのリソースの識別子です。スペースや数字を含むべきではなく、小文字でなければなりません。",
-    "FvttPartyResources.ResourceForm.MaxValue": "最大値",
-    "FvttPartyResources.ResourceForm.MaxValueHint": "（オプション）整数を入力すると、この値以上にリソースを増やせなくなります。",
-    "FvttPartyResources.ResourceForm.MinValue": "最小値",
-    "FvttPartyResources.ResourceForm.MinValueHint": "（オプション）整数を入力すると、この値以下にリソースを減らせなくなります。",
-    "FvttPartyResources.ResourceForm.Name": "リソース名",
-    "FvttPartyResources.ResourceForm.NameHint": "一覧に表示されるリソース名です。",
-    "FvttPartyResources.ResourceForm.PlayerManaged": "リソースの管理をプレイヤーに任せる",
-    "FvttPartyResources.ResourceForm.PlayerManagedHint": "有効にすると、このリソースの値をプレイヤーが増減できるようになります。",
-    "FvttPartyResources.ResourceForm.PlayerManagedRestriction": "このチェックボックスは、設定変更の許可をプレイヤーに明示的に与えることによってのみ有効にできます。",
-    "FvttPartyResources.ResourceForm.Reset": "入力リセット",
-    "FvttPartyResources.ResourceForm.SaveChanges": "変更を保存",
-    "FvttPartyResources.Title": "パーティリソース",
-
-
-
-      "forien-copy-environment": {
-        "menu": {
-          "copy": "クリップボードにコピー",
-          "save": "JSONに保存",
-          "export": "設定のエクスポート",
-          "import": "設定のインポート"
-        },
-        "title": "インポート設定",
-        "intro": "このフォームでは、ワールドとプレイヤーのどの設定をインポートするかを選択します。",
-        "message": "このリストは「Forien's Copy Environment」で作成されました： https://github.com/League-of-Foundry-Developers/foundryvtt-forien-copy-environment",
-        "copiedToClipboard": "環境データをクリップボードにコピーしました！",
-        "updatedReloading": "ワールド設定を更新しました。5秒後に再読み込みします……",
-        "import": {
-          "save": "インポート設定",
-          "playerList": "次のプレイヤー設定をインポートします：",
-          "existing": "既存のエクスポートをインポートします：",
-          "property": "プロパティ",
-          "newValue": "新しい値",
-          "currentValue": "現在の値",
-          "notFound": "インポートファイルに含まれる次のユーザーは、このワールドに存在しないため、スキップされます。",
-          "existingValue": "次の値は変更がないためスキップされます：",
-          "existingPlayerValues": "次のプレイヤーは変更がないためスキップされます：",
-          "updatedPlayer": "次のプレイヤーの設定を更新しました：{name}",
-          "noChanges": "現在のワールド設定とインポートした設定に差異がありません。"
-        }
-      },
-
-  "COMMENTS V8 COMPATIBILITY":"The following entries are there for v8 compatibility, so that those that update the module can still use older versions whilst being on the latest version",
-  
-  "ACTOR.Title": "キャラクター一覧",
-  "ACTOR.Create": "キャラクター作成",
-  "ACTOR.Search": "キャラクター検索",
-  
-  "ITEM.Create": "アイテム作成",
-  "ITEM.Delete": "アイテム削除",
-  "ITEM.Search": "アイテム検索",
-  
-  "JOURNAL.Title": "資料",
-  "JOURNAL.Search": "資料検索",
-  "JOURNAL.Create": "資料作成",
-  
-  "LIGHT.ConfigHint": "光源の位置、半径、角度、色、およびアニメーションを設定します。",
-  "LIGHT.LightDim": "薄暗い照明 (半径)",
-  "LIGHT.LightBright": "明るい照明 (半径)",
-  "LIGHT.LightAngle": "照射角",
-  "LIGHT.LightColor": "色合い",
-  "LIGHT.LightAlpha": "色の濃度",
-  "LIGHT.LightRotation": "角度",
-  "LIGHT.LightType": "ライトの種別",
-  "LIGHT.TypeLocal": "ローカル",
-  "LIGHT.TypeGlobal": "グローバル",
-  "LIGHT.TypeUniversal": "ユニバーサル",
-  
-  "MACRO.Create": "マクロ作成",
-  "MACRO.Search": "マクロ検索",
-  
-  "NOTE.WarningNoCreate": "{name} の地点メモを作成する権限がありません。",
-  
-  "PLAYLIST.Search": "プレイリスト検索",
-  "PLAYLIST.Create": "ﾌﾟﾚｲﾘｽﾄ 作成",
-  
-  "SETTINGS.Controls": "操作リファレンス",
-  
-  "SETUP.UpdateHeader": "ソフトウェア・アップデート",
-  
-  "SETUP.UpdateAlpha": "α版 (不安定版)",
-  "SETUP.UpdateBeta": "β版 (リリース候補版)",
-  "SETUP.UpdateRelease": "リリース版 (安定版)",
-  
-  "SETUP.UpdateWarning": "オンセ工房 FoundryVTTをアップデートするには、インターネットに接続する必要があり、有効なソフトウェア・ライセンスが必要です。",
-  
-  "SETUP.UpdateNoupdateMode": "--noupdate モードで起動されているため、オンセ工房 FoundryVTTのこのインスタンスを更新することができません。",
-
-  "SOUND.Type": "サウンド種別",
-  "SOUND.TypeLocal": "ローカル",
-  "SOUND.TypeGlobal": "グローバル",
-  
-  "PERMISSION.HintEntity": "特定のエンティティへのアクセス権を設定して、各ユーザーにそれぞれ異なる段階の情報を開示します。",
-  
-  "SIDEBAR.SceneCreate": "シーン作成",
-  "SIDEBAR.SceneSearch": "シーン検索",
-  "TABLE.Create": "ロール表 作成",
-  "TABLE.Search": "ロール表 検索",
-  
-  "TOKEN.CharDisposition": "関係性",
-  "TOKEN.CharInstructions": "このコマに関連付けされるキャラクターや、表示について設定。",
-  
-  "SCENES.JournalNotes": "シーンのメモ",
-  "SCENES.JournalNotesHint": "ゲームマスターは、シーンのメモとして指定された資料を開くことができます。",
-  "SCENES.HeaderAmbienceHint": "このシーンの資料や、音楽再生、あるいは天候エフェクトなどの環境を設定します。",
-  "SCENES.HeaderDetailsHint": "このシーンの詳細設定と、見える範囲に関する設定をします。",
-  "SCENES.HeaderGridHint" : "このシーンでコマの移動に使うグリッドの形状とサイズを設定します。",
-  "SCENES.HeaderVisionHint": "このシーンに使用される視覚、照明、およびシーンマスクを設定します。",
-
-  "ENTITY.Actor": "キャラクター",
-  "ENTITY.ChatMessage": "チャット・メッセージ",
-  "ENTITY.Combat": "イニシアチブ表",
-  "ENTITY.Item": "アイテム",
-  "ENTITY.Folder": "フォルダ",
-  "ENTITY.JournalEntry": "資料",
-  "ENTITY.Macro": "マクロ・コマンド",
-  "ENTITY.Playlist": "プレイリスト",
-  "ENTITY.Scene": "シーン",
-  "ENTITY.RollTable": "ロール表",
-  "ENTITY.User": "ユーザー",
-  "ENTITY.Create": "新規作成 {entity}",
-  "ENTITY.New": "新規 {entity}",
-  "ENTITY.CreateNew": "新規作成",
-
-  "TOKEN.PositionInstructions": "コマの位置、方向、高さを設定。",
-  "TOKEN.PositionLock": "回転しないようにする",
-  "TOKEN.ResourceInstructions": "コマに表示されるリソース・バーを設定。",
-  "TOKEN.VisionInstructions": "コマが持つ視覚能力と、放射する明かりを設定。",
-  "TOKEN.VisionBrightDist": "視覚 [明るい]",
-  "TOKEN.VisionDimDist": "視覚 [薄暗い]",
-  "TOKEN.VisionSightAngle": "視野角",
-  "WEBRTC.WebRTCServer" : "ｼｸﾞﾅﾘﾝｸﾞ･ｻｰﾊﾞを選択する",
-  "WEBRTC.WebRTCServerURL" : "ｼｸﾞﾅﾘﾝｸﾞ･ｻｰﾊﾞ URL",
-  "WEBRTC.FVTTSignalingServer" : "オンセ工房",
-  "WEBRTC.CustomSignalingServer" : "シグナリング･サーバを使用",
-  "WEBRTC.WebRTCServerUsername" : "ｼｸﾞﾅﾘﾝｸﾞ･ｻｰﾊﾞユーザー名",
-  "WEBRTC.WebRTCServerPassword" : "ｼｸﾞﾅﾘﾝｸﾞ･ｻｰﾊﾞパスワード",
-  "WEBRTC.PTTKey": "ﾌﾟｯｼｭﾄｩﾄｰｸ/ﾐｭｰﾄｷｰ",
-  "WEBRTC.PTTKeyNotes": "PTTモードで、保留中に音声を有効にするキーを割り当てます。 PTTモードでない場合、そのキーを押し続けるとミュートします。"
 }
-
