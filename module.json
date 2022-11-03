@@ -1,9 +1,22 @@
 {
-	"name": "foundryVTTja",
+	"id": "foundryVTTja",
 	"title": "日本語化（オンセ工房 Foundry VTT 本体＆Mod日本語化）",
 	"description": "オンセ工房Foundry VTTの本体用（v10）の日本語化に必要な翻訳ファイルを追加するモッド。作者不在のいくつかのModの翻訳もここに含まれています。デフォルト言語としてこのモッドを設定してからゲーム内でもモッドを適用してください。",
-	"version": "1.30",
-	"author": "Brother Sharp",
+	"version": "This is auto replaced",
+	"library": false,
+	"manifestPlusVersion": "1.2.0",
+	"compatibility": {
+		"minimum": 10,
+		"verified": 10,
+		"maximum": 11
+	  },
+	"authors": [
+		{
+		  "name": "Brother Sharp",
+		  "url": "https://twitter.com/Brother_Sharp",
+		  "discord": "Brother Sharp#6921"
+		}
+	],
 	"coreTranslation": true,
 	"languages": [
 		{
@@ -289,11 +302,16 @@
 		}
 	],
 	"scripts": ["./js/main.js"],
-  "styles" : ["./css/styles.css"],
-  "packs": [],
-	"url" : "https://github.com/BrotherSharper/foundryVTTja",
-	"download" : "https://github.com/BrotherSharper/foundryVTTja/releases/download/1.30/module.zip",
-	"manifest" : "https://github.com/BrotherSharper/foundryVTTja/releases/download/1.30/module.json",
-  "minimumCoreVersion": "0.5.5",
-  "compatibleCoreVersion": "10"
+  	"styles" : ["./css/styles.css"],
+  	"packs": [],
+	"url" : "This is auto replaced",
+	"download" : "This is auto replaced",
+	"manifest" : "This is auto replaced",
+	"readme": "README.md",
+	"media": [
+		{
+		  "type": "icon",
+		  "url": "https://avatars2.githubusercontent.com/u/71292812?s=400&u=ccdb4eeb7abf551ca8f314e5a9bfd0479a4d3d41&v=4"
+		}
+	  ]
 }
