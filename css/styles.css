@@ -9,3 +9,7 @@ form .form-group .form-fields > label {
 .database-entry > button {
     font-size: 0.5rem;
 }
+
+button.dice-tray__roll {
+    font-size: 8px;
+}
