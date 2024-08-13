@@ -1,14 +1,14 @@
 {
 	"id": "foundryVTTja",
 	"title": "日本語化（オンセ工房 Foundry VTT 本体）",
-	"description": "オンセ工房 Foundry VTT の本体用（v11）の日本語化に必要な翻訳ファイルを追加するモッドです。作者不在のいくつかのModの翻訳もここに含まれています。デフォルト言語としてこのモッドを設定してからゲーム内でもモッドを適用してください。",
+	"description": "オンセ工房 Foundry VTT の本体用（v12）の日本語化に必要な翻訳ファイルを追加するモッドです。作者不在のいくつかのModの翻訳もここに含まれています。デフォルト言語としてこのモッドを設定してからゲーム内でもモッドを適用してください。",
 	"version": "This is auto replaced",
 	"library": false,
 	"manifestPlusVersion": "1.2.0",
 	"compatibility": {
-		"minimum": 10,
-		"verified": 11,
-		"maximum": 11
+		"minimum": 12,
+		"verified": 12,
+		"maximum": 12
 	  },
 	"authors": [
 		{
