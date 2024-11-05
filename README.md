@@ -3,7 +3,7 @@
 * **製作者**: Brother Sharp (ディスコード：Brother Sharp#6921)
 * **翻訳ファイル提供者**: [Brother Sharp, Asami, Touge, Tonishi, エクスヴェリア]
 
-* **対応FVTTバージョン**: 0.6.0~v11
+* **対応FVTTバージョン**: 0.6.0~v12
 * **modバージョン**: 1.6
 
 ### インストール方法： 
