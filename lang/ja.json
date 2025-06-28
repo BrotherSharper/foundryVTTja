@@ -1063,8 +1063,8 @@
 "EFFECT.MODE_OVERRIDE": "上書き",
 "EFFECT.TransferLegacy": "キャラクターに効果を転送",
 "EFFECT.TransferHintLegacy": "チェックを入れると、この効果が入っているアイテムを所持したキャラに同じ効果を複製し、アイテムが消えたら効果も同時に消えます。",
-"EFFECT.DurationTurns": "効果の持続時間（ターン）",
-"EFFECT.StartTurns": "効果の開始ターン",
+"EFFECT.DurationTurns": "効果の持続時間（戦闘）",
+"EFFECT.StartTurns": "効果の開始",
 "EFFECT.ChangeKey": "属性キー",
 "EFFECT.ChangeMode": "モード変更",
 "EFFECT.ChangeValue": "効果値",
@@ -1280,7 +1280,7 @@
   "TraverseBack": "Traverse Back",
   "NoResults": "その条件で一致するファイルは見つかりませんでした。",
   "Upload": "アップロード",
-  "CannotUpload": "このフォルダへのアップロードは許可されていません。必要であれば、アップロード用に新しいトップレベルのフォルダを作成してください。",
+  "CannotUpload": "このフォルダへのアップロードは、更新時に内容が上書きされる可能性があるため禁止されています。代わりに、\"assets\"フォルダまたはその他の許可された場所にアップロードしてください。",
   "Search": "検索",
   "ErrorTooLarge": "アップロードしようとしたファイルは、プロキシサーバで処理するには大きすぎます。",
   "ErrorSomethingWrong": "ファイルのアップロードリクエストで問題が発生しました。",
@@ -2029,6 +2029,11 @@
     "yes": "共有を許可",
     "no": "共有を拒否"
   },
+  "ChangePassword": {
+    "label": "パスワード変更",
+    "hint": "現在の管理者パスワードを入力してください。",
+    "title": "現在のパスワードを入力"
+  },
   "SECTIONS": {
     "FVTTConfig": "Foundry VTT 設定",
     "ServerConfig": "サーバー設定",
@@ -2196,6 +2201,9 @@
 "SETTINGS.GridDiagonalsAlternating1": "交互 (1/2/1)",
 "SETTINGS.GridDiagonalsAlternating2": "交互 (2/1/2)",
 "SETTINGS.GridDiagonalsIllegal": "違法 (∞)",
+
+"SETTINGS.UniversalKeybindingsN": "ユニバーサルショートカット（実験的）",
+"SETTINGS.UniversalKeybindingsL": "物理的なキーの位置ではなく、入力した文字でショートカットを一致させます。AZERTY、QWERTZ、かな等の配列のサポートが改善されます。これは実験的な機能です。再読み込みが必要です。",
 
 "SETTINGS.UI": {
   "MENU": {
@@ -2445,11 +2453,15 @@
   "UpdateWarningWillDisable": "この更新は、オンセ工房 FoundryVTTの新しいメジャーバージョンです。この更新をインストールする場合、まだ互換性が無いと思われる、いくつかのインストール済みモジュールを無効化する必要があります。",
   "UpdateButtonDownload": "{display} 更新をダウンロード",
   "UpdateInfoAvailable": "オンセ工房 FoundryVTT バージョン {display} が利用可能です！",
-  "UpdateNoUpdateMode": "--noupdate モードで起動されているため、オンセ工房 FoundryVTTを更新することができません。",
   "UpdateNotAvailable": "要求された更新先で利用可能な更新情報がありません",
   "UpdateNoArchive": "インストールする更新のアーカイブが存在しません。",
   "UpdateLicenseInvalid": "ご利用のライセンスキーは返金処理が完了し無効化されたか、その他の理由により無効化されています。",
   "UpdatedPackages": "パッケージの更新ログ",
+  "NoUpdateMode": {
+    "Label": "更新無効",
+    "Hint": "--noupdate モードで起動されているため、オンセ工房 FoundryVTTを更新することができません。"
+  },
+
   "Package": "パッケージ",
   "VersionChange": "バージョン変更",
 

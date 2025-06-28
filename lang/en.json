@@ -1063,8 +1063,8 @@
 "EFFECT.MODE_OVERRIDE": "Override",
 "EFFECT.TransferLegacy": "Transfer Effect to Actor",
 "EFFECT.TransferHintLegacy": "If checked, this Effect will be copied to the Actor when this Effect's parent Item is created on an Actor, and deleted if that Item is ever removed.",
-"EFFECT.DurationTurns": "Effect Duration (Turns)",
-"EFFECT.StartTurns": "Effect Start Turn",
+"EFFECT.DurationTurns": "Effect Duration (Combat)",
+"EFFECT.StartTurns": "Effect Start",
 "EFFECT.ChangeKey": "Attribute Key",
 "EFFECT.ChangeMode": "Change Mode",
 "EFFECT.ChangeValue": "Value",
@@ -1280,7 +1280,7 @@
   "TraverseBack": "Traverse Back",
   "NoResults": "No matching results found in this location.",
   "Upload": "Upload",
-  "CannotUpload": "Uploads to this folder are prohibited. If needed, create a new top-level folder for your uploads.",
+  "CannotUpload": "Uploads to this folder are prohibited because content here may be overwritten during updates. Upload to your \"assets\" folder or another allowed location instead.",
   "Search": "Search",
   "ErrorTooLarge": "The file you have attempted to upload is too large for your proxy server to handle.",
   "ErrorSomethingWrong": "Something went wrong with your file upload request.",
@@ -2029,6 +2029,11 @@
     "yes": "Allow Sharing",
     "no": "Decline Sharing"
   },
+  "ChangePassword": {
+    "label": "Change Password",
+    "hint": "Enter the existing administrator password.",
+    "title": "Enter Existing Password"
+  },
   "SECTIONS": {
     "FVTTConfig": "Foundry VTT Configuration",
     "ServerConfig": "Server Configuration",
@@ -2196,6 +2201,9 @@
 "SETTINGS.GridDiagonalsAlternating1": "Alternating (1/2/1)",
 "SETTINGS.GridDiagonalsAlternating2": "Alternating (2/1/2)",
 "SETTINGS.GridDiagonalsIllegal": "Illegal (∞)",
+
+"SETTINGS.UniversalKeybindingsN": "Universal Keybindings (experimental)",
+"SETTINGS.UniversalKeybindingsL": "Match shortcuts by the character you type instead of the physical key position. Improves support for AZERTY, QWERTZ, Kana and other layouts. This is an experimental feature. A reload is required.",
 
 "SETTINGS.UI": {
   "MENU": {
@@ -2445,11 +2453,15 @@
   "UpdateWarningWillDisable": "This update is a new major version of the Foundry Virtual Tabletop software. Installing this update will require some installed modules which may not yet be compatible to be disabled.",
   "UpdateButtonDownload": "Download Update {display}",
   "UpdateInfoAvailable": "An update to Foundry Virtual Tabletop {display} is available!",
-  "UpdateNoUpdateMode": "You are not allowed to update this instance of Foundry Virtual Tabletop because it was launched in --noupdate mode.",
   "UpdateNotAvailable": "No software update is currently available on the requested update channel.",
   "UpdateNoArchive": "No update archive exists to install",
   "UpdateLicenseInvalid": "Your Foundry Virtual Tabletop license key is not valid.",
   "UpdatedPackages": "Package Update Log",
+  "NoUpdateMode": {
+    "Label": "Updates Disabled",
+    "Hint": "You are not allowed to update this instance of Foundry Virtual Tabletop because it was launched in --noupdate mode."
+  },
+
   "Package": "Package",
   "VersionChange": "Version Change",
 
@@ -2597,7 +2609,7 @@
     "FullList": "See the <a href=\"{url}\" target=\"_blank\">full list</a> of Release Notes.",
     "BeginDownload": "Begin Download",
     "NewGenerationHint": "Consider taking a snapshot of all installed packages before updating in case you need to roll-back.",
-    "PreviewCompatibilityHint": "Using the 'preview compatibility' button below, you can check if all your Worlds, Systems, and Modules are supported in Foundry Virtual Tabletop Version {version}."
+    "PreviewCompatibilityHint": "Using the \"Preview Compatibility\" button below, you can check if all your Worlds, Systems, and Modules are supported in Foundry Virtual Tabletop Version {version}."
   }
 },
 
