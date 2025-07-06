@@ -103,7 +103,7 @@
   "ImportProgress": "インポート",
   "ImportHeaderOverview": "概要",
   "ImportHeaderContents": "内容",
-  "ImportHeaderOptions": "Options",
+  "ImportHeaderOptions": "オプション",
   "ImportOverwriteTitle": "既存の内容を上書きしますか？",
   "ImportOverwriteWarning": "冒険「{name}」のいくつかの内容がワールド内に検出されました。この冒険をインポートすると上書きされます。それでも続行しますか？",
   "ImportAll": "全てをインポート",
@@ -417,7 +417,7 @@
     "ResetDelete": "リセット＆削除",
     "Save": "保存",
     "Shuffle": "シャッフル",
-    "ToggleSortMode": "Toggle Sort Mode"
+    "ToggleSortMode": "ソートモード切り替え"
   },
   "TABS": {
     "details": "詳細",
@@ -446,13 +446,15 @@
     },
     "FIELDS": {
       "suit.label": "スート",
-      "value.label": "値",
+      "value.label": "数字",
       "drawn.label": "配布済",
       "face.label": "面",
       "faces": {
-        "name.label": "表面名",
-        "img.label": "表面画像",
-        "text.label": "表面テキスト"
+        "element": {
+          "name.label": "表面名",
+          "img.label": "表面画像",
+          "text.label": "表面テキスト"
+        }
       },
       "back": {
         "name.label": "裏面名",
@@ -468,10 +470,10 @@
 "CHAT.EnterMessage": "メッセージを入力",
 "CHAT.Export": "チャットログを書き出す",
 "CHAT.FlushTitle": "チャットログを消去",
-"CHAT.FlushWarning": "チャットログに書いてある内容がすべて消去され、元に戻りません、本当によろしいですか？",
+"CHAT.FlushWarning": "チャットログに書いてある内容がすべて消去され、元に戻せません、本当によろしいですか？",
 "CHAT.InvalidCommand": "{command} は、有効なチャットコマンドではありません。",
 "CHAT.Title": "チャットログ",
-"CHAT.To": "宛先",
+"CHAT.To": "送信先",
 "CHAT.PopoutMessage": "メッセージをポップアウト",
 "CHAT.RevealMessage": "全て開示",
 "CHAT.ConcealMessage": "非公開",
@@ -496,8 +498,8 @@
 "COMBAT.End": "終了",
 "COMBAT.InitiativeRoll": "行動順判定",
 "COMBAT.InitiativeReset": "行動順をリセット",
-"COMBAT.ClearMovementHistories": "Clear Movement Histories",
-"COMBAT.InitiativeScore": "Initiative Score",
+"COMBAT.ClearMovementHistories": "移動履歴をクリア",
+"COMBAT.InitiativeScore": "イニシアチブスコア",
 "COMBAT.EndTitle": "戦闘終了？",
 "COMBAT.EndConfirmation": "この戦闘を終了して、行動順を空にしますか？",
 "COMBAT.Linked": "シーンにリンクされている戦闘、クリックで解除",
@@ -508,7 +510,7 @@
 "COMBAT.PanToCombatant": "戦闘参加キャラにカメラ移動",
 "COMBAT.PingCombatant": "戦闘参加キャラに注目",
 "COMBAT.WarnNonVisibleToken": "その戦闘参加キャラを見る権限がありません。",
-"COMBAT.Round": "{}ラウンド",
+"COMBAT.Round": "{round}ラウンド",
 "COMBAT.Rounds": "ラウンド",
 "COMBAT.RoundPrev": "前のラウンド",
 "COMBAT.RoundNext": "次のラウンド",
@@ -539,13 +541,13 @@
 "COMBAT.CombatantInitiative": "イニシアチブ値",
 "COMBAT.CombatantStatus": "戦闘参加キャラのステータス",
 "COMBAT.CombatantUpdate": "戦闘参加キャラを更新",
-"COMBAT.CombatantUpdateNamed": "Update Combatant: {name}",
+"COMBAT.CombatantUpdateNamed": "戦闘参加キャラ更新: {name}",
 "COMBAT.CombatantName": "表示名",
 "COMBAT.CombatantRemove": "戦闘参加キャラを削除",
 "COMBAT.CombatantClear": "イニシアチブをクリア",
 "COMBAT.CombatantReroll": "イニシアチブを再ロール",
-"COMBAT.CombatantClearMovementHistory": "Clear Movement History",
-"COMBAT.CombatantMovementHistoryCleared": "Cleared movement history for Token \"{name}\".",
+"COMBAT.CombatantClearMovementHistory": "移動履歴をクリア",
+"COMBAT.CombatantMovementHistoryCleared": "コマ \"{name}\" の移動履歴がクリアされました。",
 "COMBAT.CombatantToken": "リンク中のコマ",
 "COMBAT.CombatantScene": "戦闘参加キャラシーン",
 "COMBAT.CombatantNotInScene": "{name}は、現在表示されているシーンに存在しません",
@@ -557,20 +559,20 @@
 
 "COMBAT.TURN_MARKERS": {
   "ANIMATIONS": {
-    "SPIN": "Spin",
-    "SPIN_PULSE": "Spin Pulse",
-    "PULSE": "Pulse"
+    "SPIN": "回転",
+    "SPIN_PULSE": "回転パルス",
+    "PULSE": "パルス"
   }
 },
 "COMBAT.CONFIG": {
   "SHEET": {
-    "TURN_MARKERS": "Token Turn Markers"
+    "TURN_MARKERS": "コマのターンマーカー"
   },
   "FIELDS": {
     "core.combatTrackerConfig": {
       "skipDefeated": {
         "label": "敗北者をスキップ",
-        "hint": "敗北マーク付きの戦闘参加キャラを自動的にスキップしますか？"
+        "hint": "敗北マーク付きの戦闘参加キャラを自動的にスキップします。"
       },
       "resource": {
         "label": "データの表示",
@@ -578,20 +580,20 @@
       },
       "turnMarker": {
         "enabled": {
-          "label": "Enable Markers",
-          "hint": "Enable combat turn markers by default for all Tokens."
+          "label": "マーカーを有効化",
+          "hint": "すべてのコマの戦闘ターンマーカーをデフォルトで有効にします。"
         },
         "src": {
-          "label": "Media Source",
-          "hint": "An image or video file to use by default as a Token turn marker."
+          "label": "メディアソース",
+          "hint": "コマのターンマーカーとしてデフォルトで使用される画像またはビデオファイル。"
         },
         "animation": {
-          "label": "Animation",
-          "hint": "The animation type to use by default for each Token turn marker."
+          "label": "アニメーション",
+          "hint": "各コマのターンマーカーにデフォルトで使用されるアニメーションタイプ。"
         },
         "disposition": {
-          "label": "Disposition Tint",
-          "hint": "Apply a tint to the turn marker based on the Token disposition."
+          "label": "関係性の色合い",
+          "hint": "コマの関係性に応じてターンマーカーに色合いを適用します。"
         }
       }
     }
@@ -633,6 +635,7 @@
 "COMPENDIUM.ToggleLocked": {
   "Option": "編集ロック切り替え",
   "Title": "編集ロック切り替え: {compendium}",
+  "Unlock": "アンロック",
   "Warning": "ロックを解除して、このワールドに属していない共有の辞典を編集しようとしています。この辞典に行なった変更は、それを使用するシステムまたはモジュールが更新されると失われる可能性があります。その代わりとして自分のワールドに、辞典を複製することもできます。 続行しますか？"
 },
 "COMPENDIUM.CannotViewWarning": "この辞典を閲覧する権限がありません。",
@@ -664,7 +667,6 @@
   "TargetSelect": "目標選択",
   "TargetSelectP": "視認できるコマをターゲットします。\n自分が所有していないコマであれば右ダブルクリックでもターゲットできます。",
   "BasicMeasure": "距離測定",
-  "BasicMeasureWaypoints": "中間地点を設置",
   "GroupMeasure": "テンプレート操作",
   "MeasureType": "テンプレート種別",
   "MeasureConfigHint": "定規テンプレートの配置と表示について設定します。",
@@ -785,9 +787,9 @@
   "LongPress": "長押し",
   "RightClick": "右クリック",
   "RightClick2": "右ダブルクリック",
-  "RightClickDuringDrag": "Right-Click During Drag",
+  "RightClickDuringDrag": "ドラッグ中に右クリック",
   "MiddleClick": "中クリック",
-  "AltRightClick": "ALT + 右クリック",
+  "AltRightClick": "{alt} + 右クリック",
   "Click": "クリック",
   "ClickDrag": "クリック + ドラッグ",
   "ClickOrClickDrag": "<span class=\"reference\">クリック</span> または <span class=\"reference\">クリック + ドラッグ</span>",
@@ -795,9 +797,9 @@
   "Ctrl": "Control",
   "CtrlAbbr": "CTRL",
   "CtrlClickDrag": "{mod} + クリック + ドラッグ",
-  "Alt": "ALT",
+  "Alt": "Alt",
   "AltClick": "{alt} + クリック",
-  "AltClickDrag": "{alt} + Click + Drag",
+  "AltClickDrag": "{alt} + クリック + ドラッグ",
   "CtrlClick": "{mod} + クリック",
   "ShiftClick": "SHIFT + クリック",
   "ChainCtrlClick": "<span class=\"reference\">CTRL</span>長押し、その後<span class=\"reference\">クリック</span>",
@@ -823,11 +825,8 @@
   "KeyPaste": "オブジェクトのペースト",
   "KeyUndo": "直前の操作を取り消す",
   "KeyHotbar": "ホットバーからマクロ使用",
-  "RulerTitle": "テンプレート操作",
-  "RulerMeasure": "定規で距離を測定",
-  "RulerWaypoint": "距離測定中に中間点を設定",
-  "RulerMove": "コマを定規に沿って動かす",
-  "RulerWhile": "(コマから距離測定中に)",
+  "RulerPlaceWaypoint": "中間点を設置",
+  "RulerRemoveWaypoint": "中間点を削除",
   "ObjectSheet": "オブジェクトからシートを表示",
   "ObjectHUD": "オブジェクトのHUD表示 (あれば)",
   "ObjectConfig": "オブジェクトの設定シート表示",
@@ -838,7 +837,8 @@
   "ObjectNoSnap": "グリッドを無視して配置",
   "MouseWheel": "マウスホイール",
   "DragDrop": "ドラッグ＆ドロップ",
-  "UnconstrainedMovement": "Unconstrained Movement",
+  "UnconstrainedMovement": "制約なし移動",
+  "UnconstrainedMovementP": "有効にすると、壁や通れない地形を通り抜けてコマを移動させることができます。",
   "TokenHeader": "コマ操作",
   "TokenPlaceHidden": "不可視コマを配置 (GM)",
   "TokenTarget": "未所有のコマをターゲット指定",
@@ -855,7 +855,7 @@
   "CommonMove": "移動",
   "CommonEdit": "編集",
   "CommonHide": "隠す",
-  "CommonDelete": "消す",
+  "CommonDelete": "削除",
   "CommonRotate": "回転",
   "CommonToggleHUD": "HUD切り替え",
   "CommonDraw": "描画",
@@ -873,7 +873,7 @@
   "CommonSelectMultiple": "複数選択",
   "CommonOpenSheet": "シートを開く",
   "DisableToolclips": "このツールチップは設定から無効化できます",
-  "CutObjects": "Cut {count} {type} object(s).",
+  "CutObjects": "{count}つの{type}をカットしました。",
   "CopiedObjects": "{count}つの{type}をコピーしました。",
   "PastedObjects": "{count}つの{type}をペーストしました。",
   "DeletedObjects": "{count}つの{type}を削除しました。",
@@ -886,6 +886,7 @@
 
 "DICE": {
   "ErrorNonNumeric": "ダイスロール式 {formula} に結果となる数値が出力されませんでした。",
+  "ErrorNotParsable": "The dice roll formula \"{formula}\" is not a string.",
   "ManualRoll": "手動ロール",
   "RollResolution": "ロール申告",
   "SubmitRoll": "ロール確定",
@@ -956,8 +957,8 @@
   "Items": "アイテム",
   "JournalEntry": "資料",
   "JournalEntries": "資料",
-  "JournalEntryCategory": "Category",
-  "JournalEntryCategories": "Categories",
+  "JournalEntryCategory": "カテゴリー",
+  "JournalEntryCategories": "カテゴリー",
   "JournalEntryPage": "ページ",
   "JournalEntryPages": "ページ",
   "Macro": "マクロ",
@@ -992,15 +993,15 @@
   "Walls": "ウォール",
   "TypePageFormat": "{type} {page}",
   "FIELDS": {
-    "name.label": "Name",
-    "type.label": "Type",
-    "img.label": "Image Path",
-    "description.label": "Description",
+    "name.label": "名前",
+    "type.label": "種別",
+    "img.label": "画像パス",
+    "description.label": "説明",
     "width.label": "幅",
     "height.label": "高さ",
-    "hidden.label": "Hidden",
-    "elevation.label": "Elevation",
-    "rotation.label": "Rotation",
+    "hidden.label": "非表示",
+    "elevation.label": "高度",
+    "rotation.label": "回転",
     "sort": {
       "label": "Sort Order",
       "hint": "Configure the sorted order of this Document relative to others in its collection. Lower numbers are sorted first."
@@ -1062,12 +1063,12 @@
 "EFFECT.MODE_OVERRIDE": "上書き",
 "EFFECT.TransferLegacy": "キャラクターに効果を転送",
 "EFFECT.TransferHintLegacy": "チェックを入れると、この効果が入っているアイテムを所持したキャラに同じ効果を複製し、アイテムが消えたら効果も同時に消えます。",
-"EFFECT.DurationTurns": "効果の持続時間（ターン）",
-"EFFECT.StartTurns": "効果の開始ターン",
+"EFFECT.DurationTurns": "効果の持続時間（戦闘）",
+"EFFECT.StartTurns": "効果の開始",
 "EFFECT.ChangeKey": "属性キー",
 "EFFECT.ChangeMode": "モード変更",
 "EFFECT.ChangeValue": "効果値",
-"EFFECT.ChangePriority": "Priority",
+"EFFECT.ChangePriority": "優先度",
 "EFFECT.Submit": "保存",
 "EFFECT.FIELDS": {
   "name.label": "効果名",
@@ -1145,13 +1146,13 @@
   "CantWhisper": "秘話のチャットメッセージを他のプレイヤーに送信する権限がありません。",
   "RendererNotDetected": "ご使用のGPUレンダリングが認識されませんでした。動作が不安定になる可能性があります。",
   "NoHardwareAcceleration": "ご使用のブラウザはハードウェア・アクセラレーションを有効にしていません。このため、オンセ工房Foundry VTTの動作速度が大きく影響されます。ブラウザの設定よりハードウェア・アクセラレーションを有効にしてください。",
-  "RequiresFullReinstall": "Foundry Virtual Tabletop Version {version} is now available but cannot be installed from within the Foundry Virtual Tabletop application because it requires updates to core dependencies which are only available by re-installing the software from the <a href=\"https://foundryvtt.com/me/licenses\" target=\"_blank\">foundryvtt.com</a> website.",
-  "RequiresGenerationReinstall": "Foundry Virtual Tabletop Version {version} is now available but cannot be installed from within the Foundry Virtual Tabletop application because it is a new generation update which must be installed manually by re-installing the software from the <a href=\"https://foundryvtt.com/me/licenses\" target=\"_blank\">foundryvtt.com</a> website.",
-  "RequiresElectronReinstall": "Foundry Virtual Tabletop Version {version} is now available but cannot be installed from within the Foundry Virtual Tabletop application because it includes a new Electron version which can only be installed manually by re-installing the software from the <a href=\"https://foundryvtt.com/me/licenses\" target=\"_blank\">foundryvtt.com</a> website.",
+  "RequiresFullReinstall": "オンセ工房 FoundryVTT バージョン {version} が現在利用可能ですが、<a href=\"https://foundryvtt.com/me/licenses\" target=\"_blank\">foundryvtt.com</a> ウェブサイトからソフトウェアを再インストールすることでのみ利用可能な本体の依存関係の更新が必要なため、FoundryVTTアプリケーション内からはインストールできません。",
+  "RequiresGenerationReinstall": "オンセ工房 FoundryVTT バージョン {version} が現在利用可能ですが、<a href=\"https://foundryvtt.com/me/licenses\" target=\"_blank\">foundryvtt.com</a> ウェブサイトからソフトウェアを再インストールして手動でインストールしなければならないメジャーアップデートであるため、FoundryVTTアプリケーション内からはインストールできません。",
+  "RequiresElectronReinstall": "オンセ工房 FoundryVTT バージョン {version} が現在利用可能ですが、<a href=\"https://foundryvtt.com/me/licenses\" target=\"_blank\">foundryvtt.com</a> ウェブサイトからソフトウェアを再インストールして手動でインストールしなければならない新しいElectronバージョンが含まれているため、FoundryVTTアプリケーション内からはインストールできません。",
   "RESOLUTION": {
-    "Window": "オンセ工房 FoundryVTTには、{reqWidth} px x {reqHeight} px以上の画面解像度が必要です。 現在、お使いのディスプレイの有効解像度は{width} px x {height} pxであるため、ソフトウェアの多くの機能が適切に動作しない可能性があります。",
-    "Scale": "Foundry Virtual Tabletop requires a usable screen dimensions of {reqWidth}px by {reqHeight}px or greater. The dimensions of this window are {curWidth}px by {curHeight}px. You currently have a zoom factor applied either at the operating system or browser level, which is reducing the effective size of your window. You must enlarge the size of your window or reduce the zoom factor applied to your browser, or else some features of the software will not work properly.",
-    "Screen": "Foundry Virtual Tabletop requires usable screen dimensions of {reqWidth}px by {reqHeight}px or greater. The current dimensions of this window are {curWidth}px by {curHeight}. You must enlarge the size of your window, or else some features of the software will not work properly."
+    "Screen": "オンセ工房 FoundryVTTには、{reqWidth} px x {reqHeight} px以上の画面解像度が必要です。お使いのディスプレイの解像度は{curWidth} px x {curHeight} pxです。解像度を上げるか、別のディスプレイデバイスを使用しなければ、ソフトウェアの一部の機能が適切に動作しません。",
+    "Scale": "オンセ工房 FoundryVTTには、{reqWidth} px x {reqHeight} px以上のウィンドウサイズが必要です。このウィンドウの現在のサイズは{curWidth} px x {curHeight} pxです。現在、オペレーティングシステムまたはブラウザレベルでズーム係数が適用されているため、ウィンドウの有効サイズが小さくなっています。ウィンドウサイズを大きくするか、ブラウザに適用されているズーム倍率を小さくしなければ、ソフトウェアの一部の機能が適切に動作しません。",
+    "Window": "オンセ工房 FoundryVTTには、{reqWidth} px x {reqHeight} px以上のウィンドウサイズが必要です。このウィンドウの現在のサイズは{curWidth} px x {curHeight} pxです。ウィンドウサイズを大きくしなければ、ソフトウェアの一部の機能が適切に動作しません。"
   }
 },
 
@@ -1247,7 +1248,7 @@
   "TAGS": {
     "Add": "タグを追加",
     "Remove": "タグを削除",
-    "ErrorBlank": "HTMLStringTagsElementタグはを空にすることは出来ません。",
+    "ErrorBlank": "HTMLStringTagsElementタグは空にすることは出来ません。",
     "ErrorNonUnique": "\"{tag}\"タグはすでに存在します。"
   }
 },
@@ -1256,7 +1257,7 @@
   "CreateDirectory": "フォルダ作成",
   "CreateSubfolder": "サブフォルダ作成",
   "DirectoryName": {
-      "Label": "Directory Name",
+      "Label": "フォルダ名",
       "Placeholder": "my-folder"
   },
   "TogglePrivacy": "プライバシーモードの切替",
@@ -1267,25 +1268,26 @@
   "DisplayModeImages": "全体画像表示",
   "FavoritesLabel": "お気に入り",
   "AddFavorite": "現在のフォルダをお気に入りに追加",
-  "RemoveFavorite": "Remove Folder from Favorites",
-  "DirectoryPathLabel": "Directory Path",
+  "RemoveFavorite": "フォルダをお気に入りから削除",
+  "DirectoryPathLabel": "フォルダパス",
   "FilterLabel": "ファイル検索",
   "S3Label": "S3 バケット",
   "Selected": "選択ファイル",
   "SelectFile": "ファイル選択",
-  "SelectFolder": "ディレクトリ選択",
+  "SelectFolder": "フォルダ選択",
   "TileSize": "ファイルのグリッドサイズ",
   "TileSizeHint": "元のタイル画像のグリッドのピクセルサイズを指定して、シーンに配置したときに自動的にサイズ調整されるようにします。",
   "TraverseBack": "Traverse Back",
   "NoResults": "その条件で一致するファイルは見つかりませんでした。",
   "Upload": "アップロード",
+  "CannotUpload": "このフォルダへのアップロードは、更新時に内容が上書きされる可能性があるため禁止されています。代わりに、\"assets\"フォルダまたはその他の許可された場所にアップロードしてください。",
   "Search": "検索",
   "ErrorTooLarge": "アップロードしようとしたファイルは、プロキシサーバで処理するには大きすぎます。",
   "ErrorSomethingWrong": "ファイルのアップロードリクエストで問題が発生しました。",
-  "WarnUploadModules": "モジュールまたはシステムディレクトリにファイルをアップロードしました。システムまたはモジュールを更新するとファイルが削除されるため、これは通常<strong>安全ではありません</strong>。",
+  "WarnUploadModules": "モジュールまたはシステムフォルダにファイルをアップロードしました。システムまたはモジュールを更新するとファイルが削除されるため、これは通常<strong>安全ではありません</strong>。",
   "AlreadyFavorited": "{path} はすでにお気に入り追加済みです。",
   "TitleAny": "ファイル・ブラウザ",
-  "TitleFolder": "ディレクトリ・ブラウザ",
+  "TitleFolder": "フォルダ・ブラウザ",
   "TitleFont": "フォント・ブラウザ",
   "TitleImageVideo": "画像/動画ブラウザ",
   "TitleImage": "画像ブラウザ",
@@ -1309,17 +1311,17 @@
   "TypeFile": "ファイル",
   "TypeSystem": "システム",
   "TypeHint": "「ファイル」種別のフォントはデータファイルの中にあるものから指定され、PLのブラウザに一時的にダウンロードされます。「システム」種別はこのPCのOSに登録されているフォントから指定され、PLも各自のPCに同じフォントを登録している必要があります。",
-  "Family": "フォント・ファミリー",
-  "File": "フォント・ファイル",
+  "Family": "フォントファミリー",
+  "File": "フォントファイル",
   "FontPreview": "オンセ工房（Foundry VTT）で世界が広がります！ 1234567890",
   "RemoveFont": "フォント削除",
-  "Style": "フォント・スタイル",
-  "Weight": "フォント・ウェイト",
-  "WarnNoFamily": "You must provide a font family name.",
-  "WarnNoFile": "You must provide a file path for the font.",
+  "Style": "フォントスタイル",
+  "Weight": "フォントウェイト",
+  "WarnNoFamily": "フォントファミリー名を指定する必要があります。",
+  "WarnNoFile": "フォントのファイルパスを指定する必要があります。",
   "Styles": {
-    "Normal": "Normal",
-    "Italic": "Italic"
+    "Normal": "標準",
+    "Italic": "斜体"
   }
 },
 
@@ -1344,7 +1346,7 @@
 "ITEM.ViewArt": "アイテム画像を見せる",
 
 "HOTBAR": {
-  "LABEL": "Action Bar",
+  "LABEL": "アクションバー",
   "MUTE": "ミュート",
   "UNMUTE": "ミュート解除",
   "MENU": "メインメニュー",
@@ -1359,7 +1361,7 @@
 "HUD.Elevation": "高度",
 "HUD.OpenConfig": "設定を開く",
 "HUD.AssignStatusEffects": "ステータス効果の設定",
-"HUD.SelectMovementAction": "Select Movement Action",
+"HUD.SelectMovementAction": "移動アクションを選択",
 "HUD.ToggleTargetState": "ターゲット状態切り替え",
 "HUD.ToggleCombatState": "戦闘タブに乗せる",
 "HUD.ToggleVis": "可視状態の切替",
@@ -1376,7 +1378,7 @@
 "JOURNAL.ModeImage": "画像",
 "JOURNAL.ActionShow": "プレイヤーに見せる",
 "JOURNAL.ActionShowSuccess": "{title}の中身を{which}プレイヤーに表示しました。",
-"JOURNAL.ImageOptions": "Image Options",
+"JOURNAL.ImageOptions": "画像オプション",
 "JOURNAL.ImageShowSuccess": "画像を{which}プレイヤーに表示しました。",
 "JOURNAL.NavLabel": "資料の目次",
 "JOURNAL.AddPage": "ページ追加",
@@ -1403,10 +1405,11 @@
 "JOURNAL.ShowOwnershipHint": "表示先のプレイヤーにも閲覧の権限を渡します。すでに上位の権限を持っていた場合は降格されることはありません。",
 "JOURNAL.LockModeLocked": "目次はロック中。クリックでアンロック。",
 "JOURNAL.LockModeUnlocked": "目次はアンロック中。クリックでロック。",
-"JOURNAL.ConfigureCategories": "Configure Categories",
-"JOURNAL.ConfigureCategoriesTitle": "{name} Categories",
-"JOURNAL.CategoryName": "Category name",
-"JOURNAL.Uncategorized": "Uncategorized",
+"JOURNAL.ConfigureCategories": "カテゴリー設定",
+"JOURNAL.ConfigureCategoriesTitle": "{name} カテゴリー",
+"JOURNAL.CategoryName": "カテゴリー名",
+"JOURNAL.Uncategorized": "未分類",
+"JOURNAL.UnnamedCategory": "<Unnamed Category>",
 
 "JOURNALENTRYPAGE.DefaultPageSheet": "デフォルト{page}ページシート",
 "JOURNALENTRYPAGE.Format": "レイアウト",
@@ -1420,14 +1423,14 @@
 "JOURNALENTRYPAGE.TypeVideo": "ビデオ",
 "JOURNALENTRYPAGE.ImageSource": "画像のソース",
 "JOURNALENTRYPAGE.ImageCaption": "画像説明文",
-"JOURNALENTRYPAGE.VideoAutoplay": "Autoplay Video",
+"JOURNALENTRYPAGE.VideoAutoplay": "ビデオの自動再生",
 "JOURNALENTRYPAGE.VideoControls": "動画の操作を表示",
 "JOURNALENTRYPAGE.VideoDimensions": "動画のサイズ",
-"JOURNALENTRYPAGE.VideoLoop": "Loop Video",
+"JOURNALENTRYPAGE.VideoLoop": "ビデオのループ",
 "JOURNALENTRYPAGE.VideoStartTime": "動画開始時間",
 "JOURNALENTRYPAGE.VideoSource": "動画ソース",
 "JOURNALENTRYPAGE.VideoSourceHint": "ここにはローカルのファイルパス、Web上やリモートの画像のURL、YoutubeのURLを設定できます。",
-"JOURNALENTRYPAGE.VideoVolume": "Video Volume",
+"JOURNALENTRYPAGE.VideoVolume": "ビデオ音量",
 "JOURNALENTRYPAGE.PDFLoad": "PDF読み込み",
 "JOURNALENTRYPAGE.PDFSource": "PDFのソース",
 "JOURNALENTRYPAGE.ShowImageOnly": "画像のみを表示",
@@ -1435,7 +1438,7 @@
 "JOURNALENTRYPAGE.ShowImageCaption": "画像の説明文を表示",
 "JOURNALENTRYPAGE.ShowTitle": "ページタイトルを表示",
 "JOURNALENTRYPAGE.HeadingLevel": "見出し段階",
-"JOURNALENTRYPAGE.Category": "Page Category",
+"JOURNALENTRYPAGE.Category": "カテゴリー",
 "JOURNALENTRYPAGE.Level": "段階 {level}",
 
 "KEYBINDINGS": {
@@ -1453,7 +1456,7 @@
   "CoreKeybindings": "本体キーボード操作",
   "CoreMouse": "本体マウス操作",
   "Restricted": "ゲームマスター（GM）のみ",
-  "ReservedModifiers": "組み合わせキー： {modifiers}",
+  "ReservedModifiers": "組み合わせキー：{modifiers}",
   "HowToEdit": "{icon}またはショートカットをダブルクリックして値を変更できます。",
   "CycleView": "選択表示切り替え",
   "Dismiss":  "メニュー表示・ウィンドウをクリア",
@@ -1462,11 +1465,11 @@
   "Highlight": "オブジェクト強調表示",
   "SelectAll": "全てのオブジェクト選択",
   "Undo": "直前の操作を戻す",
-  "Cut": "Cut Objects",
+  "Cut": "カット",
   "Copy": "コピー",
   "Paste": "ペースト",
   "Target": "ターゲットする",
-  "Ruler": "Toggle Distance Ruler",
+  "Ruler": "距離測定切り替え",
   "SendToBack": "オブジェクトを奥に移動",
   "BringToFront": "オブジェクトを前に移動",
   "ToggleCharacterSheet": "キャラクターシート開閉",
@@ -1481,7 +1484,7 @@
   "PanDownRight": "コマ・画面移動（右下）",
   "ZoomIn": "ズーム・イン（拡大）",
   "ZoomOut": "ズーム・アウト（縮小）",
-  "RulerWaypoint": "Place Ruler Waypoint",
+  "RulerWaypoint": "中間点を設置",
   "ExecuteMacro": "ホットバーからマクロ {number} を実行",
   "SwapMacroPage": "ホットバー {page} に切り替え",
   "MustBeArray": "値の配列を渡してください",
@@ -1491,7 +1494,7 @@
   "FocusChat": "チャットをフォーカス",
   "ACTIONS": {
     "AddBinding": "ショートカット追加",
-    "CancelEdit": "Cancel Edit",
+    "CancelEdit": "編集をキャンセル",
     "EditBinding": "ショートカットを変更",
     "SaveBinding": "ショートカット保存",
     "DeleteBinding": "ショートカット削除"
@@ -1552,11 +1555,11 @@
   },
   "negative": {
     "label": "暗闇？",
-    "hint": "暗闇は照明と視覚を遮り、中にある照明や視覚を無効化する。"
+    "hint": "暗闇は照明と視覚を遮り、中にある照明や視覚を無効化します。"
   },
   "priority": {
-    "label": "Priority",
-    "hint": "Determines how light and darkness sources interact. Higher-priority light repels lower-priority darkness, but if priorities match, darkness prevails."
+    "label": "優先度",
+    "hint": "照明と暗闇の光源の相互作用を決定します。優先度の高い照明は優先度の低い暗闇を排除しますが、優先度が同じ場合は暗闇が優先されます。"
   },
   "saturation": {
     "label": "照明の彩度",
@@ -1649,28 +1652,28 @@
 "MODMANAGE.Bugs": "バグまたは問題の報告",
 "MODMANAGE.DeactivateAll": "全てのMODを無効化",
 "MODMANAGE.Readme": "モジュールの説明書",
-"MODMANAGE.Title": "モジュールの管理",
+"MODMANAGE.Title": "モジュール管理",
 "MODMANAGE.Instructions": "このワールドで有効化したいモジュールを設定します。モジュールの更新を行なうと現在のワールドが再読み込みされます。",
 "MODMANAGE.View": "以下のモジュールは現在、このワールドで有効化されています。",
 "MODMANAGE.None": "このワールドで利用可能なモジュールはありません。この一覧を表示することはできますが、変更する権限がありません。",
 "MODMANAGE.Search": "MODフィルタ",
-"MODMANAGE.Submit": "モジュールを更新",
+"MODMANAGE.Submit": "モジュール設定を保存",
 "MODMANAGE.Dependencies": "依存先",
 "MODMANAGE.RequiredDepError": "このモジュールは以下の {dependents} によって必要とされているので無効化できません。",
 "MODMANAGE.RequiredDependencies": "必須の依存先",
 "MODMANAGE.RecommendedDependencies": "推奨の依存先",
-"MODMANAGE.OptionalDependencies": "Optional Dependencies",
-"MODMANAGE.DependencyResolution": "Dependency Resolution",
+"MODMANAGE.OptionalDependencies": "任意の依存先",
+"MODMANAGE.DependencyResolution": "依存先の解決",
 "MODMANAGE.DepRequiredEnable": "このモジュールには、正しく機能するのに必要な以下の依存先のモジュールがあります：",
 "MODMANAGE.DepOptionalEnable": "このモジュールには、以下の任意の依存先のモジュールがあります：",
 "MODMANAGE.DepEnableCheck": "依存先を有効化しますか？",
 "MODMANAGE.DepDisable": "以下のモジュールも無効化しますか？",
 "MODMANAGE.DepDisableCheck": "依存先も無効化しますか？",
-"MODMANAGE.DepNotInstalled": "必須の依存先 {} がインストールされていません！",
+"MODMANAGE.DepNotInstalled": "必須の依存先 {missing} がインストールされていません！",
 "MODMANAGE.DepMissing": "{module}が有効化されましたが、必須の依存先である{missing}が有効化されていません。",
 "MODMANAGE.FilterAll": "全てのモジュール",
-"MODMANAGE.FilterActive": "有効化モジュール",
-"MODMANAGE.FilterInactive": "無効化モジュール",
+"MODMANAGE.FilterActive": "有効モジュール",
+"MODMANAGE.FilterInactive": "無効モジュール",
 
 "MODMANAGE.RequiredModule": "このモジュールの有効化必須です",
 "MODMANAGE.DependencyIssues": "依存先に問題があるので有効化できません。",
@@ -1678,7 +1681,7 @@
 "MODMANAGE.SystemCompatibilityIssueMaximum": "このモジュールは最大で本体バージョン {maximum} が必要ですが、現在のバージョンは {version} です。",
 "MODMANAGE.NavLabel": "モジュール管理",
 "MODMANAGE.UpstreamPackages": "このモジュールの有効化に頼っている {number} 個のモジュールがあります。このモジュールを無効化にした場合、自動的にそれらのモジュールも無効化されます。",
-"MODMANAGE.UnavailableDocuments": "無効なデータ",
+"MODMANAGE.UnavailableDocuments": "これらのモジュールを無効にすると、以下のデータは利用できなくなります。",
 
 "NOTE.Create": "地点メモ作成",
 "NOTE.CreateJournal": "関連する資料も作成しますか？",
@@ -1769,7 +1772,7 @@
 "PLAYLIST.SoundStop": "サウンド停止",
 "PLAYLIST.BulkImport": {
   "Title": "サウンドを一括インポート",
-  "Hint": "Select a folder containing the sounds to be imported.",
+  "Hint": "インポートするサウンドが含むフォルダを選択してください。",
   "Button": "一括インポート",
   "Warning": "要求された \"{path}\" ディレクトリから有効なプレイリスト・サウンドがインポートできませんでした"
 },
@@ -1814,12 +1817,12 @@
 "SCENE.DimensionLinked": "シーンの縦横比が同期されています。サイズのいずれかを編集するともう片方も比率を保つために自動的に変わります。クリックすると同期を解除します。",
 "SCENE.DimensionUnlinked": "シーンの縦横比が同期されていません。サイズのいずれかを編集してももう片方は変更されません。クリックすると同期します",
 "SCENE.DistortedDimensionsTitle": "縦横比の警告",
-"SCENE.DistortedDimensionsWarning": "元の縦横比とは違うサイズが設定されています。コマなどの配置物を自動的に一番近ちい位置に再配置しますか？結果は必ずしも正しいものとは限りません。",
+"SCENE.DistortedDimensionsWarning": "元の縦横比とは違うサイズが設定されています。コマなどの配置物を自動的に一番近い位置に再配置しますか？結果は必ずしも正しいものとは限りません。",
 "SCENE.GenerateThumb": "サムネイル画像を再生成",
 "SCENE.GenerateThumbNoCanvas": "「ゲームキャンバスの無効化」の設定を使用している場合シーンのサムネイルは生成されません。",
+"SCENE.GenerateThumbUploadDenied": "ユーザーがファイルをアップロードする権限がないため、シーンのサムネイルを生成できませんでした。",
+"SCENE.GenerateThumbProgress": "シーン「{name}」のサムネイル画像を生成中。",
 "SCENE.GenerateThumbSuccess": "シーン「{name}」のサムネイル画像を生成しました。",
-"SCENE.GenerateThumbProgress": "Generating thumbnail image for Scene {name}.",
-"SCENE.GenerateThumbSuccess": "Generated thumbnail image for Scene {name}.",
 "SCENE.GridConfigTool": "グリッド設定ツール",
 "SCENE.GridConfigToolHint": "マウスホイールと矢印キーを使用するか、次の入力欄を手動で設定して、グリッドと背景画像の位置を設定します。",
 "SCENE.GridGridless": "グリッド無し",
@@ -1854,12 +1857,12 @@
   "name.label": "シーン名",
   "navigation.label": "ナビゲーションバーに表示",
   "navName" : {
-    "label" : "ナビゲーション名",
+    "label": "ナビゲーション名",
     "hint" : "ナビゲーションバーにて、プレイヤーに表示される代替シーン名。"
   },
   "background": {
     "src": {
-      "label" : "背景画像",
+      "label": "背景画像",
       "hint": "シーンに表示する背景画像とサイズを設定します。"
     },
     "offsetX.label": "X座標",
@@ -1867,11 +1870,11 @@
   },
   "backgroundColor.label": "背景色",
   "foreground": {
-    "label" : "前景画像",
+    "label": "前景画像",
     "hint": "シーン内の他のオブジェクトの上に描画される前景画像。(任意)"
   },
   "foregroundElevation": {
-    "label" : "前景の高度",
+    "label": "前景の高度",
     "hint": "距離単位で前景画像や前景タイルの高低差を設定できます。"
   },
   "initial.scale.label": "ズーム",
@@ -1893,8 +1896,8 @@
     "hint": "シーンの周囲に表示する余分な空間やマス目を設定します。"
   },
   "tokenVision": {
-    "label" : "コマの視覚",
-    "hint" : "操作するコマに設定された視覚に基づいて、シーン内で見通せる距離を制限します。無効にすると、シーン全体が表示されます。"
+    "label": "コマの視覚",
+    "hint": "操作するコマに設定された視覚に基づいて、シーン内で見通せる距離を制限します。無効にすると、シーン全体が表示されます。"
   },
   "fog": {
     "exploration": {
@@ -1963,12 +1966,12 @@
     }
   },
   "journal": {
-    "label": "シーンのメモ",
+    "label": "資料",
     "hint": "ゲームマスターは、シーンのメモとして指定された資料を開くことができます。"
   },
   "journalEntryPage": {
-    "label": "ページ",
-    "hint": "A specific page from the linked Journal Entry."
+    "label": "資料ページ",
+    "hint": "リンクされた資料の特定のページ。"
   },
   "playlist": {
     "label": "再生するプレイリスト",
@@ -2026,6 +2029,11 @@
     "yes": "共有を許可",
     "no": "共有を拒否"
   },
+  "ChangePassword": {
+    "label": "パスワード変更",
+    "hint": "現在の管理者パスワードを入力してください。",
+    "title": "現在のパスワードを入力"
+  },
   "SECTIONS": {
     "FVTTConfig": "Foundry VTT 設定",
     "ServerConfig": "サーバー設定",
@@ -2057,6 +2065,7 @@
       "label": "デフォルトの言語",
       "hint": "対応する言語の翻訳ファイルを提供するモジュールを選択することにより、デフォルトの言語が選択できます。"
     },
+    "upnp.label": "UPnPの有効化",
     "port": {
       "label": "ポート",
       "hint": "オンセ工房 FoundryVTTがTCP接続に使用するポートを選択し、ユニバーサル・プラグアンドプレイ (UPnP) を有効または無効にすることができます。"
@@ -2071,7 +2080,7 @@
     },
     "deleteNEDB": {
       "label": "マイグレート済みNEDBファイルを削除",
-      "hint": "本体バージョン11からデータの扱い方が変わりました。古いデータベースの規格（NEDB）から新しい規格（LevelDB）へ移行します。古い規格のワールドを起動するとき、データベースは自動的に移行されます。以降後、NEDBのファイルもバックアップとして保持されるので、必要に応じて元に戻すことができます。便利な安全装置でさすが、同時にストレージに保持されるデータの量が増えて圧迫されます。安全性と引き換えにストレージを軽くしたい方はこの設定を有効化してください。注意、この設定は本体バージョン12以降ではデフォルトとなります。"
+      "hint": "本体バージョン11からデータの扱い方が変わりました。古いデータベースの規格（NEDB）から新しい規格（LevelDB）へ移行します。古い規格のワールドを起動するとき、データベースは自動的に移行されます。移行後、NEDBのファイルもバックアップとして保持されるので、必要に応じて元に戻すことができます。便利な安全装置ですが、同時にストレージに保持されるデータの量が増えて圧迫されます。安全性と引き換えにストレージを軽くしたい方はこの設定を有効化してください。注意、この設定は本体バージョン12以降ではデフォルトとなります。"
     },
     "hotReload": {
       "label": "パッケージファイルをホットリロード",
@@ -2088,7 +2097,7 @@
     },
     "fullscreen": {
       "label": "フルスクリーンモード",
-      "hint": "Open the application in a full-screen view, without toolbars or other user-interface elements."
+      "hint": "ツールバーやその他のユーザーインターフェース要素なしで、フルスクリーン表示でアプリケーションを開きます。"
     }
   }
 },
@@ -2152,27 +2161,27 @@
 "SETTINGS.TabCore": "本体設定",
 "SETTINGS.TabModule": "モジュール設定",
 "SETTINGS.TabSystem": "システム設定",
-"SETTINGS.TokenAutoRotateN": "Automatic Token Rotation",
-"SETTINGS.TokenAutoRotateL": "When enabled, Tokens are automatically rotated in the direction of movement by default. Regardless of this setting, the Lock Rotation setting on individual tokens will still prevent their artwork from being visually rotated.",
+"SETTINGS.TokenAutoRotateN": "コマの自動回転",
+"SETTINGS.TokenAutoRotateL": "有効にすると、コマはデフォルトで進行方向に自動的に回転します。この設定に関係なく、個々のコマの「回転を固定」設定は、アートワークが視覚的に回転するのを防ぎます。",
 "SETTINGS.TokenDragPreviewN": "コマ・ドラッグ中の視覚有効化",
 "SETTINGS.TokenDragPreviewL": "コマをドラッグしているときでも視覚と照明が変化します。ユーザがこれを悪用するとコマを降ろさずに奥を覗いたりできるので必要に応じて切り替えてください。",
 "SETTINGS.PrototypeTokenOverrides": {
   "Name": "初期コマの上書き",
-  "Label": "Configure Prototype Overrides",
-  "Hint": "Configure overrides of Prototype Token data for all Actors.",
+  "Label": "初期コマの上書き設定",
+  "Hint": "すべてのキャラクターに対して初期コマデータの上書き（オーバーライド）を設定します。",
   "Reset": {
-    "Label": "Reset Defaults",
+    "Label": "デフォルトにリセット",
     "Warning": "This action will remove all configured overrides."
   },
-  "Disabled": "Disabled",
-  "Submit": "Save Overrides",
+  "Disabled": "無効",
+  "Submit": "上書きを保存",
   "TABS": {
     "AllTypes": {
-      "Label": "[All Types]",
-      "Hint": "These overrides apply to all Prototype Tokens, regardless of parent Actor type. They can themselves be overridden for each Actor type in the subsequent tabs. A blank selection for a field indicates no override."
+      "Label": "[全種別]",
+      "Hint": "これらの上書きは、キャラクター種別に関係なく、すべての初期コマに適用されます。これらは、後続のタブで各キャラクター種別ごとに上書きすることができます。フィールドが空白の場合は、上書きがないことを示します。"
     },
-    "Basics": "Basics",
-    "Marker": "Turn Marker"
+    "Basics": "基本",
+    "Marker": "ターンマーカー"
   }
 },
 "SETTINGS.PermissionReset": "ユーザーのロール権限設定をデフォルトにリセットします。",
@@ -2193,31 +2202,34 @@
 "SETTINGS.GridDiagonalsAlternating2": "交互 (2/1/2)",
 "SETTINGS.GridDiagonalsIllegal": "違法 (∞)",
 
+"SETTINGS.UniversalKeybindingsN": "ユニバーサルショートカット（実験的）",
+"SETTINGS.UniversalKeybindingsL": "物理的なキーの位置ではなく、入力した文字でショートカットを一致させます。AZERTY、QWERTZ、かな等の配列のサポートが改善されます。これは実験的な機能です。再読み込みが必要です。",
+
 "SETTINGS.UI": {
   "MENU": {
     "name": "UI設定",
-    "label": "インターフェイスの設定",
-    "hint": "Settings which affect how the Foundry Virtual Tabletop user interface appears or behaves."
+    "label": "インターフェースの設定",
+    "hint": "FoundryVTTのユーザーインターフェースの表示や動作に影響する設定です。"
   },
   "HEADERS": {
-    "theme": "Theme and Color Scheme",
+    "theme": "テーマとカラースキーム",
     "size": "インターフェースサイズ",
-    "fade": "Interface Fading",
-    "other": "Other Settings"
+    "fade": "インターフェースフェーディング",
+    "other": "その他の設定"
   },
   "FIELDS": {
     "uiScale": {
-      "label": "Interface Scale",
-      "hint": "Apply a global scaling factor to the overall user interface to make it larger or smaller."
+      "label": "インターフェーススケール",
+      "hint": "ユーザーインターフェース全体にグローバルなスケーリング係数を適用して、大きくしたり小さくしたりできます。"
     },
     "fontScale": {
       "label": "フォントサイズ",
-      "hint": "Enlarge or reduce the default font size used in the application."
+      "hint": "アプリケーションで使用されるデフォルトのフォントサイズを拡大または縮小します。"
     },
     "colorScheme": {
       "applications": {
         "label": "アプリケーション",
-        "hint": "Specify whether you prefer windowed UI applications like character sheets to render using a light theme or a dark theme. Not all sheets support this preference."
+        "hint": "キャラクターシートのようなウィンドウUIアプリケーションのレンダリングにライトテーマとダークテーマのどちらを使用するかを指定します。すべてのシートがこの設定をサポートしているわけではありません。"
       },
       "choices": {
         "default": "ブラウザのデフォルト",
@@ -2226,23 +2238,23 @@
       },
       "interface": {
         "label": "インターフェース",
-        "hint": "Specify whether you prefer user interface elements to render using a light theme or a dark theme."
+        "hint": "ユーザーインターフェース要素のレンダリングにライトテーマとダークテーマのどちらを使用するかを指定します。"
       }
     },
     "chatNotifications": {
       "label": "チャット通知",
-      "hint": "Choose whether notifications of new chat messages appear as full chat cards, or only as a pip on the chat tab.",
-      "cards": "Chat Cards",
-      "pip": "Notification Pip"
+      "hint": "新着チャットメッセージの通知をチャットカードとして表示するか、チャットタブ上のバッジとしてのみ表示するかを選択します。",
+      "cards": "チャットカード",
+      "pip": "通知バッジ"
     },
     "fade": {
       "opacity": {
-        "label": "Inactive Opacity",
-        "hint": "The opacity of faded user interface elements when they are not active. Lower values are more transparent."
+        "label": "非アクティブ不透明度",
+        "hint": "ユーザーインターフェース要素がアクティブでないときに、フェードアウトされる不透明度。値が小さいほど透明度が高くなります。"
       },
       "speed": {
-        "label": "Fade Speed",
-        "hint": "How quickly interface elements fade in or out when the mouse enters or departs their area. Lower values are faster."
+        "label": "フェード速度",
+        "hint": "マウスがその領域に入ったり出たりしたときに、インターフェース要素がフェードインまたはフェードアウトする速さ。値が小さいほど速くなります。"
       }
     }
   }
@@ -2323,7 +2335,7 @@
   "ManifestUpdate": "新しいインストールURLで更新されたバージョンが利用可能です",
   "ManifestUpdateAvailable": "\"{package}\" の新しいバージョンが別のURLより利用可能です。これは、パッケージのホスティング場所または作成者が変更した場合に発生します。",
   "PriorManifestUrl": "以前のマニフェストURL (バージョン {version})",
-  "UpdatedManifestUrl": "更新されたのマニフェストURL (バージョン {version})",
+  "UpdatedManifestUrl": "更新されたマニフェストURL (バージョン {version})",
   "SwapToTheUpdatedManifest": "新しいマニフェストURLに切り替えますか？ (推奨)",
 
   "CurrentVersion": "現在のバージョン",
@@ -2356,10 +2368,10 @@
   "PackageNotOwned": "未所有",
   "PackageName": "パッケージ名",
   "PackageProtected": "Protected",
-  "PackageRequiresDowngradeHint": "You must downgrade to Foundry VTT version {vmax} in order to install this package.",
-  "PackageRequiresDowngradeLabel": "Requires Downgrade",
-  "PackageRequiresUpgradeHint": "You must upgrade to Foundry VTT version {vmin} in order to install this package.",
-  "PackageRequiresUpgradeLabel": "Requires Upgrade",
+  "PackageRequiresDowngradeHint": "このパッケージをインストールするには、Foundry VTT バージョン {vmax} にダウングレードする必要があります。",
+  "PackageRequiresDowngradeLabel": "要ダウングレード",
+  "PackageRequiresUpgradeHint": "このパッケージをインストールするには、Foundry VTT バージョン {vmin} にアップグレードする必要があります。",
+  "PackageRequiresUpgradeLabel": "要アップグレード",
   "PackageVisAll": "全てのパッケージ",
   "PackageVisInst": "インストール済",
   "PackageVisUnin": "未インストール",
@@ -2379,7 +2391,7 @@
   "PackageDependenciesTitle": "不足パッケージのインストール",
   "PackageInstallDependencies": "自動的にインストールしますか？",
   "PackageDependenciesAutomaticSingular": "依存関係を自動的にインストールする",
-  "PackageDependenciesAutomaticPlural": "{number}個の依存関係を自動的にインストールする",
+  "PackageDependenciesAutomaticPlural": "選択された依存関係を自動的にインストールする",
   "PackageDependenciesManualSingular": "依存関係を手動でインストールする",
   "PackageDependenciesManualPlural": "依存関係を全て手動でインストールする",
   "PackageDependenciesCouldNotInstallSingular": "依存関係を手動でインストールする必要があります。",
@@ -2388,8 +2400,8 @@
   "PackageDependenciesCouldInstallPlural": "{number}個の依存関係を自動的にインストール可能です。", 
   "PackageDependenciesDecline": "{title}に必要な依存パッケージをインストールしないことを選択しました。手動でインストールする必要があります。",
   "PackageDependenciesSuccess": "{title}および{number}個の依存関係に必要なものが正常にインストールされました。",
-  "PackageUpdateCoreUpdateNeeded": "{id}のための更新が存在しますが、インストールするには最低でもバージョン{vmin}まで本体を更新する必要があります。現在使用しているバージョンは{vcur}です。",
-  "PackageUpdateCoreUnstable": "{id}のための更新が存在しますが、必要最バージョン{vmin}がまだ安定版ではないためインストールを保留しました。",
+  "PackageUpdateCoreUpdateNeeded": "{id}の更新が存在しますが、インストールするには最低でもバージョン{vmin}まで本体を更新する必要があります。現在使用しているバージョンは{vcur}です。",
+  "PackageUpdateCoreUnstable": "{id}の更新が存在しますが、必要最低バージョン{vmin}がまだ安定版ではないためインストールを保留しました。",
   "PackageUpdateCoreInsufficient": "更新が見つかりましたが、適切に機能するには古い本体バージョン{vmax}が必要です。",
   "PackageDeleteTitle": "削除 {type}: {title}",
   "PackageDeleteConfirm": "<strong>{title}</strong> {type} を削除してもよろしいですか？",
@@ -2425,13 +2437,13 @@
   "WorldLaunchCleanWorld": "ワールドデータをクリーニング中",
   "WorldLaunchExtractDemo": "デモ・データを抽出中",
 
-  "UpdateDownloadingS": "更新のダウンロード",
+  "UpdateDownloadingS": "更新のダウンロード中",
   "UpdateDownloadingC": "ダウンロード完了",
-  "UpdateExtractingS": "更新の抽出",
+  "UpdateExtractingS": "更新の抽出中",
   "UpdateExtractingC": "抽出完了",
-  "UpdateCleaningS": "ディレクトリ・クリーニング",
+  "UpdateCleaningS": "ディレクトリをクリーニング中",
   "UpdateCleaningC": "クリーニング完了",
-  "UpdateInstallingS": "更新のインストール",
+  "UpdateInstallingS": "更新のインストール中",
   "UpdateInstallingC": "インストール完了",
   "UpdateCompleteManual": "更新は正常に完了しました。これよりオンセ工房 Foundry VTTのサーバを停止しますので、手動で再起動してください。",
   "UpdateCompleteAuto": "更新は正常に完了しました。オンセ工房 Foundry VTTのアプリを再起動します。",
@@ -2441,26 +2453,30 @@
   "UpdateWarningWillDisable": "この更新は、オンセ工房 FoundryVTTの新しいメジャーバージョンです。この更新をインストールする場合、まだ互換性が無いと思われる、いくつかのインストール済みモジュールを無効化する必要があります。",
   "UpdateButtonDownload": "{display} 更新をダウンロード",
   "UpdateInfoAvailable": "オンセ工房 FoundryVTT バージョン {display} が利用可能です！",
-  "UpdateNoUpdateMode": "--noupdate モードで起動されているため、オンセ工房 FoundryVTTを更新することができません。",
   "UpdateNotAvailable": "要求された更新先で利用可能な更新情報がありません",
   "UpdateNoArchive": "インストールする更新のアーカイブが存在しません。",
   "UpdateLicenseInvalid": "ご利用のライセンスキーは返金処理が完了し無効化されたか、その他の理由により無効化されています。",
   "UpdatedPackages": "パッケージの更新ログ",
+  "NoUpdateMode": {
+    "Label": "更新無効",
+    "Hint": "--noupdate モードで起動されているため、オンセ工房 FoundryVTTを更新することができません。"
+  },
+
   "Package": "パッケージ",
   "VersionChange": "バージョン変更",
 
-  "WorldMigrationRequiredTitle": "ワールドのデータを移行します。",
+  "WorldMigrationRequiredTitle": "ワールドデータを移行",
   "WorldCoreMigrationRequired": "<p>ワールド <strong>{world}</strong> を起動しようとしています。起動中、データが本体の旧バージョン (<code>{oldVersion}</code>) から現在インストールされているバージョン <strong>{newVersion}</strong>へ移行されます。</p>",
   "WorldSystemMigrationRequired": "<p>このワールドを最後に実行したとき、現在インストールされているシステムバージョン <strong>{newVersion}</strong> より古いシステムバージョン(<code>{oldVersion}</code>) が使用されました。このまま実行すると内部でデータ移行が発生する可能性があります。詳細はそれぞれのシステムの案内を御覧ください。</p>",
   "WorldMigrationSystemUnavailable": "<p>現在インストールしているシステム<strong>{system}</strong> (<code>{systemVersion}</code>) のバージョンが利用中の本体バージョンとの互換性が指定されていません。マイグレーション中に問題が発生する可能性があります。</p>",
   "WorldMigrationDisableModules": "<p>ワールドをマイグレーションする前にインストールしているシステムやモッドのアップデートを行ってください。新しいシステムバージョンへの移行であるため、インストールされたモッドは自動的に無効化されます。マイグレーション後、手動で再度有効化する事ができます。</p>",
   "WorldMigrationBackupPrompt": "<p><strong>マイグレーションをもとに戻すことはできません。</strong>ワールドのデータをバックアップしてから続行してください。途中で問題が発生した時や前のバージョンに戻したい時はこのバックアップが必要となります。</p>",
-  "WorldMigrationCreateBackup": "移行前にバックアップを作成する？",
+  "WorldMigrationCreateBackup": "移行前にバックアップを作成しますか？",
   "WorldMigrationBegin": "マイグレーション開始",
   "WorldMigrationInProcess": "ワールドデータがバージョン{version}対応のための更新を始めました。少し時間がかかる場合があります。完了するまでアプリを終了しないでください。",
 
-  "AdminAccess": "オンセ工房 Foundry VTT &bull; 管理者アクセス",
-  "AdminPasswordPrompt": "アプリケーション設定にアクセスするには、管理者パスワードを入力する必要があります。",
+  "AdminAccess": "要管理者アクセス",
+  "AdminPasswordPrompt": "現在、このサーバーでアクティブなゲームはありません。セットアップメニューにアクセスするには、サーバー管理者のパスワードを入力する必要があります。",
   "AdminPasswordForgot": "パスワードを忘れた場合は<a href='https://foundryvtt.com/article/reset-admin-password/' target='_blank'>こちら</a>にある初期化のガイドを参考にしてください。",
   "AdminLogIn": "ログイン",
   "AdminLogout": "管理者ログアウト",
@@ -2554,7 +2570,7 @@
     "CannotRestoreUnusable": "パッケージが使用不可能になるため、このバックアップを復元できません。"
   },
   "COMPAT": {
-    "Title": "Preview Compatibility: {release}",
+    "Title": "互換性を確認: {release}",
     "Compatible": "{count} 互換性あり",
     "CompatibleTooltip": "バージョン{version}と互換性が確認されたパッケージ。",
     "Previewing": "互換性の確認中",
@@ -2578,11 +2594,21 @@
         "World": "このワールドのシステムは、コアソフトウェアバージョン{verified}で最後に確認されました"
     }
   },
+  "INSTALL_PACKAGE": {
+    "ManifestIncompatible": {
+      "Title": "互換性の警告",
+      "Warning": [
+        "指定されたURLの {packageType} は、現在のバージョンの Foundry Virtual Tabletop と互換性がありません。",
+        "インストールを続行してもよろしいですか？"
+      ]
+    },
+    "ManifestWrongPackageType": "指定されたURLは {packageType} ではないようです。"
+  },
   "UPDATE_NOTES": {
-    "Title": "Release Notes: {release}",
-    "FullList": "アップデートノートについては<a href=\"{url}\" target=\"_blank\">full list</a> をご確認ください。",
+    "Title": "リリースノート: {release}",
+    "FullList": "リリースノートについては<a href=\"{url}\" target=\"_blank\">full list</a> をご確認ください。",
     "BeginDownload": "ダウンロード開始",
-    "NewGenerationHint": "Consider taking a snapshot of all installed packages before updating in case you need to roll-back.",
+    "NewGenerationHint": "ロールバックが必要な場合に備えて、アップデートの前にインストールされているすべてのパッケージのスナップショットを取ることを検討してください。",
     "PreviewCompatibilityHint": "下の「互換性を確認」ボタンを使用して、すべてのワールド、システム、およびモジュールがFVTTバージョン{version}でサポートされているかどうかを確認できます。"
   }
 },
@@ -2631,7 +2657,7 @@
   "UpdateAllInProgress": "全てを更新中です。他のパッケージタイプの更新を行う前に完了するのを待ってください。",
   "ModuleCreate": "モジュールを作成",
   "ModuleCreateHint": "このフォームでは、複数のワールド間で共有できるモジュールを作成したり、他のユーザーへの配布用にパッケージ化することができます。必要最低限の設定をここで設定できます。このフォームでパッケージを作成した後、JSONマニフェストファイルを修正して、パッケージをさらに管理し、編集することができます。",
-  "ModuleCreateSuccess": "新たにモジュール\"{id}\"が作成されました！早速利用して見てください。",
+  "ModuleCreateSuccess": "新たにモジュール\"{id}\"が作成されました！早速利用してみてください。",
   "ModuleCreateErrorAlreadyExists": "id \"{id}\" を持ったパッケージはすでに存在します！別のパッケージ識別idを入力してください。",
   "ConfigTitle": "モジュール: {module}",
   "NewModuleTitle": "My New Module",
@@ -2690,22 +2716,26 @@
       "hint": "このパッケージについての詳細を確認できるウェブサイトURLです。"
     },
     "authors": {
-      "name.label": "作者の名前",
-      "discord.label": "Discordユーザーネーム",
-      "email.label": "メールアドレス",
-      "url.label": "ウェブサイトURL"
+      "element": {
+        "name.label": "作者の名前",
+        "discord.label": "Discordユーザーネーム",
+        "email.label": "メールアドレス",
+        "url.label": "ウェブサイトURL"
+      }
     },
     "packs": {
-      "name": {
-        "label": "名前",
-        "hint": "辞典パックを識別する一意の英数字の文字列で、特殊文字は含まないものです。",
-        "disabledHint": "この辞典パックの名前はすでに存在するため、変更できません。"
-      },
-      "label.label": "ラベル",
-      "type.label": "ドキュメントタイプ",
-      "system": {
-        "label": "必要なシステム",
-        "hint": "キャラクター、アイテム、または冒険（キャラ＋アイテムが複数個混在）を含んでいる辞典パックには、どのゲームシステムで使用できるかを指定する必要があります。"
+      "element": {
+        "name": {
+          "label": "名前",
+          "hint": "辞典パックを識別する一意の英数字の文字列で、特殊文字は含まないものです。",
+          "disabledHint": "この辞典パックの名前はすでに存在するため、変更できません。"
+        },
+        "label.label": "ラベル",
+        "type.label": "ドキュメントタイプ",
+        "system": {
+          "label": "必要なシステム",
+          "hint": "キャラクター、アイテム、または冒険（キャラ＋アイテムが複数個混在）を含んでいる辞典パックには、どのゲームシステムで使用できるかを指定する必要があります。"
+        }
       }
     },
     "compatibility": {
@@ -2752,14 +2782,14 @@
 "SHEETS.Defaults": "デフォルト",
 "SHEETS.DefaultSheet": "デフォルトシート",
 "SHEETS.DefaultDocumentSheet": "デフォルト{document}シート",
-"SHEETS.DocumentSheetHint": "Override which sheet type you would like to use for this specific document.",
-"SHEETS.TypeSheetHint": "Set the default sheet type used for this document type (GM Only).",
+"SHEETS.DocumentSheetHint": "特定のドキュメントに使用するシートタイプを上書きします。",
+"SHEETS.TypeSheetHint": "このドキュメントタイプで使用されるデフォルトのシートタイプを設定します (GMのみ)。",
 "SHEETS.DocumentSheetPrivate": "You do not have sufficient permission to view the sheet for this {type}.",
 "SHEETS.Save": "シート設定を保存",
 "SHEETS.FormNavLabel": "Form Tab Navigation",
 "SHEETS.CopyUuid": "ドキュメントUUIDをコピー",
 "SHEETS.Theme": "テーマ",
-"SHEETS.ThemeHint": "Not all themes are available for each sheet.",
+"SHEETS.ThemeHint": "すべてのテーマが各シートで利用できるわけではありません。",
 
 "SOUND": {
   "ConfigTitle": "環境音の設定",
@@ -2885,7 +2915,7 @@
 "PERMISSION.WallDoorsHint": "ドアの開閉を許可します。",
 "PERMISSION.QueryUser": "Query Users",
 "PERMISSION.QueryUserHint": "Allow users with this role to query other users.",
-"PERMISSION.WarningNoCreate": "{document}を作成するには権限が足りません",  
+"PERMISSION.WarningNoCreate": "{document}を作成するには権限が足りません",
 
 "REGION": {
   "TABS": {
@@ -2952,25 +2982,25 @@
   },
   "EVENTS": {
     "regionBoundary": {
-      "label": "リージョン境界が変更されました"
+      "label": "リージョン境界の変更"
     },
-    "behaviorStatus": {
-      "label": "効果が変更されました"
+    "behaviorActivated": {
+      "label": "効果が有効化"
+    },
+    "behaviorDeactivated": {
+      "label": "効果が無効化"
+    },
+    "behaviorViewed": {
+      "label": "効果が表示"
+    },
+    "behaviorUnviewed": {
+      "label": "効果が非表示"
     },
     "tokenEnter": {
       "label": "コマが入る前"
     },
     "tokenExit": {
       "label": "コマが出た後"
-    },
-    "tokenPreMove": {
-      "label": "コマが移動する前"
-    },
-    "tokenMove": {
-      "label": "コマが移動した後"
-    },
-    "tokenExit": {
-      "label": "Token Exits"
     },
     "tokenMoveIn": {
       "label": "コマが中へ移動した"
@@ -2979,13 +3009,13 @@
       "label": "コマが中から出た"
     },
     "tokenMoveWithin": {
-      "label": "Token Moves Within"
+      "label": "コマが中で移動"
     },
     "tokenAnimateIn": {
-      "label": "Token Animates In"
+      "label": "コマが中へ移動した瞬間"
     },
     "tokenAnimateOut": {
-      "label": "Token Animates Out"
+      "label": "コマが中から出た瞬間"
     },
     "tokenTurnStart": {
       "label": "コマがターンを開始"
@@ -3141,7 +3171,7 @@
     "modifyMovementCost": {
       "FIELDS": {
         "difficulties": {
-          "hint": "Configure the movement cost multiplier for each movement action. Overlapping movement cost modifications stack multiplicatively."
+          "hint": "各移動アクションの移動コスト乗数を設定します。重複する移動コスト修正は、乗算で積み重ねられます。"
         }
       }
     },
@@ -3194,7 +3224,7 @@
 "SIDEBAR.CharArt": "キャラクター画像を表示",
 "SIDEBAR.CollapseToggle": "閉じる / 展開",
 "SIDEBAR.Delete": "削除",
-"SIDEBAR.DeleteWarning": "この {type} は完全に削除され、元に戻すことはできません。",
+"SIDEBAR.DeleteWarning": "この{type}は完全に削除され、元に戻すことはできません。",
 "SIDEBAR.Duplicate": "複製",
 "SIDEBAR.Edit": "編集",
 "SIDEBAR.Export": "エクスポート",
@@ -3227,7 +3257,7 @@
   "LABELS": {
     "Build": "ビルド",
     "Demo": "デモ・モード",
-    "Modules": "有効化モジュール"
+    "Modules": "有効モジュール"
   },
   "HEADERS": {
     "Settings": "ゲーム設定",
@@ -3240,11 +3270,11 @@
     "Invite": "招待リンク",
     "Keybindings": "ショートカット設定",
     "Logout": "ログアウト",
-    "ManageModules": "モジュールの管理",
+    "ManageModules": "モジュール管理",
     "Players": "ユーザー管理",
     "Support": "困っていますか？",
-    "Tours": "操作方法を確認する",
-    "ViewModules": "有効化されたモジュールを表示",
+    "Tours": "操作方法の確認",
+    "ViewModules": "有効モジュールを表示",
     "Wiki": "コミュニティ Wikiページ"
   }
 },
@@ -3254,7 +3284,7 @@
   "Places": "サポートを受けられる場所",
   "Discord": "オンセ工房 Foundry VTT のサポートを日本語で受けるにはオンセ工房日本語コミュニティDiscordまでお越しください。英語で遊んでいる本家の方々と繋がりたい場合は次のDiscordへお入りください：",
   "BugReporting": "バグを報告する場合はこちらのお問い合わせページからバグレポートのテンプレートをご利用ください。英語のみですので、英語がわからない方はオンセ工房のDiscordまで投稿いただければ代理で送信します。",
-  "ReportPrelude": "DiscordやGitlabでサポートを受けているとき、下記の内容も一緒に投稿してあげると手伝う人もあなたのワールドの状況を把握しやすいです。お手数でなければこちらも一緒にコピペして投稿してください！",
+  "ReportPrelude": "DiscordやGithubでサポートを受けているとき、下記の内容も一緒に投稿してあげると手伝う人もあなたのワールドの状況を把握しやすいです。お手数でなければこちらも一緒にコピペして投稿してください！",
   "CopyReport": "レポートをクリップボードにコピー",
   "ReportCopied": "報告をコピーしました",
   "OS": "OS",
@@ -3308,7 +3338,7 @@
     },
     "OpenResultConfig": "結果設定を開く",
     "DrawResult": "ダイスロール",
-    "DrawSpecificResult": "Draw This Result",
+    "DrawSpecificResult": "この結果を抽選",
     "NormalizeResults": "ロール表の式を、割合から自動化する",
     "ResetResults": "結果をリセット",
     "CreateResult": "新規結果を追加",
@@ -3321,7 +3351,7 @@
     "results": "結果"
   },
   "FIELDS": {
-    "Description": "ロール表の説明",
+    "description.label": "ロール表の説明",
     "formula.label": "ロール式",
     "replacement.label": "同じ結果を繰り返し表示しても良い？",
     "displayRoll.label": "ダイスロールをチャット欄に表示する"
@@ -3341,7 +3371,7 @@
     "name.label": "結果名",
     "type.label": "結果の種別",
     "img.label": "結果のアイコン",
-    "documentUuid.label": "Referenced Document",
+    "documentUuid.label": "参照ドキュメント",
     "weight.label": "割合",
     "range.label": "範囲"
   }
@@ -3363,10 +3393,10 @@
 },
 "TEMPLATE.FIELDS": {
   "sort.label": "ソート",
-  "t.label": "Type",
-  "direction.label": "Direction",
-  "angle.label": "Angle",
-  "distance.label": "Distance",
+  "t.label": "種別",
+  "direction.label": "向き",
+  "angle.label": "角度",
+  "distance.label": "距離",
   "borderColor.label": "枠の色",
   "fillColor.label": "塗りつぶし色",
   "texture.label": "テクスチャ"
@@ -3381,13 +3411,13 @@
 "TILE.OcclusionModeRoof": "屋根 (視覚と照明を遮る）",
 "TILE.OcclusionModeRadial": "放射 (コマの周囲)",
 "TILE.OcclusionModeVision": "視覚 (コマの視覚範囲)",
-"TILE.VideoOptions": "Video Options",
+"TILE.VideoOptions": "ビデオオプション",
 "TILE.ACTIONS": {
   "CREATE": "タイル作成",
   "UPDATE": "タイル更新"
 },
 "TILE.SECTIONS": {
-  "position": "Adjust the position and dimensions of the Tile.",
+  "position": "タイルの位置と寸法を調整します。",
   "overhead": "タイルを屋根として、前景に適用する追加属性。"
 },
 "TILE.TABS": {
@@ -3466,19 +3496,19 @@
 "TOKEN.AssignSuccess": "{name}のコマ設定を更新しました",
 "TOKEN.BarAttributes": "バー",
 "TOKEN.BarValues": "値",
-"TOKEN.DeleteCombatantWarning": "You are deleting a Token that is in Combat. Its Combatant will be permanently deleted.",
+"TOKEN.DeleteCombatantWarning": "戦闘中のトークンを削除しています。その戦闘参加キャラは永久に削除されます。",
 "TOKEN.Dimensions": "サイズ",
 "TOKEN.AnchorHint": "デフォルトのアンカー (0.5, 0.5) はトークン画像の中心です。",
 "TOKEN.ImageAlts": "代替コマ画像",
-"TOKEN.Mirror": "反転",
-"TOKEN.MirrorX": "左右反転",
-"TOKEN.MirrorY": "上下反転",
+"TOKEN.Mirror": "画像の反転",
+"TOKEN.MirrorX": "左右",
+"TOKEN.MirrorY": "上下",
 "TOKEN.ResourceBar1D": "バー 1 データ",
 "TOKEN.ResourceBar2D": "バー 2 データ",
 "TOKEN.TitlePrototype": "初期コマ",
 "TOKEN.Update": "コマを更新",
 "TOKEN.WarningNoActor": "このコマは、ワールド内に存在しなくなったキャラクターを参照しています。",
-
+"TOKEN.WarningNoVision": "There is no Token in this Scene which gives you visibility of the area.",
 "TOKEN.TABS": {
   "identity": "キャラクター",
   "appearance": "画像",
@@ -3494,17 +3524,17 @@
 "TOKEN.FIELDS": {
   "name.label": "コマ名",
   "sort.label": "ソート",
-  "movementAction.label": "Movement Action",
+  "movementAction.label": "移動アクション",
   "actorId.label": "元データ",
   "actorLink.label": "コマとデータをリンク",
-  "displayName.label": "表示方法",
+  "displayName.label": "コマ名表示方法",
   "appendNumber": {
-    "label": "リンクされていないコマ名の末尾に数字をつけますか？",
-    "hint": "例： コボルド (3)"
+    "label": "末尾に数字をつける",
+    "hint": "リンクされていないコマ名の末尾に、自動インクリメント番号を追加します。例：\"ゴブリン (3)\""
   },
   "prependAdjective": {
-    "label": "リンクされていないコマ名の頭に形容詞をつけますか？",
-    "hint": "例：　臆病なコボルド"
+    "label": "頭に形容詞をつける",
+    "hint": "リンクされていないコマ名の頭にランダムな形容詞をつけます。例：\"怒り狂うゴブリン\""
   },
   "occludable.radius": {
     "label": "干渉半径",
@@ -3513,7 +3543,7 @@
   "disposition.label": "関係性",
   "lockRotation": {
     "label": "回転を固定",
-    "hint": "Prevent this Token's rotation angle from being rendered on the Canvas."
+    "hint": "コマの回転角度がキャンバスにレンダリングされないようにします。"
   },
   "texture": {
     "src.label": "画像パス",
@@ -3592,23 +3622,23 @@
   },
   "turnMarker": {
     "mode": {
-      "label": "Mode",
-      "hint": "Choose Default to use default Combat settings, Disabled to hide the turn marker, or Custom for a unique turn marker behavior."
+      "label": "モード",
+      "hint": "「デフォルト」でデフォルトの戦闘設定を使用します。「無効」でターンマーカーを非表示にします。または「カスタム」で固有のターンマーカーの動作を設定します。"
     },
     "animation": {
-      "label": "Animation",
-      "hint": "Choose an animation style for this Token's combat turn marker."
+      "label": "アニメーション",
+      "hint": "このコマの戦闘ターンマーカーのアニメーションスタイルを選択します。"
     },
     "src": {
-      "label": "Media Source",
-      "hint": "Choose an image or video file used for this Token's combat turn marker."
+      "label": "メディアソース",
+      "hint": "このコマの戦闘ターンマーカーに使用する画像またはビデオファイルを選択します。"
     },
     "disposition": {
-      "label": "Disposition Tint",
-      "hint": "Tint this Token's combat turn marker according to their disposition."
+      "label": "関係性の色合い",
+      "hint": "このコマの戦闘ターンマーカーを、その関係性に応じて色付けします。"
     }
   },
-  "displayBars.label": "表示方法",
+  "displayBars.label": "バー表示方法",
   "bar1.attribute.label": "バー 1 設定",
   "bar2.attribute.label": "バー 2 設定"
 },
@@ -3761,34 +3791,34 @@
     "coreSteel": "鋼色",
     "coreBronze": "銅色",
     "FIT_MODES": {
-      "label": "Dynamic Token Rings Fit Modes",
-      "hint": "Choose the fit mode for the Dynamic Rings.",
-      "subject": "Standard",
-      "grid": "Grid"
+      "label": "ダイナミックリングのフィットモード",
+      "hint": "ダイナミックリングのフィットモードを選択します。",
+      "subject": "スタンダード",
+      "grid": "グリッド"
     }
   }
 },
 "TOKEN.TURNMARKER": {
   "SHEET": {
-    "legend": "Combat Turn Marker"
+    "legend": "戦闘ターンマーカー"
   },
   "MODES": {
-    "DISABLED": "Disabled",
+    "DISABLED": "無効",
     "DEFAULT": "デフォルト",
     "CUSTOM": "カスタム"
   }
 },
 "TOKEN.MOVEMENT": {
   "ACTIONS": {
-    "blink.label": "Teleport (Blink)",
-    "burrow.label": "Burrow",
+    "blink.label": "テレポート (Blink)",
+    "burrow.label": "穴掘り",
     "climb.label": "登攀",
     "crawl.label": "這い進み",
-    "displace.label": "Teleport (Displace)",
+    "displace.label": "テレポート (Displace)",
     "jump.label": "跳躍",
     "fly.label": "飛行",
     "swim.label": "水泳",
-    "walk.label": "Walk"
+    "walk.label": "歩行"
   }
 },
 
@@ -3814,14 +3844,14 @@
     "displayScrollingText": "スクロールするテキストを表示",
     "executeMacro": "マクロを実行",
     "executeScript": "スクリプトを実行",
-    "modifyMovementCost": "Modify Movement Cost",
+    "modifyMovementCost": "移動コストを修正",
     "pauseGame": "ゲームを一時停止",
     "suppressWeather": "天候効果を抑制する",
     "teleportToken": "コマを転送する",
     "toggleBehavior": "効果を変更する"
   },
   "TableResult": {
-    "document": "Document",
+    "document": "ドキュメント",
     "text": "テキスト"
   }
 },
@@ -3896,9 +3926,9 @@
     }
   },
   "MESSAGES": {
-    "KICKED": "User {user} has been <strong>kicked</strong> from the World.",
-    "BANNED": "User {user} has been <strong>banned</strong> from the World.",
-    "UNBANNED": "User {user} has been <strong>unbanned</strong> from the World."
+    "KICKED": "ユーザー {user} はワールドから<strong>切断</strong>されました。",
+    "BANNED": "ユーザー {user} はワールドから<strong>BAN</strong>されました。",
+    "UNBANNED": "ユーザー {user} はワールドから<strong>BAN解除</strong>されました。"
   },
   "RoleNone": "なし",
   "RolePlayer": "プレイヤー",
@@ -3966,7 +3996,7 @@
   "SWIVEL": "Swivel"
 },
 "WALL.ANIMATION_DIRECTIONS": {
-  "DEFAULT": "Default",
+  "DEFAULT": "デフォルト",
   "REVERSE": "Reversed"
 },
 "WALL.Title": "ウォールの設定",
@@ -4045,10 +4075,10 @@
   "VoiceModeAlways": "常に有効",
   "VoiceModeActivity": "音声により有効化",
   "VoiceModePtt": "プッシュトゥトーク",
-  "DockPosition": "ドックの位置",
   "DockPositionTop": "上",
   "DockPositionRight": "右",
   "DockPositionBottom": "下",
+  "DockPositionLeft": "左",
   "TooltipAllowUserVideo" : "ユーザービデオを許可",
   "TooltipBlockUserVideo" : "ユーザービデオをブロック",
   "TooltipAllowUserAudio" : "ユーザー音声を許可",
@@ -4080,7 +4110,7 @@
   "ConnectionLostWarning" : "音声/ビデオ シグナリングサーバへの接続が失われました。接続の再確立を試みています。",
   "GenericError" : "WebRTC エラー : ",
   "NoSSLError": "オンセ工房Foundry VTTサーバがSSL証明書を使用していない限り、音声/ビデオ通話は使用できません。 手順については、オンラインマニュアルを参照してください。",
-  "Volume": "Volume",
+  "Volume": "音量",
   "WarningCannotEnableVideo": "ビデオ画像をブロードキャストする権限がないため、カメラを有効にすることができません。",
   "WarningCannotEnableAudio": "音声をブロードキャストする権限がないため、マイクを有効にすることができません。",
   "WorldSettings": {
@@ -4092,8 +4122,8 @@
       "turn": {
         "type.label": "Relay Server",
         "url.label": "URL",
-        "username.label": "Username",
-        "password.label": "Password"
+        "username.label": "ユーザーネーム",
+        "password.label": "パスワード"
       }
     }
   },
@@ -4105,7 +4135,7 @@
           "hint": "Choose how your voice is broadcast in AV calls."
         }
       },
-      "dockPosition.label": "Dock Position",
+      "dockPosition.label": "ドックの位置",
       "nameplates.label": "ネームプレート",
       "borderColors.label": "プレイヤーの枠色を使用",
       "videoSrc": {
