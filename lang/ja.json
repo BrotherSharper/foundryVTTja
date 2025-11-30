@@ -453,6 +453,7 @@
 "CHAT.RollPrivate": "自分とGMに送信",
 "CHAT.RollSelf": "自分だけに送信",
 "CHAT.RollTables": "ロール表",
+"CHAT.SendMessage": "メッセージを送信",
 "CHAT.JumpToBottom": "一番下へ移動",
 "CHAT.PrivateRollContent": "{user}は秘密裏にメッセージ（ロール）を送信した",
 "CHAT.UnknownUser": "不明なユーザー",
@@ -653,10 +654,12 @@
   },
   "SETTING": {
     "Hint": "システムやModが提供する画像素材の使用順位を設定します。",
-    "Label": "画像素材の設定",
+    "Label": "辞典の画像素材",
     "Title": "辞典の画像素材"
   }
 },
+"COMPENDIUM.CopyId": "辞典IDをコピー",
+"COMPENDIUM.IdCopiedClipboard": "辞典ID \"{id}\" がクリップボードにコピーされました。",
 
 "CONTROLS": {
   "Title": "操作マニュアル",
@@ -669,14 +672,6 @@
   "TargetSelect": "目標選択",
   "TargetSelectP": "視認できるコマをターゲットします。\n自分が所有していないコマであれば右ダブルクリックでもターゲットできます。",
   "BasicMeasure": "距離測定",
-  "GroupMeasure": "テンプレート操作",
-  "MeasureType": "テンプレート種別",
-  "MeasureConfigHint": "定規テンプレートの配置と表示について設定します。",
-  "MeasureCircle": "球形テンプレート",
-  "MeasureCone": "円錐テンプレート",
-  "MeasureRect": "四角テンプレート",
-  "MeasureRay": "直線テンプレート",
-  "MeasureClear": "テンプレート消去",
   "GroupTile": "タイル操作",
   "TileSelect": "タイル選択",
   "TilePlace": "タイル設置",
@@ -747,9 +742,11 @@
   "GroupRegion": "リージョン操作",
   "RegionSelect": "リージョン選択",
   "RegionSelectP": "シーンに存在する一つ以上のリージョンを選択できます。選択されているリージョンはソリッドカラーで表され、選択されていないリージョンはストライプ模様で表されます。",
+  "RegionTemplateMode": "定規テンプレートモード",
   "RegionRectangle": "四角形を描く",
   "RegionCircle": "円形を描く",
   "RegionEllipse": "楕円を描く",
+  "RegionEmanation": "オーラを描く",
   "RegionCone": "円錐を描く",
   "RegionLine": "直線を描く",
   "RegionPolygon": "多角形を描く",
@@ -899,7 +896,7 @@
   "WarnMissingData": "属性 {match} は、ロールデータの中に存在しません。",
   "CONFIG": {
     "Hint": "ダイスロールに使用する手法を設定します。",
-    "Label": "ダイスの設定",
+    "Label": "ダイス",
     "Title": "ダイスの設定"
   },
   "FULFILLMENT": {
@@ -912,6 +909,7 @@
 "DOCUMENT": {
   "Create": "{type}新規作成",
   "Delete": "{type}削除",
+  "DeleteDocument": "ドキュメント削除",
   "New": "新規{type}",
   "NewCount": "新規{type} ({count})",
   "Update": "{type}更新",
@@ -928,6 +926,7 @@
 
   "SheetPermissionWarn": "この{document}シートを表示する権限がありません。",
   "UsePermissionWarn": "この{document}を使用する権限がありません。",
+  "CopyUuid": "ドキュメントUUIDをコピー",
   "IdCopiedClipboard": "{label} {type} \"{id}\"をクリップボードにコピーしました。",
 
   "ActiveEffect": "アクティブ効果",
@@ -970,8 +969,6 @@
   "JournalEntryPages": "ページ",
   "Macro": "マクロ",
   "Macros": "マクロ",
-  "MeasuredTemplate": "定規テンプレート",
-  "MeasuredTemplates": "定規テンプレート",
   "Note": "地点メモ",
   "Notes": "地点メモ",
   "Playlist": "プレイリスト",
@@ -1062,19 +1059,29 @@
   "sort.label": "ソート"
 },
 
-"EFFECT.MODE_CUSTOM": "カスタム",
-"EFFECT.MODE_MULTIPLY": "乗算",
-"EFFECT.MODE_ADD": "追加",
-"EFFECT.MODE_DOWNGRADE": "ダウングレード",
-"EFFECT.MODE_UPGRADE": "アップグレード",
-"EFFECT.MODE_OVERRIDE": "上書き",
 "EFFECT.DurationTurns": "効果の持続時間（戦闘）",
 "EFFECT.StartTurns": "効果の開始",
-"EFFECT.ChangeKey": "属性キー",
-"EFFECT.ChangeMode": "モード変更",
-"EFFECT.ChangeValue": "効果値",
-"EFFECT.ChangePriority": "優先度",
 "EFFECT.Submit": "保存",
+"EFFECT.CHANGES": {
+  "PHASES": {
+    "initial": {
+      "label": "初期",
+      "hint": "基本データ属性が初期化された後、派生データが準備される前"
+    },
+    "final": {
+      "label": "最終",
+      "hint": "派生データ属性が計算された後"
+    }
+  },
+  "TYPES": {
+    "custom": "カスタム",
+    "multiply": "乗算",
+    "add": "追加",
+    "downgrade": "ダウングレード",
+    "upgrade": "アップグレード",
+    "override": "上書き"
+  }
+},
 "EFFECT.FIELDS": {
   "name.label": "効果名",
   "img.label": "効果アイコン",
@@ -1090,6 +1097,16 @@
   "showIcon": {
     "label": "アイコンを表示する？",
     "hint": "この効果が有効な間、この効果を表すアイコンをUIに表示するかどうか。"
+  },
+  "changes.element": {
+    "key.label": "属性キー",
+    "type.label": "種別",
+    "value.label": "効果値",
+    "priority.label": "優先度",
+    "phase": {
+      "label": "フェーズ",
+      "hint": "データ準備または別のイベントにおいて変更が適用される時点。"
+    }
   },
   "duration": {
     "seconds.label": "効果の持続時間（秒）",
@@ -1190,12 +1207,33 @@
 },
 
 "EDITOR.Format": "フォーマット",
-"EDITOR.Font": "フォント",
+"EDITOR.Font": {
+  "Color": {
+    "Label": "フォント色",
+    "Set": "フォント色を設定",
+    "Title": "色"
+  },
+  "Size": {
+    "Huge": "特大",
+    "Invalid": "無効なフォントサイズ",
+    "Label": "フォントサイズ",
+    "Large": "大",
+    "Normal": "標準",
+    "Placeholder": "12pt",
+    "Set": "フォントサイズを設定",
+    "Small": "小",
+    "Title": "サイズ"
+  },
+  "Title": "フォント"
+},
 "EDITOR.Inline": "行間",
 "EDITOR.Block": "文体",
 "EDITOR.Headings": "見出し",
 "EDITOR.Heading": "見出し {level}",
 "EDITOR.Alignment": "整列",
+"EDITOR.Custom": "カスタム",
+"EDITOR.Insert": "挿入",
+"EDITOR.Lists": "リスト",
 "EDITOR.Paragraph": "標準",
 "EDITOR.Bold": "太字",
 "EDITOR.Italic": "斜体",
@@ -1230,6 +1268,7 @@
 "EDITOR.InsertImage": "画像挿入",
 "EDITOR.ImageSource": "ソース",
 "EDITOR.ImageAlt": "画像の説明",
+"EDITOR.ImageCaption": "説明文",
 "EDITOR.ImageDimensions": "サイズ",
 "EDITOR.ImageDimensionsHint": "空の場合、画像の原サイズが使用されます。",
 "EDITOR.ImageInsert": "挿入",
@@ -1495,16 +1534,26 @@
   "BringToFront": "オブジェクトを前に移動",
   "ToggleCharacterSheet": "キャラクターシート開閉",
   "PTTKey": "プッシュトゥトーク・ミュート",
-  "PanUp": "コマ・画面移動（上）",
-  "PanLeft": "コマ・画面移動（左）",
-  "PanDown": "コマ・画面移動（下）",
-  "PanRight": "コマ・画面移動（右）",
-  "PanUpLeft": "コマ・画面移動（左上）",
-  "PanUpRight": "コマ・画面移動（右上）",
-  "PanDownLeft": "コマ・画面移動（左下）",
-  "PanDownRight": "コマ・画面移動（右下）",
-  "ZoomIn": "垂直に上昇・マップ拡大",
-  "ZoomOut": "垂直に下降・マップ縮小",
+  "MoveUp": "コマ移動（上）",
+  "MoveLeft": "コマ移動（左）",
+  "MoveDown": "コマ移動（下）",
+  "MoveRight": "コマ移動（右）",
+  "MoveUpLeft": "コマ移動（左上）",
+  "MoveUpRight": "コマ移動（右上）",
+  "MoveDownLeft": "コマ移動（左下）",
+  "MoveDownRight": "コマ移動（右下）",
+  "Ascend": "垂直に上昇",
+  "Descend": "垂直に下降",
+  "PanUp": "画面移動（上）",
+  "PanLeft": "画面移動（左）",
+  "PanDown": "画面移動（下）",
+  "PanRight": "画面移動（右）",
+  "PanUpLeft": "画面移動（左上）",
+  "PanUpRight": "画面移動（右上）",
+  "PanDownLeft": "画面移動（左下）",
+  "PanDownRight": "画面移動（右下）",
+  "ZoomIn": "マップ拡大",
+  "ZoomOut": "マップ縮小",
   "RulerWaypoint": "中間点を設置",
   "ExecuteMacro": "ホットバーからマクロ {number} を実行",
   "SwapMacroPage": "ホットバー {page} に切り替え",
@@ -1885,12 +1934,46 @@
 "SCENE.View": "シーンを表示",
 "SCENE.ShiftBG": "グリッド・オフセット位置",
 "SCENE.ToggleNav": "ナビゲーション切替",
+"SCENE.Transition": {
+  "Animations": "遷移アニメーション",
+  "Preview": "プレビュー",
+  "Config": "設定",
+  "Types": {
+    "fade": "フェード",
+    "swirl": "うずまき",
+    "waterDrop": "水滴",
+    "morph": "変形",
+    "crosshatch": "クロスハッチ",
+    "wind": "風",
+    "waves": "ウェーブ",
+    "whiteNoise": "ホワイトノイズ",
+    "hologram": "ホログラム",
+    "hole": "ホール",
+    "holeSwirl": "ホールうずまき",
+    "glitch": "グリッチ",
+    "dots": "ドット"
+  }
+},
 "SCENE.Ambience": {
   "Base": "基礎照明",
   "Dark": "暗い照明",
   "ResetEnvironment": "デフォルト値にリセット"
 },
 "SCENE.FIELDS": {
+  "transition": {
+    "in": {
+      "label": "遷移",
+      "hint": "シーンが読み込まれたときの遷移アニメーションを設定します。"
+    },
+    "duration": {
+      "label": "時間",
+      "hint": "遷移時間の長さ（ミリ秒）。"
+    },
+    "activateOnly": {
+      "label": "有効化時のみ",
+      "hint": "この遷移をシーンが有効化されたとき（初期読み込みを含む）に再生しますが、単に表示されただけのときは再生しません。"
+    }
+  },
   "name.label": "シーン名",
   "navigation.label": "ナビゲーションバーに表示",
   "navName" : {
@@ -2139,8 +2222,7 @@
   }
 },
 
-"SETTINGS.CombatConfigN": "戦闘",
-"SETTINGS.CombatConfigL": "戦闘タブの設定",
+"SETTINGS.CombatConfigL": "戦闘タブ",
 "SETTINGS.CombatConfigH": "戦闘タブの行動順に関わる設定です。",
 "SETTINGS.CombatThemeN": "戦闘テーマ",
 "SETTINGS.CombatThemeL": "戦闘タブで戦いが始まったとき、君のターン直前と君のターンになったときに再生される効果音のテーマです。",
@@ -2176,10 +2258,10 @@
 "SETTINGS.MaxFPSN": "最大FPS",
 "SETTINGS.MaxFPSL": "オンセ工房 FoundryVTTがキャンバスをレンダリングする最大フレームレートに上限を設けます。この値を下げると、ハードウェアの負荷が低下し、アプリの反応速度が向上する可能性があります。",
 "SETTINGS.DefaultSheetsN": "デフォルトのドキュメントシート",
-"SETTINGS.DefaultSheetsL": "デフォルトのシート設定",
+"SETTINGS.DefaultSheetsL": "デフォルトのドキュメントシート",
 "SETTINGS.DefaultSheetsH": "キャラクターやアイテムなど、ワールド内で使用可能な全てのドキュメント種別に対して、デフォルトで使用するシートを設定します。",
 "SETTINGS.FontConfigN": "追加フォント",
-"SETTINGS.FontConfigL": "追加フォントの設定",
+"SETTINGS.FontConfigL": "追加フォント",
 "SETTINGS.FontConfigH": "このワールドで使用可能な追加フォントを設定できます。",
 "SETTINGS.PhotosensitiveModeN": "光過敏モード",
 "SETTINGS.PhotosensitiveModeL": "このモードを有効にすると、過剰に移動、点滅、または繰り返される光を抑制します。",
@@ -2204,7 +2286,7 @@
 "SETTINGS.TokenDragPreviewL": "コマをドラッグしているときでも視覚と照明が変化します。ユーザーがこれを悪用するとコマを下ろさずに奥を覗いたりできるので必要に応じて切り替えてください。",
 "SETTINGS.PrototypeTokenOverrides": {
   "Name": "初期コマの上書き",
-  "Label": "初期コマの上書き設定",
+  "Label": "初期コマの上書き",
   "Hint": "すべてのキャラクターに対して初期コマデータの上書き（オーバーライド）を設定します。",
   "Reset": {
     "Label": "デフォルトにリセット",
@@ -2245,7 +2327,7 @@
 "SETTINGS.UI": {
   "MENU": {
     "name": "UI設定",
-    "label": "インターフェース設定",
+    "label": "ユーザーインターフェース",
     "hint": "FoundryVTTのユーザーインターフェースの表示や動作に影響する設定です。"
   },
   "HEADERS": {
@@ -2346,7 +2428,7 @@
   "ReinstallPackageNotFound": "このパッケージは中央リポジトリにIDが存在していませんので、再インストールできません。再インストールする場合は手動でマニフェスト（インストールリンク）経由で行なう必要があります。",
   "WorldCreate": "ワールド作成",
   "WorldDelete": "ワールド削除",
-  "WorldEdit": "ワールド編集",
+  "WorldEdit": "ワールド設定",
   "WorldLaunch": "ワールド起動",
   "WorldLaunchFailure": "ワールドの起動に失敗しました：{message}。詳細はコンソール（F12）よりご確認ください。",
   "WorldUnavailable": "利用不可",
@@ -2359,6 +2441,7 @@
   "NoSupportedSystem": "サポートされているシステムがインストールされていません",
   "RequireCoreUpgrade": "要・本体アップデート",
   "RequireCoreUnstable": "要・不安定版",
+  "RequireCoreUnknown": "要・不明なバージョン",
   "RequireCoreDowngrade": "このパッケージは現在の本体バージョンではご利用できません。",
   "LockHint": "パッケージをロックして削除・更新されないようにします。",
   "FavoritePackage": "お気に入り",
@@ -2439,6 +2522,7 @@
   "PackageDependenciesSuccess": "{title}および{number}個の依存関係に必要なものが正常にインストールされました。",
   "PackageUpdateCoreUpdateNeeded": "{id}の更新が存在しますが、インストールするには最低でもバージョン{vmin}まで本体を更新する必要があります。現在使用しているバージョンは{vcur}です。",
   "PackageUpdateCoreUnstable": "{id}の更新が存在しますが、必要最低バージョン{vmin}がまだ安定版ではないためインストールを保留しました。",
+  "PackageUpdateCoreUnknown": "{title}の更新が存在しますが、不明な本体バージョン{vmin}が必要なためインストールできない可能性があります。",
   "PackageUpdateCoreInsufficient": "更新が見つかりましたが、適切に機能するには古い本体バージョン{vmax}が必要です。",
   "PackageDeleteTitle": "削除 {type}: {title}",
   "PackageDeleteConfirm": "<strong>{title}</strong> {type} を削除してもよろしいですか？",
@@ -2824,7 +2908,6 @@
 "SHEETS.DocumentSheetPrivate": "この{type}のシートを閲覧する権限がありません。",
 "SHEETS.Save": "シート設定を保存",
 "SHEETS.FormNavLabel": "フォームタブナビゲーション",
-"SHEETS.CopyUuid": "ドキュメントUUIDをコピー",
 "SHEETS.Theme": "テーマ",
 "SHEETS.ThemeHint": "すべてのテーマが各シートで利用できるわけではありません。",
 
@@ -2896,8 +2979,8 @@
 },
 
 "PERMISSION.Title": "ユーザー権限の設定",
-"PERMISSION.Configure": "権限の設定",
-"PERMISSION.ConfigureLabel": "権限設定を開く",
+"PERMISSION.Configure": "ユーザー権限の設定",
+"PERMISSION.ConfigureLabel": "ユーザー権限",
 "PERMISSION.ConfigureHint": "各役割でユーザーに対して許可するアクションを設定します。",
 "PERMISSION.Instructions": "ユーザーの役割ごとに、どのような実行権限を与えるかを設定します。一部のアクションはGMユーザーに対して無効にできないので注意してください。一部の変更は、ゲームが再読み込みされるまで有効にならない場合があります。",
 "PERMISSION.Permission": "権限",
@@ -2942,8 +3025,6 @@
 "PERMISSION.ShowCursorHint": "プレイヤーのマウスカーソル位置を表示します。これはユーザーが画面上で指している場所を示します。",
 "PERMISSION.ShowRuler": "定規による距離の表示",
 "PERMISSION.ShowRulerHint": "定規ツールを使用したとき、他のプレイヤーにも測定した距離を表示します。",
-"PERMISSION.TemplateCreate": "定規テンプレートの作成",
-"PERMISSION.TemplateCreateHint": "効果範囲を測定するテンプレートの作成ができる許可を与えます。",
 "PERMISSION.TokenCreate": "新規コマ作成",
 "PERMISSION.TokenCreateHint": "自分が所有するキャラクターのコマをゲーム画面上に配置できる許可を与えます。",
 "PERMISSION.TokenDelete": "コマ削除",
@@ -2963,6 +3044,7 @@
     "behaviors": "効果"
   },
   "SECTIONS": {
+    "elevation": "高度",
     "restriction": "制限"
   },
   "FIELDS": {
@@ -2991,8 +3073,8 @@
         "label": "制限あり",
         "hint": "このリージョンの形状が壁によって制約されるかどうかを設定します。"
       },
-      "type.label": "制限種別",
-      "priority.label": "制限優先度"
+      "type.label": "次により制限",
+      "priority.label": "優先度の閾値"
     },
     "behaviors": {
       "label": "効果",
@@ -3035,11 +3117,11 @@
     }
   },
   "RESTRICTION_TYPES": {
-    "light.label": "ライト",
-    "darkness.label": "暗闇",
-    "sight.label": "視覚",
-    "sound.label": "サウンド",
-    "move.label": "移動"
+    "light.label": "優先度≥閾値 の光を遮る壁と暗闇",
+    "darkness.label": "優先度>閾値 の暗闇を遮る壁と光源",
+    "sight.label": "優先度≥閾値 の視覚を遮る壁と暗闇",
+    "sound.label": "音を遮る壁",
+    "move.label": "移動を遮る壁"
   },
   "EVENTS": {
     "regionBoundary": {
@@ -3107,6 +3189,13 @@
   },
   "SHEET": {
     "title": "リージョンを設定"
+  },
+  "NOTIFICATIONS": {
+    "PlacedRegionRotationNotAllowed": "配置済みのリージョンの形状は回転できません。",
+    "CopiedShape": "リージョン形状をコピーしました。",
+    "CutShape": "リージョン形状をカットしました。",
+    "PastedShape": "リージョン形状をペーストしました。",
+    "PastedShapeWithoutControlledRegion": "形状をペーストできるリージョンを選択していません。"
   }
 },
 
@@ -3166,6 +3255,14 @@
         },
         "DARKEN": {
           "label": "暗くする"
+        }
+      }
+    },
+    "applyActiveEffect": {
+      "FIELDS": {
+        "effects": {
+          "label": "効果",
+          "hint": "リージョン内のコマに適用される効果。"
         }
       }
     },
@@ -3244,6 +3341,14 @@
         "revealed": {
           "label": "公開",
           "hint": "このテレポーターの目的地をすべての人に公開します。"
+        },
+        "dialog.revealed": {
+          "label": "ダイアログ（公開時）",
+          "hint": "目的地が公開されている場合、またはユーザーがGMの場合に確認ダイアログに表示されるテキスト。{token}はコマ名に置き換えられます。{region}は目的地のリージョン名に置き換えられます（このテレポーターに複数の目的地がある場合を除く）。{scene}は目的地のシーン名に置き換えられます（このテレポーターに異なるシーンに目的地がある場合を除く）。"
+        },
+        "dialog.unrevealed": {
+          "label": "ダイアログ（非公開時）",
+          "hint": "目的地が非公開で、ユーザーがGMでない場合に確認ダイアログに表示されるテキスト。{token}はコマ名に置き換えられます。"
         }
       },
       "PLACEMENTS": {
@@ -3253,7 +3358,8 @@
       },
       "Confirm": "{token}を転送しますか？",
       "ConfirmRevealed": "{scene}の{region}に{token}を転送しますか？",
-      "ConfirmSelect": "{token}を転送する目的地を選択してください。",
+      "ConfirmSelectSameScene": "{scene}の{token}を転送する目的地を選択してください。",
+      "ConfirmSelectDifferentScene": "{token}を転送する目的地を選択してください。",
       "ConfirmSelectOption": "{scene}の{region}"
     },
     "toggleBehavior": {
@@ -3328,13 +3434,13 @@
     "Modules": "有効モジュール"
   },
   "HEADERS": {
-    "Settings": "ゲーム設定",
+    "Settings": "設定",
     "Docs": "ヘルプ ドキュメント",
     "Access": "ゲームアクセス"
   },
   "ACTIONS": {
-    "Configure": "設定",
-    "Docs": "説明書を開く",
+    "Configure": "ゲーム設定",
+    "Docs": "説明書",
     "Invite": "招待リンク",
     "Keybindings": "ショートカット設定",
     "Logout": "ログアウト",
@@ -3342,13 +3448,13 @@
     "Players": "ユーザー管理",
     "Support": "困っていますか？",
     "Tours": "操作方法の確認",
-    "ViewModules": "有効モジュールを表示",
-    "Wiki": "コミュニティ Wikiページ"
+    "ViewModules": "有効モジュール",
+    "Wiki": "コミュニティ Wiki"
   }
 },
 
 "SUPPORT": {
-  "Title": "サポート内容",
+  "Title": "サポートと問題",
   "Places": "サポートを受けられる場所",
   "Discord": "オンセ工房 Foundry VTT のサポートを日本語で受けるには<a href='https://discord.gg/vM4YM27' target='_blank'>日本語コミュニティDiscord</a>までお越しください。英語で遊んでいる本家の方々と繋がりたい場合はこちらの<a href=\"https://discord.gg/foundryvtt\" target=\"_blank\" rel=\"nofollow\">Discord</a>へお入りください。",
   "BugReporting": "バグを報告する場合はこちらの<a href=\"https://foundryvtt.com/contact-us?category=bug\" target=\"_blank\" rel=\"nofollow\">Contact Us page</a>からバグレポートのテンプレートをご利用ください。英語のみですので、英語がわからない方はオンセ工房のDiscordまで投稿いただければ代理で送信します。",
@@ -3443,31 +3549,6 @@
     "weight.label": "割合",
     "range.label": "範囲"
   }
-},
-
-"TEMPLATE.ConeTypeSetting": "円錐テンプレート形状",
-"TEMPLATE.ConeTypeSettingHint": "円錐テンプレートの効果範囲の形状を選択します。「グリッドに沿う」が有効な場合、この設定は影響しません。",
-"TEMPLATE.ConeTypeFlat": "三角",
-"TEMPLATE.ConeTypeRound": "扇形",
-"TEMPLATE.SubmitCreate": "テンプレート作成",
-"TEMPLATE.SubmitUpdate": "テンプレート更新",
-"TEMPLATE.GridTemplatesSetting": "グリッドに沿う",
-"TEMPLATE.GridTemplatesSettingHint": "テンプレートの範囲が従来のユークリッド方式からグリッドのマス目をベースに計算されたものになります。",
-"TEMPLATE.TYPES": {
-  "circle": "球形",
-  "cone": "円錐",
-  "ray": "直線",
-  "rect": "四角"
-},
-"TEMPLATE.FIELDS": {
-  "sort.label": "ソート",
-  "t.label": "種別",
-  "direction.label": "向き",
-  "angle.label": "角度",
-  "distance.label": "距離",
-  "borderColor.label": "枠の色",
-  "fillColor.label": "塗りつぶし色",
-  "texture.label": "テクスチャ"
 },
 
 "TILE.ConfigTitle": "タイル設定",
@@ -3606,7 +3687,8 @@
 "TOKEN.SECTIONS": {
   "basic": "基本設定",
   "animation": "ライトアニメーション",
-  "advanced": "高度なオプション"
+  "advanced": "高度なオプション",
+  "attachments": "追従"
 },
 "TOKEN.FIELDS": {
   "name.label": "コマ名",
@@ -3724,6 +3806,10 @@
       "label": "関係性の色合い",
       "hint": "このコマの戦闘ターンマーカーを、その関係性に応じて色付けします。"
     }
+  },
+  "attachments.regions": {
+    "label": "追従リージョン",
+    "hint": "このコマが移動したとき、すべての追従リージョンも一緒に移動します。"
   },
   "displayBars.label": "バー表示方法",
   "bar1.attribute.label": "バー 1 設定",
@@ -3858,7 +3944,7 @@
 "TOKEN.DetectionMode": "感知モード",
 "TOKEN.DetectionRange": "距離",
 "TOKEN.DetectionEnabled": "有効化",
-"TOKEN.DetectionAdd": "感知モードを追加",
+"TOKEN.DetectionAdd": "感知モードを上書き",
 "TOKEN.DetectionRemove": "感知モードを削除",
 
 "TOKEN.RING": {
@@ -3928,6 +4014,7 @@
   },
   "RegionBehavior": {
     "adjustDarknessLevel": "暗さの度合いの調整",
+    "applyActiveEffect": "アクティブ効果を適用",
     "displayScrollingText": "スクロールテキストを表示",
     "executeMacro": "マクロを実行",
     "executeScript": "スクリプトを実行",
@@ -3958,6 +4045,7 @@
 "TEXTURE_DATA.FIT.height": "高さ優先",
 
 "TOURS": {
+  "Title": "ツアー管理",
   "NavLabel": "ツアー管理タブ",
   "ShowMeHow": "教えて、FVTT先生！",
   "TourCategories": "ツアー種別",
@@ -4050,7 +4138,7 @@
 
 "WALL.FIELDS": {
   "c.label": "ウォール座標",
-  "light.label": "ライト",
+  "light.label": "ライトと暗さ",
   "move.label": "移動",
   "sight.label": "視覚",
   "sound.label": "サウンド",
@@ -4131,7 +4219,7 @@
 
 "WEBRTC": {
   "Title": "音声/ビデオ 設定",
-  "MenuLabel": "音声/ビデオ 設定",
+  "MenuLabel": "音声/ビデオ",
   "MenuHint": "WebRTCコンポーネントに音声/ビデオに関する固有設定をします。",
   "UnknownDevice": "<不明なデバイス>",
   "DeviceUnavailableWarning": "設定された入力デバイスの1つが使用できなかったため、音声/ビデオ通信を開始できませんでした。",
@@ -4334,6 +4422,14 @@
         "semicircle.label": "半円"
       }
     },
+    "ring": {
+      "name": "リング",
+      "FIELDS": {
+        "radius.label": "半径",
+        "innerWidth.label": "内側の幅",
+        "outerWidth.label": "外側の幅"
+      }
+    },
     "line": {
       "name": "直線",
       "FIELDS": {
@@ -4341,11 +4437,31 @@
         "length.label": "長さ"
       }
     },
+    "emanation": {
+      "name": "オーラ",
+      "FIELDS": {
+        "base.label": "起点",
+        "radius.label": "半径"
+      }
+    },
     "polygon": {
       "name": "多角形",
       "FIELDS": {
-        "points.label": "ポイント"
+        "points.label": "ポイント",
+        "origin.label": "原点"
       }
+    },
+    "token": {
+      "name": "コマ",
+      "FIELDS": {
+        "x.label": "X",
+        "y.label": "Y",
+        "width.label": "幅",
+        "height.label": "高さ",
+        "shape.label": "形状"
+      },
+      "position.label": "位置",
+      "dimensions.label": "サイズ"
     }
   },
   "ACTIONS": {
@@ -4355,7 +4471,8 @@
     "moveUp": "形状を上に移動",
     "moveDown": "形状を下に移動",
     "edit": "形状を編集",
-    "remove": "形状を削除"
+    "remove": "形状を削除",
+    "removeAll": "全ての形状を削除"
   },
   "NOTIFICATIONS": {
     "DrawingMultipleObjectsControlled": "複数{type}の選択中には、形状を描けません！",

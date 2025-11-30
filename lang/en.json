@@ -453,6 +453,7 @@
 "CHAT.RollPrivate": "Private GM Roll",
 "CHAT.RollSelf": "Self Roll",
 "CHAT.RollTables": "Rollable Tables",
+"CHAT.SendMessage": "Send Message",
 "CHAT.JumpToBottom": "Jump to Bottom",
 "CHAT.PrivateRollContent": "{user} privately rolled some dice",
 "CHAT.UnknownUser": "Unknown User",
@@ -653,10 +654,12 @@
   },
   "SETTING": {
     "Hint": "Configure which system- and module-provided art should be used.",
-    "Label": "Configure Art",
+    "Label": "Compendium Art",
     "Title": "Compendium Art"
   }
 },
+"COMPENDIUM.CopyId": "Copy Compendium ID",
+"COMPENDIUM.IdCopiedClipboard": "Compendium ID \"{id}\" copied to clipboard.",
 
 "CONTROLS": {
   "Title": "Game Controls Reference",
@@ -669,14 +672,6 @@
   "TargetSelect": "Select Targets",
   "TargetSelectP": "Target any Tokens that you can see.",
   "BasicMeasure": "Measure Distance",
-  "GroupMeasure": "Measurement Controls",
-  "MeasureType": "Template Type",
-  "MeasureConfigHint": "Configure the placement and display of the measurement template.",
-  "MeasureCircle": "Circle Template",
-  "MeasureCone": "Cone Template",
-  "MeasureRect": "Rectangle Template",
-  "MeasureRay": "Ray Template",
-  "MeasureClear": "Clear Templates",
   "GroupTile": "Tile Controls",
   "TileSelect": "Select Tiles",
   "TilePlace": "Place Tile",
@@ -747,9 +742,11 @@
   "GroupRegion": "Region Controls",
   "RegionSelect": "Select Regions",
   "RegionSelectP": "Select one or more Regions in the Scene. A selected Region is a solid color and unselected Regions are striped.",
+  "RegionTemplateMode": "Measured Template Mode",
   "RegionRectangle": "Draw Rectangle",
   "RegionCircle": "Draw Circle",
   "RegionEllipse": "Draw Ellipse",
+  "RegionEmanation": "Draw Emanation",
   "RegionCone": "Draw Cone",
   "RegionLine": "Draw Line",
   "RegionPolygon": "Draw Polygon",
@@ -877,7 +874,7 @@
   "CommonSelect": "Select",
   "CommonSelectMultiple": "Select Multiple",
   "CommonOpenSheet": "Open Sheet",
-  "DisableToolclips": "Disable Toolclips in the Settings",
+  "DisableToolclips": "You can disable these Toolclips in the Settings",
   "CutObjects": "Cut {count} {type} object(s).",
   "CopiedObjects": "Copied {count} {type} object(s).",
   "PastedObjects": "Pasted {count} {type} object(s).",
@@ -899,7 +896,7 @@
   "WarnMissingData": "The attribute {match} was not present in the provided roll data.",
   "CONFIG": {
     "Hint": "Configure how dice rolling is performed.",
-    "Label": "Configure Dice",
+    "Label": "Dice",
     "Title": "Dice Configuration"
   },
   "FULFILLMENT": {
@@ -912,6 +909,7 @@
 "DOCUMENT": {
   "Create": "Create {type}",
   "Delete": "Delete {type}",
+  "DeleteDocument": "Delete Document",
   "New": "New {type}",
   "NewCount": "New {type} ({count})",
   "Update": "Update {type}",
@@ -928,6 +926,7 @@
 
   "SheetPermissionWarn": "You do not have permission to view this {document} sheet.",
   "UsePermissionWarn": "You do not have permission to use this {document}.",
+  "CopyUuid": "Copy Document UUID",
   "IdCopiedClipboard": "{label} {type} \"{id}\" copied to clipboard.",
 
   "ActiveEffect": "Active Effect",
@@ -970,8 +969,6 @@
   "JournalEntryPages": "Pages",
   "Macro": "Macro",
   "Macros": "Macros",
-  "MeasuredTemplate": "Measured Template",
-  "MeasuredTemplates": "Measured Templates",
   "Note": "Note",
   "Notes": "Notes",
   "Playlist": "Playlist",
@@ -1062,19 +1059,29 @@
   "sort.label": "Sort"
 },
 
-"EFFECT.MODE_CUSTOM": "Custom",
-"EFFECT.MODE_MULTIPLY": "Multiply",
-"EFFECT.MODE_ADD": "Add",
-"EFFECT.MODE_DOWNGRADE": "Downgrade",
-"EFFECT.MODE_UPGRADE": "Upgrade",
-"EFFECT.MODE_OVERRIDE": "Override",
 "EFFECT.DurationTurns": "Effect Duration (Combat)",
 "EFFECT.StartTurns": "Effect Start",
-"EFFECT.ChangeKey": "Attribute Key",
-"EFFECT.ChangeMode": "Change Mode",
-"EFFECT.ChangeValue": "Value",
-"EFFECT.ChangePriority": "Priority",
 "EFFECT.Submit": "Submit Changes",
+"EFFECT.CHANGES": {
+  "PHASES": {
+    "initial": {
+      "label": "Initial",
+      "hint": "After base-data attributes are initialized, but before derived data is prepared"
+    },
+    "final": {
+      "label": "Final",
+      "hint": "After derived-data attributes are computed"
+    }
+  },
+  "TYPES": {
+    "custom": "Custom",
+    "multiply": "Multiply",
+    "add": "Add",
+    "downgrade": "Downgrade",
+    "upgrade": "Upgrade",
+    "override": "Override"
+  }
+},
 "EFFECT.FIELDS": {
   "name.label": "Effect Name",
   "img.label": "Effect Icon",
@@ -1090,6 +1097,16 @@
   "showIcon": {
     "label": "Show Icon?",
     "hint": "Should the icon representing this Effect be displayed in the UI while this effect is active?"
+  },
+  "changes.element": {
+    "key.label": "Attribute Key",
+    "type.label": "Type",
+    "value.label": "Value",
+    "priority.label": "Priority",
+    "phase": {
+      "label": "Phase",
+      "hint": "The point in data preparation or another event a change is to be applied."
+    }
   },
   "duration": {
     "seconds.label": "Effect Duration (Seconds)",
@@ -1190,12 +1207,33 @@
 },
 
 "EDITOR.Format": "Format",
-"EDITOR.Font": "Font",
+"EDITOR.Font": {
+  "Color": {
+    "Label": "Font Color",
+    "Set": "Set Font Color",
+    "Title": "Color"
+  },
+  "Size": {
+    "Huge": "Huge",
+    "Invalid": "Invalid font size",
+    "Label": "Font Size",
+    "Large": "Large",
+    "Normal": "Normal",
+    "Placeholder": "12pt",
+    "Set": "Set Font Size",
+    "Small": "Small",
+    "Title": "Size"
+  },
+  "Title": "Font"
+},
 "EDITOR.Inline": "Inline",
 "EDITOR.Block": "Block",
 "EDITOR.Headings": "Headings",
 "EDITOR.Heading": "Heading {level}",
 "EDITOR.Alignment": "Alignment",
+"EDITOR.Custom": "Custom",
+"EDITOR.Insert": "Insert",
+"EDITOR.Lists": "Lists",
 "EDITOR.Paragraph": "Paragraph",
 "EDITOR.Bold": "Bold",
 "EDITOR.Italic": "Italic",
@@ -1230,6 +1268,7 @@
 "EDITOR.InsertImage": "Insert Image",
 "EDITOR.ImageSource": "Source",
 "EDITOR.ImageAlt": "Alternative Description",
+"EDITOR.ImageCaption": "Caption",
 "EDITOR.ImageDimensions": "Dimensions",
 "EDITOR.ImageDimensionsHint": "Leaving these blank will use the image's intrinsic size.",
 "EDITOR.ImageInsert": "Insert",
@@ -1495,16 +1534,26 @@
   "BringToFront": "Bring Objects to the Front",
   "ToggleCharacterSheet": "Toggle Character Sheet",
   "PTTKey": "Push-to-Talk / Push-to-Mute",
-  "PanUp": "Move or Pan Up",
-  "PanLeft": "Move or Pan Left",
-  "PanDown": "Move or Pan Down",
-  "PanRight": "Move or Pan Right",
-  "PanUpLeft": "Move or Pan Up+Left",
-  "PanUpRight": "Move or Pan Up+Right",
-  "PanDownLeft": "Move or Pan Down+Left",
-  "PanDownRight": "Move or Pan Down+Right",
-  "ZoomIn": "Ascend Vertically or Zoom In Canvas",
-  "ZoomOut": "Descend Vertically or Zoom Out Canvas",
+  "MoveUp": "Move Up",
+  "MoveLeft": "Move Left",
+  "MoveDown": "Move Down",
+  "MoveRight": "Move Right",
+  "MoveUpLeft": "Move Up+Left",
+  "MoveUpRight": "Move Up+Right",
+  "MoveDownLeft": "Move Down+Left",
+  "MoveDownRight": "Move Down+Right",
+  "Ascend": "Ascend Vertically",
+  "Descend": "Descend Vertically",
+  "PanUp": "Pan Up",
+  "PanLeft": "Pan Left",
+  "PanDown": "Pan Down",
+  "PanRight": "Pan Right",
+  "PanUpLeft": "Pan Up+Left",
+  "PanUpRight": "Pan Up+Right",
+  "PanDownLeft": "Pan Down+Left",
+  "PanDownRight": "Pan Down+Right",
+  "ZoomIn": "Zoom In",
+  "ZoomOut": "Zoom Out",
   "RulerWaypoint": "Place Ruler Waypoint",
   "ExecuteMacro": "Execute Hotbar Slot {number}",
   "SwapMacroPage": "Swap to Hotbar Page {page}",
@@ -1885,12 +1934,46 @@
 "SCENE.View": "View Scene",
 "SCENE.ShiftBG": "Offset Background",
 "SCENE.ToggleNav": "Toggle Navigation",
+"SCENE.Transition": {
+  "Animations": "Transition Animations",
+  "Preview": "Preview",
+  "Config": "Configure",
+  "Types": {
+    "fade": "Fade",
+    "swirl": "Swirl",
+    "waterDrop": "Water Drop",
+    "morph": "Morph",
+    "crosshatch": "Crosshatch",
+    "wind": "Wind",
+    "waves": "Waves",
+    "whiteNoise": "White Noise",
+    "hologram": "Hologram",
+    "hole": "Hole",
+    "holeSwirl": "Hole Swirl",
+    "glitch": "Glitch",
+    "dots": "Dots"
+  }
+},
 "SCENE.Ambience": {
   "Base": "Base Ambience",
   "Dark": "Dark Ambience",
   "ResetEnvironment": "Reset to Default Options"
 },
 "SCENE.FIELDS": {
+  "transition": {
+    "in": {
+      "label": "Transition",
+      "hint": "Configure the transition animation when the scene is loaded."
+    },
+    "duration": {
+      "label": "Duration",
+      "hint": "Transition length in milliseconds."
+    },
+    "activateOnly": {
+      "label": "On Activation Only",
+      "hint": "Play this transition when the scene becomes active, including on initial load, but not when it is only viewed."
+    }
+  },
   "name.label": "Scene Name",
   "navigation.label": "Show in Navigation",
   "navName" : {
@@ -2139,8 +2222,7 @@
   }
 },
 
-"SETTINGS.CombatConfigN": "Combat Tracker",
-"SETTINGS.CombatConfigL": "Configure Combat Tracker",
+"SETTINGS.CombatConfigL": "Encounter Tracker",
 "SETTINGS.CombatConfigH": "Combat and Tracker related settings.",
 "SETTINGS.CombatThemeN": "Combat Theme",
 "SETTINGS.CombatThemeL": "The set of Sounds that will play when Combat begins, when your turn is next, and when it is your turn.",
@@ -2176,10 +2258,10 @@
 "SETTINGS.MaxFPSN": "Maximum Framerate",
 "SETTINGS.MaxFPSL": "Limit the maximum framerate at which Foundry Virtual Tabletop will render canvas updates. Lowering this value may improve application performance for less powerful hardware.",
 "SETTINGS.DefaultSheetsN": "Default Document Sheets",
-"SETTINGS.DefaultSheetsL": "Configure Default Sheets",
+"SETTINGS.DefaultSheetsL": "Default Document Sheets",
 "SETTINGS.DefaultSheetsH": "Configure which sheets are used by default for all the Document types available in the World",
 "SETTINGS.FontConfigN": "Additional Fonts",
-"SETTINGS.FontConfigL": "Configure Additional Fonts",
+"SETTINGS.FontConfigL": "Additional Fonts",
 "SETTINGS.FontConfigH": "Configure additional fonts that will be available for use in this World.",
 "SETTINGS.PhotosensitiveModeN": "Photosensitivity Mode",
 "SETTINGS.PhotosensitiveModeL": "Enabling this mode reduces the prevalence and intensity of flashing, fast-moving, and repetitive animations and effects.",
@@ -2204,7 +2286,7 @@
 "SETTINGS.TokenDragPreviewL": "When enabled, vision and lighting for a Token is previewed in real time during a left-click drag workflow. This is disabled by default because it may promote undesirable meta-gaming behaviors.",
 "SETTINGS.PrototypeTokenOverrides": {
   "Name": "Prototype Token Overrides",
-  "Label": "Configure Prototype Overrides",
+  "Label": "Prototype Token Overrides",
   "Hint": "Configure overrides of Prototype Token data for all Actors.",
   "Reset": {
     "Label": "Reset Defaults",
@@ -2245,7 +2327,7 @@
 "SETTINGS.UI": {
   "MENU": {
     "name": "User Interface Configuration",
-    "label": "Configure Interface",
+    "label": "User Interface",
     "hint": "Settings which affect how the Foundry Virtual Tabletop user interface appears or behaves."
   },
   "HEADERS": {
@@ -2346,7 +2428,7 @@
   "ReinstallPackageNotFound": "Package reinstallation failed as a package with that ID could not be found at the central package repository. You will need to manually reinstall it via its manifest link.",
   "WorldCreate": "Create World",
   "WorldDelete": "Delete World",
-  "WorldEdit": "Edit World",
+  "WorldEdit": "World Configuration",
   "WorldLaunch": "Launch World",
   "WorldLaunchFailure": "World launch failed: {message}. See the console (F12) for more details.",
   "WorldUnavailable": "Unavailable",
@@ -2359,6 +2441,7 @@
   "NoSupportedSystem": "No supported system installed",
   "RequireCoreUpgrade": "Requires Core Update",
   "RequireCoreUnstable": "Requires Unstable Version",
+  "RequireCoreUnknown": "Requires Unknown Version",
   "RequireCoreDowngrade": "Unsupported Core Version",
   "LockHint": "Locking a Package prevents it from being uninstalled or updated",
   "FavoritePackage": "Favorite",
@@ -2439,6 +2522,7 @@
   "PackageDependenciesSuccess": "Successfully installed {title} and {number} dependencies.",
   "PackageUpdateCoreUpdateNeeded": "An update is available for {title} but cannot be installed because it requires the core software to be updated to at least {vmin}. You are currently using version {vcur}.",
   "PackageUpdateCoreUnstable": "An update is available for {title} but it may not be installed because it requires a core software version {vmin} which is not yet stable.",
+  "PackageUpdateCoreUnknown": "An update is available for {title} but it may not be installed because it requires unknown core software version {vmin}.",
   "PackageUpdateCoreInsufficient": "An update for {title} is available but it requires an older core software version {vmax} to function. You are currently using version {vcur}.",
   "PackageDeleteTitle": "Delete {type}: {title}",
   "PackageDeleteConfirm": "Are you sure you want to delete the {type} \"{title}\"?",
@@ -2824,7 +2908,6 @@
 "SHEETS.DocumentSheetPrivate": "You do not have sufficient permission to view the sheet for this {type}.",
 "SHEETS.Save": "Save Sheet Configuration",
 "SHEETS.FormNavLabel": "Form Tab Navigation",
-"SHEETS.CopyUuid": "Copy Document UUID",
 "SHEETS.Theme": "Theme",
 "SHEETS.ThemeHint": "Not all themes are available for each sheet.",
 
@@ -2896,8 +2979,8 @@
 },
 
 "PERMISSION.Title": "User Permission Configuration",
-"PERMISSION.Configure": "Configure Permissions",
-"PERMISSION.ConfigureLabel": "Open Permission Configuration",
+"PERMISSION.Configure": "Configure User Permissions",
+"PERMISSION.ConfigureLabel": "User Permissions",
 "PERMISSION.ConfigureHint": "Fine tune the permitted actions which are allowed to Users for each role.",
 "PERMISSION.Instructions": "Configure which User role has permission to perform which action. Note that some actions cannot be disabled for Game Master users. Some changes may not take effect until the game is reloaded.",
 "PERMISSION.Permission": "Permission",
@@ -2942,8 +3025,6 @@
 "PERMISSION.ShowCursorHint": "Display the position of the player's mouse cursor to all other connected users.",
 "PERMISSION.ShowRuler": "Display Ruler Measurement",
 "PERMISSION.ShowRulerHint": "Display measurements with tokens and the Measure Distance tool to other connected users.",
-"PERMISSION.TemplateCreate": "Create Measured Templates",
-"PERMISSION.TemplateCreateHint": "Allow users with this role to create templates for area-of-effect measurement.",
 "PERMISSION.TokenCreate": "Create Tokens",
 "PERMISSION.TokenCreateHint": "Allow users with this role to place Tokens for Actors they own on the game canvas.",
 "PERMISSION.TokenDelete": "Delete Tokens",
@@ -2963,6 +3044,7 @@
     "behaviors": "Behaviors"
   },
   "SECTIONS": {
+    "elevation": "Elevation",
     "restriction": "Restriction"
   },
   "FIELDS": {
@@ -2991,8 +3073,8 @@
         "label": "Is Restricted",
         "hint": "Configure whether the shapes of this Region are constrained by walls."
       },
-      "type.label": "Restriction Type",
-      "priority.label": "Restriction Priority"
+      "type.label": "Restricted By",
+      "priority.label": "Priority Threshold"
     },
     "behaviors": {
       "label": "Behaviors",
@@ -3035,11 +3117,11 @@
     }
   },
   "RESTRICTION_TYPES": {
-    "light.label": "Light",
-    "darkness.label": "Darkness",
-    "sight.label": "Sight",
-    "sound.label": "Sound",
-    "move.label": "Movement"
+    "light.label": "Light-blocking Walls and Darkness Sources with Priority ≥ Threshold",
+    "darkness.label": "Darkness-blocking Walls and Light Sources with Priority > Threshold",
+    "sight.label": "Sight-blocking Walls and Darkness Sources with Priority ≥ Threshold",
+    "sound.label": "Sound-blocking Walls",
+    "move.label": "Movement-blocking Walls"
   },
   "EVENTS": {
     "regionBoundary": {
@@ -3107,6 +3189,13 @@
   },
   "SHEET": {
     "title": "Configure Region"
+  },
+  "NOTIFICATIONS": {
+    "PlacedRegionRotationNotAllowed": "You are not allowed to rotate the shape of the placed Region.",
+    "CopiedShape": "Copied Region shape.",
+    "CutShape": "Cut Region shape.",
+    "PastedShape": "Pasted Region shape.",
+    "PastedShapeWithoutControlledRegion": "You are not controlling a Region that the shape can be pasted into."
   }
 },
 
@@ -3166,6 +3255,14 @@
         },
         "DARKEN": {
           "label": "Darken"
+        }
+      }
+    },
+    "applyActiveEffect": {
+      "FIELDS": {
+        "effects": {
+          "label": "Effects",
+          "hint": "The effects that are applied to Tokens within the Region."
         }
       }
     },
@@ -3244,6 +3341,14 @@
         "revealed": {
           "label": "Revealed",
           "hint": "Reveal the destination(s) of this teleporter to anyone."
+        },
+        "dialog.revealed": {
+          "label": "Dialog (Revealed)",
+          "hint": "The text that is displayed in the confirmation dialog if the destination(s) are revealed or the User is a GM. {token} is replaced by the Token's name. {region} is replaced by the destination Region's name unless this teleporter has multiple destinations. {scene} is replaced by the destination Scene's name unless this teleporter has destinations in different Scenes."
+        },
+        "dialog.unrevealed": {
+          "label": "Dialog (Unrevealed)",
+          "hint": "The text that is displayed in the confirmation dialog if the destination(s) are unrevealed and the User is not a GM. {token} is replaced by the Token's name."
         }
       },
       "PLACEMENTS": {
@@ -3253,7 +3358,8 @@
       },
       "Confirm": "Do you want to teleport {token}?",
       "ConfirmRevealed": "Do you want to teleport {token} to {region} in {scene}?",
-      "ConfirmSelect": "Select the destination you want to teleport {token} to.",
+      "ConfirmSelectSameScene": "Select the destination in {scene} you want to teleport {token} to.",
+      "ConfirmSelectDifferentScene": "Select the destination you want to teleport {token} to.",
       "ConfirmSelectOption": "{region} in {scene}"
     },
     "toggleBehavior": {
@@ -3328,27 +3434,27 @@
     "Modules": "Active Modules"
   },
   "HEADERS": {
-    "Settings": "Game Settings",
+    "Settings": "Settings and Configuration",
     "Docs": "Help and Documentation",
     "Access": "Game Access"
   },
   "ACTIONS": {
-    "Configure": "Configure Settings",
-    "Docs": "View Documentation",
+    "Configure": "Game Settings",
+    "Docs": "Documentation",
     "Invite": "Invitation Links",
-    "Keybindings": "Configure Controls",
+    "Keybindings": "Controls Configuration",
     "Logout": "Log Out",
-    "ManageModules": "Manage Modules",
+    "ManageModules": "Module Management",
     "Players": "User Management",
     "Support": "Support & Issues",
     "Tours": "Tour Management",
-    "ViewModules": "View Active Modules",
-    "Wiki": "Community Wiki Pages"
+    "ViewModules": "Active Modules",
+    "Wiki": "Community Wiki"
   }
 },
 
 "SUPPORT": {
-  "Title": "Support Details",
+  "Title": "Support & Issues",
   "Places": "Places To Get Support",
   "Discord": "To join others who are using Foundry VTT, or to get support from our wonderful Community Helpers, join our <a href=\"https://discord.gg/foundryvtt\" target=\"_blank\" rel=\"nofollow\">Discord</a>.",
   "BugReporting": "If you would like to report a bug, please use the Bug Report category available on our <a href=\"https://foundryvtt.com/contact-us?category=bug\" target=\"_blank\" rel=\"nofollow\">Contact Us page</a>.",
@@ -3443,31 +3549,6 @@
     "weight.label": "Weight",
     "range.label": "Range"
   }
-},
-
-"TEMPLATE.ConeTypeSetting": "Cone Template Shape",
-"TEMPLATE.ConeTypeSettingHint": "Choose how the area of effect for cone templates should be defined. This setting has no effect if Grid-based Template Shapes is enabled.",
-"TEMPLATE.ConeTypeFlat": "Flat",
-"TEMPLATE.ConeTypeRound": "Round",
-"TEMPLATE.SubmitCreate": "Create Measured Template",
-"TEMPLATE.SubmitUpdate": "Update Measured Template",
-"TEMPLATE.GridTemplatesSetting": "Grid-based Template Shapes",
-"TEMPLATE.GridTemplatesSettingHint": "Configure whether the area of effect of templates should be grid-based instead of Euclidean.",
-"TEMPLATE.TYPES": {
-  "circle": "Circle",
-  "cone": "Cone",
-  "ray": "Ray",
-  "rect": "Rectangle"
-},
-"TEMPLATE.FIELDS": {
-  "sort.label": "Sort",
-  "t.label": "Type",
-  "direction.label": "Direction",
-  "angle.label": "Angle",
-  "distance.label": "Distance",
-  "borderColor.label": "Border Color",
-  "fillColor.label": "Fill Color",
-  "texture.label": "Fill Texture"
 },
 
 "TILE.ConfigTitle": "Tile Configuration",
@@ -3606,7 +3687,8 @@
 "TOKEN.SECTIONS": {
   "basic": "Basic Configuration",
   "animation": "Light Animation",
-  "advanced": "Advanced Options"
+  "advanced": "Advanced Options",
+  "attachments": "Attachments"
 },
 "TOKEN.FIELDS": {
   "name.label": "Token Name",
@@ -3724,6 +3806,10 @@
       "label": "Disposition Tint",
       "hint": "Tint this Token's combat turn marker according to their disposition."
     }
+  },
+  "attachments.regions": {
+    "label": "Attached Regions",
+    "hint": "When this Token is moved, all its attached Regions are moved with it."
   },
   "displayBars.label": "Display Bars",
   "bar1.attribute.label": "Bar 1 Attribute",
@@ -3858,7 +3944,7 @@
 "TOKEN.DetectionMode": "Detection Mode",
 "TOKEN.DetectionRange": "Range",
 "TOKEN.DetectionEnabled": "Enabled",
-"TOKEN.DetectionAdd": "Add Detection Mode",
+"TOKEN.DetectionOverride": "Override Detection Mode",
 "TOKEN.DetectionRemove": "Remove Detection Mode",
 
 "TOKEN.RING": {
@@ -3928,6 +4014,7 @@
   },
   "RegionBehavior": {
     "adjustDarknessLevel": "Adjust Darkness Level",
+    "applyActiveEffect": "Apply Active Effect",
     "displayScrollingText": "Display Scrolling Text",
     "executeMacro": "Execute Macro",
     "executeScript": "Execute Script",
@@ -3958,6 +4045,7 @@
 "TEXTURE_DATA.FIT.height": "Full Height",
 
 "TOURS": {
+  "Title": "Tour Management",
   "NavLabel": "Tour Management Tabs",
   "ShowMeHow": "Show me how.",
   "TourCategories": "Tour Categories",
@@ -4050,7 +4138,7 @@
 
 "WALL.FIELDS": {
   "c.label": "Wall Coordinates",
-  "light.label": "Light",
+  "light.label": "Light and Darkness",
   "move.label": "Movement",
   "sight.label": "Sight",
   "sound.label": "Sound",
@@ -4131,7 +4219,7 @@
 
 "WEBRTC": {
   "Title": "Audio/Video Configuration",
-  "MenuLabel": "Configure Audio/Video",
+  "MenuLabel": "Audio/Video",
   "MenuHint": "Configure settings specific to the integrated Audio/Video WebRTC component.",
   "UnknownDevice": "<Unknown Device>",
   "DeviceUnavailableWarning": "Audio/Video communication was unable to start because one of the configured input devices was unavailable.",
@@ -4334,6 +4422,14 @@
         "semicircle.label": "Semicircle"
       }
     },
+    "ring": {
+      "name": "Ring",
+      "FIELDS": {
+        "radius.label": "Radius",
+        "innerWidth.label": "Inner Width",
+        "outerWidth.label": "Outer Width"
+      }
+    },
     "line": {
       "name": "Line",
       "FIELDS": {
@@ -4341,11 +4437,31 @@
         "length.label": "Length"
       }
     },
+    "emanation": {
+      "name": "Emanation",
+      "FIELDS": {
+        "base.label": "Base",
+        "radius.label": "Radius"
+      }
+    },
     "polygon": {
       "name": "Polygon",
       "FIELDS": {
-        "points.label": "Points"
+        "points.label": "Points",
+        "origin.label": "Origin"
       }
+    },
+    "token": {
+      "name": "Token",
+      "FIELDS": {
+        "x.label": "X",
+        "y.label": "Y",
+        "width.label": "Width",
+        "height.label": "Height",
+        "shape.label": "Shape"
+      },
+      "position.label": "Position",
+      "dimensions.label": "Dimensions"
     }
   },
   "ACTIONS": {
@@ -4355,7 +4471,8 @@
     "moveUp": "Move Shape Up",
     "moveDown": "Move Shape Down",
     "edit": "Edit Shape",
-    "remove": "Remove Shape"
+    "remove": "Remove Shape",
+    "removeAll": "Remove All Shapes"
   },
   "NOTIFICATIONS": {
     "DrawingMultipleObjectsControlled": "You must control only one or no {type} when you draw a shape!",
