@@ -10,6 +10,7 @@
   "ImportOverwriteWarning": "Some content from the {name} adventure already exists in your World. If you import the adventure that content will be overwritten. Do you want to proceed?",
   "ImportAll": "Import All",
   "ImportContent": "Import {label}",
+  "ImportLoading": "Loading adventure data...",
   "Importer": {
     "V1": "Adventure Importer (V1)",
     "V2": "Adventure Importer (V2)"
@@ -385,16 +386,18 @@
   "RevealMessage": "Reveal To Everyone",
   "ConcealMessage": "Make Private",
   "RollVisibility": "Roll Visibility",
-  "RollBlind": "Blind GM Roll",
-  "RollDefault": "Default Roll Mode",
-  "RollPublic": "Public Roll",
-  "RollPrivate": "Private GM Roll",
-  "RollSelf": "Self Roll",
   "RollTables": "Rollable Tables",
   "SendMessage": "Send Message",
   "JumpToBottom": "Jump to Bottom",
   "PrivateRollContent": "{user} privately rolled some dice",
-  "UnknownUser": "Unknown User"
+  "UnknownUser": "Unknown User",
+  "MODES": {
+    "blind": "Blind to Gamemasters",
+    "gm": "Private to Gamemasters",
+    "ic": "Public as Character",
+    "public": "Public as User",
+    "self": "Self Only"
+  }
 },
 
 "COMBAT": {
@@ -839,6 +842,7 @@
   "SubmitRollPl": "Submit Rolls",
   "WarnMissingData": "The attribute {match} was not present in the provided roll data.",
   "CONFIG": {
+    "DefaultMethod": "Default Method",
     "Hint": "Configure how dice rolling is performed.",
     "Label": "Dice",
     "Title": "Dice Configuration"
@@ -846,7 +850,8 @@
   "FULFILLMENT": {
     "Default": "Foundry VTT Digital Roll",
     "Mersenne": "Digital Roll (Mersenne Twister)",
-    "Manual": "Manual Input"
+    "Manual": "Manual Input",
+    "UseDefault": "Use Default"
   }
 },
 
@@ -2211,7 +2216,8 @@
     "Down": "Down one level",
     "Edit": "Edit level",
     "Remove": "Remove level",
-    "Up": "Up one level"
+    "Up": "Up one level",
+    "View": "View level"
   },
   "FIELDS": {
     "background": {
@@ -3072,7 +3078,8 @@
   "ErrorUserDoesNotExist": "The requested User, \"{user}\", does not exist!",
   "ErrorInvalidPassword": "Invalid password provided for {user}!",
   "ErrorBanned": "{user} does not have permission to access this World!",
-  "LoginSuccess": "Login as {user} successful, joining game!"
+  "LoginSuccess": "Login as {user} successful, joining game!",
+  "WorldPendingSetup": "This World is not ready yet. Please wait for the Gamemaster to log in and complete setup before attempting to join."
 },
 
 "SHEETS.ConfigureSheet": "Configure Sheet",
@@ -3217,7 +3224,8 @@
 "PERMISSION.WarningNoCreate": "You do not have sufficient permission to create a {document}.",
 
 "PLACEABLE_PALETTE": {
-  "Apply": "Apply Changes",
+  "Apply": "Apply",
+  "CloneSettings": "Clone",
   "MultipleValues": "<Multiple Values>",
   "Selected": "{document} Palette [{count}]",
   "Title": "{document} Palette"
@@ -3486,10 +3494,18 @@
     "defineSurface": {
       "FIELDS": {
         "placement.label": "Placement",
-        "light.label": "Restricts Light and Darkness?",
-        "move.label": "Restricts Movement?",
-        "sight.label": "Restricts Sight?",
-        "sound.label": "Restricts Sound?"
+        "light.label": "Restricts Light and Darkness",
+        "move.label": "Restricts Movement",
+        "sight.label": "Restricts Sight",
+        "sound.label": "Restricts Sound",
+        "occlusion": {
+          "label": "Occlusion",
+          "hint": "When an occludable Token is beneath the surface, Tiles with occlusion mode set to SURFACE, and any foreground or background Level textures at the same elevation or higher, will be occluded."
+        },
+        "exposure": {
+          "label": "Reveal Elevated Surface",
+          "hint": "Partially reveal the visible area of this elevated surface to observers below and outside of it. The revealed area depends on the angle between the observer and the surface boundary, this area decreases as the angle becomes steeper. This option is useful for roofs, balconies, or other overhead platforms."
+        }
       },
       "PLACEMENTS": {
         "bottom.label": "Bottom",
@@ -3694,6 +3710,15 @@
     "hidden": "Hidden from players",
     "locked": "Locked"
   },
+  "Filter": {
+    "ACTIONS": {
+      "Clear": "Clear"
+    },
+    "Bottom": "Bottom",
+    "Title": "Advanced Filter",
+    "Tooltip": "Advanced Filters. Right-click to clear",
+    "Top": "Top"
+  },
   "Search": {
     "placeholder": "Filter {name}"
   },
@@ -3841,7 +3866,7 @@
 "TILE.ScaleHint": "Adjust the scale of the image on the X or Y axis. The image may overflow its bounding box. Negative values will flip the image.",
 "TILE.OcclusionModeNone": "None (Always Visible)",
 "TILE.OcclusionModeFade": "Fade (Entire Tile)",
-"TILE.OcclusionModeRoof": "Roof (Blocks Vision and Lighting)",
+"TILE.OcclusionModeSurface": "Surface",
 "TILE.OcclusionModeRadial": "Radial (Surrounding Token)",
 "TILE.OcclusionModeVision": "Vision (Token Field of Vision)",
 "TILE.VideoOptions": "Video Options",
@@ -3856,7 +3881,8 @@
 "TILE.TABS": {
   "position": "Position",
   "appearance": "Appearance",
-  "overhead": "Overhead"
+  "overhead": "Overhead",
+  "video": "Video"
 },
 "TILE.FIELDS": {
   "sort.label": "Sort",
@@ -3872,7 +3898,7 @@
     "label": "Name"
   },
   "occlusion": {
-    "mode.label": "Occlusion Mode",
+    "modes.label": "Occlusion Modes",
     "alpha.label": "Occlusion Alpha"
   },
   "restrictions": {
@@ -4431,7 +4457,7 @@
 "USERS.NoGMError": "You must have at least one Game Master user within your World.",
 "USERS.DeleteWarning": "This user will be permanently deleted from the game World.",
 "USERS.DeleteGMWarning": "You are about to delete a Game Master user!",
-
+"USERS.PasswordWarning": "Setting a password for the Gamemaster account is strongly recommended.",
 
 "VISION.ModeBlindness": "Blindness",
 "VISION.ModeBasicVision": "Basic Vision",

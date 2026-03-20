@@ -10,6 +10,7 @@
   "ImportOverwriteWarning": "シナリオ「{name}」のいくつかの内容がワールド内に検出されました。このシナリオをインポートすると上書きされます。それでも続行しますか？",
   "ImportAll": "全てをインポート",
   "ImportContent": "{label}をインポート",
+  "ImportLoading": "シナリオデータをロード中...",
   "Importer": {
     "V1": "シナリオインポーター (V1)",
     "V2": "シナリオインポーター (V2)"
@@ -385,16 +386,18 @@
   "RevealMessage": "全員に公開",
   "ConcealMessage": "非公開",
   "RollVisibility": "ロールの可視性",
-  "RollBlind": "GMだけに送信（自分は見えない）",
-  "RollDefault": "ロール送信方法",
-  "RollPublic": "全員に送信",
-  "RollPrivate": "自分とGMに送信",
-  "RollSelf": "自分だけに送信",
   "RollTables": "ロール表",
   "SendMessage": "メッセージを送信",
   "JumpToBottom": "一番下へ移動",
   "PrivateRollContent": "{user}は秘密裏にメッセージ（ロール）を送信した",
-  "UnknownUser": "不明なユーザー"
+  "UnknownUser": "不明なユーザー",
+  "MODES": {
+    "blind": "Blind to Gamemasters",
+    "gm": "Private to Gamemasters",
+    "ic": "Public as Character",
+    "public": "Public as User",
+    "self": "Self Only"
+  }
 },
 
 "COMBAT": {
@@ -839,14 +842,16 @@
   "SubmitRollPl": "ロール確定",
   "WarnMissingData": "属性 {match} は、ロールデータの中に存在しません。",
   "CONFIG": {
+    "DefaultMethod": "デフォルトの方法",
     "Hint": "ダイスロールに使用する手法を設定します。",
     "Label": "ダイス",
     "Title": "ダイスの設定"
   },
   "FULFILLMENT": {
-    "Default": "デフォルト",
+    "Default": "Foundry VTT デジタルダイス",
     "Mersenne": "デジタルダイス（メルセンヌ・ツイスタ）",
-    "Manual": "手動入力"
+    "Manual": "手動入力",
+    "UseDefault": "デフォルトを使用"
   }
 },
 
@@ -2211,7 +2216,8 @@
     "Down": "Down one level",
     "Edit": "Edit level",
     "Remove": "Remove level",
-    "Up": "Up one level"
+    "Up": "Up one level",
+    "View": "View level"
   },
   "FIELDS": {
     "background": {
@@ -3072,7 +3078,8 @@
   "ErrorUserDoesNotExist": "リクエストされたユーザー「{user}」は存在しません！",
   "ErrorInvalidPassword": "{user}のために提供されたパスワードが無効です！",
   "ErrorBanned": "{user}はこのワールドにアクセスする権限がありません！",
-  "LoginSuccess": "{user}としてのログインに成功しました。ゲームに参加しています！"
+  "LoginSuccess": "{user}としてのログインに成功しました。ゲームに参加しています！",
+  "WorldPendingSetup": "This World is not ready yet. Please wait for the Gamemaster to log in and complete setup before attempting to join."
 },
 
 "SHEETS.ConfigureSheet": "シート設定",
@@ -3217,7 +3224,8 @@
 "PERMISSION.WarningNoCreate": "{document}を作成するには権限が足りません",
 
 "PLACEABLE_PALETTE": {
-  "Apply": "Apply Changes",
+  "Apply": "Apply",
+  "CloneSettings": "Clone",
   "MultipleValues": "<Multiple Values>",
   "Selected": "{document} Palette [{count}]",
   "Title": "{document} Palette"
@@ -3486,10 +3494,18 @@
     "defineSurface": {
       "FIELDS": {
         "placement.label": "Placement",
-        "light.label": "Restricts Light and Darkness?",
-        "move.label": "Restricts Movement?",
-        "sight.label": "Restricts Sight?",
-        "sound.label": "Restricts Sound?"
+        "light.label": "Restricts Light and Darkness",
+        "move.label": "Restricts Movement",
+        "sight.label": "Restricts Sight",
+        "sound.label": "Restricts Sound",
+        "occlusion": {
+          "label": "干渉",
+          "hint": "When an occludable Token is beneath the surface, Tiles with occlusion mode set to SURFACE, and any foreground or background Level textures at the same elevation or higher, will be occluded."
+        },
+        "exposure": {
+          "label": "Reveal Elevated Surface",
+          "hint": "Partially reveal the visible area of this elevated surface to observers below and outside of it. The revealed area depends on the angle between the observer and the surface boundary, this area decreases as the angle becomes steeper. This option is useful for roofs, balconies, or other overhead platforms."
+        }
       },
       "PLACEMENTS": {
         "bottom.label": "Bottom",
@@ -3694,6 +3710,15 @@
     "hidden": "Hidden from players",
     "locked": "Locked"
   },
+  "Filter": {
+    "ACTIONS": {
+      "Clear": "Clear"
+    },
+    "Bottom": "Bottom",
+    "Title": "Advanced Filter",
+    "Tooltip": "Advanced Filters. Right-click to clear",
+    "Top": "Top"
+  },
   "Search": {
     "placeholder": "Filter {name}"
   },
@@ -3841,7 +3866,7 @@
 "TILE.ScaleHint": "XとY軸で画像の縮尺を調整します。設定のよってはコマの枠からあふれる可能性があります。負の値は画像をその軸で反転させます。",
 "TILE.OcclusionModeNone": "なし（常に見える）",
 "TILE.OcclusionModeFade": "減衰（全タイル）",
-"TILE.OcclusionModeRoof": "屋根（視覚と照明を遮る）",
+"TILE.OcclusionModeSurface": "Surface",
 "TILE.OcclusionModeRadial": "放射（コマの周囲）",
 "TILE.OcclusionModeVision": "視覚（コマの視覚範囲）",
 "TILE.VideoOptions": "ビデオオプション",
@@ -3856,7 +3881,8 @@
 "TILE.TABS": {
   "position": "位置",
   "appearance": "外観",
-  "overhead": "前景"
+  "overhead": "前景",
+  "video": "Video"
 },
 "TILE.FIELDS": {
   "sort.label": "ソート",
@@ -3872,7 +3898,7 @@
     "label": "Name"
   },
   "occlusion": {
-    "mode.label": "干渉モード",
+    "modes.label": "干渉モード",
     "alpha.label": "干渉アルファ値"
   },
   "restrictions": {
@@ -4431,7 +4457,7 @@
 "USERS.NoGMError": "ワールド内には最低1名のゲームマスターユーザーが必要です。",
 "USERS.DeleteWarning": "このユーザーはワールドから削除されます",
 "USERS.DeleteGMWarning": "あなたはゲームマスターを削除しようとしています！",
-
+"USERS.PasswordWarning": "Setting a password for the Gamemaster account is strongly recommended.",
 
 "VISION.ModeBlindness": "盲目",
 "VISION.ModeBasicVision": "基本視覚",
