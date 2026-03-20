@@ -66,7 +66,6 @@
     "RESET": "高度なオプションをリセット"
   },
   "FIELDS": {
-    "levels.label": "Levels",
     "name": {
       "hint": "An optional name to help identify the light source.",
       "label": "Name"
@@ -167,8 +166,7 @@
         },
         "hint": "「壁とSurfaceに遮られる」がオフになっている効果音にのみ使用できる特殊エフェクトです。音源が壁やSurfaceを通過するときに壁越しに聞こえる雰囲気を与えるために消音効果を設定できます。"
       }
-    },
-    "levels.label": "Levels"
+    }
   },
   "SECTIONS": {
     "SOURCE": "ソース",
@@ -657,6 +655,7 @@
   "WallWindow": "窓",
   "WallWindowBlocks": "一定の距離までの視線、移動、音",
   "GroupLighting": "ライト操作",
+  "LightSelect": "ライト選択",
   "LightDraw": "ライト設置",
   "LightClear": "全ライト消去",
   "LightReset": "マスクのリセット",
@@ -672,6 +671,7 @@
   "FOWResetTitle": "マスクをリセットしますか？",
   "FOWResetDesc": "シーン探索の結果、見えるようになったマスクをリセットします。全てのプレイヤーに影響します。",
   "GroupSound": "環境音操作",
+  "SoundSelect": "環境音選択",
   "SoundDraw": "環境音追加",
   "SoundPreview": "環境音の試聴",
   "SoundPreviewP": "有効化中、マウスを環境音の上にホバーするとそこにコマがあるかのように試聴することができます。",
@@ -780,6 +780,7 @@
   "ObjectRotateSlow": "オブジェクト回転（小）",
   "ObjectRotateFast": "オブジェクト回転（大）",
   "ObjectNoSnap": "グリッドを無視して配置",
+  "Palette": "パレット",
   "MouseWheel": "マウスホイール",
   "DragDrop": "ドラッグ＆ドロップ",
   "UnconstrainedMovement": "制約なし移動",
@@ -957,36 +958,22 @@
       "hint": "このドキュメントをコレクション内の他のドキュメントと比較した並び順を設定します。数値が小さいほど先に並びます。"
     },
     "x.label": "X",
-    "y.label": "Y"
+    "y.label": "Y",
+    "levels": {
+      "label": "階層",
+      "hint": "Choose the Levels in which inclusion applies. An empty selection applies inclusion to all Levels."
+    }
   }
 },
 
 "DRAWING": {
   "ConfigDefaultTitle": "図形描画の設定",
   "SubmitDefault": "デフォルト設定",
-  "SubmitCreate": "図形の作成",
-  "SubmitUpdate": "図形の更新",
-  "SubmitReset": "デフォルトにリセット",
   "NotePosition": "図形の位置、重なり順を設定します",
   "NoteLines": "図形の線を設定します",
   "NoteFill": "図形内の塗り潰しを設定します",
   "NoteText": "図形に適用されるテキストを設定します（任意）",
   "ZIndex": "重なり順",
-  "LineWidth": "線の幅",
-  "StrokeColor": "線の色",
-  "LineOpacity": "線の不透明度",
-  "SmoothingFactor": "線の滑らかさ",
-  "SmoothingFactorHint": "手書き描画の場合、線の滑らかさを調整します。",
-  "FillTypeNone": "なし",
-  "FillTypeSolid": "塗り潰し",
-  "FillTypePattern": "テクスチャー",
-  "TextLabel": "テキストラベル",
-  "FontFamily": "フォントファミリー",
-  "FontSize": "フォントサイズ",
-  "TextColor": "テキストの色",
-  "TextOpacity": "テキストの不透明度",
-  "Role": "図形の種類",
-  "RoleHint": "「オブジェクト」として指定された図形はコマと同じレイヤーに配置され、視覚などに影響され、壁の向こう側にあると視認できなくなります。「情報」として指定された図形は常に上位レイヤーに表示され、視覚に関係なく常にすべての参加者に視認されます。",
   "Object": "オブジェクト",
   "Information": "情報",
   "JointValidationError": "図形には視認可能な色、塗りつぶし、または、文字が必用です。",
@@ -997,16 +984,46 @@
     "fill": "塗り潰し",
     "text": "テキスト"
   },
+  "FILL_TYPES": {
+    "none": "なし",
+    "solid": "塗り潰し",
+    "pattern": "テクスチャー"
+  },
   "FIELDS": {
+    "bezierFactor": {
+      "label": "線の滑らかさ",
+      "hint": "手書き描画の場合、線の滑らかさを調整します。"
+    },
     "fillAlpha.label": "塗り潰しの不透明度",
     "fillColor.label": "塗り潰しの色",
     "fillType.label": "塗り潰し種別",
+    "fontFamily.label": "フォントファミリー",
+    "fontSize.label": "フォントサイズ",
+    "interface": {
+      "label": "図形の種類",
+      "hint": "「オブジェクト」として指定された図形はコマと同じレイヤーに配置され、視覚などに影響され、壁の向こう側にあると視認できなくなります。「情報」として指定された図形は常に上位レイヤーに表示され、視覚に関係なく常にすべての参加者に視認されます。"
+    },
     "name": {
       "hint": "An optional name to help identify the drawing.",
       "label": "名前"
     },
+    "shape": {
+      "width.label": "幅",
+      "height.label": "高さ"
+    },
     "sort.label": "ソート",
+    "strokeAlpha.label": "線の不透明度",
+    "strokeColor.label": "線の色",
+    "strokeWidth.label": "線の幅",
+    "text.label": "テキストラベル",
+    "textAlpha.label": "テキストの不透明度",
+    "textColor.label": "テキストの色",
     "texture.label": "塗り潰しテクスチャー"
+  },
+  "ACTIONS": {
+    "resetDefaults": "デフォルトにリセット",
+    "submitCreate": "図形を作成",
+    "submitUpdate": "図形を更新"
   }
 },
 
@@ -1286,7 +1303,6 @@
   "LinkTitle": "リンクのタイトル",
   "LinkInsert": "リンクを挿入",
   "ProseMirrorBadArguments": "ProseMirror（テキストエディタ）のインスタンスを作成するにはドキュメントと名前が必要です。",
-  "TinyMCE": "TinyMCE",
   "Markdown": "マークダウン",
   "HTML": "HTML",
   "Reveal": "開示",
@@ -1448,77 +1464,88 @@
 
 "HTMLDocumentTagsElement.PLACEHOLDER": "UUIDを入力か、{type}をドロップ",
 
-"JOURNAL.ModeText": "テキスト",
-"JOURNAL.ModeImage": "画像",
-"JOURNAL.ActionShow": "プレイヤーに見せる",
-"JOURNAL.ActionShowSuccess": "{title}の中身を{which}プレイヤーに表示しました。",
-"JOURNAL.ImageOptions": "画像オプション",
-"JOURNAL.ImageShowSuccess": "画像を{which}プレイヤーに表示しました。",
-"JOURNAL.NavLabel": "資料の目次",
-"JOURNAL.AddPage": "ページ追加",
-"JOURNAL.EditPage": "ページ編集",
-"JOURNAL.NextPage": "次のページ",
-"JOURNAL.PrevPage": "前のページ",
-"JOURNAL.Submit": "ページを保存",
-"JOURNAL.AnchorCenter": "中央揃え",
-"JOURNAL.AnchorBottom": "下揃え",
-"JOURNAL.AnchorTop": "上揃え",
-"JOURNAL.AnchorLeft": "左揃え",
-"JOURNAL.AnchorRight": "右揃え",
-"JOURNAL.EntryTitle": "項目を追加",
-"JOURNAL.ModeMultiple": "複数ページモード",
-"JOURNAL.ModeSingle": "単ページモード",
-"JOURNAL.ViewMultiple": "ページを複数で表示",
-"JOURNAL.ViewSingle": "ページを単体で表示",
-"JOURNAL.ViewCollapse": "サイドバーを閉じる",
-"JOURNAL.ViewExpand": "サイドバーを展開",
-"JOURNAL.ShowTo": "表示先",
-"JOURNAL.ShowEntry": "{name}に表示",
-"JOURNAL.ShowBadPermissions": "自分が権限を持っている資料やページのみを他人に表示出来ます。",
-"JOURNAL.ShowNoPlayers": "表示できる他のプレイヤーが接続していません。",
-"JOURNAL.ShowOwnershipHint": "表示先のプレイヤーにも閲覧の権限を渡します。すでに上位の権限を持っていた場合は降格されることはありません。",
-"JOURNAL.SHOW": {
-  "all": "all",
-  "authorized": "authorized",
-  "selected": "selected"
+"JOURNAL": {
+  "ModeText": "テキスト",
+  "ModeImage": "画像",
+  "ActionShow": "プレイヤーに見せる",
+  "ActionShowSuccess": "{title}の中身を{which}プレイヤーに表示しました。",
+  "ImageOptions": "画像オプション",
+  "ImageShowSuccess": "画像を{which}プレイヤーに表示しました。",
+  "NavLabel": "資料の目次",
+  "AddPage": "ページ追加",
+  "EditPage": "ページ編集",
+  "NextPage": "次のページ",
+  "PrevPage": "前のページ",
+  "Submit": "ページを保存",
+  "AnchorCenter": "中央揃え",
+  "AnchorBottom": "下揃え",
+  "AnchorTop": "上揃え",
+  "AnchorLeft": "左揃え",
+  "AnchorRight": "右揃え",
+  "ModeMultiple": "複数ページモード",
+  "ModeSingle": "単ページモード",
+  "ViewMultiple": "ページを複数で表示",
+  "ViewSingle": "ページを単体で表示",
+  "ViewCollapse": "サイドバーを閉じる",
+  "ViewExpand": "サイドバーを展開",
+  "ShowTo": "表示先",
+  "ShowEntry": "{name}に表示",
+  "ShowBadPermissions": "自分が権限を持っている資料やページのみを他人に表示出来ます。",
+  "ShowNoPlayers": "表示できる他のプレイヤーが接続していません。",
+  "ShowOwnershipHint": "表示先のプレイヤーにも閲覧の権限を渡します。すでに上位の権限を持っていた場合は降格されることはありません。",
+  "SHOW": {
+    "all": "all",
+    "authorized": "authorized",
+    "selected": "selected"
+  },
+  "LockModeLocked": "目次はロック中。クリックでアンロック。",
+  "LockModeUnlocked": "目次はアンロック中。クリックでロック。",
+  "ConfigureCategories": "カテゴリー設定",
+  "ConfigureCategoriesTitle": "{name} カテゴリー",
+  "CategoryName": "カテゴリー名",
+  "Uncategorized": "未分類",
+  "UnnamedCategory": "<未命名カテゴリー>",
+  "FIELDS": {
+    "name": {
+      "label": "項目を追加"
+    }
+  }
 },
-"JOURNAL.LockModeLocked": "目次はロック中。クリックでアンロック。",
-"JOURNAL.LockModeUnlocked": "目次はアンロック中。クリックでロック。",
-"JOURNAL.ConfigureCategories": "カテゴリー設定",
-"JOURNAL.ConfigureCategoriesTitle": "{name} カテゴリー",
-"JOURNAL.CategoryName": "カテゴリー名",
-"JOURNAL.Uncategorized": "未分類",
-"JOURNAL.UnnamedCategory": "<未命名カテゴリー>",
 
-"JOURNALENTRYPAGE.DefaultPageSheet": "デフォルトの{page}ページシート",
-"JOURNALENTRYPAGE.Format": "フォーマット",
-"JOURNALENTRYPAGE.Page": "ページ",
-"JOURNALENTRYPAGE.PageTitle": "ページ名",
-"JOURNALENTRYPAGE.Source": "ソース",
-"JOURNALENTRYPAGE.Type": "種別",
-"JOURNALENTRYPAGE.TypeImage": "画像",
-"JOURNALENTRYPAGE.TypePDF": "PDF",
-"JOURNALENTRYPAGE.TypeText": "テキスト",
-"JOURNALENTRYPAGE.TypeVideo": "動画",
-"JOURNALENTRYPAGE.ImageSource": "画像ソース",
-"JOURNALENTRYPAGE.ImageCaption": "画像説明文",
-"JOURNALENTRYPAGE.VideoAutoplay": "動画の自動再生",
-"JOURNALENTRYPAGE.VideoControls": "動画の操作を表示",
-"JOURNALENTRYPAGE.VideoDimensions": "動画のサイズ",
-"JOURNALENTRYPAGE.VideoLoop": "動画のループ",
-"JOURNALENTRYPAGE.VideoStartTime": "動画開始時間",
-"JOURNALENTRYPAGE.VideoSource": "動画ソース",
-"JOURNALENTRYPAGE.VideoSourceHint": "ここにはローカルのファイルパス、Web上やリモートの画像のURL、YouTubeのURLを設定できます。",
-"JOURNALENTRYPAGE.VideoVolume": "動画音量",
-"JOURNALENTRYPAGE.PDFLoad": "PDF読み込み",
-"JOURNALENTRYPAGE.PDFSource": "PDFソース",
-"JOURNALENTRYPAGE.ShowImageOnly": "画像のみを表示",
-"JOURNALENTRYPAGE.ShowImageTitle": "画像タイトルを表示",
-"JOURNALENTRYPAGE.ShowImageCaption": "画像の説明文を表示",
-"JOURNALENTRYPAGE.ShowTitle": "ページタイトルを表示",
-"JOURNALENTRYPAGE.HeadingLevel": "見出し段階",
-"JOURNALENTRYPAGE.Category": "カテゴリー",
-"JOURNALENTRYPAGE.Level": "段階 {level}",
+"JOURNALENTRYPAGE": {
+  "DefaultPageSheet": "デフォルトの{page}ページシート",
+  "Page": "ページ",
+  "VideoDimensions": "動画のサイズ",
+  "VideoStartTime": "動画開始時間",
+  "VideoSourceHint": "ここにはローカルのファイルパス、Web上やリモートの画像のURL、YouTubeのURLを設定できます。",
+  "PDFLoad": "PDF読み込み",
+  "ShowImageOnly": "画像のみを表示",
+  "ShowImageTitle": "画像タイトルを表示",
+  "ShowImageCaption": "画像の説明文を表示",
+  "Level": "段階 {level}",
+
+  "FIELDS": {
+    "category.label": "ページカテゴリー",
+    "image": {
+      "caption.label": "画像説明文"
+    },
+    "name.label": "ページ名",
+    "src.label": "ファイルパス",
+    "text": {
+      "format.label": "フォーマット"
+    },
+    "title": {
+      "level.label": "見出し段階",
+      "show.label": "ページタイトルを表示"
+    },
+    "video": {
+      "autoplay.label": "動画の自動再生",
+      "controls.label": "動画の操作を表示",
+      "loop.label": "動画のループ",
+      "volume.label": "動画音量"
+    }
+  }
+},
 
 "KEYBINDINGS": {
   "Title": "操作設定",
@@ -1740,6 +1767,9 @@
 },
 
 "MEASUREMENT": {
+  "ABBR": {
+    "Pixels": "px"
+  },
   "Angle": "角度",
   "Coordinates": "座標",
   "Degrees": "度",
@@ -1921,10 +1951,14 @@
 "SCENE.AccessibilityGM" : "GMのみ",
 "SCENE.AccessibilityAll" : "全プレイヤー",
 "SCENE.Activate": "有効化",
+"SCENE.Audio": "音声",
 "SCENE.BackgroundScale": "背景画像の縮尺",
 "SCENE.BackgroundScaleHint": "Shift＋マウスホイール、または、Shift＋上矢印または下矢印で、背景画像サイズを調整します。",
 "SCENE.CaptureInitialViewPosition": "今の盤面の位置を初期ビューとして保存しました。",
 "SCENE.Configure": "設定",
+"SCENE.CurrentLevel": "Current Level",
+"SCENE.Darkness": "Darkness",
+"SCENE.Details": "Details",
 "SCENE.Dimensions": "シーンのサイズ",
 "SCENE.DimensionsHint": "背景画像のサイズを設定します。これは初回選択時に自動的に生成されます。",
 "SCENE.DimensionChangeTitle": "シーンのサイズ変更をしますか？",
@@ -1933,11 +1967,19 @@
 "SCENE.DimensionUnlinked": "シーンの縦横比が同期されていません。サイズのいずれかを編集してももう片方は変更されません。クリックすると同期します",
 "SCENE.DistortedDimensionsTitle": "縦横比の警告",
 "SCENE.DistortedDimensionsWarning": "元の縦横比とは違うサイズが設定されています。コマなどの配置物を自動的に一番近い位置に再配置しますか？結果は必ずしも正しいものとは限りません。",
+"SCENE.Environment.Base": "Base Environment",
+"SCENE.Environment.Dark": "Darkness Environment",
+"SCENE.Environment.DarkHint": "Behaves as the base environmental settings, but applies as the scene's darkness level gets closer to 1.",
+"SCENE.Environment.Reset": "Reset to Default Options",
+"SCENE.FogOfWar": "Fog of War",
 "SCENE.GenerateThumb": "サムネイル画像を再生成",
 "SCENE.GenerateThumbNoCanvas": "「ゲームキャンバスの無効化」の設定を使用している場合シーンのサムネイルは生成されません。",
 "SCENE.GenerateThumbUploadDenied": "ユーザーがファイルをアップロードする権限がないため、シーンのサムネイルを生成できませんでした。",
 "SCENE.GenerateThumbProgress": "シーン「{name}」のサムネイル画像を生成中。",
 "SCENE.GenerateThumbSuccess": "シーン「{name}」のサムネイル画像を生成しました。",
+"SCENE.GlobalIllumination": "Global Illumination",
+"SCENE.GridAppearance": "Appearance",
+"SCENE.GridAppearanceHint": "Configure the appearance of the grid lines.",
 "SCENE.GridConfigTool": "グリッド設定ツール",
 "SCENE.GridConfigToolHint": "マウスホイールと矢印キーを使用するか、次の入力欄を手動で設定して、グリッドと背景画像の位置を設定します。",
 "SCENE.GridGridless": "グリッド無し",
@@ -1946,12 +1988,15 @@
 "SCENE.GridHexEvenR": "ヘクス（六角マス）偶数行",
 "SCENE.GridHexOddQ": "ヘクス（六角マス）奇数列",
 "SCENE.GridHexEvenQ": "ヘクス（六角マス）偶数列",
+"SCENE.GridMeasurement": "Measurement",
+"SCENE.GridMechanics": "Mechanics",
 "SCENE.GridSizeError": "このサイズ変更によりグリッドのサイズが最低値である50px以下になります。この操作を行なうのであれば、先にグリッド無しに変更し、サイズ変更後に新しいグリッドを設置してください。",
 "SCENE.GridResizeHint" : "ALT+マウスホイールまたは「ALT+上、ALT+下」でグリッド・サイズを微調整します。",
 "SCENE.GridPosition": "グリッド・オフセット位置",
 "SCENE.GridPositionHint": "矢印キーを使用して、グリッドを微調整します。",
-"SCENE.GridScale": "グリッドの単位",
 "SCENE.GridReset": "変更をリセット",
+"SCENE.InheritedField": "This field's value is being inherited from the '{level}' level. Click here to edit it directly.",
+"SCENE.InitialLevel": "Initial Level",
 "SCENE.InitialView": "初期表示位置",
 "SCENE.InitialViewButton": "現在の表示位置を初期表示位置にする",
 "SCENE.InitialViewHint": "このシーンが初めて表示される場合の、デフォルトの表示位置を設定します。",
@@ -1960,8 +2005,10 @@
 "SCENE.Notes": "シーンメモ",
 "SCENE.Perception": "Perception",
 "SCENE.Preload": "先読み",
+"SCENE.Presentation": "Presentation",
+"SCENE.Properties": "Scene Properties",
 "SCENE.View": "シーンを表示",
-"SCENE.ShiftBG": "グリッド・オフセット位置",
+"SCENE.ShiftBG": "Shift",
 "SCENE.ToggleNav": "ナビゲーション切替",
 "SCENE.FogModeChangeMessage": "Fog exploration mode has changed. This will reload fog exploration and reset vision.",
 "SCENE.Transition": {
@@ -1984,13 +2031,8 @@
     "dots": "ドット"
   }
 },
-"SCENE.Ambience": {
-  "Base": "基礎照明",
-  "Dark": "暗い照明",
-  "ResetEnvironment": "デフォルト値にリセット"
-},
 "SCENE.FIELDS": {
-  "activeLevel": {
+  "initialLevel": {
     "hint": "If a User has visibility of this Level, they will be placed on it when the Scene is activated for the first time, or if the Scene is active when joining the game.",
     "label": "Initial Level"
   },
@@ -2036,11 +2078,12 @@
     "type.label": "グリッド種別",
     "size": {
       "label" : "グリッドサイズ ",
-      "hint" : "Shift＋マウスホイール、または、Shift＋上矢印または下矢印で、グリッド・サイズを調整します。"
+      "hint" : "The grid pixel size is the size of a single grid space. Use the Grid Configuration tool to visually adjust this."
     },
     "thickness.label": "グリッドの幅",
     "color.label": "グリッドの色",
     "alpha.label": "グリッドの不透明度",
+    "distance.hint": "The distance each grid space represents on this scene, in units appropriate to the game system.",
     "distance.label": "距離 ",
     "units.label": "単位",
     "style.label": "グリッド種別"
@@ -2049,18 +2092,21 @@
     "label" : "マップ余白",
     "hint": "シーンの周囲に表示する余分な空間やマス目を設定します。"
   },
+  "shiftX.hint": "The offset applied to the Scene's playable area, which is centered on the canvas by default.",
+  "shiftX.label": "X-Shift",
+  "shiftY.label": "Y-Shift",
   "tokenVision": {
     "label": "コマの視覚",
     "hint": "操作するコマに設定された視覚に基づいて、シーン内で見通せる距離を制限します。無効にすると、シーン全体が表示されます。"
   },
   "fog": {
     "MODES": {
-      "DISABLED": "無効",
+      "DISABLED": "なし",
       "INDIVIDUAL": "個別",
       "SHARED": "共有"
     },
     "mode": {
-      "label" : "Fog Mode",
+      "label" : "Exploration Mode",
       "hint" : "Controls Fog of War mode: \"None\" disables exploration (tokens only see what they currently can), \"Individual\" tracks exploration separately for each user, and \"Shared\" uses a single exploration state contributed to by all users."
     },
     "overlay": {
@@ -2081,11 +2127,11 @@
   "environment": {
     "globalLight": {
       "enabled": {
-        "label" : "見える範囲の無制限化",
+        "label" : "有効",
         "hint": "視覚管理が設定されているすべてのコマの視覚は壁にぶつかるまで無制限に見えるようになります。無効にするとコマの本来の視覚やライトの範囲を参照して計算されます。"
       },
       "darkness.max": {
-        "label": "見える暗さの閾値",
+        "label": "閾値",
         "hint": "暗さのレベルが閾値を超えると、見える範囲の無制限化が自動的に無効化されます。"
       }
     },
@@ -2147,15 +2193,12 @@
 },
 "SCENE.TABS": {
   "SHEET": {
-    "presentation": "Presentation",
+    "basics": "基本",
     "grid": "グリッド",
-    "lighting": "照明と視覚",
-    "ambience": "環境",
+    "visibility": "Visibility",
+    "environment": "環境",
+    "misc": "Miscellaneous",
     "levels": "Levels"
-  },
-  "AMBIENCE": {
-    "basic": "基本オプション",
-    "environment": "環境照明"
   }
 },
 
@@ -2174,6 +2217,7 @@
     "background": {
       "label": "Background",
       "src.label": "Texture",
+      "color.label": "色",
       "tint.label": "Tint",
       "alphaThreshold.label": "Alpha Threshold"
     },
@@ -3172,17 +3216,22 @@
 "PERMISSION.QueryUserHint": "他のユーザーへクエリ（問い合わせ）を送信できる許可を与えます。",
 "PERMISSION.WarningNoCreate": "{document}を作成するには権限が足りません",
 
+"PLACEABLE_PALETTE": {
+  "Apply": "Apply Changes",
+  "MultipleValues": "<Multiple Values>",
+  "Selected": "{document} Palette [{count}]",
+  "Title": "{document} Palette"
+},
+
 "REGION": {
   "TABS": {
     "appearance": "外観",
-    "area": "範囲",
+    "shapes": "Shapes",
+    "placement": "Placement",
     "behaviors": "効果"
   },
   "SECTIONS": {
-    "elevation": "高度",
-    "levels": "Levels",
-    "restriction": "制限",
-    "attachment": "Attachment"
+    "restriction": "Wall Restriction"
   },
   "FIELDS": {
     "color": {
@@ -3209,7 +3258,6 @@
       "label": "Attached Token",
       "hint": "The Token the Region is attached to. When this Token is moved, the Region is moved with it."
     },
-    "levels.label": "Levels",
     "restriction": {
       "enabled": {
         "label": "制限あり",
@@ -3353,6 +3401,11 @@
     "CutShape": "リージョン形状をカットしました。",
     "PastedShape": "リージョン形状をペーストしました。",
     "PastedShapeWithoutControlledRegion": "形状をペーストできるリージョンを選択していません。"
+  },
+  "TOOLTIPS": {
+    "CannotChangeLevelsIfAttached": "The Region must be on the same Level as the Token it's attached to.",
+    "CannotSelectMultipleLevelsIfRestricted": "This Region can't be included in multiple Regions while it's restricted.",
+    "CannotEnableRestriction": "This Region can't be restricted because it's included in more than one Level."
   }
 },
 
@@ -3836,8 +3889,7 @@
     "loop.label": "動画のループ",
     "autoplay.label": "動画の自動再生",
     "volume.label": "動画の音量"
-  },
-  "levels.label": "Levels"
+  }
 },
 
 "TIME": {
@@ -4263,6 +4315,22 @@
   "TableResult": {
     "document": "ドキュメント",
     "text": "テキスト"
+  },
+  "HINTS": {
+    "RegionBehavior": {
+      "adjustDarknessLevel": "Override, brighten, or darken the Scene's Darkness Level within the Region.",
+      "applyActiveEffect": "Apply Active Effects to Tokens while they are within the Region.",
+      "changeLevel": "Allow Tokens that move into the Region to move to another Level the Region is included in.",
+      "defineSurface": "Define a surface that can restrict light, movement, sight, and sound.",
+      "displayScrollingText": "Display a scrolling text above a Token when it triggers one of the subscribed events.",
+      "executeMacro": "Execute a Macro when one of the subscribed events occurs.",
+      "executeScript": "Execute a script when one of the subscribed events occurs.",
+      "modifyMovementCost": "Modify the movement cost of Tokens within the Region.",
+      "pauseGame": "Pause the game when a Token is moved into the Region by a player.",
+      "suppressWeather": "Suppress weather effects within the Region.",
+      "teleportToken": "Teleport Tokens that are moved into the Region to another Region.",
+      "toggleBehavior": "Enable/disable other Region Behaviors when one of the subscribed events occurs."
+    }
   }
 },
 
@@ -4375,7 +4443,6 @@
 
 "WALL.FIELDS": {
   "c.label": "ウォール座標",
-  "levels.label": "Levels",
   "light.label": "ライトと暗さ",
   "move.label": "移動",
   "sight.label": "視覚",
@@ -4441,6 +4508,8 @@
 "WALL.DoorSounds.Industrial": "工業的",
 "WALL.DoorSounds.IndustrialCreaky": "工業的、きしむ",
 "WALL.DoorSounds.Jail": "刑務所",
+"WALL.DoorSounds.JailCreaky": "刑務所、きしむ",
+"WALL.DoorSounds.JailHeavy": "刑務所、重い",
 "WALL.DoorSounds.MagicDoor": "魔法の扉",
 "WALL.DoorSounds.MagicWall": "魔法の壁",
 "WALL.DoorSounds.Metal": "金属",

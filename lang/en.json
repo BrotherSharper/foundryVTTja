@@ -66,7 +66,6 @@
     "RESET": "Reset Advanced Options"
   },
   "FIELDS": {
-    "levels.label": "Levels",
     "name": {
       "hint": "An optional name to help identify the light source.",
       "label": "Name"
@@ -167,8 +166,7 @@
         },
         "hint": "Apply an audio effect to the sound which replaces the base effect when the sound is muffled by intervening walls and surfaces. A sound can only be muffled if it is not constrained by walls and surfaces."
       }
-    },
-    "levels.label": "Levels"
+    }
   },
   "SECTIONS": {
     "SOURCE": "Source",
@@ -657,6 +655,7 @@
   "WallWindow": "Window Walls",
   "WallWindowBlocks": "Sight, movement, and hearing beyond a certain distance",
   "GroupLighting": "Lighting Controls",
+  "LightSelect": "Select Light Sources",
   "LightDraw": "Draw Light Source",
   "LightClear": "Clear Lights",
   "LightReset": "Reset Fog of War",
@@ -672,6 +671,7 @@
   "FOWResetTitle": "Reset Fog of War Exploration?",
   "FOWResetDesc": "This will reset fog of war for this Scene for all players.",
   "GroupSound": "Ambient Sound Controls",
+  "SoundSelect": "Select Ambient Sounds",
   "SoundDraw": "Draw Ambient Sound",
   "SoundPreview": "Preview Ambient Sounds",
   "SoundPreviewP": "When active, hover your cursor over an ambient sound to hear it as if your Token was in that position.",
@@ -780,6 +780,7 @@
   "ObjectRotateSlow": "Rotate Object (Slow)",
   "ObjectRotateFast": "Rotate Object (Fast)",
   "ObjectNoSnap": "Bypass Snap-to-Grid",
+  "Palette": "Palette",
   "MouseWheel": "Mouse-Wheel",
   "DragDrop": "Drag and Drop",
   "UnconstrainedMovement": "Unconstrained Movement",
@@ -957,36 +958,22 @@
       "hint": "Configure the sorted order of this Document relative to others in its collection. Lower numbers are sorted first."
     },
     "x.label": "X",
-    "y.label": "Y"
+    "y.label": "Y",
+    "levels": {
+      "label": "Levels",
+      "hint": "Choose the Levels in which inclusion applies. An empty selection applies inclusion to all Levels."
+    }
   }
 },
 
 "DRAWING": {
   "ConfigDefaultTitle": "Default Drawing Configuration",
   "SubmitDefault": "Configure Default",
-  "SubmitCreate": "Create Drawing",
-  "SubmitUpdate": "Update Drawing",
-  "SubmitReset": "Reset Defaults",
   "NotePosition": "Adjust the position and visibility of the Drawing.",
   "NoteLines": "Adjust the outer line work for the Drawing.",
   "NoteFill": "Adjust the interior fill preferences for this Drawing.",
   "NoteText": "Adjust the text label applied to this Drawing (if any).",
   "ZIndex": "Z-Index",
-  "LineWidth": "Line Width",
-  "StrokeColor": "Line Color",
-  "LineOpacity": "Line Opacity",
-  "SmoothingFactor": "Smoothing Factor",
-  "SmoothingFactorHint": "For freehand drawing, the smoothing factor controls the amount of spline smoothing.",
-  "FillTypeNone": "None",
-  "FillTypeSolid": "Solid",
-  "FillTypePattern": "Pattern",
-  "TextLabel": "Text Label",
-  "FontFamily": "Font Family",
-  "FontSize": "Font Size",
-  "TextColor": "Text Color",
-  "TextOpacity": "Text Opacity",
-  "Role": "Drawing Role",
-  "RoleHint": "A Drawing that represents an \"Object\" is rendered in the Primary Canvas Group and is affected by lighting and fog of war exploration. One that conveys \"Information\" is rendered in the Interface Group and is visible to all players unless hidden.",
   "Object": "Object",
   "Information": "Information",
   "JointValidationError": "Drawings must have visible text, a visible fill, or a visible line.",
@@ -997,16 +984,46 @@
     "fill": "Fill",
     "text": "Text"
   },
+  "FILL_TYPES": {
+    "none": "None",
+    "solid": "Solid",
+    "pattern": "Pattern"
+  },
   "FIELDS": {
+    "bezierFactor": {
+      "label": "Smoothing Factor",
+      "hint": "For freehand drawing, the smoothing factor controls the amount of spline smoothing."
+    },
     "fillAlpha.label": "Fill Opacity",
     "fillColor.label": "Fill Color",
     "fillType.label": "Fill Types",
+    "fontFamily.label": "Font Family",
+    "fontSize.label": "Font Size",
+    "interface": {
+      "label": "Drawing Role",
+      "hint": "A Drawing that represents an \"Object\" is rendered in the Primary Canvas Group and is affected by lighting and fog of war exploration. One that conveys \"Information\" is rendered in the Interface Group and is visible to all players unless hidden."
+    },
     "name": {
       "hint": "An optional name to help identify the drawing.",
       "label": "Name"
     },
+    "shape": {
+      "width.label": "Width",
+      "height.label": "Height"
+    },
     "sort.label": "Sort",
+    "strokeAlpha.label": "Line Opacity",
+    "strokeColor.label": "Line Color",
+    "strokeWidth.label": "Line Width",
+    "text.label": "Text Label",
+    "textAlpha.label": "Text Opacity",
+    "textColor.label": "Text Color",
     "texture.label": "Fill Texture"
+  },
+  "ACTIONS": {
+    "resetDefaults": "Reset Defaults",
+    "submitCreate": "Create Drawing",
+    "submitUpdate": "Update Drawing"
   }
 },
 
@@ -1286,7 +1303,6 @@
   "LinkTitle": "Link Title",
   "LinkInsert": "Insert Link",
   "ProseMirrorBadArguments": "Both a document and a name must be supplied to create a ProseMirror instance.",
-  "TinyMCE": "TinyMCE",
   "Markdown": "Markdown",
   "HTML": "HTML",
   "Reveal": "Reveal",
@@ -1448,77 +1464,88 @@
 
 "HTMLDocumentTagsElement.PLACEHOLDER": "Enter UUID or Drop {type}",
 
-"JOURNAL.ModeText": "Text",
-"JOURNAL.ModeImage": "Image",
-"JOURNAL.ActionShow": "Show Players",
-"JOURNAL.ActionShowSuccess": "Showed the contents of {title} to {which} players.",
-"JOURNAL.ImageOptions": "Image Options",
-"JOURNAL.ImageShowSuccess": "Image shown to {which} players.",
-"JOURNAL.NavLabel": "Journal Entry Table of Contents",
-"JOURNAL.AddPage": "Add Page",
-"JOURNAL.EditPage": "Edit Page",
-"JOURNAL.NextPage": "Next Page",
-"JOURNAL.PrevPage": "Previous Page",
-"JOURNAL.Submit": "Save Entry",
-"JOURNAL.AnchorCenter": "Center",
-"JOURNAL.AnchorBottom": "Bottom",
-"JOURNAL.AnchorTop": "Top",
-"JOURNAL.AnchorLeft": "Left",
-"JOURNAL.AnchorRight": "Right",
-"JOURNAL.EntryTitle": "Entry Title",
-"JOURNAL.ModeMultiple": "Multiple Page Mode",
-"JOURNAL.ModeSingle": "Single Page Mode",
-"JOURNAL.ViewMultiple": "View Multiple Pages",
-"JOURNAL.ViewSingle": "View Single Page",
-"JOURNAL.ViewCollapse": "Collapse Sidebar",
-"JOURNAL.ViewExpand": "Expand Sidebar",
-"JOURNAL.ShowTo": "Show To",
-"JOURNAL.ShowEntry": "Show {name}",
-"JOURNAL.ShowBadPermissions": "You may only show Journal Entries or Pages which you own.",
-"JOURNAL.ShowNoPlayers": "There are no other connected players to show this to.",
-"JOURNAL.ShowOwnershipHint": "Optionally update the ownership of this document for the players that it is being shown to. If a player already has a greater ownership level, they will not be downgraded.",
-"JOURNAL.SHOW": {
-  "all": "all",
-  "authorized": "authorized",
-  "selected": "selected"
+"JOURNAL": {
+  "ModeText": "Text",
+  "ModeImage": "Image",
+  "ActionShow": "Show Players",
+  "ActionShowSuccess": "Showed the contents of {title} to {which} players.",
+  "ImageOptions": "Image Options",
+  "ImageShowSuccess": "Image shown to {which} players.",
+  "NavLabel": "Journal Entry Table of Contents",
+  "AddPage": "Add Page",
+  "EditPage": "Edit Page",
+  "NextPage": "Next Page",
+  "PrevPage": "Previous Page",
+  "Submit": "Save Entry",
+  "AnchorCenter": "Center",
+  "AnchorBottom": "Bottom",
+  "AnchorTop": "Top",
+  "AnchorLeft": "Left",
+  "AnchorRight": "Right",
+  "ModeMultiple": "Multiple Page Mode",
+  "ModeSingle": "Single Page Mode",
+  "ViewMultiple": "View Multiple Pages",
+  "ViewSingle": "View Single Page",
+  "ViewCollapse": "Collapse Sidebar",
+  "ViewExpand": "Expand Sidebar",
+  "ShowTo": "Show To",
+  "ShowEntry": "Show {name}",
+  "ShowBadPermissions": "You may only show Journal Entries or Pages which you own.",
+  "ShowNoPlayers": "There are no other connected players to show this to.",
+  "ShowOwnershipHint": "Optionally update the ownership of this document for the players that it is being shown to. If a player already has a greater ownership level, they will not be downgraded.",
+  "SHOW": {
+    "all": "all",
+    "authorized": "authorized",
+    "selected": "selected"
+  },
+  "LockModeLocked": "Table of contents locked. Click to unlock.",
+  "LockModeUnlocked": "Table of contents unlocked. Click to lock.",
+  "ConfigureCategories": "Configure Categories",
+  "ConfigureCategoriesTitle": "{name} Categories",
+  "CategoryName": "Category name",
+  "Uncategorized": "Uncategorized",
+  "UnnamedCategory": "<Unnamed Category>",
+  "FIELDS": {
+    "name": {
+      "label": "Entry Title"
+    }
+  }
 },
-"JOURNAL.LockModeLocked": "Table of contents locked. Click to unlock.",
-"JOURNAL.LockModeUnlocked": "Table of contents unlocked. Click to lock.",
-"JOURNAL.ConfigureCategories": "Configure Categories",
-"JOURNAL.ConfigureCategoriesTitle": "{name} Categories",
-"JOURNAL.CategoryName": "Category name",
-"JOURNAL.Uncategorized": "Uncategorized",
-"JOURNAL.UnnamedCategory": "<Unnamed Category>",
 
-"JOURNALENTRYPAGE.DefaultPageSheet": "Default {page} Page Sheet",
-"JOURNALENTRYPAGE.Format": "Format",
-"JOURNALENTRYPAGE.Page": "Page",
-"JOURNALENTRYPAGE.PageTitle": "Page Name",
-"JOURNALENTRYPAGE.Source": "Source",
-"JOURNALENTRYPAGE.Type": "Type",
-"JOURNALENTRYPAGE.TypeImage": "Image",
-"JOURNALENTRYPAGE.TypePDF": "PDF",
-"JOURNALENTRYPAGE.TypeText": "Text",
-"JOURNALENTRYPAGE.TypeVideo": "Video",
-"JOURNALENTRYPAGE.ImageSource": "Image Source",
-"JOURNALENTRYPAGE.ImageCaption": "Image Caption",
-"JOURNALENTRYPAGE.VideoAutoplay": "Autoplay Video",
-"JOURNALENTRYPAGE.VideoControls": "Show Video Controls",
-"JOURNALENTRYPAGE.VideoDimensions": "Video Dimensions",
-"JOURNALENTRYPAGE.VideoLoop": "Loop Video",
-"JOURNALENTRYPAGE.VideoStartTime": "Video Start Time",
-"JOURNALENTRYPAGE.VideoSource": "Video Source",
-"JOURNALENTRYPAGE.VideoSourceHint": "This may be a local file, a remote video file URL, or a YouTube URL.",
-"JOURNALENTRYPAGE.VideoVolume": "Video Volume",
-"JOURNALENTRYPAGE.PDFLoad": "Load PDF",
-"JOURNALENTRYPAGE.PDFSource": "PDF Source",
-"JOURNALENTRYPAGE.ShowImageOnly": "Show Image Only",
-"JOURNALENTRYPAGE.ShowImageTitle": "Show Image Title",
-"JOURNALENTRYPAGE.ShowImageCaption": "Show Image Caption",
-"JOURNALENTRYPAGE.ShowTitle": "Display Page Title",
-"JOURNALENTRYPAGE.HeadingLevel": "Heading Level",
-"JOURNALENTRYPAGE.Category": "Page Category",
-"JOURNALENTRYPAGE.Level": "Level {level}",
+"JOURNALENTRYPAGE": {
+  "DefaultPageSheet": "Default {page} Page Sheet",
+  "Page": "Page",
+  "VideoDimensions": "Video Dimensions",
+  "VideoStartTime": "Video Start Time",
+  "VideoSourceHint": "This may be a local file, a remote video file URL, or a YouTube URL.",
+  "PDFLoad": "Load PDF",
+  "ShowImageOnly": "Show Image Only",
+  "ShowImageTitle": "Show Image Title",
+  "ShowImageCaption": "Show Image Caption",
+  "Level": "Level {level}",
+
+  "FIELDS": {
+    "category.label": "Page Category",
+    "image": {
+      "caption.label": "Image Caption"
+    },
+    "name.label": "Page Name",
+    "src.label": "File Path",
+    "text": {
+      "format.label": "Format"
+    },
+    "title": {
+      "level.label": "Heading Level",
+      "show.label": "Display Page Title"
+    },
+    "video": {
+      "autoplay.label": "Autoplay Video",
+      "controls.label": "Show Video Controls",
+      "loop.label": "Loop Video",
+      "volume.label": "Video Volume"
+    }
+  }
+},
 
 "KEYBINDINGS": {
   "Title": "Controls Configuration",
@@ -1740,6 +1767,9 @@
 },
 
 "MEASUREMENT": {
+  "ABBR": {
+    "Pixels": "px"
+  },
   "Angle": "Angle",
   "Coordinates": "Coordinates",
   "Degrees": "Degrees",
@@ -1921,10 +1951,14 @@
 "SCENE.AccessibilityGM" : "GM Only",
 "SCENE.AccessibilityAll" : "All Players",
 "SCENE.Activate": "Activate",
+"SCENE.Audio": "Audio",
 "SCENE.BackgroundScale": "Background Image Scale",
 "SCENE.BackgroundScaleHint": "Use SHIFT+Mousewheel or SHIFT+Up Arrow and SHIFT+Down Arrow to adjust the background image size.",
 "SCENE.CaptureInitialViewPosition": "Captured canvas position as initial view in the Scene configuration form.",
 "SCENE.Configure": "Configure",
+"SCENE.CurrentLevel": "Current Level",
+"SCENE.Darkness": "Darkness",
+"SCENE.Details": "Details",
 "SCENE.Dimensions": "Scene Dimensions",
 "SCENE.DimensionsHint": "The scene dimensions are automatically set to match the background image's dimensions when a background image is first configured.",
 "SCENE.DimensionChangeTitle": "Change Scene Dimensions?",
@@ -1933,11 +1967,19 @@
 "SCENE.DimensionUnlinked": "Scene dimensions are currently unlinked, changing one will not change the other. Click to link.",
 "SCENE.DistortedDimensionsTitle": "Distorted Scene Dimensions",
 "SCENE.DistortedDimensionsWarning": "You have chosen new dimensions that are of a different aspect ratio than the original. Do you wish to automatically reposition placed objects such as Tokens? The result may end up appearing distorted.",
+"SCENE.Environment.Base": "Base Environment",
+"SCENE.Environment.Dark": "Darkness Environment",
+"SCENE.Environment.DarkHint": "Behaves as the base environmental settings, but applies as the scene's darkness level gets closer to 1.",
+"SCENE.Environment.Reset": "Reset to Default Options",
+"SCENE.FogOfWar": "Fog of War",
 "SCENE.GenerateThumb": "Generate Thumbnail Image",
 "SCENE.GenerateThumbNoCanvas": "Scene thumbnail cannot be generated with 'Disable Game Canvas' setting active.",
 "SCENE.GenerateThumbUploadDenied": "The scene thumbnail could not be generated because the user does not have permission to upload files.",
 "SCENE.GenerateThumbProgress": "Generating thumbnail image for Scene {name}.",
 "SCENE.GenerateThumbSuccess": "Generated thumbnail image for Scene {name}.",
+"SCENE.GlobalIllumination": "Global Illumination",
+"SCENE.GridAppearance": "Appearance",
+"SCENE.GridAppearanceHint": "Configure the appearance of the grid lines.",
 "SCENE.GridConfigTool": "Grid Configuration Tool",
 "SCENE.GridConfigToolHint": "Configure the grid and background image position using the mousewheel and arrow keys, or by manually setting the following fields.",
 "SCENE.GridGridless": "Gridless",
@@ -1946,12 +1988,15 @@
 "SCENE.GridHexEvenR": "Hexagonal Rows - Even",
 "SCENE.GridHexOddQ": "Hexagonal Columns - Odd",
 "SCENE.GridHexEvenQ": "Hexagonal Columns - Even",
+"SCENE.GridMeasurement": "Measurement",
+"SCENE.GridMechanics": "Mechanics",
 "SCENE.GridSizeError": "This resize would reduce the grid size under the minimum of 50px. If you would like to reduce to this size, please swap to gridless first and resetup a new grid after resize.",
 "SCENE.GridResizeHint" : "Use ALT+Mousewheel or ALT+Up Arrow and ALT+Down Arrow to adjust the grid size.",
 "SCENE.GridPosition": "Background Image Offset",
 "SCENE.GridPositionHint": "Use the Arrow Keys to shift the background image offset.",
-"SCENE.GridScale": "Grid Scale",
 "SCENE.GridReset": "Reset Changes",
+"SCENE.InheritedField": "This field's value is being inherited from the '{level}' level. Click here to edit it directly.",
+"SCENE.InitialLevel": "Initial Level",
 "SCENE.InitialView": "Initial View Position",
 "SCENE.InitialViewButton": "Capture Current View",
 "SCENE.InitialViewHint": "Set a default camera position that is displayed the first time this Scene is viewed.",
@@ -1960,8 +2005,10 @@
 "SCENE.Notes": "Scene Notes",
 "SCENE.Perception": "Perception",
 "SCENE.Preload": "Preload Scene",
+"SCENE.Presentation": "Presentation",
+"SCENE.Properties": "Scene Properties",
 "SCENE.View": "View Scene",
-"SCENE.ShiftBG": "Offset Background",
+"SCENE.ShiftBG": "Shift",
 "SCENE.ToggleNav": "Toggle Navigation",
 "SCENE.FogModeChangeMessage": "Fog exploration mode has changed. This will reload fog exploration and reset vision.",
 "SCENE.Transition": {
@@ -1984,13 +2031,8 @@
     "dots": "Dots"
   }
 },
-"SCENE.Ambience": {
-  "Base": "Base Ambience",
-  "Dark": "Dark Ambience",
-  "ResetEnvironment": "Reset to Default Options"
-},
 "SCENE.FIELDS": {
-  "activeLevel": {
+  "initialLevel": {
     "hint": "If a User has visibility of this Level, they will be placed on it when the Scene is activated for the first time, or if the Scene is active when joining the game.",
     "label": "Initial Level"
   },
@@ -2036,11 +2078,12 @@
     "type.label": "Grid Type",
     "size": {
       "label" : "Grid Size",
-      "hint" : "The pixel size of a single grid space. Use the Grid Configuration tool to visually adjust this."
+      "hint" : "The grid pixel size is the size of a single grid space. Use the Grid Configuration tool to visually adjust this."
     },
     "thickness.label": "Grid Thickness",
     "color.label": "Grid Color",
     "alpha.label": "Grid Opacity",
+    "distance.hint": "The distance each grid space represents on this scene, in units appropriate to the game system.",
     "distance.label": "Distance",
     "units.label": "Units",
     "style.label": "Grid Style"
@@ -2049,31 +2092,34 @@
     "label" : "Padding Percentage",
     "hint": "An amount of additional padding around the Scene background image which provides usable canvas space."
   },
+  "shiftX.hint": "The offset applied to the Scene's playable area, which is centered on the canvas by default.",
+  "shiftX.label": "X-Shift",
+  "shiftY.label": "Y-Shift",
   "tokenVision": {
     "label": "Token Vision",
     "hint": "Restrict visibility within this Scene to the vision of controlled Tokens. If disabled, the entire Scene is visible."
   },
   "fog": {
     "MODES": {
-      "DISABLED": "Disabled",
+      "DISABLED": "None",
       "INDIVIDUAL": "Individual",
       "SHARED": "Shared"
     },
     "mode": {
-      "label" : "Fog Mode",
+      "label" : "Exploration Mode",
       "hint" : "Controls Fog of War mode: \"None\" disables exploration (tokens only see what they currently can), \"Individual\" tracks exploration separately for each user, and \"Shared\" uses a single exploration state contributed to by all users."
     },
     "overlay": {
-      "label" : "Fog of War Image",
+      "label" : "Exploration Image",
       "hint": "An optional fog of war image to be drawn above unexplored parts of the scene."
     },
     "colors": {
       "explored": {
-        "label": "Fog Explored Color",
+        "label": "Explored Color",
         "hint": "A color applied to all areas of the Scene which have been explored but are outside of the current vision area."
       },
       "unexplored": {
-        "label": "Fog Unexplored Color",
+        "label": "Unexplored Color",
         "hint": "A solid color applied to all unexplored areas of the Scene."
       }
     }
@@ -2081,11 +2127,11 @@
   "environment": {
     "globalLight": {
       "enabled": {
-        "label" : "Global Illumination",
+        "label" : "Enabled",
         "hint": "This Scene contains a global source of light that provides all areas of the Scene with a base level of illumination."
       },
       "darkness.max": {
-        "label": "Global Illumination Threshold",
+        "label": "Threshold",
         "hint": "A darkness threshold between 0 and 1. When the Scene darkness level exceeds this threshold Global Illumination is automatically disabled."
       }
     },
@@ -2147,15 +2193,12 @@
 },
 "SCENE.TABS": {
   "SHEET": {
-    "presentation": "Presentation",
+    "basics": "Basics",
     "grid": "Grid",
-    "lighting": "Lighting",
-    "ambience": "Ambience",
+    "visibility": "Visibility",
+    "environment": "Environment",
+    "misc": "Miscellaneous",
     "levels": "Levels"
-  },
-  "AMBIENCE": {
-    "basic": "Basic Options",
-    "environment": "Environment Lighting"
   }
 },
 
@@ -2174,6 +2217,7 @@
     "background": {
       "label": "Background",
       "src.label": "Texture",
+      "color.label": "Color",
       "tint.label": "Tint",
       "alphaThreshold.label": "Alpha Threshold"
     },
@@ -3172,17 +3216,22 @@
 "PERMISSION.QueryUserHint": "Allow users with this role to query other users.",
 "PERMISSION.WarningNoCreate": "You do not have sufficient permission to create a {document}.",
 
+"PLACEABLE_PALETTE": {
+  "Apply": "Apply Changes",
+  "MultipleValues": "<Multiple Values>",
+  "Selected": "{document} Palette [{count}]",
+  "Title": "{document} Palette"
+},
+
 "REGION": {
   "TABS": {
     "appearance": "Appearance",
-    "area": "Area",
+    "shapes": "Shapes",
+    "placement": "Placement",
     "behaviors": "Behaviors"
   },
   "SECTIONS": {
-    "elevation": "Elevation",
-    "levels": "Levels",
-    "restriction": "Restriction",
-    "attachment": "Attachment"
+    "restriction": "Wall Restriction"
   },
   "FIELDS": {
     "color": {
@@ -3209,7 +3258,6 @@
       "label": "Attached Token",
       "hint": "The Token the Region is attached to. When this Token is moved, the Region is moved with it."
     },
-    "levels.label": "Levels",
     "restriction": {
       "enabled": {
         "label": "Is Restricted",
@@ -3353,6 +3401,11 @@
     "CutShape": "Cut Region shape.",
     "PastedShape": "Pasted Region shape.",
     "PastedShapeWithoutControlledRegion": "You are not controlling a Region that the shape can be pasted into."
+  },
+  "TOOLTIPS": {
+    "CannotChangeLevelsIfAttached": "The Region must be on the same Level as the Token it's attached to.",
+    "CannotSelectMultipleLevelsIfRestricted": "This Region can't be included in multiple Regions while it's restricted.",
+    "CannotEnableRestriction": "This Region can't be restricted because it's included in more than one Level."
   }
 },
 
@@ -3836,8 +3889,7 @@
     "loop.label": "Loop Video",
     "autoplay.label": "Autoplay Video",
     "volume.label": "Video Volume"
-  },
-  "levels.label": "Levels"
+  }
 },
 
 "TIME": {
@@ -4263,6 +4315,22 @@
   "TableResult": {
     "document": "Document",
     "text": "Text"
+  },
+  "HINTS": {
+    "RegionBehavior": {
+      "adjustDarknessLevel": "Override, brighten, or darken the Scene's Darkness Level within the Region.",
+      "applyActiveEffect": "Apply Active Effects to Tokens while they are within the Region.",
+      "changeLevel": "Allow Tokens that move into the Region to move to another Level the Region is included in.",
+      "defineSurface": "Define a surface that can restrict light, movement, sight, and sound.",
+      "displayScrollingText": "Display a scrolling text above a Token when it triggers one of the subscribed events.",
+      "executeMacro": "Execute a Macro when one of the subscribed events occurs.",
+      "executeScript": "Execute a script when one of the subscribed events occurs.",
+      "modifyMovementCost": "Modify the movement cost of Tokens within the Region.",
+      "pauseGame": "Pause the game when a Token is moved into the Region by a player.",
+      "suppressWeather": "Suppress weather effects within the Region.",
+      "teleportToken": "Teleport Tokens that are moved into the Region to another Region.",
+      "toggleBehavior": "Enable/disable other Region Behaviors when one of the subscribed events occurs."
+    }
   }
 },
 
@@ -4375,7 +4443,6 @@
 
 "WALL.FIELDS": {
   "c.label": "Wall Coordinates",
-  "levels.label": "Levels",
   "light.label": "Light and Darkness",
   "move.label": "Movement",
   "sight.label": "Sight",
@@ -4441,6 +4508,8 @@
 "WALL.DoorSounds.Industrial": "Industrial",
 "WALL.DoorSounds.IndustrialCreaky": "Industrial, Creaky",
 "WALL.DoorSounds.Jail": "Jail",
+"WALL.DoorSounds.JailCreaky": "Jail, Creaky",
+"WALL.DoorSounds.JailHeavy": "Jail, Heavy",
 "WALL.DoorSounds.MagicDoor": "Magical Door",
 "WALL.DoorSounds.MagicWall": "Magical Wall",
 "WALL.DoorSounds.Metal": "Metal",
