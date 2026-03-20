@@ -619,7 +619,6 @@
   "TileSelect": "Select Tiles",
   "TilePlace": "Place Tile",
   "TilePlaceHeading": "Place",
-  "TileForeground": "Foreground Layer",
   "TileBrowser": "Tile Browser",
   "GroupDrawing": "Drawing Tools",
   "DrawingSelect": "Select Drawings",
@@ -631,31 +630,29 @@
   "DrawingText": "Draw Text",
   "DrawingClear": "Clear Drawings",
   "DrawingConfig": "Configure Drawing",
-  "DrawingRole": "Toggle Information Drawings",
   "GroupWall": "Wall Controls",
-  "WallDraw": "Draw Walls",
-  "WallBasic": "Basic Walls",
-  "WallBasicBlocks": "Movement, vision, and hearing",
-  "WallInvisible": "Invisible Walls",
+  "WallDraw": "Draw Wall",
+  "WallSolid": "Solid Wall",
+  "WallSolidBlocks": "Movement, vision, and hearing",
+  "WallInvisible": "Invisible Wall",
   "WallInvisibleBlocks": "Movement",
-  "WallTerrain": "Terrain Walls",
+  "WallTerrain": "Terrain Wall",
   "WallTerrainBlocks": "Sight beyond the second wall, movement, and hearing",
-  "WallEthereal": "Ethereal Walls",
+  "WallEthereal": "Ethereal Wall",
   "WallEtherealBlocks": "Sight and hearing",
-  "WallDoors": "Draw Doors",
-  "DoorBlocks": "Movement, vision, and hearing unless opened",
-  "WallSecret": "Secret Doors",
+  "WallDoor": "Door",
+  "WallDoorBlocks": "Movement, vision, and hearing unless opened",
+  "WallSecret": "Secret Door",
   "WallSecretHidden": "Hidden",
   "WallSecretHiddenP": "Secret Doors can't be seen by players",
-  "WallSelect": "Rectangular Select Walls",
+  "WallSelect": "Select Walls",
   "CommonMoveWithoutSnapping": "Move Without Snapping",
   "WallSelectEdit": "<span class=\"reference\">Double Click</span>",
   "WallSnapP": "Wall points snap to nearest grid vertex when active",
-  "WallClone": "Clone Walls",
   "WallCloseDoors": "Close all Doors",
   "WallDoorsClosed": "Closed {number} doors",
   "WallClear": "Clear Walls",
-  "WallWindow": "Window Walls",
+  "WallWindow": "Window",
   "WallWindowBlocks": "Sight, movement, and hearing beyond a certain distance",
   "GroupLighting": "Lighting Controls",
   "LightSelect": "Select Light Sources",
@@ -1117,12 +1114,26 @@
       "many": "{rounds} Rounds",
       "other": "{rounds} Rounds"
     },
+    "ROUNDS_AGO": {
+      "one": "1 Round Ago",
+      "two": "2 Rounds Ago",
+      "few": "{rounds} Rounds Ago",
+      "many": "{rounds} Rounds Ago",
+      "other": "{rounds} Rounds Ago"
+    },
     "TURNS": {
       "one": "1 Turn",
       "two": "2 Turns",
       "few": "{turns} Turns",
       "many": "{turns} Turns",
       "other": "{turns} Turns"
+    },
+    "TURNS_AGO": {
+      "one": "1 Turn Ago",
+      "two": "2 Turns Ago",
+      "few": "{turns} Turns Ago",
+      "many": "{turns} Turns Ago",
+      "other": "{turns} Turns Ago"
     },
     "EXPIRY_EVENTS": {
       "combatStart": "Combat Start",
@@ -1336,8 +1347,12 @@
   },
   "TAGS": {
     "Add": "Add Tag",
+    "AddGridOffset": "Add Grid Offset",
     "Remove": "Remove Tag",
+    "RemoveGridOffset": "Remove Grid Offset",
     "ErrorBlank": "Tags in an HTMLStringTagsElement may not be blank.",
+    "ErrorInvalidGridOffset2D": "A 2D grid offset must have two integer coordinates, which are separated by a dot.",
+    "ErrorInvalidGridOffset3D": "A 3D grid offset must have three integer coordinates, which are separated by dots.",
     "ErrorNonUnique": "Tag \"{tag}\" is already set."
   }
 },
@@ -1676,7 +1691,9 @@
     "animation": {
       "label": "Light Animation",
       "type": {
-        "label": "Light Animation Type"
+        "label": "Light Animation Type",
+        "any": "Any",
+        "none": "No Animation"
       },
       "speed": {
         "label": "Animation Speed",
@@ -2336,7 +2353,11 @@
     "upnp.label": "Enable UPnP",
     "port": {
       "label": "Port",
-      "hint": "Choose which port Foundry Virtual Tabletop uses for TCP connection traffic and enable or disable Universal Plug and Play (UPnP)."
+      "hint": "Choose a port number that Foundry Virtual Tabletop will use for TCP connections. You can also enable or disable Universal Plug and Play (UPnP)."
+    },
+    "unixSocket": {
+      "label": "Unix Socket",
+      "hint": "Instead of a port number, a file path to a Unix domain socket can be entered. If both a port and socket are entered, the socket path will be used."
     },
     "compressStatic": {
       "label": "Compress Static Files",
@@ -3262,9 +3283,11 @@
         "hint": "The top of the elevation range."
       }
     },
-    "attachedToken": {
-      "label": "Attached Token",
-      "hint": "The Token the Region is attached to. When this Token is moved, the Region is moved with it."
+    "attachment": {
+      "token": {
+        "label": "Attached Token",
+        "hint": "The Token the Region is attached to. When this Token is moved, the Region is moved with it."
+      }
     },
     "restriction": {
       "enabled": {
@@ -3405,6 +3428,7 @@
   },
   "NOTIFICATIONS": {
     "PlacedRegionRotationNotAllowed": "You are not allowed to rotate the shape of the placed Region.",
+    "PlacedRegionNotAttachedToToken": "The placed Region must be attached to a Token.",
     "CopiedShape": "Copied Region shape.",
     "CutShape": "Cut Region shape.",
     "PastedShape": "Pasted Region shape.",
@@ -3716,7 +3740,8 @@
     },
     "Bottom": "Bottom",
     "Title": "Advanced Filter",
-    "Tooltip": "Advanced Filters. Right-click to clear",
+    "Level": "Filter by Level",
+    "Tooltip": "Advanced Filters. Right-click to clear.",
     "Top": "Top"
   },
   "Search": {
@@ -3725,6 +3750,7 @@
   "WALLS": {
     "door": "Doors",
     "ethereal": "Ethereal Walls",
+    "filterByCategory": "Filter by Category",
     "invisible": "Invisible Walls",
     "normal": "Normal Walls",
     "secret": "Secret Doors",
@@ -3901,7 +3927,15 @@
     "modes.label": "Occlusion Modes",
     "alpha.label": "Occlusion Alpha"
   },
+  "OCCLUSION_MODES": {
+    "FADE.label": "Fade",
+    "NONE.label": "None",
+    "RADIAL.label": "Radial",
+    "SURFACE.label": "Surface",
+    "VISION.label": "Vision"
+  },
   "restrictions": {
+    "label": "Restrictions",
     "light": {
       "label": "Restricts Light",
       "hint": "Are light sources blocked based on their elevation relative to the elevation of this Tile?"
@@ -4005,6 +4039,9 @@
   "basic": "Basic Configuration",
   "animation": "Light Animation",
   "advanced": "Advanced Options"
+},
+"TOKEN.NOTIFICATIONS": {
+  "PlacedTokenRotationNotAllowed": "You are not allowed to rotate the placed Token."
 },
 "TOKEN.FIELDS": {
   "name.label": "Token Name",
@@ -4449,6 +4486,8 @@
 "USERS.KeyShow": "Show Password",
 "USERS.Create": "Create Additional User",
 "USERS.Delete": "Delete User",
+"USERS.LoginAs": "Login as User",
+"USERS.LoginAsGMRequired": "You must be a Gamemaster to log in as another user.",
 "USERS.DeleteName": "Delete User: {name}",
 "USERS.Launch": "Save and Return",
 "USERS.FirstLaunch": "Save and Continue",
@@ -4795,6 +4834,13 @@
       },
       "position.label": "Position",
       "dimensions.label": "Dimensions"
+    },
+    "grid": {
+      "name": "Grid Spaces",
+      "FIELDS": {
+        "offsets.label": "Grid Offsets",
+        "origin.label": "Origin"
+      }
     }
   },
   "ACTIONS": {

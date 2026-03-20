@@ -619,7 +619,6 @@
   "TileSelect": "タイル選択",
   "TilePlace": "タイル設置",
   "TilePlaceHeading": "設置",
-  "TileForeground": "前景レイヤー",
   "TileBrowser": "タイルブラウザ",
   "GroupDrawing": "図形描画ツール",
   "DrawingSelect": "図形選択",
@@ -631,27 +630,25 @@
   "DrawingText": "テキスト描画",
   "DrawingClear": "全図形消去",
   "DrawingConfig": "図形設定",
-  "DrawingRole": "情報図形の表示切り替え",
   "GroupWall": "ウォール操作",
   "WallDraw": "ウォール描画",
-  "WallBasic": "基本のウォール",
-  "WallBasicBlocks": "移動、視線、音",
+  "WallSolid": "基本のウォール",
+  "WallSolidBlocks": "移動、視線、音",
   "WallInvisible": "不可視ウォール",
   "WallInvisibleBlocks": "移動と音",
   "WallTerrain": "地形ウォール",
   "WallTerrainBlocks": "移動、音、2つ目のウォール以降の視線",
   "WallEthereal": "エーテルウォール",
   "WallEtherealBlocks": "視線と音",
-  "WallDoors": "扉の描画",
-  "DoorBlocks": "閉じた状態で移動、視線、音。開けると全てを通します",
+  "WallDoor": "扉",
+  "WallDoorBlocks": "閉じた状態で移動、視線、音。開けると全てを通します",
   "WallSecret": "隠し扉",
   "WallSecretHidden": "不可視",
   "WallSecretHiddenP": "隠し扉はプレイヤーに視認されません。",
-  "WallSelect": "ウォール選択（複数）",
+  "WallSelect": "ウォール選択",
   "CommonMoveWithoutSnapping": "移動（マス目を無視）",
   "WallSelectEdit": "<span class=\"reference\">ダブルクリック</span>",
   "WallSnapP": "有効にするとウォールの頂点が自動的に一番近いマス目に張り付きます。",
-  "WallClone": "ウォール複製",
   "WallCloseDoors": "全ての扉を閉じる",
   "WallDoorsClosed": "{number}個扉を閉じました",
   "WallClear": "全ウォール消去",
@@ -1117,12 +1114,26 @@
       "many": "{rounds}ラウンド",
       "other": "{rounds}ラウンド"
     },
+    "ROUNDS_AGO": {
+      "one": "1ラウンド前",
+      "two": "2ラウンド前",
+      "few": "{rounds}ラウンド前",
+      "many": "{rounds}ラウンド前",
+      "other": "{rounds}ラウンド前"
+    },
     "TURNS": {
       "one": "1ターン",
       "two": "2ターン",
       "few": "{turns}ターン",
       "many": "{turns}ターン",
       "other": "{turns}ターン"
+    },
+    "TURNS_AGO": {
+      "one": "1ターン前",
+      "two": "2ターン前",
+      "few": "{turns}ターン前",
+      "many": "{turns}ターン前",
+      "other": "{turns}ターン前"
     },
     "EXPIRY_EVENTS": {
       "combatStart": "戦闘開始",
@@ -1336,8 +1347,12 @@
   },
   "TAGS": {
     "Add": "タグを追加",
+    "AddGridOffset": "グリッド･オフセットを追加",
     "Remove": "タグを削除",
+    "RemoveGridOffset": "グリッド･オフセットを削除",
     "ErrorBlank": "HTMLStringTagsElementタグは空にすることは出来ません。",
+    "ErrorInvalidGridOffset2D": "A 2D grid offset must have two integer coordinates, which are separated by a dot.",
+    "ErrorInvalidGridOffset3D": "A 3D grid offset must have three integer coordinates, which are separated by dots.",
     "ErrorNonUnique": "\"{tag}\"タグはすでに存在します。"
   }
 },
@@ -1676,7 +1691,9 @@
     "animation": {
       "label": "ライトアニメーション",
       "type": {
-        "label": "アニメーション種別"
+        "label": "アニメーション種別",
+        "any": "Any",
+        "none": "アニメーションなし"
       },
       "speed": {
         "label": "アニメーション速度",
@@ -2336,7 +2353,11 @@
     "upnp.label": "UPnPの有効化",
     "port": {
       "label": "ポート",
-      "hint": "オンセ工房 FoundryVTTがTCP接続に使用するポートを選択し、ユニバーサル・プラグアンドプレイ (UPnP) を有効または無効にすることができます。"
+      "hint": "オンセ工房 FoundryVTTがTCP接続に使用するポート番号を選択してください。また、ユニバーサル・プラグアンドプレイ (UPnP) を有効または無効にすることができます。"
+    },
+    "unixSocket": {
+      "label": "Unix Socket",
+      "hint": "Instead of a port number, a file path to a Unix domain socket can be entered. If both a port and socket are entered, the socket path will be used."
     },
     "compressStatic": {
       "label": "静的ファイル圧縮",
@@ -3262,9 +3283,11 @@
         "hint": "高度範囲の上端。"
       }
     },
-    "attachedToken": {
-      "label": "Attached Token",
-      "hint": "The Token the Region is attached to. When this Token is moved, the Region is moved with it."
+    "attachment": {
+      "token": {
+        "label": "Attached Token",
+        "hint": "The Token the Region is attached to. When this Token is moved, the Region is moved with it."
+      }
     },
     "restriction": {
       "enabled": {
@@ -3405,6 +3428,7 @@
   },
   "NOTIFICATIONS": {
     "PlacedRegionRotationNotAllowed": "配置済みのリージョンの形状は回転できません。",
+    "PlacedRegionNotAttachedToToken": "The placed Region must be attached to a Token.",
     "CopiedShape": "リージョン形状をコピーしました。",
     "CutShape": "リージョン形状をカットしました。",
     "PastedShape": "リージョン形状をペーストしました。",
@@ -3716,6 +3740,7 @@
     },
     "Bottom": "Bottom",
     "Title": "Advanced Filter",
+    "Level": "Filter by Level",
     "Tooltip": "Advanced Filters. Right-click to clear",
     "Top": "Top"
   },
@@ -3725,6 +3750,7 @@
   "WALLS": {
     "door": "Doors",
     "ethereal": "Ethereal Walls",
+    "filterByCategory": "Filter by Category",
     "invisible": "Invisible Walls",
     "normal": "Normal Walls",
     "secret": "Secret Doors",
@@ -3901,7 +3927,15 @@
     "modes.label": "干渉モード",
     "alpha.label": "干渉アルファ値"
   },
+  "OCCLUSION_MODES": {
+    "FADE.label": "Fade",
+    "NONE.label": "None",
+    "RADIAL.label": "Radial",
+    "SURFACE.label": "Surface",
+    "VISION.label": "Vision"
+  },
   "restrictions": {
+    "label": "Restrictions",
     "light": {
       "label": "ライトを遮る",
       "hint": "このタイルは同じ高度以下の高度を持つ光源を遮りますか？"
@@ -4005,6 +4039,9 @@
   "basic": "基本設定",
   "animation": "ライトアニメーション",
   "advanced": "高度なオプション"
+},
+"TOKEN.NOTIFICATIONS": {
+  "PlacedTokenRotationNotAllowed": "You are not allowed to rotate the placed Token."
 },
 "TOKEN.FIELDS": {
   "name.label": "コマ名",
@@ -4449,6 +4486,8 @@
 "USERS.KeyShow": "パスワードを表示",
 "USERS.Create": "ユーザーの新規追加",
 "USERS.Delete": "ユーザー削除",
+"USERS.LoginAs": "Login as User",
+"USERS.LoginAsGMRequired": "You must be a Gamemaster to log in as another user.",
 "USERS.DeleteName": "ユーザー削除: {name}",
 "USERS.Launch": "保存して戻る",
 "USERS.FirstLaunch": "Save and Continue",
@@ -4795,6 +4834,13 @@
       },
       "position.label": "位置",
       "dimensions.label": "サイズ"
+    },
+    "grid": {
+      "name": "Grid Spaces",
+      "FIELDS": {
+        "offsets.label": "グリッド･オフセット",
+        "origin.label": "Origin"
+      }
     }
   },
   "ACTIONS": {
