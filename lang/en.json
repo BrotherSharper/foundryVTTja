@@ -685,6 +685,7 @@
   "RegionSelect": "Select Regions",
   "RegionSelectP": "Select one or more Regions in the Scene. A selected Region is a solid color and unselected Regions are striped.",
   "RegionTemplateMode": "Measured Template Mode",
+  "RegionTemplateModeP": "When enabled, the palette is ignored and each shape you draw creates a new Region. Shapes cannot be added to existing Regions.",
   "RegionRectangle": "Draw Rectangle",
   "RegionCircle": "Draw Circle",
   "RegionEllipse": "Draw Ellipse",
@@ -792,7 +793,6 @@
   "TooltipDismiss": "Dismiss locked tooltip",
   "TooltipLock": "Lock tooltip",
   "WallHeader": "Walls Layer Controls",
-  "WallChain": "Chain Wall Creation",
   "WallSelectChain": "Select Chained Segments",
   "DrawingHeader": "Drawing Tool Controls",
   "DrawingTextConfirm": "Confirm Drawing Text",
@@ -1973,8 +1973,8 @@
 "SCENE.AccessibilityAll" : "All Players",
 "SCENE.Activate": "Activate",
 "SCENE.Audio": "Audio",
-"SCENE.BackgroundScale": "Background Image Scale",
-"SCENE.BackgroundScaleHint": "Use SHIFT+Mousewheel or SHIFT+Up Arrow and SHIFT+Down Arrow to adjust the background image size.",
+"SCENE.BackgroundScale": "Scene Scale",
+"SCENE.BackgroundScaleHint": "Use SHIFT+Mousewheel or SHIFT+Up Arrow and SHIFT+Down Arrow to adjust the scene scale.",
 "SCENE.CaptureInitialViewPosition": "Captured canvas position as initial view in the Scene configuration form.",
 "SCENE.Configure": "Configure",
 "SCENE.CurrentLevel": "Current Level",
@@ -1985,6 +1985,7 @@
 "SCENE.DimensionChangeTitle": "Change Scene Dimensions?",
 "SCENE.DimensionChangeWarning": "You are changing the underlying dimensions of this Scene, if you have already placed objects in this Scene this operation may cause those objects to shift position relative to the background image.",
 "SCENE.DimensionLinked": "Scene dimensions are currently linked: changing one will change the other to maintain aspect ratio. Click to unlink.",
+"SCENE.DeterminingDimensions": "Determining Scene dimensions.",
 "SCENE.DimensionUnlinked": "Scene dimensions are currently unlinked, changing one will not change the other. Click to link.",
 "SCENE.DistortedDimensionsTitle": "Distorted Scene Dimensions",
 "SCENE.DistortedDimensionsWarning": "You have chosen new dimensions that are of a different aspect ratio than the original. Do you wish to automatically reposition placed objects such as Tokens? The result may end up appearing distorted.",
@@ -2002,7 +2003,7 @@
 "SCENE.GridAppearance": "Appearance",
 "SCENE.GridAppearanceHint": "Configure the appearance of the grid lines.",
 "SCENE.GridConfigTool": "Grid Configuration Tool",
-"SCENE.GridConfigToolHint": "Configure the grid and background image position using the mousewheel and arrow keys, or by manually setting the following fields.",
+"SCENE.GridConfigToolHint": "Configure the grid and scene offset using the mousewheel and arrow keys, or by manually setting the following fields.",
 "SCENE.GridGridless": "Gridless",
 "SCENE.GridSquare": "Square",
 "SCENE.GridHexOddR": "Hexagonal Rows - Odd",
@@ -2013,8 +2014,8 @@
 "SCENE.GridMechanics": "Mechanics",
 "SCENE.GridSizeError": "This resize would reduce the grid size under the minimum of 50px. If you would like to reduce to this size, please swap to gridless first and resetup a new grid after resize.",
 "SCENE.GridResizeHint" : "Use ALT+Mousewheel or ALT+Up Arrow and ALT+Down Arrow to adjust the grid size.",
-"SCENE.GridPosition": "Background Image Offset",
-"SCENE.GridPositionHint": "Use the Arrow Keys to shift the background image offset.",
+"SCENE.GridPosition": "Scene Offset",
+"SCENE.GridPositionHint": "Use the Arrow Keys to adjust the scene offset.",
 "SCENE.GridReset": "Reset Changes",
 "SCENE.InheritedField": "This field's value is being inherited from the '{level}' level. Click here to edit it directly.",
 "SCENE.InitialLevel": "Initial Level",
@@ -2060,7 +2061,7 @@
   "transition": {
     "type": {
       "label": "Transition Type",
-      "hint": "The type of transition animation that is played when the Scene is loaded."
+      "hint": "The type of transition animation that is played when the Scene is viewed."
     },
     "duration": {
       "label": "Duration",
@@ -2605,6 +2606,8 @@
   "WorldCreating": "Creating World...",
   "WorldCreateCancel": "Cancel World Creation",
   "WorldCreateDependencyFail": "The World could not be created as required dependencies were not installed.",
+  "WorldCreateNoSystem": "You must select a Game System for the World before continuing.",
+  "WorldCreateNoTitle": "You must provide a title for the World before continuing.",
   "WorldCreateSuccess": "Creation successful, launching...",
   "WorldDelete": "Delete World",
   "WorldEdit": "World Configuration",
@@ -3264,7 +3267,8 @@
   "FIELDS": {
     "color": {
       "label": "Color",
-      "hint": "The color applied to the visualization of the Region."
+      "hint": "The color applied to the visualization of the Region.",
+      "placeholder": "Random Color"
     },
     "shapes": {
       "label": "Shapes",
@@ -3725,7 +3729,8 @@
     "Visible": "Visible"
   },
   "Categories": {
-    "NoAuthor": "No Author"
+    "NoAuthor": "No Author",
+    "NoLevel": "No Level"
   },
   "Meta": {
     "empty": "Empty",
@@ -4048,6 +4053,7 @@
   "width.label": "X-Size",
   "height.label": "Y-Size",
   "depth.label": "Z-Size",
+  "level.label": "Level",
   "movementAction.label": "Movement Action",
   "actorId.label": "Represented Actor",
   "actorLink.label": "Link Actor Data",
@@ -4865,7 +4871,7 @@
     "removeAll": "Remove All Shapes"
   },
   "NOTIFICATIONS": {
-    "DrawingMultipleObjectsControlled": "You must control only one or no {type} when you draw a shape!",
+    "DrawingMultipleObjectsControlled": "You must control or configure only one or no {type} when you draw a shape!",
     "ControlWalls": "Control a group of Walls which define the boundary of your desired shape.",
     "EmptyEnclosedArea": "The area enclosed by the controlled Walls is empty! Make sure that the outer Walls form a closed loop and are connected endpoint to endpoint.",
     "NoControlledWalls": "You are not controlling any Walls!"
