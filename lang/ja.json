@@ -1795,7 +1795,6 @@
   "Angle": "角度",
   "Coordinates": "座標",
   "Degrees": "度",
-  "Depth": "Depth",
   "Direction": "向き",
   "Distance": "距離",
   "GridSpaces": "マス目",
@@ -4012,7 +4011,7 @@
 "TOKEN.BarValues": "値",
 "TOKEN.DeleteCombatantWarning": "戦闘中のコマを削除しようとしています。その戦闘参加キャラは永久に削除されます。",
 "TOKEN.DeleteAttachedRegionWarning": "You are deleting a Token that has a Region attached to it. Its attached Region(s) will be permanently deleted.",
-"TOKEN.Dimensions": "サイズ",
+"TOKEN.Size": "サイズ",
 "TOKEN.Anchor": "アンカー",
 "TOKEN.AnchorHint": "デフォルトのアンカー (0.5, 0.5) はコマ画像の中心です。",
 "TOKEN.ImageAlts": "代替コマ画像",
@@ -4046,6 +4045,9 @@
 "TOKEN.FIELDS": {
   "name.label": "コマ名",
   "sort.label": "ソート",
+  "width.label": "Xサイズ",
+  "height.label": "Yサイズ",
+  "depth.label": "Zサイズ",
   "movementAction.label": "移動アクション",
   "actorId.label": "元データ",
   "actorLink.label": "コマとデータをリンク",
@@ -4341,6 +4343,15 @@
     "fly.label": "飛行",
     "swim.label": "水泳",
     "walk.label": "歩行"
+  },
+  "NOTIFICATIONS": {
+    "PLAN": {
+      "DirectViolation": "You are not allowed to place waypoints while planning this movement.",
+      "MinCostViolation": "The planned movement path does not meet the minimum required cost.",
+      "MaxCostViolation": "The planned movement path exceeds the maximum allowed cost.",
+      "MinDistanceViolation": "The planned movement path does not meet the minimum required distance.",
+      "MaxDistanceViolation": "The planned movement path exceeds the maximum allowed distance."
+    }
   }
 },
 
@@ -4761,8 +4772,8 @@
     "rectangle": {
       "name": "四角形",
       "FIELDS": {
-        "width.label": "幅",
-        "height.label": "高さ",
+        "width.label": "Xサイズ",
+        "height.label": "Yサイズ",
         "anchorX.label": "Xアンカー",
         "anchorY.label": "Yアンカー"
       },
@@ -4833,7 +4844,7 @@
         "shape.label": "形状"
       },
       "position.label": "位置",
-      "dimensions.label": "サイズ"
+      "size.label": "サイズ"
     },
     "grid": {
       "name": "Grid Spaces",

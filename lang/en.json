@@ -1795,7 +1795,6 @@
   "Angle": "Angle",
   "Coordinates": "Coordinates",
   "Degrees": "Degrees",
-  "Depth": "Depth",
   "Direction": "Direction",
   "Distance": "Distance",
   "GridSpaces": "Grid Spaces",
@@ -4012,7 +4011,7 @@
 "TOKEN.BarValues": "Single Values",
 "TOKEN.DeleteCombatantWarning": "You are deleting a Token that is in Combat. Its Combatant will be permanently deleted.",
 "TOKEN.DeleteAttachedRegionWarning": "You are deleting a Token that has a Region attached to it. Its attached Region(s) will be permanently deleted.",
-"TOKEN.Dimensions": "Dimensions",
+"TOKEN.Size": "Size",
 "TOKEN.Anchor": "Anchor",
 "TOKEN.AnchorHint": "The default anchor (0.5, 0.5) is the center of the Token image.",
 "TOKEN.ImageAlts": "Alternate Actor Tokens",
@@ -4046,6 +4045,9 @@
 "TOKEN.FIELDS": {
   "name.label": "Token Name",
   "sort.label": "Sort",
+  "width.label": "X-Size",
+  "height.label": "Y-Size",
+  "depth.label": "Z-Size",
   "movementAction.label": "Movement Action",
   "actorId.label": "Represented Actor",
   "actorLink.label": "Link Actor Data",
@@ -4341,6 +4343,15 @@
     "fly.label": "Fly",
     "swim.label": "Swim",
     "walk.label": "Walk"
+  },
+  "NOTIFICATIONS": {
+    "PLAN": {
+      "DirectViolation": "You are not allowed to place waypoints while planning this movement.",
+      "MinCostViolation": "The planned movement path does not meet the minimum required cost.",
+      "MaxCostViolation": "The planned movement path exceeds the maximum allowed cost.",
+      "MinDistanceViolation": "The planned movement path does not meet the minimum required distance.",
+      "MaxDistanceViolation": "The planned movement path exceeds the maximum allowed distance."
+    }
   }
 },
 
@@ -4761,8 +4772,8 @@
     "rectangle": {
       "name": "Rectangle",
       "FIELDS": {
-        "width.label": "Width",
-        "height.label": "Height",
+        "width.label": "X-Size",
+        "height.label": "Y-Size",
         "anchorX.label": "X-Anchor",
         "anchorY.label": "Y-Anchor"
       },
@@ -4833,7 +4844,7 @@
         "shape.label": "Shape"
       },
       "position.label": "Position",
-      "dimensions.label": "Dimensions"
+      "size.label": "Size"
     },
     "grid": {
       "name": "Grid Spaces",
