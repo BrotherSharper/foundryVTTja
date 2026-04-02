@@ -700,7 +700,10 @@
   "RegionClear": "Clear Regions",
   "RegionPerformance": "<em>Performance Note:</em> Each drawing is its own Shape. Be careful not to place multiple Shapes entirely within each other. Rather than combining simple Shapes to create a complex Shape, consider using the Region Polygon tool.",
   "ClearAll": "Clear All Objects",
-  "ClearAllHint": "Permanently delete all {type} objects from this Scene?",
+  "ClearAllOwned": "Clear All Owned Objects",
+  "ClearAllHint": "Permanently delete all viewed {type} objects?",
+  "ClearAllOwnedHint": "Permanently delete all viewed {type} objects that you own?",
+  "DeleteLockedObjects": "Delete Locked Objects",
   "HeaderGame": "General Game Controls",
   "HeaderGameNotes": "These controls generally apply across all aspects of Foundry functionality.",
   "HeaderCanvas": "Canvas Layer Controls",
@@ -2087,14 +2090,6 @@
     "offsetY.label": "Vertical"
   },
   "backgroundColor.label": "Background Color",
-  "foreground": {
-    "label": "Foreground Image",
-    "hint": "An optional foreground image which is drawn above other objects in the Scene."
-  },
-  "foregroundElevation": {
-    "label": "Foreground Elevation",
-    "hint": "An elevation in distance units which configures the height of the foreground image and overhead tiles."
-  },
   "initial.scale.label": "Zoom",
   "grid": {
     "type.label": "Grid Type",
@@ -2242,7 +2237,10 @@
       "src.label": "Texture",
       "color.label": "Color",
       "tint.label": "Tint",
-      "alphaThreshold.label": "Alpha Threshold"
+      "alphaThreshold": {
+        "label": "Alpha Threshold",
+        "hint": "Pixels in the background texture with alpha values below this threshold do not restrict light or weather."
+      }
     },
     "elevation": {
       "label": "Elevation Range",
@@ -3439,7 +3437,7 @@
   },
   "TOOLTIPS": {
     "CannotChangeLevelsIfAttached": "The Region must be on the same Level as the Token it's attached to.",
-    "CannotSelectMultipleLevelsIfRestricted": "This Region can't be included in multiple Regions while it's restricted.",
+    "CannotSelectMultipleLevelsIfRestricted": "This Region can't be included in multiple Levels while it's restricted.",
     "CannotEnableRestriction": "This Region can't be restricted because it's included in more than one Level."
   }
 },
@@ -3920,11 +3918,15 @@
     "src.label": "Tile Image or Video",
     "scaleX.label": "Horizontal",
     "scaleY.label": "Vertical",
-    "tint.label": "Tint Color"
+    "tint.label": "Tint Color",
+    "alphaThreshold": {
+      "label": "Alpha Threshold",
+      "hint": "Pixels in the Tile image with alpha values below this threshold do not restrict light or weather and do not trigger hover fading."
+    }
   },
   "alpha.label": "Tile Opacity",
   "name": {
-    "hint": "An optional name to help identify the tile.",
+    "hint": "An optional name to help identify the Tile.",
     "label": "Name"
   },
   "occlusion": {
