@@ -1,13 +1,13 @@
 {
 	"id": "foundryVTTja",
 	"title": "日本語化（オンセ工房 Foundry VTT 本体）",
-	"description": "オンセ工房 Foundry VTT の本体用（v13）の日本語化に必要な翻訳ファイルを追加するモッドです。作者不在のいくつかのModの翻訳もここに含まれています。デフォルト言語としてこのモッドを設定してからゲーム内でもモッドを適用してください。",
+	"description": "オンセ工房 Foundry VTT の本体用（v14）の日本語化に必要な翻訳ファイルを追加するモッドです。作者不在のいくつかのModの翻訳もここに含まれています。デフォルト言語としてこのモッドを設定してからゲーム内でもモッドを適用してください。",
 	"version": "This is auto replaced",
 	"library": false,
 	"compatibility": {
-		"minimum": 13,
-		"verified": "13.351",
-		"maximum": 13
+		"minimum": 14,
+		"verified": "14.363",
+		"maximum": 14
 	  },
 	"authors": [
 		{
@@ -25,9 +25,7 @@
 		},
 		{
 			"lang": "ja",
-			"path": "lang/modules/midi-qol.json",
-			"module": "midi-qol",
-			"lang-author": "touge"
+			"path": "lang/tour.json"
 		},
 		{
 			"lang": "ja",
@@ -91,12 +89,6 @@
 		},
 		{
 			"lang": "ja",
-			"path": "lang/modules/dice-so-nice.json",
-			"module": "dice-so-nice",
-			"lang-author": "touge"
-		},
-		{
-			"lang": "ja",
 			"path": "lang/modules/autoanimations.json",
 			"module": "autoanimations",
 			"lang-author": "touge"
@@ -112,12 +104,6 @@
 			"path": "lang/modules/hero-creation-tool.json",
 			"module": "hero-creation-tool",
 			"lang-author": "touge"
-		},
-		{
-			"lang": "ja",
-			"path": "lang/modules/foundryvtt-gmScreen.json",
-			"module": "foundryvtt-gmScreen",
-			"lang-author": "tonishi"
 		},
 		{
 			"lang": "ja",
@@ -181,12 +167,6 @@
 		},
 		{
 			"lang": "ja",
-			"path": "lang/modules/combat-utility-belt.json",
-			"module": "combat-utility-belt",
-			"lang-author": "touge"
-		},
-		{
-			"lang": "ja",
 			"path": "lang/modules/df-curvy-walls.json",
 			"module": "df-curvy-walls",
 			"lang-author": "touge"
@@ -226,12 +206,6 @@
 			"path": "lang/modules/automated-evocations.json",
 			"module": "automated-evocations",
 			"lang-author": "エクスヴェリア"
-		},
-		{
-			"lang": "ja",
-			"path": "lang/modules/tidy5e-sheet.json",
-			"module": "tidy5e-sheet",
-			"lang-author": "asami, Brother Sharp"
 		},
 		{
 			"lang": "ja",

@@ -30,7 +30,6 @@
 仕様上、一度ゲーム内に有効化して言語を日本語に変更しないと日本語化されませんが、それ以降ずっと日本語化されます。
 
 このモッドで使用される用語は技術的な背景がなかったり、他のオンセツールからやってきた方がわかりやすく使用できるための翻訳を採用しています。
-原文に近い翻訳を希望している方はフォルダの中にあるja.jsonを削除し、ja-alt.jsonの名前をja.jsonに変更してください。
 
 このModには以下のModの日本語化ファイルも含まれています。いくつかはMod本体に日本語が入っているのでここにある差分は無視してください。
 
@@ -41,22 +40,18 @@
 * Better Roofs
 * Chat-Portrait
 * Combat-Carousel
-* Combat Utility Belt
 * Dynamic Active Effects (dae)
 * DF Chat enhance
 * DF Curvy walls
 * DF qol
 * DF scene enhance
-* dice so nice (3Dダイス)
 * food and water tracker
-* gmscreen
 * party resources
 * fxMaster
 * hero creation tool
 * illandril's ttoken tooltips
 * inline web viewer
 * merchant sheet npc
-* midi-qol
 * monks active tile triggers
 * monks little details
 * monks token bar
@@ -70,7 +65,6 @@
 * smalltime
 * smart target
 * theatre inserts（立ち絵ツール）
-* tidy5e-sheet
 * tidy-ui
 * Tokens Visible
 * Turn Alert
