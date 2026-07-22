@@ -1,5 +1,4 @@
 {
-"Foundry Virtual Tabletop": "オンセ工房 Foundry VTT",
 "ADVENTURE": {
   "ImportSubmit": "シナリオをインポート",
   "ImportProgress": "インポート",
@@ -537,6 +536,7 @@
   "Confirm": "確定",
   "Default": "デフォルト",
   "Delete": "削除",
+  "Foundry Virtual Tabletop": "オンセ工房 Foundry VTT",
   "Invalid": "無効",
   "No": "いいえ",
   "None": "ー",
@@ -574,6 +574,10 @@
     "Start": "{number}個の{type}ドキュメントと{folderNumber}個のフォルダを{folder}フォルダにインポート中です。しばらくお待ちください。",
     "Finish": "{number}個の{type}ドキュメントと{folderNumber}個のフォルダを{folder}フォルダに正常にインポートしました。"
   },
+    "ImportFolder": {
+    "InvalidDocument": "{collection} 辞典のフォルダに{type}ドキュメントをインポートすることはできません。",
+    "InvalidDocuments": "{collection} 辞典のフォルダにはフォルダドキュメントのみインポートできます。"
+  },
   "ImportEntry": "インポート",
   "Locked": "{title} [ロック]",
   "Migration": {
@@ -590,11 +594,14 @@
     "Warning": "ロックを解除して、このワールドに属していない共有の辞典を編集しようとしています。この辞典に行なった変更は、それを使用するシステムまたはモジュールが更新されると失われる可能性があります。その代わりとして自分のワールドに、辞典を複製することもできます。 続行しますか？"
   },
   "CannotViewWarning": "この辞典を閲覧する権限がありません。",
+  "ModifyLocked": "この辞典はロックされているため、内容を変更できません。",
+  "ModifyPermissionDenied": "この辞典を変更する権限がありません。",
   "OwnershipInheritBelow": "下位から継承",
   "OwnershipReset": "デフォルトへリセット",
   "ART": {
     "CONFIG": {
       "Hint": "十字キーで使用される画像素材の優先順位を設定します。一つのキャラクターが複数のソースから画像を提供されている場合、一番優先度の高いものが使用されます。",
+      "Items": "アイテム",
       "Portraits": "立ち絵",
       "PriorityDecrease": "優先順位－",
       "PriorityIncrease": "優先順位＋",
@@ -696,7 +703,7 @@
   "RegionCircle": "円形を描く",
   "RegionEllipse": "楕円を描く",
   "RegionRing": "リングを描く",
-  "RegionEmanation": "オーラを描く",
+  "RegionEmanation": "放射を描く",
   "RegionCone": "円錐を描く",
   "RegionLine": "直線を描く",
   "RegionPolygon": "多角形を描く",
@@ -1076,6 +1083,7 @@
   "StatusUpgrade": "強化",
   "Submit": "保存",
   "CHANGES": {
+        "Unregistered": "「{type}」種別の変更は登録されていません。",
     "PHASES": {
       "initial": {
         "label": "初期",
@@ -2266,8 +2274,7 @@
     },
     "fog": {
       "label": "探索マスク",
-      "src.label": "未探索テクスチャ",
-      "tint.label": "テクスチャの色合い"
+      "src.label": "未探索時のテクスチャ"
     },
     "textures": {
       "label": "位置",
@@ -3776,7 +3783,8 @@
     "Title": "詳細な絞り込み",
     "Level": "階層で絞り込み",
     "Tooltip": "詳細な絞り込み。右クリックで解除",
-    "Top": "上端"
+    "Top": "上端",
+    "Viewed": "閲覧済みのみ"
   },
   "Search": {
     "placeholder": "{name}を検索"
@@ -3867,7 +3875,9 @@
   "AnimateSettingHint": "ロール表を使うとき、ルーレット風にアニメーションさせるかどうか設定します。",
   "DrawFlavor": "ロール表「{name}」の結果",
   "DrawFlavorPlural": "ロール表「{name}」の{number}個の結果",
+  "DrawMaximumIterations": "ロール表「{name}」から利用可能な結果を抽選できませんでした。最大試行回数に達しました。",
   "NoAvailableResults": "ロール表からこれ以上得られる結果がありません。",
+  "NoPossibleResults": "ロール表「{name}」と式からは、これ以上結果を抽選できません。",
   "Result": "結果",
   "ResultDescription": "結果説明",
   "SHEETS": {
@@ -4094,6 +4104,7 @@
   "depth.label": "Zサイズ",
   "level.label": "階層",
   "movementAction.label": "移動アクション",
+  "movementAction.hint": "「デフォルト」が選択されている場合、このコマの移動アクションは自動的に決定されます。",
   "actorId.label": "元データ",
   "actorLink.label": "コマとデータをリンク",
   "displayName.label": "コマ名表示方法",
@@ -4866,7 +4877,7 @@
       }
     },
     "emanation": {
-      "name": "オーラ",
+      "name": "放射",
       "FIELDS": {
         "base.label": "起点",
         "radius.label": "半径"

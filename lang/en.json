@@ -1,5 +1,4 @@
 {
-"Foundry Virtual Tabletop": "Foundry Virtual Tabletop",
 "ADVENTURE": {
   "ImportSubmit": "Import Adventure",
   "ImportProgress": "Importing",
@@ -537,6 +536,7 @@
   "Confirm": "Confirm",
   "Default": "Default",
   "Delete": "Delete",
+  "FoundryVirtualTabletop": "Foundry Virtual Tabletop",
   "Invalid": "Invalid",
   "No": "No",
   "None": "None",
@@ -574,6 +574,10 @@
     "Start": "Importing {number} {type} Documents and {folderNumber} Folders into the {folder} folder. Please be patient.",
     "Finish": "Successfully imported {number} {type} Documents and {folderNumber} Folders into the {folder} folder."
   },
+  "ImportFolder": {
+    "InvalidDocument": "You may not import a {type} Document into the folders collection of the {collection} Compendium.",
+    "InvalidDocuments": "You can only import Folder documents into the folders collection of the {collection} Compendium."
+  },
   "ImportEntry": "Import Entry",
   "Locked": "{title} [Locked]",
   "Migration": {
@@ -590,11 +594,14 @@
     "Warning": "You are attempting to unlock for editing a compendium that does not belong to this World. Any changes you make in this compendium pack may be lost if the System or Module which owns it is updated. You may wish to duplicate the compendium to your World instead. How do you wish to proceed?"
   },
   "CannotViewWarning": "You do not have sufficient permission to view this Compendium pack.",
+  "ModifyLocked": "You cannot modify content in this Compendium pack because it is locked.",
+  "ModifyPermissionDenied": "You do not have permission to modify this Compendium pack.",
   "OwnershipInheritBelow": "Inherit from below",
   "OwnershipReset": "Reset to Default",
   "ART": {
     "CONFIG": {
-      "Hint": "Use the arrows to adjust the priority of the art sources. When a single Actor has art provided by multiple sources, the one with the highest priority will be used.",
+      "Hint": "Use the arrows to adjust the priority of the art sources. When a single Document has art provided by multiple sources, the one with the highest priority will be used.",
+      "Items": "Items",
       "Portraits": "Portraits",
       "PriorityDecrease": "Decrease Priority",
       "PriorityIncrease": "Increase Priority",
@@ -1076,6 +1083,7 @@
   "StatusUpgrade": "Empowered",
   "Submit": "Submit Changes",
   "CHANGES": {
+    "Unregistered": "A change type of \"{type}\" is not registered.",
     "PHASES": {
       "initial": {
         "label": "Initial",
@@ -2049,7 +2057,7 @@
 "SCENE.ShiftBG": "Shift",
 "SCENE.PullEveryone": "Pull Everyone",
 "SCENE.ToggleNav": "Toggle Navigation",
-"SCENE.FogModeChangeMessage": "Fog exploration mode has changed. This will reload fog exploration and reset vision.",
+"SCENE.FogModeChangeMessage": "Fog of War mode has changed. This will reload fog exploration and reset vision.",
 "SCENE.Transition": {
   "Animation": "Transition Animation",
   "Preview": "Preview",
@@ -2141,8 +2149,8 @@
       "hint" : "Controls Fog of War mode: \"None\" disables exploration (tokens only see what they currently can), \"Individual\" tracks exploration separately for each user, and \"Shared\" uses a single exploration state contributed to by all users."
     },
     "overlay": {
-      "label" : "Exploration Image",
-      "hint": "An optional fog of war image to be drawn above unexplored parts of the scene."
+      "label" : "Unexplored Image",
+      "hint": "An optional Fog of War image to be drawn above unexplored parts of the Scene. If Unexplored Color is configured, the image is drawn on top of it."
     },
     "colors": {
       "explored": {
@@ -2265,9 +2273,8 @@
       "alphaThreshold.label": "Alpha Threshold"
     },
     "fog": {
-      "label": "Fog Exploration",
-      "src.label": "Unexplored Texture",
-      "tint.label": "Texture Tint"
+      "label": "Fog of War",
+      "src.label": "Unexplored Image"
     },
     "textures": {
       "label": "Positioning",
@@ -3261,8 +3268,8 @@
   "CannotApplyToLocked": "You cannot apply the palette to locked objects.",
   "CloneSettings": "Clone",
   "MultipleValues": "<Multiple Values>",
-  "Selected": "{document} Palette [{count}]",
-  "Title": "{document} Palette"
+  "Selected": "{document} Palette: Edit [{count}]",
+  "Title": "{document} Palette: Preset"
 },
 
 "REGION": {
@@ -3776,7 +3783,8 @@
     "Title": "Advanced Filter",
     "Level": "Filter by Level",
     "Tooltip": "Advanced Filters. Right-click to clear.",
-    "Top": "Top"
+    "Top": "Top",
+    "Viewed": "Viewed Only"
   },
   "Search": {
     "placeholder": "Filter {name}"
@@ -3867,7 +3875,9 @@
   "AnimateSettingHint": "Display a roulette-style animation when drawing from a Roll Table.",
   "DrawFlavor": "Draws a result from the {name} table",
   "DrawFlavorPlural": "Draws {number} results from the {name} table",
+  "DrawMaximumIterations": "Failed to draw an available entry from Table {name}, maximum iteration reached.",
   "NoAvailableResults": "There are no available results which can be drawn from this table.",
+  "NoPossibleResults": "No results can possibly be drawn from this table and formula.",
   "Result": "Result",
   "ResultDescription": "Result Description",
   "SHEETS": {
@@ -4094,6 +4104,7 @@
   "depth.label": "Z-Size",
   "level.label": "Level",
   "movementAction.label": "Movement Action",
+  "movementAction.hint": "When Default is selected, the movement action is automatically determined for this Token.",
   "actorId.label": "Represented Actor",
   "actorLink.label": "Link Actor Data",
   "displayName.label": "Display Name",
