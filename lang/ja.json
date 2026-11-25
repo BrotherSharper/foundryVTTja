@@ -70,6 +70,10 @@
       "hint": "ライトを見分けるための任意の名前。",
       "label": "名前"
     },
+    "hidden": {
+      "label": "非表示",
+      "hint": "この光源を一時的に無効化します。"
+    },
     "rotation": {
       "label": "回転角度"
     },
@@ -536,7 +540,7 @@
   "Confirm": "確定",
   "Default": "デフォルト",
   "Delete": "削除",
-  "Foundry Virtual Tabletop": "オンセ工房 Foundry VTT",
+  "FoundryVirtualTabletop": "オンセ工房 Foundry VTT",
   "Invalid": "無効",
   "No": "いいえ",
   "None": "ー",
@@ -969,6 +973,10 @@
     "width.label": "幅",
     "height.label": "高さ",
     "hidden.label": "非表示",
+    "locked": {
+      "label": "ロック",
+      "hint": "キャンバスの操作とパレットからの編集を防止します。"
+    },
     "elevation.label": "高度",
     "rotation.label": "回転",
     "sort": {
@@ -1011,6 +1019,10 @@
     "bezierFactor": {
       "label": "線の滑らかさ",
       "hint": "手書き描画の場合、線の滑らかさを調整します。"
+    },
+    "hidden": {
+      "label": "非表示",
+      "hint": "作成者以外のすべてのプレイヤーからこの図形を隠します。"
     },
     "fillAlpha.label": "塗り潰しの不透明度",
     "fillColor.label": "塗り潰しの色",
@@ -1227,7 +1239,7 @@
   "NoWebGL": "ご使用のブラウザは現在、オンセ工房 FoundryVTTで必要なWebGLレンダリングをサポートしていません。ブラウザでハードウェアレンダリングとWebGLが有効になっていることを確認してください。",
   "NoWebGL2": "ご使用のブラウザは現在、オンセ工房 FoundryVTTに推薦されているWebGL Version 2 レンダリングをサポートしていません。いくつかの機能が制限される恐れがあります。",
   "BackgroundTextureSize": "シーンに使用されているマップのテキスチャのサイズは{width} x {height}です。それにより縦または横の解像度が、このデバイスでサポートされている最大テクスチャサイズである{max}ピクセルを超えます。",
-  "InvalidAdminKey": "指定された管理者アクセスキーは無効です。設定したアクセスキーを忘れた場合は、ユーザーデータの場所から<strong> Config/admin.txt </strong>ファイルを手動で削除する必要があります。</p>",
+  "InvalidAdminCredentials": "入力されたサーバー管理者のユーザー名またはパスワードが無効です。設定した認証情報を忘れた場合は、ユーザーデータの場所にある<strong>Config/admin.txt</strong>ファイルを手動で削除する必要があります。",
   "LoadPackages": "オンセ工房 Foundryサーバーとの接続に失敗したため、既存パッケージへの参照ができませんでした。アプリケーションが外部接続可能であることを確認してください。",
   "NoTargetUsersForWhisper": "この秘話の対象となるユーザーが存在しません。名前を再確認するか、 もしくは \"/w [User Name]\"コマンドを試してください。",
   "CantWhisper": "秘話のチャットメッセージを他のプレイヤーに送信する権限がありません。",
@@ -1401,7 +1413,7 @@
   "TraverseBack": "上の階層に戻る",
   "NoResults": "その条件で一致するファイルは見つかりませんでした。",
   "Upload": "アップロード",
-  "CannotUpload": "このフォルダへのアップロードは、更新時に内容が上書きされる可能性があるため禁止されています。代わりに、\"assets\"フォルダまたはその他の許可された場所にアップロードしてください。",
+  "CannotUpload": "このフォルダへのアップロードは禁止されています。代わりに、\"assets\"フォルダまたはその他の許可された場所にアップロードしてください。",
   "Search": "検索",
   "ErrorTooLarge": "アップロードしようとしたファイルは、プロキシサーバーで処理するには大きすぎます。",
   "ErrorSomethingWrong": "ファイルのアップロードリクエストで問題が発生しました。",
@@ -1452,12 +1464,14 @@
 "GAME.ReturnSetup": "セットアップに戻る",
 "GAME.ReturnSetupActiveUser": "このワールドに入室中のユーザーがいます。閉じてしまうと入室中のユーザーも切断されますが、続行しますか？",
 "GAME.ReturnSetupActiveUsers": "このワールドに入室中の{number}人のユーザーがいます。閉じてしまうと入室中のユーザーも切断されますが、続行しますか？",
+"GAME.WorldShuttingDown": "ゲームワールドを終了しています。サーバーのホームページに戻ります。",
 
 "INFO.SceneViewCanvasDisabled": "シーン「{name}」を現在表示中ですが、キャンバスが無効化されているため表示するものがありません。",
 
 "INVITATIONS.Copied": "招待リンクをクリップボードにコピーしました",
 "INVITATIONS.Instructions": "あなたのゲームに参加したいユーザーに、以下の招待リンクを送ってください。ローカルの招待リンクは、あなたのローカルネットワーク上（家の中）のユーザーのためのもので、インターネットの招待リンクは設定されたポートを使ってインターネット経由で接続します。",
 "INVITATIONS.Internet": "インターネット",
+"INVITATIONS.InternetV6": "インターネット（IPv6）",
 "INVITATIONS.Local": "ローカル",
 "INVITATIONS.Title": "ゲームへの招待リンク",
 "INVITATIONS.OpenConnection": "接続は開かれています",
@@ -1472,6 +1486,7 @@
   "Empty": "空",
   "ToggleSheet": "{document}を表示",
   "ClearConfirm": "ホットバーに割り当てられたマクロをすべて消去しますか？",
+  "IsLocked": "ホットバーがロックされている間、この操作は実行できません。",
   "ACTIONS": {
     "Clear": "ホットバーを消去",
     "Mute": "ミュート",
@@ -2304,7 +2319,12 @@
 "SCENE_NAVIGATION": {
   "COLLAPSE": "ナビゲーションを閉じる",
   "EXPAND": "ナビゲーションを展開",
-  "LABEL": "シーン・ナビゲーション"
+  "LABEL": "シーン・ナビゲーション",
+  "SCENE": {
+    "Viewing": "表示中",
+    "Active": "アクティブ",
+    "Hidden": "非表示"
+  }
 },
 
 "GRID.STYLES":{
@@ -2323,6 +2343,33 @@
     "label": "アプリケーション設定を保存",
     "warning": "これらの設定オプションを変更すると、それを有効にするためにサーバーを再起動する必要があります。続けますか？",
     "restart": "Foundry VTT のアプリケーション設定が変更されました。変更を有効にするには、サーバーを再起動する必要があります。"
+  },
+  "SSL": {
+    "Content": {
+      "Attempt": "まずLet's Encryptのサービスから証明書の取得を試みます。これらの証明書はブラウザーから自動的に信頼されるため、サーバーでSSLを有効にする方法として推奨されます。証明書の取得には、サーバーがポート80でインターネットから到達可能である必要があります。状況によってはこれが不可能な場合があります。",
+      "Fallback": "信頼された証明書を取得できない場合、代わりに自己署名証明書が発行されます。接続は暗号化され、最新のブラウザーAPIも利用できますが、ブラウザーはこの証明書を自動的には信頼せず、あなたやプレイヤーに警告を表示します。この警告は無視しても安全です。",
+      "DoNotShare": "Configフォルダー内に生成された秘密鍵ファイル（ファイル名が<code>-key.pem</code>で終わるもの）は、誰にも共有しないでください。",
+      "Terms": "Let's Encryptから証明書を取得するには、<a href=\"https://letsencrypt.org/repository/\">利用者契約</a>への同意が必要です。続行しますか？"
+    },
+    "ERRORS": {
+      "CertificateGenerationFailed": "証明書の生成に失敗しました。詳細はサーバーログを確認してください。",
+      "CouldNotBind": "ポート80へのバインド要求が拒否されたため、認証局のチャレンジに応答できませんでした。",
+      "NoCandidates": "証明書生成に使用できるアドレスが見つかりませんでした。",
+      "NoChallenge": "指定されたアドレスに対してLet's Encryptからhttp-01チャレンジが提示されませんでした。",
+      "PortUnreachable": "ポート80にインターネットから接続できません。",
+      "ProxySSL": "このサーバーはSSLを処理するリバースプロキシの背後にあるため、SSL証明書は必要ありません。"
+    },
+    "RenewalFailed": "管理対象のSSL証明書を更新できませんでした: {error}",
+    "RenewalFailedInGame": "管理対象のSSL証明書を更新できませんでした。すぐに問題が発生する可能性は低いですが、都合のよいときにセットアップへ戻って新しい証明書の生成を試すか、Foundry Virtual Tabletopの管理者に連絡してください。",
+    "SelfSigned": "Let's Encryptから証明書を取得できなかったため、代わりに自己署名証明書を発行しました: {error}",
+    "Title": "証明書を自動生成",
+    "Tooltip": "SSL証明書と鍵を自動的に（再）生成します。",
+    "Trusted": "信頼された証明書を取得し、自動更新を設定しました。設定を保存してサーバーを再起動すると適用されます。",
+    "Unlock": {
+      "Title": "自動更新を停止",
+      "Tooltip": "この証明書の自動管理を停止します。",
+      "Warning": "Foundry Virtual Tabletopは現在この証明書を管理し、有効期限前に自動更新しています。続行すると証明書が削除され、自動更新が停止して、SSL証明書を手動で管理できるようになります。続行しますか？"
+    }
   },
   "SSLCert": "SSL証明書",
   "Telemetry": {
@@ -2343,6 +2390,10 @@
     "OtherSettings": "その他設定"
   },
   "FIELDS": {
+    "adminUsername": {
+      "label": "管理者ユーザー名",
+      "hint": "管理者ユーザー名を設定すると、Foundry Virtual Tabletopのセットアップおよび設定画面へのアクセスを保護できます。設定は任意ですが、設定することを推奨します。"
+    },
     "adminPassword": {
       "label": "管理者パスワード",
       "hint": "このセットアップ画面にアクセスするために必要な管理者パスワードを割り当てることができます。"
@@ -2394,7 +2445,7 @@
     },
     "sslCert": {
       "label": "証明書",
-      "hint": "証明書と秘密鍵ファイルへのパスを入力することで、SSLを使用してサーバー実行できます。 パスはユーザーデータのConfigサブディレクトリに対する絶対パスまたは相対パスです。"
+      "hint": "WebRTC（音声・ビデオ機能）やWebBluetooth（Bluetoothダイス機能）など、最新のブラウザー機能を使うにはSSLの設定が必要です。独自の証明書と鍵ファイルを用意するか、自動生成できます。パスはユーザーデータのConfigサブディレクトリからの絶対パスまたは相対パスです。詳細は<a href=\"https://foundryvtt.com/article/ssl/\" target=\"_blank\">SSL証明書</a>の記事を参照してください。"
     },
     "sslKey.label": "秘密鍵",
     "awsConfig": {
@@ -2555,6 +2606,10 @@
       "cards": "チャットカード",
       "pip": "通知バッジ"
     },
+    "chatBackground": {
+      "hint": "チャットカードをキャンバスに重ねず、チャットログの背景を表示します。",
+      "label": "チャット背景"
+    },
     "fade": {
       "opacity": {
         "label": "非アクティブ不透明度",
@@ -2581,7 +2636,7 @@
   "Modules": "モッド・拡張機能",
   "Systems": "ゲームシステム",
   "GettingStarted": "はじめに",
-  "NoSystemsMessage": "初めてワールド（卓部屋）を作るには <a class=\"system-install\" data-query=\"\" title=\"Game System\">ゲームシステム</a> をインストールする必要があります。ツール内にブラウザがありますので、既存のTRPGシステムを探してみてください！　もし自分がほしいシステムが見つからない場合は <a class=\"system-install\" data-query=\"Simple Worldbuilding\" title=\"Simple Worldbuilding\">Simple Worldbuilding（汎用システム）</a> のインストールをおすすめします。",
+  "NoSystemsMessage": "最初のワールド（部屋）を作成するには、まず<a class=\"system-install\" data-query=\"\" title=\"Game System\">ゲームシステム</a>をインストールしてください。利用可能なシステムを参照して、インストールするものを選びましょう。",
   "NoWorldsMessage": "システムがインストールできましたね！これで早速卓部屋を立てられます。卓部屋はワールドと呼ばれ、キャラクター、資料、マップなどを含んだものです。単発セッションでも長期キャンペーンでも好みによってご利用ください！",
   "NueWorldDescription": "<p>ワールドの使い方については<a href='https://foundryvtt.com/article/game-worlds/' target='_blank'>ワールド</a>の操作説明を確認してください！　英語のページなのでわからない場合はオンセ工房の日本語Discordまでご連絡ください。</p>",
   "SeeTutorial": "オンセ工房 Foundry VTTを使うためのガイドは <a href=\"https://foundryvtt.com/article/tutorial/\" target=\"_blank\" title=\"Gamemaster Tutorial\">英語版のGMガイド</a> もしくは <a href=\"https://foundryvtt.wiki/ja/home\" target=\"_blank\" title=\"JP Community Wiki\">日本語Wiki</a> を参照してください。",
@@ -2651,16 +2706,18 @@
   "FavoritePackage": "お気に入り",
   "Verified": "パッケージは現在の本体バージョンで利用できます。",
   "ErrorTimeout": "{url}へのリクエストが{timeout}秒後にタイムアウトしました。",
+  "GoBack": "戻る",
+
+  "ShuttingDown": {
+    "Confirm": "サーバーを終了してもよろしいですか？",
+    "Title": "終了中",
+    "Message": "サーバーを終了しています。再度アクセスするにはサーバーを再起動する必要があります。",
+    "Unavailable": "サーバーはまだ利用できません。再起動されたことを確認するか、数秒後にもう一度お試しください。"
+  },
 
   "WarningsTitle": "パッケージ警告",
   "WarningsNone": "警告はありません！",
   "WarningsManage": "パッケージ管理",
-
-  "ManifestUpdate": "新しいインストールURLで更新されたバージョンが利用可能です",
-  "ManifestUpdateAvailable": "\"{package}\" の新しいバージョンが別のURLより利用可能です。これは、パッケージのホスティング場所または作成者が変更した場合に発生します。",
-  "PriorManifestUrl": "以前のマニフェストURL (バージョン {version})",
-  "UpdatedManifestUrl": "更新されたマニフェストURL (バージョン {version})",
-  "SwapToTheUpdatedManifest": "新しいマニフェストURLに切り替えますか？（推奨）",
 
   "CurrentVersion": "現在のバージョン",
   "ForceUpdate": "強制アップデート",
@@ -2691,12 +2748,15 @@
   "PackageInstalled": "インストール済",
   "PackageNotOwned": "未所有",
   "PackageName": "パッケージ名",
+  "PackageOwnershipUnknown": "所有状況不明",
+  "PackageOwnershipUnknownHint": "foundryvtt.comからパッケージの所有権情報を取得できなかったため、このパッケージを所有しているかどうか不明です。",
   "PackageProtected": "プロテクト",
   "PackageRequiresDowngradeHint": "このパッケージをインストールするには、Foundry VTT バージョン {vmax} にダウングレードする必要があります。",
   "PackageRequiresDowngradeLabel": "要ダウングレード",
   "PackageRequiresUpgradeHint": "このパッケージをインストールするには、Foundry VTT バージョン {vmin} にアップグレードする必要があります。",
   "PackageRequiresUpgradeLabel": "要アップグレード",
   "PackageVisAll": "全てのパッケージ",
+  "PackageVisOwned": "所有済みパッケージ",
   "PackageVisInst": "インストール済",
   "PackageVisUnin": "未インストール",
   "PackageVisCompatible": "互換性あり",
@@ -2721,8 +2781,10 @@
   "PackageDependenciesCouldNotInstallSingular": "依存関係を手動でインストールする必要があります。",
   "PackageDependenciesCouldNotInstallPlural": "{number}個の依存関係を手動でインストールする必要があります。",
   "PackageDependenciesCouldInstallSingular": "依存関係を自動的にインストール可能です。",
-  "PackageDependenciesCouldInstallPlural": "{number}個の依存関係を自動的にインストール可能です。", 
+  "PackageDependenciesCouldInstallPlural": "{number}個の依存関係を自動的にインストール可能です。",
   "PackageDependenciesDecline": "{title}に必要な依存パッケージをインストールしないことを選択しました。手動でインストールする必要があります。",
+  "PackageDependenciesUnavailable": "次の必須依存パッケージをインストールできないため、このワールドを作成できません:",
+  "PackageDependencyUnlisted": "このパッケージは一覧にありません。",
   "PackageDependenciesSuccess": "{title}および{number}個の依存関係に必要なものが正常にインストールされました。",
   "PackageUpdateCoreUpdateNeeded": "{id}の更新が存在しますが、インストールするには最低でもバージョン{vmin}まで本体を更新する必要があります。現在使用しているバージョンは{vcur}です。",
   "PackageUpdateCoreUnstable": "{id}の更新が存在しますが、必要最低バージョン{vmin}がまだ安定版ではないためインストールを保留しました。",
@@ -2777,8 +2839,8 @@
   "UpdateCompleteAuto": "更新は正常に完了しました。オンセ工房 Foundry VTTのアプリを再起動します。",
   "UpdateNoInternetError": "オンセ工房 FoundryVTTを更新するには、インターネットに接続する必要があります。",
   "UpdateWebsiteUnreachableError": "https://foundryvtt.com に接続できません。時間をおいてからもう一度お試しください。",
+  "UpdateRequestRefusedError": "https://foundryvtt.com が更新リクエストを拒否しました。ライセンスキーの問題ではありません。時間をおいてからもう一度お試しください。",
   "UpdateWebsiteSlowWarning": "https://foundryvtt.com のサーバーは現在負荷が高い状態です。時間をおいてからもう一度お試しください。",
-  "UpdateWarningWillDisable": "この更新は、オンセ工房 FoundryVTTの新しいメジャーバージョンです。この更新をインストールする場合、まだ互換性が無いと思われる、いくつかのインストール済みモジュールを無効化する必要があります。",
   "UpdateButtonDownload": "{display} 更新をダウンロード",
   "UpdateInfoAvailable": "オンセ工房 FoundryVTT バージョン {display} が利用可能です！",
   "UpdateNotAvailable": "要求された更新先で利用可能な更新情報がありません",
@@ -2805,7 +2867,7 @@
 
   "AdminAccess": "要管理者アクセス",
   "AdminPasswordPrompt": "現在、このサーバーでアクティブなゲームはありません。セットアップメニューにアクセスするには、サーバー管理者のパスワードを入力する必要があります。",
-  "AdminPasswordForgot": "パスワードを忘れた場合は<a href='https://foundryvtt.com/article/reset-admin-password/' target='_blank'>こちら</a>にある初期化のガイドを参考にしてください。",
+  "AdminCredentialsForgot": "管理者のユーザー名またはパスワードを忘れた場合、サーバー管理者は<a href=\"https://foundryvtt.com/article/reset-admin-password/\" target=\"_blank\">こちらの手順</a>でリセットできます。",
   "AdminLogIn": "ログイン",
   "AdminLogout": "管理者ログアウト",
 
@@ -2819,11 +2881,15 @@
     "Configure": "設定",
     "Logout": "ログアウト",
     "Update": "アップデート",
-    "Warnings": "警告"
+    "Warnings": "警告",
+    "ShutDownServer": "シャットダウン"
   },
 
   "BACKUPS": {
     "Backup": "バックアップ",
+    "BackupBeforeRestore": "現在の状態をバックアップ",
+    "BackupBeforeRestoreHint": "復元前のパッケージの状態をバックアップしておくと、今回の復元を取り消すことができます。",
+    "BackupBeforeRestoreNote": "復元前の自動バックアップ",
     "BackingUp": "バックアップ実行中",
     "BulkActions": "一括操作",
     "Extracting": "バックアップ摘出中",
@@ -2871,10 +2937,12 @@
     "Restoring": "バックアップ復元中",
     "RestoreLatest": "最新を復元",
     "RestoreLatestBackup": "最新のバックアップを復元",
-    "RestoreBackupWarning": "バックアップを復元すると、現在のパッケージの状態を削除します。この操作は元に戻すことができません。本当に実行しますか？",
+    "RestoreBackupWarning": "バックアップを復元すると、現在のパッケージの状態は消去されます。下のチェックボックスをオンにしてバックアップを作成しない限り、この操作は元に戻せません。続行しますか？",
+    "RestoreBackupWarningNoBackups": "バックアップを復元すると、現在のパッケージの状態は消去されます。この操作は元に戻せません。続行しますか？",
     "RestoreBackupTitle": "{title}のバックアップ復元中",
     "RestoreBackupFailure": "{title}のバックアップの復元に失敗しました。詳細はコンソールログ（F12）よりご確認ください。",
     "RestoreBackupComplete": "{title}を{date}のバックアップに無事復元できました。",
+    "RestoreBackupConfirmCodeInvalid": "バックアップの復元を確認するには、正確な確認コードを入力してください。",
     "RestoringSnapshot": "スナップショット復元中",
     "RestoreSnapshotFailure": "スナップショットの復元に失敗しました。詳細はコンソールログ（F12）よりご確認ください。",
     "RestoreSnapshotComplete": "{date}のスナップショットを無事復元できました。",
@@ -2882,6 +2950,7 @@
     "RestoreSnapshotWarning": "スナップショットを復元すると、現在のオンセ工房 FoundryVTTの状態をスナップショット作成時点にリセットします。すべてのシステムやモッドのバージョンおよびワールドの状態が復元されます。この操作は元に戻すことができません。",
     "RestoreSnapshotUnchangedPackages": "スナップショット作成後に<strong>一つ</strong>のパッケージが追加されてます。スナップショット復元中のリセットから除外されます。",
     "RestoreSnapshotUnchangedPackagesPl": "スナップショット作成後に<strong>{count}つ</strong>のパッケージが追加されてます。スナップショット復元中のリセットから除外されます。",
+    "RestoreSnapshotConfirmCodeInvalid": "スナップショットの復元を確認するには、正確な確認コードを入力してください。",
     "SelectAll": "すべて選択",
     "Snapshot": "スナップショット",
     "TakeBackup": "バックアップを取る",
@@ -2941,6 +3010,20 @@
     },
     "ManifestWrongPackageType": "指定されたURLは {packageType} ではないようです。"
   },
+  "PROVIDER_FILTER": {
+    "Label": "プロバイダー",
+    "Placeholder": "プロバイダーを検索"
+  },
+  "SYSTEM_FILTER": {
+    "Label": "システム",
+    "Systems": "必要なシステム",
+    "RequiresN": "{count}個のシステム",
+    "MODES": {
+      "installed": "インストール済みシステムで利用可能",
+      "none": "制限なし",
+      "specific": "特定のシステムが必要"
+    }
+  },
   "UPDATE_NOTES": {
     "Title": "リリースノート: {release}",
     "FullList": "リリースノートについては<a href=\"{url}\" target=\"_blank\">full list</a> をご確認ください。",
@@ -2968,6 +3051,30 @@
   "Compatibility": {
     "Label": "互換性",
     "Hint": "任意で、このパッケージがFVTTの特定の範囲のバージョンとのみ互換性があることを示すことができます。互換性は、「13.339」のような特定のビルドバージョンから、「13」のような幅広い表現で宣言することができます。"
+  },
+  "TAGS": {
+    "adventures": "シナリオ",
+    "ai-content": "AI生成を含む",
+    "ai-tools": "AIツール",
+    "analytics": "分析・トラッキング",
+    "archived": "アーカイブ済み",
+    "audio": "音声機能の改善",
+    "automation": "自動化機能の強化",
+    "chat": "チャット・メッセージ",
+    "combat": "戦闘機能の強化",
+    "content": "コンテンツパック",
+    "dice": "ダイスロール",
+    "importer": "コンテンツのインポート",
+    "integration": "外部サービス連携",
+    "journal": "資料・メモ",
+    "overhaul": "大規模な改修・機能セット",
+    "paid-features": "有料機能を含む",
+    "patches": "修正・バグ修正",
+    "sheets": "キャラクター・アイテムシート",
+    "tools": "ツール・操作機能",
+    "translation": "翻訳・ローカライズ",
+    "visuals": "視覚効果",
+    "zero-ai": "AI不使用"
   },
   "TagJavaScript": "JavaScript",
   "TagCSS": "CSS",
@@ -3113,9 +3220,10 @@
   "NextSession": "次回セッション",
   "SelectUser": "ユーザーを選択",
   "UserKey": "ユーザーパスワード",
-  "AuthAdmin": "サーバー管理者ユーザーとして認証されています。",
+  "AuthAdmin": "サーバー管理者として認証されています。",
+  "AuthRequired": "サーバー管理者としての認証が必要です。",
   "ErrorMustSelectUser": "ログインするにはユーザーを選択する必要があります。",
-  "ErrorUserDoesNotExist": "リクエストされたユーザー「{user}」は存在しません！",
+  "ErrorUserDoesNotExist": "リクエストされたユーザー「{user}」は存在しません。",
   "ErrorInvalidPassword": "{user}のために提供されたパスワードが無効です！",
   "ErrorBanned": "{user}はこのワールドにアクセスする権限がありません！",
   "LoginSuccess": "{user}としてのログインに成功しました。ゲームに参加しています！",
@@ -3330,6 +3438,14 @@
       "label": "可視性",
       "hint": "リージョンの可視性を設定します。"
     },
+    "hidden": {
+      "label": "非表示",
+      "hint": "リージョンをプレイヤーから隠し、挙動も無効化します。"
+    },
+    "locked": {
+      "label": "ロック",
+      "hint": "キャンバスでの操作とパレットからの編集を防ぎ、表示設定が「ロック解除されたリージョンのみ」の場合はこのリージョンを隠します。"
+    },
     "highlightMode": {
       "label": "強調モード",
       "hint": "正確な形状を強調表示するか、リージョンに覆われたマス目を強調表示するかを設定します。"
@@ -3453,7 +3569,6 @@
   },
   "NOTIFICATIONS": {
     "PlacedRegionRotationNotAllowed": "配置済みのリージョンの形状は回転できません。",
-    "PlacedRegionNotAttachedToToken": "配置したリージョンはコマに追従させる必要があります。",
     "CopiedShape": "リージョン形状をコピーしました。",
     "CutShape": "リージョン形状をカットしました。",
     "PastedShape": "リージョン形状をペーストしました。",
@@ -3779,6 +3894,9 @@
     "ACTIONS": {
       "Clear": "解除"
     },
+    "Any": "すべて",
+    "Yes": "はい",
+    "No": "いいえ",
     "Bottom": "下端",
     "Title": "詳細な絞り込み",
     "Level": "階層で絞り込み",
@@ -3926,7 +4044,8 @@
     "img.label": "結果のアイコン",
     "documentUuid.label": "参照ドキュメント",
     "weight.label": "割合",
-    "range.label": "範囲"
+    "range.label": "範囲",
+    "description.label": "説明"
   }
 },
 
@@ -3956,6 +4075,10 @@
   "video": "動画"
 },
 "TILE.FIELDS": {
+  "hidden": {
+    "label": "非表示",
+    "hint": "このタイルをプレイヤーから隠します。"
+  },
   "sort.label": "ソート",
   "texture": {
     "src.label": "タイル画像 / 動画",
@@ -4098,6 +4221,14 @@
 },
 "TOKEN.FIELDS": {
   "name.label": "コマ名",
+  "hidden": {
+    "label": "非表示",
+    "hint": "このコマをプレイヤーから隠します。"
+  },
+  "locked": {
+    "label": "ロック",
+    "hint": "このコマがキャンバス上で移動されないようにします。"
+  },
   "sort.label": "ソート",
   "width.label": "Xサイズ",
   "height.label": "Yサイズ",

@@ -70,6 +70,10 @@
       "hint": "An optional name to help identify the light source.",
       "label": "Name"
     },
+    "hidden": {
+      "label": "Hidden",
+      "hint": "Temporarily disable this light source."
+    },
     "rotation": {
       "label": "Rotation Angle"
     },
@@ -969,6 +973,10 @@
     "width.label": "Width",
     "height.label": "Height",
     "hidden.label": "Hidden",
+    "locked": {
+      "label": "Locked",
+      "hint": "Prevent canvas manipulation and edits via the palette."
+    },
     "elevation.label": "Elevation",
     "rotation.label": "Rotation",
     "sort": {
@@ -1011,6 +1019,10 @@
     "bezierFactor": {
       "label": "Smoothing Factor",
       "hint": "For freehand drawing, the smoothing factor controls the amount of spline smoothing."
+    },
+    "hidden": {
+      "label": "Hidden",
+      "hint": "Hide this Drawing from every player except its author."
     },
     "fillAlpha.label": "Fill Opacity",
     "fillColor.label": "Fill Color",
@@ -1227,7 +1239,7 @@
   "NoWebGL": "Your browser does not currently support WebGL rendering which is required by Foundry Virtual Tabletop. Ensure that you have hardware rendering and WebGL enabled in your browser.",
   "NoWebGL2": "Your browser does not currently support WebGL Version 2 rendering which is essential for Foundry Virtual Tabletop to work properly. Errors or abnormal graphical behavior may occur.",
   "BackgroundTextureSize": "You are using a Scene background texture with dimensions {width}px by {height}px. One or both of these dimensions exceeds the maximum texture size of {max}px supported by your device.",
-  "InvalidAdminKey": "The provided server administrator password is invalid. If you have forgotten your configured password you will need to manually delete the <strong>Config/admin.txt</strong> file from your user data location.",
+  "InvalidAdminCredentials": "The provided server administrator username or password is invalid. If you have forgotten your configured credentials, you will need to manually delete the <strong>Config/admin.txt</strong> file from your user data location.",
   "LoadPackages": "The request to browse existing packages failed to connect with the Foundry server. Make sure your application allows outbound connections.",
   "NoTargetUsersForWhisper": "No target users exist for this whisper. Check your spelling or try \"/w [User Name]\" instead.",
   "CantWhisper": "You do not have permission to send whispered chat messages to other users.",
@@ -1401,7 +1413,7 @@
   "TraverseBack": "Traverse Back",
   "NoResults": "No matching results found in this location.",
   "Upload": "Upload",
-  "CannotUpload": "Uploads to this folder are prohibited because content here may be overwritten during updates. Upload to your \"assets\" folder or another allowed location instead.",
+  "CannotUpload": "Uploads to this folder are prohibited. Upload to your \"assets\" folder or another allowed location instead.",
   "Search": "Search",
   "ErrorTooLarge": "The file you have attempted to upload is too large for your proxy server to handle.",
   "ErrorSomethingWrong": "Something went wrong with your file upload request.",
@@ -1452,12 +1464,14 @@
 "GAME.ReturnSetup": "Return to Setup",
 "GAME.ReturnSetupActiveUser": "There is one other User currently active in this World and will be disconnected. Do you wish to proceed?",
 "GAME.ReturnSetupActiveUsers": "There are {number} other Users currently active in this World and will be disconnected. Do you wish to proceed?",
+"GAME.WorldShuttingDown": "The game world is shutting down and you will be returned to the server homepage.",
 
 "INFO.SceneViewCanvasDisabled": "The Scene \"{name}\" is now viewed but is not displayed because the game Canvas is disabled.",
 
 "INVITATIONS.Copied": "Game invitation link copied to clipboard",
 "INVITATIONS.Instructions": "Share the below invitation links with users who you wish to have join your game. The local invitation link is for users on your local network while the internet link connects via internet on the configured port.",
 "INVITATIONS.Internet": "Internet",
+"INVITATIONS.InternetV6": "Internet (IPv6)",
 "INVITATIONS.Local": "Local Network",
 "INVITATIONS.Title": "Game Invitation Links",
 "INVITATIONS.OpenConnection": "Your connection appears to be open",
@@ -1472,6 +1486,7 @@
   "Empty": "Empty Slot",
   "ToggleSheet": "Display {document}",
   "ClearConfirm": "Clear all assigned Macros from your hotbar?",
+  "IsLocked": "You cannot take this action while the hotbar is locked.",
   "ACTIONS": {
     "Clear": "Clear Hotbar",
     "Mute": "Mute Volume",
@@ -2304,7 +2319,12 @@
 "SCENE_NAVIGATION": {
   "COLLAPSE": "Collapse Navigation",
   "EXPAND": "Expand Navigation",
-  "LABEL": "Scene Navigation"
+  "LABEL": "Scene Navigation",
+  "SCENE": {
+    "Viewing": "Viewing",
+    "Active": "Active",
+    "Hidden": "Hidden"
+  }
 },
 
 "GRID.STYLES":{
@@ -2323,6 +2343,33 @@
     "label": "Save Application Configuration",
     "warning": "Modifying these configuration options will require you to restart your server in order for them to take effect. Do you wish to continue?",
     "restart": "Foundry Virtual Tabletop application configuration settings have been changed. You must restart your server for the changes to take effect."
+  },
+  "SSL": {
+    "Content": {
+      "Attempt": "Foundry Virtual Tabletop will first attempt to obtain a certificate from the Let's Encrypt 3rd party service. Browsers trust these certificates automatically so they are the preferred method for enabling SSL on your server. Obtaining these certificates requires that your instance is publicly reachable on port 80 which may not be possible in some circumstances.",
+      "Fallback": "If a trusted certificate cannot be obtained, a self-signed certificate will be issued instead. This still encrypts the connection and still enables modern browser APIs, but browsers do not implicitly trust these certificates and will display a prominent warning for you and your players. This warning is safe to ignore.",
+      "DoNotShare": "Take care that you do not share the generated private key file (ends with <code>-key.pem</code>) in your Config folder with anyone.",
+      "Terms": "Requesting a certificate from Let's Encrypt requires that you agree to their <a href=\"https://letsencrypt.org/repository/\">Subscriber Agreement</a>. Would you like to proceed?"
+    },
+    "ERRORS": {
+      "CertificateGenerationFailed": "Certificate generation failed, consult your server logs for more details.",
+      "CouldNotBind": "Unable to answer the certificate authority's challenge because the request to bind to port 80 was rejected.",
+      "NoCandidates": "Unable to discover any candidate addresses for certificate generation.",
+      "NoChallenge": "Let's Encrypt did not offer an http-01 challenge for the provided address.",
+      "PortUnreachable": "Port 80 is not reachable publicly.",
+      "ProxySSL": "This instance does not require an SSL certificate as it is already behind a reverse proxy that handles SSL."
+    },
+    "RenewalFailed": "Failed to renew the managed SSL certificate: {error}",
+    "RenewalFailedInGame": "Failed to renew the managed SSL certificate. This will likely not cause any immediate issue, but you will need to Return to Setup at your convenience and attempt to generate a new certificate, or contact whoever manages your Foundry Virtual Tabletop instance.",
+    "SelfSigned": "A certificate from Let's Encrypt could not be obtained, so a self-signed certificate was issued instead: {error}",
+    "Title": "Automatically Generate Certificate",
+    "Tooltip": "Automatically (re-)generate SSL certificates & keys.",
+    "Trusted": "A trusted certificate was obtained and will be renewed automatically. Save your settings and restart the server to apply it.",
+    "Unlock": {
+      "Title": "Stop Automatic Renewal",
+      "Tooltip": "Stop managing this certificate automatically.",
+      "Warning": "Foundry Virtual Tabletop currently manages this certificate and automatically renews it before it expires. If you continue, the certificate will be deleted and automatic renewal will stop, allowing you to manually manage your SSL certificates. Would you like to proceed?"
+    }
   },
   "SSLCert": "SSL Certificate",
   "Telemetry": {
@@ -2343,6 +2390,10 @@
     "OtherSettings": "Other Settings"
   },
   "FIELDS": {
+    "adminUsername": {
+      "label": "Administrator Username",
+      "hint": "An administrator username is used to protect access to this Setup and Configuration area of Foundry Virtual Tabletop. Configuring an administrator username is optional but encouraged."
+    },
     "adminPassword": {
       "label": "Administrator Password",
       "hint": "An administrator password is used to protect access to this Setup and Configuration area of Foundry Virtual Tabletop. It is strongly encouraged to set an administrator password for your server."
@@ -2394,7 +2445,7 @@
     },
     "sslCert": {
       "label": "Certificate",
-      "hint": "You may run the server using secure socket layer (SSL) encryption by providing paths to certificate and key files. Paths are absolute or relative to the Config subfolder in user data."
+      "hint": "Secure socket layer (SSL) must be configured in order to use certain modern browser features such as WebRTC (for audio & video features), or WebBluetooth (for bluetooth dice features). You may generate your own certificate and key file to enable SSL, or you can have one created for you automatically. Paths are absolute or relative to the Config subfolder in user data. See the <a href=\"https://foundryvtt.com/article/ssl/\" target=\"_blank\">SSL Certificates</a> article for more details."
     },
     "sslKey.label": "Key",
     "awsConfig": {
@@ -2549,6 +2600,10 @@
         "hint": "Specify whether you prefer user interface elements to render using a light theme or a dark theme."
       }
     },
+    "chatBackground": {
+      "hint": "Display the chat log with a background rather than having chat cards overlay the canvas.",
+      "label": "Chat Background"
+    },
     "chatNotifications": {
       "label": "Chat Notifications",
       "hint": "Choose whether notifications of new chat messages appear as full chat cards, or only as a pip on the chat tab.",
@@ -2581,7 +2636,7 @@
   "Modules": "Add-on Modules",
   "Systems": "Game Systems",
   "GettingStarted": "Getting Started",
-  "NoSystemsMessage": "In order to create your first World, you must first install a <a class=\"system-install\" data-query=\"\" title=\"Game System\">Game System</a>. Please take some time to browse available systems and choose one to install. If you do not know which system you want, or your preferred system is unavailable, we recommend that you install the <a class=\"system-install\" data-query=\"Simple Worldbuilding\" title=\"Simple Worldbuilding\">Simple Worldbuilding</a> system. ",
+  "NoSystemsMessage": "In order to create your first World, you must first install a <a class=\"system-install\" data-query=\"\" title=\"Game System\">Game System</a>. Please take some time to browse available systems and choose one to install.",
   "NoWorldsMessage": "Now that you have a Game System providing you rules on how to play, you'll want to create a World. Game worlds are spaces that contain all of the characters, sheets, journals and maps used to play a game, whether it's a one-shot or a full campaign.",
   "NueWorldDescription": "<p>For more info on setting up Worlds, check out the <a href='https://foundryvtt.com/article/game-worlds/' target='_blank'>World</a> documentation.</p>",
   "SeeTutorial": "For a more in-depth guide to getting started with Foundry Virtual Tabletop, you can reference the <a href=\"https://foundryvtt.com/article/tutorial/\" target=\"_blank\" title=\"Gamemaster Tutorial\">Gamemaster Tutorial</a> series in our <a href=\"https://foundryvtt.com/kb/\" target=\"_blank\" title=\"Knowledge Base\">Knowledge Base</a>.",
@@ -2651,16 +2706,18 @@
   "FavoritePackage": "Favorite",
   "Verified": "Package is verified for this version of Foundry",
   "ErrorTimeout": "The request to {url} timed out after {timeout}s",
+  "GoBack": "Go Back",
+
+  "ShuttingDown": {
+    "Confirm": "Are you sure you want to shut down the server?",
+    "Title": "Shutting Down",
+    "Message": "The server is shutting down. It will need to be restarted to access again.",
+    "Unavailable": "The server is not yet available. Verify that it has been restarted, or try again in a few seconds."
+  },
 
   "WarningsTitle": "Package Warnings",
   "WarningsNone": "You have no warnings!",
   "WarningsManage": "Manage Package",
-
-  "ManifestUpdate": "Updated version available at new installation URL",
-  "ManifestUpdateAvailable": "A newer version of \"{package}\" is available at a different installation URL. This happens when the package hosting location or the author has changed.",
-  "PriorManifestUrl": "Prior Manifest URL (Version {version})",
-  "UpdatedManifestUrl": "Updated Manifest URL (Version {version})",
-  "SwapToTheUpdatedManifest": "Would you like to switch to the new manifest URL? (this is recommended)",
 
   "CurrentVersion": "Current Version",
   "ForceUpdate": "Force Update?",
@@ -2691,12 +2748,15 @@
   "PackageInstalled": "Installed",
   "PackageNotOwned": "Not Owned",
   "PackageName": "Package Name",
+  "PackageOwnershipUnknown": "Ownership Unknown",
+  "PackageOwnershipUnknownHint": "Your package entitlements could not be retrieved from foundryvtt.com, so it is not known whether you own this package.",
   "PackageProtected": "Protected",
   "PackageRequiresDowngradeHint": "You must downgrade to Foundry VTT version {vmax} in order to install this package.",
   "PackageRequiresDowngradeLabel": "Requires Downgrade",
   "PackageRequiresUpgradeHint": "You must upgrade to Foundry VTT version {vmin} in order to install this package.",
   "PackageRequiresUpgradeLabel": "Requires Upgrade",
   "PackageVisAll": "All Packages",
+  "PackageVisOwned": "Owned Packages",
   "PackageVisInst": "Installed",
   "PackageVisUnin": "Not Installed",
   "PackageVisCompatible": "Compatible",
@@ -2723,6 +2783,8 @@
   "PackageDependenciesCouldInstallSingular": "A dependency can be automatically installed.",
   "PackageDependenciesCouldInstallPlural": "{number} dependencies can be automatically installed.",
   "PackageDependenciesDecline": "You have chosen not to install the required dependency packages for {title}. You will need to install them manually.",
+  "PackageDependenciesUnavailable": "This world cannot be created because the following required dependencies are not available to install:",
+  "PackageDependencyUnlisted": "This package is unlisted.",
   "PackageDependenciesSuccess": "Successfully installed {title} and {number} dependencies.",
   "PackageUpdateCoreUpdateNeeded": "An update is available for {title} but cannot be installed because it requires the core software to be updated to at least {vmin}. You are currently using version {vcur}.",
   "PackageUpdateCoreUnstable": "An update is available for {title} but it may not be installed because it requires a core software version {vmin} which is not yet stable.",
@@ -2777,8 +2839,8 @@
   "UpdateCompleteAuto": "Update completed successfully. Restarting Foundry VTT application.",
   "UpdateNoInternetError": "Foundry Virtual Tabletop requires an active internet connection to update.",
   "UpdateWebsiteUnreachableError": "We cannot reach https://foundryvtt.com at this time, please try again later.",
+  "UpdateRequestRefusedError": "https://foundryvtt.com refused this update request. This is not a problem with your license key. Please try again later.",
   "UpdateWebsiteSlowWarning": "https://foundryvtt.com appears to be under heavy load at this time, we recommend you try again later.",
-  "UpdateWarningWillDisable": "This update is a new major version of the Foundry Virtual Tabletop software. Installing this update will require some installed modules which may not yet be compatible to be disabled.",
   "UpdateButtonDownload": "Download Update {display}",
   "UpdateInfoAvailable": "An update to Foundry Virtual Tabletop {display} is available!",
   "UpdateNotAvailable": "No software update is currently available on the requested update channel.",
@@ -2805,7 +2867,7 @@
 
   "AdminAccess": "Administrator Access Required",
   "AdminPasswordPrompt": "There is not currently an active game on this server. In order to access the setup menu you must provide the server administrator password.",
-  "AdminPasswordForgot": "If you have forgotten the administrator password, the server administrator can reset it by <a href='https://foundryvtt.com/article/reset-admin-password/' target='_blank'>following these instructions</a>.",
+  "AdminCredentialsForgot": "If you have forgotten the administrator username or password, the server administrator can reset it by <a href=\"https://foundryvtt.com/article/reset-admin-password/\" target=\"_blank\">following these instructions</a>.",
   "AdminLogIn": "Log In",
   "AdminLogout": "Admin Log Out",
 
@@ -2819,11 +2881,15 @@
     "Configure": "Configure",
     "Logout": "Log Out",
     "Update": "Update",
-    "Warnings": "Warnings"
+    "Warnings": "Warnings",
+    "ShutDownServer": "Shut Down"
   },
 
   "BACKUPS": {
     "Backup": "Backup",
+    "BackupBeforeRestore": "Back Up Current State",
+    "BackupBeforeRestoreHint": "Take a backup of the package as it is now, so that this restoration can itself be rolled back.",
+    "BackupBeforeRestoreNote": "Automatic Pre-Restore Backup",
     "BackingUp": "Backup In Progress",
     "BulkActions": "Bulk Actions",
     "Extracting": "Extracting Backup",
@@ -2871,10 +2937,12 @@
     "Restoring": "Backup Restoration In Progress",
     "RestoreLatest": "Restore Latest",
     "RestoreLatestBackup": "Restore Latest Backup",
-    "RestoreBackupWarning": "Restoring a backup will erase the current state of the package. This action cannot be reversed. Do you want to continue?",
+    "RestoreBackupWarning": "Restoring a backup will erase the current state of the package. Unless you choose to back up by checking the box below, this action cannot be reversed. Do you want to continue?",
+    "RestoreBackupWarningNoBackups": "Restoring a backup will erase the current state of the package. This action cannot be reversed. Do you want to continue?",
     "RestoreBackupTitle": "Restoring backup for {title}",
     "RestoreBackupFailure": "Failed to restore backup for {title}. See the console (F12) for details.",
     "RestoreBackupComplete": "Successfully restored {title} with backup taken on {date}",
+    "RestoreBackupConfirmCodeInvalid": "You must enter the exact code to confirm the backup restoration request.",
     "RestoringSnapshot": "Restoring Snapshot",
     "RestoreSnapshotFailure": "Failed to restore snapshot. See the console (F12) for details.",
     "RestoreSnapshotComplete": "Successfully restored snapshot taken on {date}.",
@@ -2882,6 +2950,7 @@
     "RestoreSnapshotWarning": "Restoring a snapshot resets the state of your Foundry VTT installation back to the state at which the snapshot was taken. All versions and world states will be rolled back. This process cannot be undone.",
     "RestoreSnapshotUnchangedPackages": "<strong>1</strong> package was added after the snapshot was taken and will remain unchanged after the snapshot is restored.",
     "RestoreSnapshotUnchangedPackagesPl": "<strong>{count}</strong> packages were added after the snapshot was taken and will remain unchanged after the snapshot is restored.",
+    "RestoreSnapshotConfirmCodeInvalid": "You must enter the exact code to confirm the snapshot restoration request.",
     "SelectAll": "Select All",
     "Snapshot": "Snapshot",
     "TakeBackup": "Take Backup",
@@ -2941,6 +3010,20 @@
     },
     "ManifestWrongPackageType": "The provided URL does not appear to point to a {packageType}."
   },
+  "PROVIDER_FILTER": {
+    "Label": "Providers",
+    "Placeholder": "Search Providers"
+  },
+  "SYSTEM_FILTER": {
+    "Label": "Systems",
+    "Systems": "Requires System",
+    "RequiresN": "{count} Systems",
+    "MODES": {
+      "installed": "Available for Installed Systems",
+      "none": "No Restriction",
+      "specific": "Requires Specific System"
+    }
+  },
   "UPDATE_NOTES": {
     "Title": "Release Notes: {release}",
     "FullList": "See the <a href=\"{url}\" target=\"_blank\">full list</a> of Release Notes.",
@@ -2968,6 +3051,30 @@
   "Compatibility": {
     "Label": "Compatibility",
     "Hint": "You may optionally indicate that this package is compatible only with a range of Foundry Virtual Tabletop software versions. Compatibility can be declared for a specific build version like \"13.339\" or for a broad generation like \"13\"."
+  },
+  "TAGS": {
+    "adventures": "Adventures",
+    "ai-content": "Contains AI Content",
+    "ai-tools": "AI Tools",
+    "analytics": "Analytics and Tracking",
+    "archived": "Archived",
+    "audio": "Audio Improvements",
+    "automation": "Automation Enhancers",
+    "chat": "Chat Log and Messaging",
+    "combat": "Combat Enhancements",
+    "content": "Content Packs",
+    "dice": "Dice Rolling",
+    "importer": "Content Importers",
+    "integration": "External Integrations",
+    "journal": "Journals and Notes",
+    "overhaul": "Overhauls or Feature Suites",
+    "paid-features": "Contains Paid Features",
+    "patches": "Patches or Bug Fixes",
+    "sheets": "Actor and Item Sheets",
+    "tools": "Tools and Controls",
+    "translation": "Translation and Localization",
+    "visuals": "Visual Effects",
+    "zero-ai": "Contains Zero AI"
   },
   "TagJavaScript": "JavaScript",
   "TagCSS": "CSS",
@@ -3113,9 +3220,10 @@
   "NextSession": "Next Session",
   "SelectUser": "Select User",
   "UserKey": "User Password",
-  "AuthAdmin": "You are authenticated as a server administrator user.",
+  "AuthAdmin": "You are authenticated as a server administrator.",
+  "AuthRequired": "You will be required to authenticate as a server administrator.",
   "ErrorMustSelectUser": "You must select a User in order to log in.",
-  "ErrorUserDoesNotExist": "The requested User, \"{user}\", does not exist!",
+  "ErrorUserDoesNotExist": "The requested User, \"{user}\", does not exist.",
   "ErrorInvalidPassword": "Invalid password provided for {user}!",
   "ErrorBanned": "{user} does not have permission to access this World!",
   "LoginSuccess": "Login as {user} successful, joining game!",
@@ -3330,6 +3438,14 @@
       "label": "Visibility",
       "hint": "Configure the visibility of the Region."
     },
+    "hidden": {
+      "label": "Hidden",
+      "hint": "Hide the Region from players and deactivate its behaviors."
+    },
+    "locked": {
+      "label": "Locked",
+      "hint": "Prevent canvas interactions and palette edits, and hide the Region when visibility is set to show only unlocked Regions."
+    },
     "highlightMode": {
       "label": "Highlight Mode",
       "hint": "Configure whether to highlight the true shapes or the grid spaces covered by the Region."
@@ -3453,7 +3569,6 @@
   },
   "NOTIFICATIONS": {
     "PlacedRegionRotationNotAllowed": "You are not allowed to rotate the shape of the placed Region.",
-    "PlacedRegionNotAttachedToToken": "The placed Region must be attached to a Token.",
     "CopiedShape": "Copied Region shape.",
     "CutShape": "Cut Region shape.",
     "PastedShape": "Pasted Region shape.",
@@ -3779,6 +3894,9 @@
     "ACTIONS": {
       "Clear": "Clear"
     },
+    "Any": "Any",
+    "Yes": "Yes",
+    "No": "No",
     "Bottom": "Bottom",
     "Title": "Advanced Filter",
     "Level": "Filter by Level",
@@ -3926,7 +4044,8 @@
     "img.label": "Result Icon",
     "documentUuid.label": "Referenced Document",
     "weight.label": "Weight",
-    "range.label": "Range"
+    "range.label": "Range",
+    "description.label": "Description"
   }
 },
 
@@ -3956,6 +4075,10 @@
   "video": "Video"
 },
 "TILE.FIELDS": {
+  "hidden": {
+    "label": "Hidden",
+    "hint": "Hide this Tile from players."
+  },
   "sort.label": "Sort",
   "texture": {
     "src.label": "Tile Image or Video",
@@ -4098,6 +4221,14 @@
 },
 "TOKEN.FIELDS": {
   "name.label": "Token Name",
+  "hidden": {
+    "label": "Hidden",
+    "hint": "Hide this Token from players."
+  },
+  "locked": {
+    "label": "Locked",
+    "hint": "Prevent this Token from being moved on the canvas."
+  },
   "sort.label": "Sort",
   "width.label": "X-Size",
   "height.label": "Y-Size",
